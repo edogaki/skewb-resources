@@ -6,7 +6,10 @@ import type { SkewbRendererState } from "./renderer/skewbRenderer";
 type Piece = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13;
 type Orientation = 0 | 1 | 2;
 
-const pieceColors = {
+const CenterPiece = [8, 9, 10, 11, 12, 13] as const;
+type CenterPiece = (typeof CenterPiece)[number];
+
+export const pieceColors = {
     0: [Color.White, Color.Red, Color.Green],
     1: [Color.White, Color.Green, Color.Orange],
     2: [Color.White, Color.Orange, Color.Blue],
@@ -643,4 +646,4 @@ export class SkewbState {
     }
 }
 
-export { WCATurn };
+export { WCATurn, CenterPiece };

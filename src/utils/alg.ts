@@ -46,6 +46,10 @@ export class WCAAlg {
     toString() {
         return this.turns.join(" ");
     }
+
+    addTurn(turn: WCATurn) {
+        this.turns.push(turn);
+    }
 }
 
 const RubikskewbTurn = {
@@ -104,6 +108,10 @@ export class RubikskewbAlg {
 
     toString() {
         return this.turns.join(" ");
+    }
+
+    addTurn(turn: RubikskewbTurn) {
+        this.turns.push(turn);
     }
 }
 

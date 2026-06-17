@@ -390,7 +390,6 @@ pre code {
   background: color-mix(in oklab, var(--lagoon) 8%, transparent);
 }
 
-button,
 .island-shell,
 a {
   transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease,
