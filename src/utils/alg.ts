@@ -33,11 +33,13 @@ export class WCAAlg {
     constructor(algString: string) {
         this.turns = [];
         for (const turn of algString.split(" ")) {
-            if (isWCATurn(turn)) {
-                this.turns.push(turn);
-            } else {
+            if (turn === "") {
+                continue;
+            }
+            if (!isWCATurn(turn)) {
                 throw new Error(`Invalid WCA alg string`);
             }
+            this.turns.push(turn as WCATurn);
         }
     }
 
@@ -89,6 +91,9 @@ export class RubikskewbAlg {
     constructor(algString: string) {
         this.turns = [];
         for (const turn of algString.split(" ")) {
+            if (turn === "") {
+                continue;
+            }
             if (isRubikskewbTurn(turn)) {
                 this.turns.push(turn);
             } else {
