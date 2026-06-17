@@ -357,14 +357,12 @@ export class SkewbState {
                 ];
                 break;
             case WCATurn.yprime:
-                console.log("before", { perm: [...this.perm] });
                 [this.perm[0], this.perm[3], this.perm[2], this.perm[1]] = [
                     this.perm[1],
                     this.perm[0],
                     this.perm[3],
                     this.perm[2],
                 ];
-                console.log("after", { perm: [...this.perm] });
                 [this.orie[0], this.orie[3], this.orie[2], this.orie[1]] = [
                     this.orie[1],
                     this.orie[0],
@@ -414,7 +412,6 @@ export class SkewbState {
                 this.applyWCAAlg(new WCAAlg("z z"));
                 break;
         }
-        console.log({ this: this });
         return this;
     }
 
@@ -628,14 +625,14 @@ export class SkewbState {
                 .map((i) => skewbRendererState[i])
                 .join("|");
             if (!pieceColorsReverseMap.has(searchString)) {
-                console.log({ perm, orie });
+                console.error({ perm, orie });
                 return `Piece in location ${p} does not exist`;
             }
             // biome-ignore lint/style/noNonNullAssertion: type guard above guarantees non-undefined value
             const [pPiece, pOrie] = pieceColorsReverseMap.get(searchString)!;
 
             if (perm.indexOf(pPiece) >= 0) {
-                console.log({ perm, orie });
+                console.error({ perm, orie });
                 return `Duplicate piece found in locations ${p} and ${perm.indexOf(pPiece)}`;
             }
             perm.push(pPiece);
