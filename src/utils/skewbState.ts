@@ -554,6 +554,15 @@ export class SkewbState {
             case WCATurn.zprime:
                 this.applyWCAAlg(new WCAAlg("x y' x'"));
                 break;
+            case WCATurn.x2:
+                this.applyWCAAlg(new WCAAlg("x x"));
+                break;
+            case WCATurn.y2:
+                this.applyWCAAlg(new WCAAlg("y y"));
+                break;
+            case WCATurn.z2:
+                this.applyWCAAlg(new WCAAlg("z z"));
+                break;
         }
         return this;
     }
@@ -679,6 +688,15 @@ export class SkewbState {
                 break;
             case RubikskewbTurn.zprime:
                 this.turnWCA(WCATurn.zprime);
+                break;
+            case RubikskewbTurn.x2:
+                this.applyWCAAlg(new WCAAlg("x x"));
+                break;
+            case RubikskewbTurn.y2:
+                this.applyWCAAlg(new WCAAlg("y y"));
+                break;
+            case RubikskewbTurn.z2:
+                this.applyWCAAlg(new WCAAlg("z z"));
                 break;
 
             // Only for parsing user input. Not to be used for alg search.

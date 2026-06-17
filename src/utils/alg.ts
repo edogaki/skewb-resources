@@ -13,6 +13,9 @@ const WCATurn = {
     xprime: "x'",
     yprime: "y'",
     zprime: "z'",
+    x2: "x2",
+    y2: "y2",
+    z2: "z2",
 } as const;
 type WCATurn = (typeof WCATurn)[keyof typeof WCATurn];
 
@@ -66,6 +69,9 @@ const RubikskewbTurn = {
     xprime: "x'",
     yprime: "y'",
     zprime: "z'",
+    x2: "x2",
+    y2: "y2",
+    z2: "z2",
 } as const;
 type RubikskewbTurn = (typeof RubikskewbTurn)[keyof typeof RubikskewbTurn];
 
