@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import SkewbEditor from "#/components/SkewbEditor";
 import SkewbRenderer from "#/components/SkewbRenderer";
-import SkewbPlayer from "#/components/TwistyPlayer";
+import { RubikskewbAlg, WCAAlg } from "#/utils/alg";
 import { SkewbState } from "#/utils/skewbState";
 
 export const Route = createFileRoute("/solver")({
@@ -10,7 +10,11 @@ export const Route = createFileRoute("/solver")({
 });
 
 function RouteComponent() {
-    const [skewbState, setSkewbState] = useState(new SkewbState());
+    const [skewbState, setSkewbState] = useState(
+        new SkewbState().applyRubikskewbAlg(
+            new RubikskewbAlg("F f' F' f l L' l' L"),
+        ),
+    );
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8">
@@ -30,7 +34,9 @@ function RouteComponent() {
                     />
                 </div>
                 <SkewbEditor state={skewbState} setState={setSkewbState} />
+                {/*
                 <SkewbPlayer alg="R U R' U'" />
+                */}
             </section>
         </main>
     );

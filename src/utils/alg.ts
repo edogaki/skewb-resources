@@ -7,6 +7,12 @@ const WCATurn = {
     Rprime: "R'",
     Lprime: "L'",
     Bprime: "B'",
+    x: "x",
+    y: "y",
+    z: "z",
+    xprime: "x'",
+    yprime: "y'",
+    zprime: "z'",
 } as const;
 type WCATurn = (typeof WCATurn)[keyof typeof WCATurn];
 
@@ -37,4 +43,57 @@ export class WCAAlg {
     }
 }
 
-export { WCATurn };
+const RubikskewbTurn = {
+    R: "R",
+    B: "B",
+    r: "r",
+    b: "b",
+    Rprime: "R'",
+    Bprime: "B'",
+    rprime: "r'",
+    bprime: "b'",
+    L: "L",
+    l: "l",
+    F: "F",
+    f: "f",
+    Lprime: "L'",
+    lprime: "l'",
+    Fprime: "F'",
+    fprime: "f'",
+    x: "x",
+    y: "y",
+    z: "z",
+    xprime: "x'",
+    yprime: "y'",
+    zprime: "z'",
+} as const;
+type RubikskewbTurn = (typeof RubikskewbTurn)[keyof typeof RubikskewbTurn];
+
+const rubikskewbTurnsMap = new Map(
+    (Object.values(RubikskewbTurn) as RubikskewbTurn[]).map((v) => [v, true]),
+);
+
+export function isRubikskewbTurn(str: string): str is RubikskewbTurn {
+    return rubikskewbTurnsMap.has(str as RubikskewbTurn);
+}
+
+export class RubikskewbAlg {
+    turns: RubikskewbTurn[];
+
+    constructor(algString: string) {
+        this.turns = [];
+        for (const turn of algString.split(" ")) {
+            if (isRubikskewbTurn(turn)) {
+                this.turns.push(turn);
+            } else {
+                throw new Error(`Invalid Rubikskewb alg string`);
+            }
+        }
+    }
+
+    toString() {
+        return this.turns.join(" ");
+    }
+}
+
+export { WCATurn, RubikskewbTurn };

@@ -39,24 +39,18 @@ export default function SkewbEditor({
                         type="button"
                         className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                         onClick={() => {
-                            setState(() => {
-                                const newState = new SkewbState();
-                                try {
-                                    newState.applyAlg(new WCAAlg(algText));
-                                    setAlgErrorMessage("");
-                                    return newState;
-                                } catch (err) {
-                                    if (err instanceof Error) {
-                                        setAlgErrorMessage(err.message);
-                                    } else {
-                                        console.error(
-                                            "Unexpected error: ",
-                                            err,
-                                        );
-                                    }
-                                    return state;
+                            const newState = new SkewbState();
+                            try {
+                                newState.applyWCAAlg(new WCAAlg(algText));
+                                setAlgErrorMessage("");
+                                setState(newState);
+                            } catch (err) {
+                                if (err instanceof Error) {
+                                    setAlgErrorMessage(err.message);
+                                } else {
+                                    console.error("Unexpected error: ", err);
                                 }
-                            });
+                            }
                         }}
                     >
                         Apply Alg
@@ -71,19 +65,15 @@ export default function SkewbEditor({
                     type="button"
                     className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     onClick={() => {
-                        setState(() => {
-                            const newState = new SkewbState();
-                            const msg =
-                                newState.fromSkewbRendererState(
-                                    skewbRendererState,
-                                );
-                            if (msg !== undefined) {
-                                setPainterErrorMessage(msg);
-                            } else {
-                                setPainterErrorMessage("");
-                            }
-                            return newState;
-                        });
+                        const newState = new SkewbState();
+                        const msg =
+                            newState.fromSkewbRendererState(skewbRendererState);
+                        if (msg !== undefined) {
+                            setPainterErrorMessage(msg);
+                            return;
+                        }
+                        setState(newState);
+                        setPainterErrorMessage("");
                     }}
                 >
                     Apply Painted Skewb
