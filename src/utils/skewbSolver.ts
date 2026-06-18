@@ -1,5 +1,5 @@
 import { RubikskewbAlg, RubikskewbTurn, type WCAAlg } from "./alg";
-import { CenterPiece, pieceColors, type SkewbState } from "./skewbState";
+import { basePieceColors, CenterPiece, type SkewbState } from "./skewbState";
 
 export type LayerSolutions = Record<CenterPiece, RubikskewbAlg[]>;
 
@@ -22,22 +22,22 @@ class SearchNode<A extends WCAAlg | RubikskewbAlg> {
 }
 
 function stateData(skewbState: SkewbState) {
-    const layerColor = pieceColors[skewbState.perm[10]][0];
+    const layerColor = skewbState.pieceColors[skewbState.perm[10]][0];
     const solvedCorners =
         (layerColor ===
-        pieceColors[skewbState.perm[1]][(1 + skewbState.orie[1]) % 3]
+        skewbState.pieceColors[skewbState.perm[1]][(1 + skewbState.orie[1]) % 3]
             ? 1
             : 0) +
         (layerColor ===
-        pieceColors[skewbState.perm[0]][(2 + skewbState.orie[0]) % 3]
+        skewbState.pieceColors[skewbState.perm[0]][(2 + skewbState.orie[0]) % 3]
             ? 1
             : 0) +
         (layerColor ===
-        pieceColors[skewbState.perm[4]][(1 + skewbState.orie[4]) % 3]
+        skewbState.pieceColors[skewbState.perm[4]][(1 + skewbState.orie[4]) % 3]
             ? 1
             : 0) +
         (layerColor ===
-        pieceColors[skewbState.perm[5]][(2 + skewbState.orie[5]) % 3]
+        skewbState.pieceColors[skewbState.perm[5]][(2 + skewbState.orie[5]) % 3]
             ? 1
             : 0);
 
@@ -45,8 +45,31 @@ function stateData(skewbState: SkewbState) {
         solvedCorners,
         isLayerSolved:
             solvedCorners === 4 &&
-            pieceColors[skewbState.perm[0]][(0 + skewbState.orie[0]) % 3] ===
-                pieceColors[skewbState.perm[1]][(0 + skewbState.orie[1]) % 3],
+            skewbState.pieceColors[skewbState.perm[0]][
+                (0 + skewbState.orie[0]) % 3
+            ] ===
+                skewbState.pieceColors[skewbState.perm[1]][
+                    (0 + skewbState.orie[1]) % 3
+                ] &&
+            (skewbState.pieceColors === basePieceColors ||
+                (skewbState.pieceColors[skewbState.perm[4]][
+                    (0 + skewbState.orie[4]) % 3
+                ] ===
+                    skewbState.pieceColors[skewbState.perm[5]][
+                        (0 + skewbState.orie[5]) % 3
+                    ] &&
+                    skewbState.pieceColors[skewbState.perm[0]][
+                        (1 + skewbState.orie[0]) % 3
+                    ] ===
+                        skewbState.pieceColors[skewbState.perm[4]][
+                            (2 + skewbState.orie[4]) % 3
+                        ] &&
+                    skewbState.pieceColors[skewbState.perm[1]][
+                        (2 + skewbState.orie[1]) % 3
+                    ] ===
+                        skewbState.pieceColors[skewbState.perm[5]][
+                            (1 + skewbState.orie[5]) % 3
+                        ])),
     };
 }
 
@@ -61,7 +84,7 @@ export const searchTurns = [
     RubikskewbTurn.bprime,
 ] as const;
 
-const maxDepth = 7;
+const maxDepth = 8;
 const extraSearchDepth = 1;
 export function solveLayers(
     skewbState: SkewbState,
@@ -115,8 +138,11 @@ export function solveLayers(
                     return;
                 }
                 if (
-                    shortestLayerFound[searchNode.centerPiece] +
-                        extraSearchDepth -
+                    Math.min(
+                        maxDepth,
+                        shortestLayerFound[searchNode.centerPiece] +
+                            extraSearchDepth,
+                    ) -
                         searchNode.depth <
                     4 - solvedCorners
                 ) {

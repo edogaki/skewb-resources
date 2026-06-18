@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/alg";
 import { Color, tailwindColors } from "#/utils/renderer/color";
 import { type LayerSolutions, searchTurns } from "#/utils/skewbSolver";
-import { CenterPiece, pieceColors } from "#/utils/skewbState";
+import { CenterPiece, type Piece } from "#/utils/skewbState";
 import AlgorithmView from "./AlgorithmView";
 
 const colorsReverseMap = Object.fromEntries(
@@ -17,8 +17,10 @@ function algLength(alg: RubikskewbAlg) {
 
 export default function LayerSolutionsView({
     layerSolutions,
+    pieceColors,
 }: {
     layerSolutions: LayerSolutions;
+    pieceColors: Record<Piece, Color[]>;
 }) {
     const shortestSolution = Object.fromEntries(
         CenterPiece.map((c) => [

@@ -3,13 +3,13 @@ import type { Tuple } from "./helperTypes";
 import { Color } from "./renderer/color";
 import type { SkewbRendererState } from "./renderer/skewbRenderer";
 
-type Piece = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13;
+export type Piece = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13;
 type Orientation = 0 | 1 | 2;
 
 const CenterPiece = [8, 9, 10, 11, 12, 13] as const;
 type CenterPiece = (typeof CenterPiece)[number];
 
-export const pieceColors = {
+export const basePieceColors = {
     0: [Color.White, Color.Red, Color.Green],
     1: [Color.White, Color.Green, Color.Orange],
     2: [Color.White, Color.Orange, Color.Blue],
@@ -26,24 +26,18 @@ export const pieceColors = {
     13: [Color.Yellow],
 } as const as Record<Piece, Color[]>;
 
-const pieceColorsReverseMap = new Map<string, [Piece, Orientation]>();
-
-for (const p in pieceColors) {
-    const k = Number(p) as Piece;
-    const colors = [...pieceColors[k]];
-    for (let i = 0; i < pieceColors[k].length; i++) {
-        pieceColorsReverseMap.set(colors.join("|"), [k, i as Orientation]);
-        // biome-ignore lint/style/noNonNullAssertion: always pushing back removed element so colrs will never be empty
-        colors.push(colors.shift()!);
-    }
-}
-
 export class SkewbState {
     perm: Tuple<Piece, 14>;
     orie: Tuple<Orientation, 14>;
-    constructor(perm?: Tuple<Piece, 14>, orie?: Tuple<Orientation, 14>) {
+    pieceColors: Record<Piece, Color[]>;
+    constructor(
+        perm?: Tuple<Piece, 14>,
+        orie?: Tuple<Orientation, 14>,
+        pieceColors?: Record<Piece, Color[]>,
+    ) {
         this.perm = perm ?? [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
         this.orie = orie ?? [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        this.pieceColors = pieceColors ?? basePieceColors;
     }
     turnWCA(turn: WCATurn) {
         switch (turn) {
@@ -606,50 +600,68 @@ export class SkewbState {
     toSkewbRendererState(): SkewbRendererState {
         return [
             // L (Orange) Faces (0-4)
-            pieceColors[this.perm[2] as Piece][(1 + this.orie[2]) % 3],
-            pieceColors[this.perm[1] as Piece][(2 + this.orie[1]) % 3],
-            pieceColors[this.perm[5] as Piece][(1 + this.orie[5]) % 3],
-            pieceColors[this.perm[6] as Piece][(2 + this.orie[6]) % 3],
-            pieceColors[this.perm[11] as Piece][0],
+            this.pieceColors[this.perm[2] as Piece][(1 + this.orie[2]) % 3],
+            this.pieceColors[this.perm[1] as Piece][(2 + this.orie[1]) % 3],
+            this.pieceColors[this.perm[5] as Piece][(1 + this.orie[5]) % 3],
+            this.pieceColors[this.perm[6] as Piece][(2 + this.orie[6]) % 3],
+            this.pieceColors[this.perm[11] as Piece][0],
 
             // F (Green) Faces (5-9)
-            pieceColors[this.perm[1] as Piece][(1 + this.orie[1]) % 3],
-            pieceColors[this.perm[0] as Piece][(2 + this.orie[0]) % 3],
-            pieceColors[this.perm[4] as Piece][(1 + this.orie[4]) % 3],
-            pieceColors[this.perm[5] as Piece][(2 + this.orie[5]) % 3],
-            pieceColors[this.perm[10] as Piece][0],
+            this.pieceColors[this.perm[1] as Piece][(1 + this.orie[1]) % 3],
+            this.pieceColors[this.perm[0] as Piece][(2 + this.orie[0]) % 3],
+            this.pieceColors[this.perm[4] as Piece][(1 + this.orie[4]) % 3],
+            this.pieceColors[this.perm[5] as Piece][(2 + this.orie[5]) % 3],
+            this.pieceColors[this.perm[10] as Piece][0],
 
             // D (Yellow) Faces (10-14)
-            pieceColors[this.perm[5] as Piece][(0 + this.orie[5]) % 3],
-            pieceColors[this.perm[4] as Piece][(0 + this.orie[4]) % 3],
-            pieceColors[this.perm[7] as Piece][(0 + this.orie[7]) % 3],
-            pieceColors[this.perm[6] as Piece][(0 + this.orie[6]) % 3],
-            pieceColors[this.perm[13] as Piece][0],
+            this.pieceColors[this.perm[5] as Piece][(0 + this.orie[5]) % 3],
+            this.pieceColors[this.perm[4] as Piece][(0 + this.orie[4]) % 3],
+            this.pieceColors[this.perm[7] as Piece][(0 + this.orie[7]) % 3],
+            this.pieceColors[this.perm[6] as Piece][(0 + this.orie[6]) % 3],
+            this.pieceColors[this.perm[13] as Piece][0],
 
             // U (White) Faces (15-19)
-            pieceColors[this.perm[2] as Piece][(0 + this.orie[2]) % 3],
-            pieceColors[this.perm[3] as Piece][(0 + this.orie[3]) % 3],
-            pieceColors[this.perm[0] as Piece][(0 + this.orie[0]) % 3],
-            pieceColors[this.perm[1] as Piece][(0 + this.orie[1]) % 3],
-            pieceColors[this.perm[8] as Piece][0],
+            this.pieceColors[this.perm[2] as Piece][(0 + this.orie[2]) % 3],
+            this.pieceColors[this.perm[3] as Piece][(0 + this.orie[3]) % 3],
+            this.pieceColors[this.perm[0] as Piece][(0 + this.orie[0]) % 3],
+            this.pieceColors[this.perm[1] as Piece][(0 + this.orie[1]) % 3],
+            this.pieceColors[this.perm[8] as Piece][0],
 
             // R (Red) Faces (20-24)
-            pieceColors[this.perm[0] as Piece][(1 + this.orie[0]) % 3],
-            pieceColors[this.perm[3] as Piece][(2 + this.orie[3]) % 3],
-            pieceColors[this.perm[7] as Piece][(1 + this.orie[7]) % 3],
-            pieceColors[this.perm[4] as Piece][(2 + this.orie[4]) % 3],
-            pieceColors[this.perm[9] as Piece][0],
+            this.pieceColors[this.perm[0] as Piece][(1 + this.orie[0]) % 3],
+            this.pieceColors[this.perm[3] as Piece][(2 + this.orie[3]) % 3],
+            this.pieceColors[this.perm[7] as Piece][(1 + this.orie[7]) % 3],
+            this.pieceColors[this.perm[4] as Piece][(2 + this.orie[4]) % 3],
+            this.pieceColors[this.perm[9] as Piece][0],
 
             // B (Blue) Faces (25-29)
-            pieceColors[this.perm[3] as Piece][(1 + this.orie[3]) % 3],
-            pieceColors[this.perm[2] as Piece][(2 + this.orie[2]) % 3],
-            pieceColors[this.perm[6] as Piece][(1 + this.orie[6]) % 3],
-            pieceColors[this.perm[7] as Piece][(2 + this.orie[7]) % 3],
-            pieceColors[this.perm[12] as Piece][0],
+            this.pieceColors[this.perm[3] as Piece][(1 + this.orie[3]) % 3],
+            this.pieceColors[this.perm[2] as Piece][(2 + this.orie[2]) % 3],
+            this.pieceColors[this.perm[6] as Piece][(1 + this.orie[6]) % 3],
+            this.pieceColors[this.perm[7] as Piece][(2 + this.orie[7]) % 3],
+            this.pieceColors[this.perm[12] as Piece][0],
         ];
     }
 
-    fromSkewbRendererState(skewbRendererState: SkewbRendererState) {
+    fromSkewbRendererState(
+        skewbRendererState: SkewbRendererState,
+        useSameColorScheme: boolean,
+    ) {
+        const pieceColorsReverseMap = new Map<string, [Piece, Orientation]>();
+
+        for (const p in basePieceColors) {
+            const k = Number(p) as Piece;
+            const colors = [...this.pieceColors[k]];
+            for (let i = 0; i < this.pieceColors[k].length; i++) {
+                pieceColorsReverseMap.set(colors.join("|"), [
+                    k,
+                    i as Orientation,
+                ]);
+                // biome-ignore lint/style/noNonNullAssertion: always pushing back removed element so colrs will never be empty
+                colors.push(colors.shift()!);
+            }
+        }
+
         const perm = [] as Piece[];
         const orie = [] as Orientation[];
         const rendererStateIndices = {
@@ -668,31 +680,48 @@ export class SkewbState {
             12: [29],
             13: [14],
         } as const as Record<Piece, number[]>;
-        for (const k in rendererStateIndices) {
-            const p = Number(k) as Piece;
-            const searchString = rendererStateIndices[p]
-                .map((i) => skewbRendererState[i])
-                .join("|");
-            if (!pieceColorsReverseMap.has(searchString)) {
-                console.error({ perm, orie });
-                return `Piece in location ${p} does not exist`;
-            }
-            // biome-ignore lint/style/noNonNullAssertion: type guard above guarantees non-undefined value
-            const [pPiece, pOrie] = pieceColorsReverseMap.get(searchString)!;
 
-            if (perm.indexOf(pPiece) >= 0) {
-                console.error({ perm, orie });
-                return `Duplicate piece found in locations ${p} and ${perm.indexOf(pPiece)}`;
+        if (useSameColorScheme) {
+            for (const k in rendererStateIndices) {
+                const p = Number(k) as Piece;
+                const searchString = rendererStateIndices[p]
+                    .map((i) => skewbRendererState[i])
+                    .join("|");
+                if (!pieceColorsReverseMap.has(searchString)) {
+                    console.error({ perm, orie });
+                    return `Piece in location ${p} does not exist`;
+                }
+                const [pPiece, pOrie] =
+                    // biome-ignore lint/style/noNonNullAssertion: type guard above guarantees non-undefined value
+                    pieceColorsReverseMap.get(searchString)!;
+
+                if (perm.indexOf(pPiece) >= 0) {
+                    console.error({ perm, orie });
+                    return `Duplicate piece found in locations ${p} and ${perm.indexOf(pPiece)}`;
+                }
+                perm.push(pPiece);
+                orie.push(pOrie);
             }
-            perm.push(pPiece);
-            orie.push(pOrie);
+        } else {
+            this.pieceColors = { ...this.pieceColors };
+            for (const k in rendererStateIndices) {
+                const p = Number(k) as Piece;
+
+                this.pieceColors[p] = rendererStateIndices[p].map(
+                    (i) => skewbRendererState[i],
+                );
+
+                perm.push(p);
+                orie.push(0);
+            }
         }
+
         this.perm = perm as Tuple<Piece, 14>;
         this.orie = orie as Tuple<Orientation, 14>;
     }
 
     clone() {
-        return new SkewbState([...this.perm], [...this.orie]);
+        return new SkewbState([...this.perm], [...this.orie], this.pieceColors);
     }
 }
 

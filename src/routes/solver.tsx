@@ -90,7 +90,10 @@ function RouteComponent() {
                 </button>
                 {isSolving && <p className="mb-4">Solving layers...</p>}
                 {layerSolutions && (
-                    <LayerSolutionsView layerSolutions={layerSolutions} />
+                    <LayerSolutionsView
+                        layerSolutions={layerSolutions}
+                        pieceColors={skewbState.pieceColors}
+                    />
                 )}
             </section>
         </main>
