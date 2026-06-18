@@ -27,31 +27,6 @@ export function isWCATurn(str: string): str is WCATurn {
     return wcaTurnsMap.has(str as WCATurn);
 }
 
-export class WCAAlg {
-    turns: WCATurn[];
-
-    constructor(algString: string) {
-        this.turns = [];
-        for (const turn of algString.split(" ")) {
-            if (turn === "") {
-                continue;
-            }
-            if (!isWCATurn(turn)) {
-                throw new Error(`Invalid WCA alg string`);
-            }
-            this.turns.push(turn as WCATurn);
-        }
-    }
-
-    toString() {
-        return this.turns.join(" ");
-    }
-
-    addTurn(turn: WCATurn) {
-        this.turns.push(turn);
-    }
-}
-
 const RubikskewbTurn = {
     R: "R",
     B: "B",
@@ -78,6 +53,26 @@ const RubikskewbTurn = {
     x2: "x2",
     y2: "y2",
     z2: "z2",
+
+    R2: "R2",
+    B2: "B2",
+    r2: "r2",
+    b2: "b2",
+    R2prime: "R2'",
+    B2prime: "B2'",
+    r2prime: "r2'",
+    b2prime: "b2'",
+    L2: "L2",
+    l2: "l2",
+    F2: "F2",
+    f2: "f2",
+    L2prime: "L2'",
+    l2prime: "l2'",
+    F2prime: "F2'",
+    f2prime: "f2'",
+    x2prime: "x2'",
+    y2prime: "y2'",
+    z2prime: "z2'",
 } as const;
 type RubikskewbTurn = (typeof RubikskewbTurn)[keyof typeof RubikskewbTurn];
 
@@ -89,29 +84,61 @@ export function isRubikskewbTurn(str: string): str is RubikskewbTurn {
     return rubikskewbTurnsMap.has(str as RubikskewbTurn);
 }
 
-export class RubikskewbAlg {
-    turns: RubikskewbTurn[];
+export abstract class Alg<T extends WCATurn | RubikskewbTurn> {
+    protected abstract isValidTurn(s: string): s is T;
+    protected abstract empty(): this;
+
+    turns: T[];
 
     constructor(algString: string) {
+        const parsedTurns = algString.trim().match(/\S+/g) || [];
         this.turns = [];
-        for (const turn of algString.split(" ")) {
+        for (const turn of parsedTurns) {
             if (turn === "") {
                 continue;
             }
-            if (isRubikskewbTurn(turn)) {
+            if (this.isValidTurn(turn)) {
                 this.turns.push(turn);
             } else {
-                throw new Error(`Invalid Rubikskewb alg string`);
+                throw new Error(`Invalid alg string`);
             }
         }
+    }
+
+    setTurns(turns: T[]) {
+        this.turns = turns;
+        return this;
     }
 
     toString() {
         return this.turns.join(" ");
     }
 
-    addTurn(turn: RubikskewbTurn) {
+    addTurn(turn: T) {
         this.turns.push(turn);
+        return this;
+    }
+
+    clone() {
+        return this.empty().setTurns([...this.turns]);
+    }
+}
+
+export class WCAAlg extends Alg<WCATurn> {
+    protected isValidTurn(s: string): s is WCATurn {
+        return isWCATurn(s);
+    }
+    protected empty(): this {
+        return new WCAAlg("") as this;
+    }
+}
+
+export class RubikskewbAlg extends Alg<RubikskewbTurn> {
+    protected isValidTurn(s: string): s is RubikskewbTurn {
+        return isRubikskewbTurn(s);
+    }
+    protected empty(): this {
+        return new RubikskewbAlg("") as this;
     }
 }
 

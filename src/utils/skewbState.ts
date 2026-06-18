@@ -41,9 +41,9 @@ for (const p in pieceColors) {
 export class SkewbState {
     perm: Tuple<Piece, 14>;
     orie: Tuple<Orientation, 14>;
-    constructor() {
-        this.perm = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
-        this.orie = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    constructor(perm?: Tuple<Piece, 14>, orie?: Tuple<Orientation, 14>) {
+        this.perm = perm ?? [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+        this.orie = orie ?? [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     }
     turnWCA(turn: WCATurn) {
         switch (turn) {
@@ -536,6 +536,55 @@ export class SkewbState {
             case RubikskewbTurn.fprime:
                 this.applyRubikskewbAlg(new RubikskewbAlg("x' y B'"));
                 break;
+
+            case RubikskewbTurn.R2:
+                this.turnRubikskewb(RubikskewbTurn.R);
+                break;
+            case RubikskewbTurn.B2:
+                this.turnRubikskewb(RubikskewbTurn.B);
+                break;
+            case RubikskewbTurn.r2:
+                this.turnRubikskewb(RubikskewbTurn.r);
+                break;
+            case RubikskewbTurn.b2:
+                this.turnRubikskewb(RubikskewbTurn.b);
+                break;
+            case RubikskewbTurn.L2:
+                this.turnRubikskewb(RubikskewbTurn.L);
+                break;
+            case RubikskewbTurn.F2:
+                this.turnRubikskewb(RubikskewbTurn.F);
+                break;
+            case RubikskewbTurn.l2:
+                this.turnRubikskewb(RubikskewbTurn.l);
+                break;
+            case RubikskewbTurn.f2:
+                this.turnRubikskewb(RubikskewbTurn.f);
+                break;
+            case RubikskewbTurn.R2prime:
+                this.turnRubikskewb(RubikskewbTurn.R);
+                break;
+            case RubikskewbTurn.B2prime:
+                this.turnRubikskewb(RubikskewbTurn.B);
+                break;
+            case RubikskewbTurn.r2prime:
+                this.turnRubikskewb(RubikskewbTurn.r);
+                break;
+            case RubikskewbTurn.b2prime:
+                this.turnRubikskewb(RubikskewbTurn.b);
+                break;
+            case RubikskewbTurn.L2prime:
+                this.turnRubikskewb(RubikskewbTurn.L);
+                break;
+            case RubikskewbTurn.F2prime:
+                this.turnRubikskewb(RubikskewbTurn.F);
+                break;
+            case RubikskewbTurn.l2prime:
+                this.turnRubikskewb(RubikskewbTurn.l);
+                break;
+            case RubikskewbTurn.f2prime:
+                this.turnRubikskewb(RubikskewbTurn.f);
+                break;
         }
         return this;
     }
@@ -640,6 +689,10 @@ export class SkewbState {
         }
         this.perm = perm as Tuple<Piece, 14>;
         this.orie = orie as Tuple<Orientation, 14>;
+    }
+
+    clone() {
+        return new SkewbState([...this.perm], [...this.orie]);
     }
 }
 

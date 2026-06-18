@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import LayerSolutionView from "#/components/LayerSolutionView";
+import { useEffect, useState } from "react";
+import LayerSolutionsView from "#/components/LayerSolutionsView";
 import SkewbEditor from "#/components/SkewbEditor";
 import SkewbRenderer from "#/components/SkewbRenderer";
-import { type LayerSolution, solveLayers } from "#/utils/skewbSolver";
-import { SkewbState } from "#/utils/skewbState";
+import type { RubikskewbAlg } from "#/utils/alg";
+import { type LayerSolutions, solveLayers } from "#/utils/skewbSolver";
+import { CenterPiece, SkewbState } from "#/utils/skewbState";
 
 export const Route = createFileRoute("/solver")({
     component: RouteComponent,
@@ -13,9 +14,45 @@ export const Route = createFileRoute("/solver")({
 function RouteComponent() {
     const [skewbState, setSkewbState] = useState(new SkewbState());
     const [isSolving, setIsSolving] = useState(false);
-    const [layerSolution, setLayerSolution] = useState<LayerSolution | null>(
+    // const [isStartedSolving, setIsStartedSolving] = useState(false);
+    const [layerSolutions, setLayerSolutions] = useState<LayerSolutions | null>(
         null,
     );
+
+    useEffect(() => {
+        if (skewbState) {
+            setLayerSolutions(null);
+        }
+    }, [skewbState]);
+
+    useEffect(() => {
+        if (!isSolving) return;
+        const abortFunction = solveLayers(
+            skewbState,
+            (c, solution) => {
+                setLayerSolutions((ls) =>
+                    ls
+                        ? {
+                              ...ls,
+                              [c]: [...ls[c], solution],
+                          }
+                        : (Object.fromEntries(
+                              CenterPiece.map((_c) => [
+                                  _c,
+                                  _c === c
+                                      ? [solution]
+                                      : ([] as RubikskewbAlg[]),
+                              ]),
+                          ) as Record<CenterPiece, RubikskewbAlg[]>),
+                );
+            },
+            () => {
+                setIsSolving(false);
+            },
+        );
+        return abortFunction;
+    }, [isSolving, skewbState]);
+
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8">
@@ -35,7 +72,7 @@ function RouteComponent() {
                 <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
                     Your Cube
                 </h2>
-                <div className="w-150">
+                <div className="w-150 max-w-full">
                     <SkewbRenderer
                         state={skewbState.toSkewbRendererState()}
                         options={null}
@@ -46,19 +83,14 @@ function RouteComponent() {
                     className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     onClick={() => {
                         setIsSolving(true);
-                        setTimeout(() => {
-                            solveLayers(skewbState).then((solution) => {
-                                setLayerSolution(solution);
-                                setIsSolving(false);
-                            });
-                        }, 500);
+                        setLayerSolutions(null);
                     }}
                 >
                     Solve for Layers!
                 </button>
                 {isSolving && <p className="mb-4">Solving layers...</p>}
-                {layerSolution && (
-                    <LayerSolutionView layerSolution={layerSolution} />
+                {layerSolutions && (
+                    <LayerSolutionsView layerSolutions={layerSolutions} />
                 )}
             </section>
         </main>
