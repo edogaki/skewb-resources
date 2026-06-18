@@ -41,13 +41,13 @@ export default function SkewbPainter({
                         )
                     }
                 >
-                    Reset Colors
+                    Reset
                 </button>
             </div>
             <div>
                 <svg
                     version="1.1"
-                    viewBox="0 0 200 150"
+                    viewBox="0 0 160 140"
                     xmlns="http://www.w3.org/2000/svg"
                 >
                     <title>Skewb Renderer</title>

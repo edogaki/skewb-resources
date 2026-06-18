@@ -228,3 +228,7 @@ export function solveLayers(
         isAborted = true;
     };
 }
+
+export interface SolverOptions {
+    startSolvingImmediately: boolean;
+}

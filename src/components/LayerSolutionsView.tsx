@@ -56,24 +56,6 @@ export default function LayerSolutionsView({
 
     return (
         <div>
-            {/*
-            <div
-                className={`mb-2 ${hasAtLeastOneCenterWithMultipleSolns ? "" : "hidden"}`}
-            >
-                <input
-                    type="checkbox"
-                    id="showAdditionalSolutions"
-                    checked={showAdditionalSolutions}
-                    onChange={(e) =>
-                        setShowAdditionalSolutions(e.target.checked)
-                    }
-                    className="mr-1"
-                />
-                <label htmlFor="showAdditionalSolutions">
-                    Show additional solutions
-                </label>
-            </div>
-            */}
             <div className="flex flex-col gap-2">
                 {CenterPiece.map((c) => {
                     const color: Color = pieceColors[c][0];

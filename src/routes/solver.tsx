@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import LayerSolutionsView from "#/components/LayerSolutionsView";
 import SkewbEditor from "#/components/SkewbEditor";
 import SkewbRenderer from "#/components/SkewbRenderer";
+import SolverOptionsView from "#/components/SolverOptionsView";
 import type { RubikskewbAlg } from "#/utils/alg";
-import { type LayerSolutions, solveLayers } from "#/utils/skewbSolver";
+import {
+    type LayerSolutions,
+    type SolverOptions,
+    solveLayers,
+} from "#/utils/skewbSolver";
 import { CenterPiece, SkewbState } from "#/utils/skewbState";
 
 export const Route = createFileRoute("/solver")({
@@ -18,10 +23,22 @@ function RouteComponent() {
     const [layerSolutions, setLayerSolutions] = useState<LayerSolutions | null>(
         null,
     );
+    const [options, setOptions] = useState<SolverOptions>({
+        startSolvingImmediately: false,
+    });
 
+    const startSolving = () => {
+        setIsSolving(true);
+        setLayerSolutions(null);
+    };
+
+    // biome-ignore lint/correctness/useExhaustiveDependencies: should not start solving if options changed
     useEffect(() => {
         if (skewbState) {
             setLayerSolutions(null);
+            if (options.startSolvingImmediately) {
+                startSolving();
+            }
         }
     }, [skewbState]);
 
@@ -55,8 +72,7 @@ function RouteComponent() {
 
     return (
         <main className="page-wrap px-4 py-12">
-            <section className="island-shell rounded-2xl p-6 sm:p-8">
-                {/* <p className="island-kicker mb-2">Solver</p> */}
+            <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
                 <h1 className="display-title mb-3 text-4xl font-bold text-[var(--sea-ink)] sm:text-5xl">
                     Layer Solver
                 </h1>
@@ -72,7 +88,7 @@ function RouteComponent() {
                 <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
                     Your Cube
                 </h2>
-                <div className="w-150 max-w-full">
+                <div className="w-100 max-w-full">
                     <SkewbRenderer
                         state={skewbState.toSkewbRendererState()}
                         options={null}
@@ -80,11 +96,8 @@ function RouteComponent() {
                 </div>
                 <button
                     type="button"
-                    className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
-                    onClick={() => {
-                        setIsSolving(true);
-                        setLayerSolutions(null);
-                    }}
+                    className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                    onClick={startSolving}
                 >
                     Solve for Layers!
                 </button>
@@ -95,6 +108,9 @@ function RouteComponent() {
                         pieceColors={skewbState.pieceColors}
                     />
                 )}
+            </section>
+            <section className="island-shell rounded-2xl p-6 sm:p-8">
+                <SolverOptionsView options={options} setOptions={setOptions} />
             </section>
         </main>
     );

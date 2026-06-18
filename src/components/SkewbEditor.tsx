@@ -92,7 +92,7 @@ export default function SkewbEditor({
                     </button>
                 </div>
             </div>
-            <div className="w-120">
+            <div className="w-100">
                 <h2 className="mb-2 text-lg font-semibold text-[var(--sea-ink)]">
                     Or, set state using Skewb Painter
                 </h2>
