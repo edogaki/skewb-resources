@@ -30,16 +30,45 @@ export default function SkewbEditor({
                 </h2>
                 <p className="text-red-400">{algErrorMessage}</p>
                 <div>
-                    <input
-                        type="text"
-                        placeholder="WCA Alg, e.g. U R U L R' U' B' U'"
-                        className="w-full mr-3 mb-4 p-3 border rounded-md"
-                        value={algText}
-                        onChange={(e) => setAlgText(e.target.value)}
-                    ></input>
+                    <div className="flex items-center mb-2">
+                        <input
+                            type="text"
+                            placeholder="WCA Alg, e.g. U R U L R' U' B' U'"
+                            className="w-full mr-2 p-3 border rounded-md"
+                            value={algText}
+                            onChange={(e) => setAlgText(e.target.value)}
+                        ></input>
+                        <div className="shrink-0">
+                            <button
+                                type="button"
+                                className=" rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 text-sm  px-5 py-2.5 font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                                onClick={() => {
+                                    try {
+                                        setAlgText(
+                                            new WCAAlg(algText)
+                                                .invert()
+                                                .toString(),
+                                        );
+                                        setAlgErrorMessage("");
+                                    } catch (err) {
+                                        if (err instanceof Error) {
+                                            setAlgErrorMessage(err.message);
+                                        } else {
+                                            console.error(
+                                                "Unexpected error: ",
+                                                err,
+                                            );
+                                        }
+                                    }
+                                }}
+                            >
+                                Invert
+                            </button>
+                        </div>
+                    </div>
                     <button
                         type="button"
-                        className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                        className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                         onClick={() => {
                             const newState = new SkewbState();
                             try {
@@ -61,13 +90,46 @@ export default function SkewbEditor({
                 <br></br>
                 <p className="text-red-400">{rubikskewbAlgErrorMessage}</p>
                 <div>
-                    <input
-                        type="text"
-                        placeholder="Rubikskewb Alg, e.g. r' R r R' z b B' b' B"
-                        className="w-full mr-3 mb-4 p-3 border rounded-md"
-                        value={rubikskewbAlgText}
-                        onChange={(e) => setRubikskewbAlgText(e.target.value)}
-                    ></input>
+                    <div className="flex items-center mb-2">
+                        <input
+                            type="text"
+                            placeholder="Rubikskewb Alg, e.g. r' R r R' z b B' b' B"
+                            className="w-full mr-2 p-3 border rounded-md"
+                            value={rubikskewbAlgText}
+                            onChange={(e) =>
+                                setRubikskewbAlgText(e.target.value)
+                            }
+                        ></input>
+                        <div className="shrink-0">
+                            <button
+                                type="button"
+                                className=" rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 text-sm  px-5 py-2.5 font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                                onClick={() => {
+                                    try {
+                                        setRubikskewbAlgText(
+                                            new RubikskewbAlg(rubikskewbAlgText)
+                                                .invert()
+                                                .toString(),
+                                        );
+                                        setRubikskewbAlgErrorMessage("");
+                                    } catch (err) {
+                                        if (err instanceof Error) {
+                                            setRubikskewbAlgErrorMessage(
+                                                err.message,
+                                            );
+                                        } else {
+                                            console.error(
+                                                "Unexpected error: ",
+                                                err,
+                                            );
+                                        }
+                                    }
+                                }}
+                            >
+                                Invert
+                            </button>
+                        </div>
+                    </div>
                     <button
                         type="button"
                         className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
@@ -98,7 +160,7 @@ export default function SkewbEditor({
                 </h2>
                 <button
                     type="button"
-                    className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                    className="mb-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     onClick={() => {
                         const newState = new SkewbState();
                         const msg = newState.fromSkewbRendererState(
@@ -117,7 +179,7 @@ export default function SkewbEditor({
                 </button>
                 <button
                     type="button"
-                    className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                    className="mb-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     onClick={() => {
                         const newState = new SkewbState();
                         newState.fromSkewbRendererState(

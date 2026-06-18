@@ -26,13 +26,13 @@ export default function SkewbPainter({
                     <button
                         type="button"
                         key={c}
-                        className={`rounded-full w-10 h-10 m-1 ${tailwindColors[c]} ${tailwindHoverColors[c]} transition-all ${selectedColor === c ? "border-4" : "border"}`}
+                        className={`rounded-full w-10 h-10 mr-2 ${tailwindColors[c]} ${tailwindHoverColors[c]} transition-all ${selectedColor === c ? "border-4" : "border"}`}
                         onClick={() => setSelectedColor(c)}
                     ></button>
                 ))}
                 <button
                     type="button"
-                    className={`rounded-full rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                    className={`rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
                     onClick={() =>
                         setSkewbRendererState(
                             Array.from({ length: 30 }).fill(
