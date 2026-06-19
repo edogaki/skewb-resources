@@ -41,7 +41,7 @@ export default function SkewbEditor({
                         <div className="shrink-0">
                             <button
                                 type="button"
-                                className=" rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 text-sm  px-5 py-2.5 font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                                className=" rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 text-sm  px-5 py-2.5 font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                                 onClick={() => {
                                     try {
                                         setAlgText(
@@ -68,7 +68,7 @@ export default function SkewbEditor({
                     </div>
                     <button
                         type="button"
-                        className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                        className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                         onClick={() => {
                             const newState = new SkewbState();
                             try {
@@ -103,7 +103,7 @@ export default function SkewbEditor({
                         <div className="shrink-0">
                             <button
                                 type="button"
-                                className=" rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 text-sm  px-5 py-2.5 font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                                className=" rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 text-sm  px-5 py-2.5 font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                                 onClick={() => {
                                     try {
                                         setRubikskewbAlgText(
@@ -132,7 +132,7 @@ export default function SkewbEditor({
                     </div>
                     <button
                         type="button"
-                        className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                        className="mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                         onClick={() => {
                             const newState = new SkewbState();
                             try {
@@ -160,7 +160,7 @@ export default function SkewbEditor({
                 </h2>
                 <button
                     type="button"
-                    className="mb-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                    className="mb-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     onClick={() => {
                         const newState = new SkewbState();
                         const msg = newState.fromSkewbRendererState(
@@ -179,7 +179,7 @@ export default function SkewbEditor({
                 </button>
                 <button
                     type="button"
-                    className="mb-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                    className="mb-2 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     onClick={() => {
                         const newState = new SkewbState();
                         newState.fromSkewbRendererState(

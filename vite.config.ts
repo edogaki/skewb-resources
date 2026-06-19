@@ -12,9 +12,23 @@ const config = defineConfig({
     base: "/skewb-resources",
     plugins: [
         devtools(),
-        nitro({ rollupConfig: { external: [/^@sentry\//] } }),
+        // nitro({ rollupConfig: { external: [/^@sentry\//] } }),
         tailwindcss(),
-        tanstackStart(),
+        tanstackStart({
+            prerender: {
+                enabled: true,
+                autoSubfolderIndex: true,
+                concurrency: 14,
+                crawlLinks: true,
+                retryCount: 2,
+                retryDelay: 1000,
+                maxRedirects: 5,
+                failOnError: true,
+                onSuccess: ({ page }) => {
+                    console.log(`Rendered ${page.path}`);
+                },
+            },
+        }),
         viteReact(),
     ],
 });

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: App });
 
@@ -27,7 +27,7 @@ function App() {
                         href="https://tanstack.com/router"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/50 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                        className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
                     >
                         Router Guide
                     </a>
@@ -44,7 +44,7 @@ function App() {
                     ],
                     ["Skewb Solver", "Includes layer solver.", "/solver"],
                 ].map(([title, desc, href], index) => (
-                    <a href={href} key={title}>
+                    <Link to={href} key={title}>
                         <article
                             className="island-shell feature-card rise-in rounded-2xl p-5"
                             style={{ animationDelay: `${index * 90 + 80}ms` }}
@@ -56,7 +56,7 @@ function App() {
                                 {desc}
                             </p>
                         </article>
-                    </a>
+                    </Link>
                 ))}
             </section>
 

@@ -85,7 +85,7 @@ export default function LayerSolutionsView({
                             {isMoreSolutionsAvailable[c] && (
                                 <button
                                     type="button"
-                                    className="p-1 rounded-full border border-[rgba(23,58,64,0.2)]"
+                                    className="p-1 rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-2.5"
                                     onClick={() =>
                                         setLongestSolutionShown((lss) => ({
                                             ...lss,
