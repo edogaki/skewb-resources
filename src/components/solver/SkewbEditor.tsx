@@ -172,7 +172,7 @@ export default function SkewbEditor({
             <div className="w-100">
                 <Accordion
                     title="Or, set state using Skewb Painter"
-                    defaultIsOpen={true}
+                    defaultIsOpen={false}
                 >
                     {!noApplyButton && (
                         <>
