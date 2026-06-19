@@ -28,7 +28,7 @@ export const Route = createRootRoute({
             {
                 property: "og:description",
                 content:
-                    "edogaki's Skewb Resources website. Includes trainers and solvers.",
+                    "edogaki's Skewb Resources website. Includes trainer and layer solver.",
             },
             /*
             {
