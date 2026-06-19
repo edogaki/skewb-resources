@@ -1,5 +1,9 @@
 import { RubikskewbAlg, RubikskewbTurn, type WCAAlg } from "./alg";
-import { basePieceColors, CenterPiece, type SkewbState } from "./skewbState";
+import {
+    basePieceColors,
+    type CenterPiece,
+    type SkewbState,
+} from "./skewbState";
 
 export type LayerSolutions = Record<CenterPiece, RubikskewbAlg[]>;
 
@@ -97,9 +101,12 @@ export function solveLayers(
     const timeStarted = Date.now();
     let totalNodes = 0;
     let abortedDueToUnsolvedCorners = 0;
+    // filter out non-unique centers
+    const centersToSearch = skewbState.uniqueColorCenters();
     const shortestLayerFound = Object.fromEntries(
-        CenterPiece.map((c) => [c, Infinity]),
+        centersToSearch.map((c) => [c, Infinity]),
     ) as Record<CenterPiece, number>;
+    console.log({ centersToSearch });
 
     const queueRegistry = new Map<number, boolean>();
 
@@ -174,7 +181,7 @@ export function solveLayers(
             queueRegistry.delete(randomId);
         }, 0);
     }
-    for (const c of CenterPiece) {
+    for (const c of centersToSearch) {
         const initialAlg = new RubikskewbAlg("");
         const index = skewbState.perm.indexOf(c);
         switch (index) {

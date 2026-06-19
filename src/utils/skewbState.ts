@@ -6,8 +6,27 @@ import type { SkewbRendererState } from "./renderer/skewbRenderer";
 export type Piece = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13;
 type Orientation = 0 | 1 | 2;
 
+const CornerPiece = [0, 1, 2, 3, 4, 5, 6, 7] as const;
+type CornerPiece = (typeof CornerPiece)[number];
 const CenterPiece = [8, 9, 10, 11, 12, 13] as const;
 type CenterPiece = (typeof CenterPiece)[number];
+
+export const rendererStateIndices = {
+    0: [17, 20, 6],
+    1: [18, 5, 1],
+    2: [15, 0, 26],
+    3: [16, 25, 21],
+    4: [11, 7, 23],
+    5: [10, 2, 8],
+    6: [13, 27, 3],
+    7: [12, 22, 28],
+    8: [19],
+    9: [24],
+    10: [9],
+    11: [4],
+    12: [29],
+    13: [14],
+} as const as Record<Piece, number[]>;
 
 export const basePieceColors = {
     0: [Color.White, Color.Red, Color.Green],
@@ -664,22 +683,6 @@ export class SkewbState {
 
         const perm = [] as Piece[];
         const orie = [] as Orientation[];
-        const rendererStateIndices = {
-            0: [17, 20, 6],
-            1: [18, 5, 1],
-            2: [15, 0, 26],
-            3: [16, 25, 21],
-            4: [11, 7, 23],
-            5: [10, 2, 8],
-            6: [13, 27, 3],
-            7: [12, 22, 28],
-            8: [19],
-            9: [24],
-            10: [9],
-            11: [4],
-            12: [29],
-            13: [14],
-        } as const as Record<Piece, number[]>;
 
         if (useSameColorScheme) {
             for (const k in rendererStateIndices) {
@@ -723,6 +726,15 @@ export class SkewbState {
     clone() {
         return new SkewbState([...this.perm], [...this.orie], this.pieceColors);
     }
+
+    uniqueColorCenters() {
+        return CenterPiece.filter(
+            (cp) =>
+                CenterPiece.filter(
+                    (c) => this.pieceColors[c][0] === this.pieceColors[cp][0],
+                ).length === 1,
+        );
+    }
 }
 
-export { WCATurn, CenterPiece };
+export { WCATurn, CornerPiece, CenterPiece };

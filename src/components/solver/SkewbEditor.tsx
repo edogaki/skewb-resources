@@ -23,7 +23,7 @@ export default function SkewbEditor({
         useState("");
     const [painterErrorMessage, setPainterErrorMessage] = useState("");
     return (
-        <div className="flex flex-wrap gap-30">
+        <div className="flex flex-wrap gap-x-30 gap-y-4">
             <div className="w-100">
                 <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
                     Set state using alg

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/alg";
 import { Color, tailwindColors } from "#/utils/renderer/color";
 import { type LayerSolutions, searchTurns } from "#/utils/skewbSolver";
-import { CenterPiece, type Piece } from "#/utils/skewbState";
+import type { CenterPiece, Piece, SkewbState } from "#/utils/skewbState";
 import AlgorithmView from "./AlgorithmView";
 
 const colorsReverseMap = Object.fromEntries(
@@ -18,12 +18,15 @@ function algLength(alg: RubikskewbAlg) {
 export default function LayerSolutionsView({
     layerSolutions,
     pieceColors,
+    skewbState,
 }: {
     layerSolutions: LayerSolutions;
     pieceColors: Record<Piece, Color[]>;
+    skewbState: SkewbState;
 }) {
+    const centersToShow = skewbState.uniqueColorCenters();
     const shortestSolution = Object.fromEntries(
-        CenterPiece.map((c) => [
+        centersToShow.map((c) => [
             c,
             layerSolutions[c][0] ? algLength(layerSolutions[c][0]) : Infinity,
         ]),
@@ -32,7 +35,7 @@ export default function LayerSolutionsView({
     const [longestSolutionShown, setLongestSolutionShown] =
         useState(shortestSolution);
     const isMoreSolutionsAvailable = Object.fromEntries(
-        CenterPiece.map((c) => [
+        centersToShow.map((c) => [
             c,
             layerSolutions[c].length > 0 &&
                 algLength(layerSolutions[c][layerSolutions[c].length - 1]) >
@@ -41,7 +44,7 @@ export default function LayerSolutionsView({
     ) as Record<CenterPiece, boolean>;
 
     useEffect(() => {
-        for (const c of CenterPiece) {
+        for (const c of centersToShow) {
             if (
                 shortestSolution[c] !== Infinity &&
                 longestSolutionShown[c] === Infinity
@@ -52,12 +55,12 @@ export default function LayerSolutionsView({
                 }));
             }
         }
-    }, [shortestSolution, longestSolutionShown]);
+    }, [shortestSolution, longestSolutionShown, centersToShow]);
 
     return (
         <div>
             <div className="flex flex-col gap-2">
-                {CenterPiece.map((c) => {
+                {centersToShow.map((c) => {
                     const color: Color = pieceColors[c][0];
                     const colorName = colorsReverseMap[color];
                     return (

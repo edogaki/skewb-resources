@@ -26,8 +26,14 @@ function RouteComponent() {
     const [options, setOptions] = useState<SolverOptions>({
         startSolvingImmediately: false,
     });
+    const [solverErrorMessage, setSolverErrorMessage] = useState("");
 
     const startSolving = () => {
+        if (skewbState.uniqueColorCenters().length < 1) {
+            setSolverErrorMessage("Solver error: no unique centers!");
+            setIsSolving(false);
+            return;
+        }
         setIsSolving(true);
         setLayerSolutions(null);
     };
@@ -36,6 +42,7 @@ function RouteComponent() {
     useEffect(() => {
         if (skewbState) {
             setLayerSolutions(null);
+            setSolverErrorMessage("");
             if (options.startSolvingImmediately) {
                 startSolving();
             }
@@ -85,7 +92,7 @@ function RouteComponent() {
                         <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
                             Your Cube
                         </h2>
-                        <div className="w-100 max-w-full">
+                        <div className="w-120 max-w-full">
                             <SkewbRenderer
                                 state={skewbState.toSkewbRendererState()}
                                 options={null}
@@ -98,11 +105,13 @@ function RouteComponent() {
                         >
                             Solve for Layers!
                         </button>
+                        <p className="text-red-400">{solverErrorMessage}</p>
                         {isSolving && <p className="mb-4">Solving layers...</p>}
                         {layerSolutions && (
                             <LayerSolutionsView
                                 layerSolutions={layerSolutions}
                                 pieceColors={skewbState.pieceColors}
+                                skewbState={skewbState}
                             />
                         )}
                     </div>
