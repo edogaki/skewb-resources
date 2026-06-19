@@ -66,7 +66,7 @@ export default function LayerSolutionsView({
                     return (
                         <div key={c}>
                             <span
-                                className={`inline-block w-7 border border-[var(--line)] rounded-xl ${tailwindColors[color]}`}
+                                className={`inline-block w-7 border border-(--line) rounded-xl ${tailwindColors[color]}`}
                             >
                                 &nbsp;
                             </span>

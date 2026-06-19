@@ -81,11 +81,13 @@ function RouteComponent() {
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
-                <h1 className="display-title mb-3 text-4xl font-bold text-[var(--sea-ink)] sm:text-5xl">
+                <h1 className="display-title mb-3 text-4xl font-bold text-(--sea-ink) sm:text-5xl">
                     Skewb Layer Solver
                 </h1>
                 <div className="flex flex-wrap gap-x-10 gap-y-4">
-                    <SkewbEditor state={skewbState} setState={setSkewbState} />
+                    <SkewbEditor /* state={skewbState} */
+                        setState={setSkewbState}
+                    />
                     {/*
                 <SkewbPlayer alg="R U R' U'" />
                 */}
@@ -101,7 +103,7 @@ function RouteComponent() {
                         <div className="w-120">
                             <button
                                 type="button"
-                                className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                                className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-(--sea-ink) px-5 py-2.5 text-sm font-semibold text-(--foam) no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
                                 onClick={startSolving}
                             >
                                 Solve for Layers!

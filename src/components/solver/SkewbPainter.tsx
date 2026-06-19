@@ -7,7 +7,7 @@ import {
 } from "#/utils/renderer/skewbRenderer";
 import {
     basePieceColors,
-    CornerPiece,
+    type CornerPiece,
     Piece,
     rendererStateIndices,
 } from "#/utils/skewbState";
@@ -55,7 +55,7 @@ export default function SkewbPainter({
                 ))}
                 <button
                     type="button"
-                    className={`rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                    className={`rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
                     onClick={() =>
                         setSkewbRendererState(
                             Array.from({ length: 30 }).fill(

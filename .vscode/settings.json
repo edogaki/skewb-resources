@@ -33,5 +33,15 @@
         "source.organizeImports.biome": "explicit"
     },
     "editor.tabSize": 4,
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+    "tailwindCSS.files.exclude": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/.hg/**",
+        "**/.svn/**",
+        "**/dist/**"
+    ]
 }

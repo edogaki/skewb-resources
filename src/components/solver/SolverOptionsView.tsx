@@ -10,7 +10,7 @@ export default function SolverOptionsView({
 }) {
     return (
         <div>
-            <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
+            <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">
                 Options
             </h2>
             <div className={`mb-2`}>
