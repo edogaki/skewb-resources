@@ -42,11 +42,15 @@ function App() {
                         "Includes NS Center trainer.",
                         "https://edogaki.github.io/skewb-trainer/",
                     ],
-                    ["Skewb Solver", "Includes layer solver.", "/solver"],
+                    [
+                        "Skewb Layer Solver",
+                        "Input your skewb and find out the minimum layer alg for each face.",
+                        "/layer-solver",
+                    ],
                 ].map(([title, desc, href], index) => (
                     <Link to={href} key={title}>
                         <article
-                            className="island-shell feature-card rise-in rounded-2xl p-5"
+                            className="island-shell feature-card rise-in rounded-2xl p-5 min-h-35"
                             style={{ animationDelay: `${index * 90 + 80}ms` }}
                         >
                             <h2 className="mb-2 text-base font-semibold text-(--sea-ink)">

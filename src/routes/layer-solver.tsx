@@ -13,7 +13,7 @@ import {
 } from "#/utils/skewbSolver";
 import { CenterPiece, SkewbState } from "#/utils/skewbState";
 
-export const Route = createFileRoute("/solver")({
+export const Route = createFileRoute("/layer-solver")({
     component: RouteComponent,
 });
 

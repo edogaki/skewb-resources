@@ -9,13 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SolverRouteImport } from './routes/solver'
+import { Route as LayerSolverRouteImport } from './routes/layer-solver'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SolverRoute = SolverRouteImport.update({
-  id: '/solver',
-  path: '/solver',
+const LayerSolverRoute = LayerSolverRouteImport.update({
+  id: '/layer-solver',
+  path: '/layer-solver',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,40 +32,40 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/solver': typeof SolverRoute
+  '/layer-solver': typeof LayerSolverRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/solver': typeof SolverRoute
+  '/layer-solver': typeof LayerSolverRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/solver': typeof SolverRoute
+  '/layer-solver': typeof LayerSolverRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/solver'
+  fullPaths: '/' | '/about' | '/layer-solver'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/solver'
-  id: '__root__' | '/' | '/about' | '/solver'
+  to: '/' | '/about' | '/layer-solver'
+  id: '__root__' | '/' | '/about' | '/layer-solver'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  SolverRoute: typeof SolverRoute
+  LayerSolverRoute: typeof LayerSolverRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/solver': {
-      id: '/solver'
-      path: '/solver'
-      fullPath: '/solver'
-      preLoaderRoute: typeof SolverRouteImport
+    '/layer-solver': {
+      id: '/layer-solver'
+      path: '/layer-solver'
+      fullPath: '/layer-solver'
+      preLoaderRoute: typeof LayerSolverRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -88,7 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  SolverRoute: SolverRoute,
+  LayerSolverRoute: LayerSolverRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
