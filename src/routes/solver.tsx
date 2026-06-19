@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import LayerSolutionsView from "#/components/LayerSolutionsView";
-import SkewbEditor from "#/components/SkewbEditor";
-import SkewbRenderer from "#/components/SkewbRenderer";
-import SolverOptionsView from "#/components/SolverOptionsView";
+import LayerSolutionsView from "#/components/solver/LayerSolutionsView";
+import SkewbEditor from "#/components/solver/SkewbEditor";
+import SkewbRenderer from "#/components/solver/SkewbRenderer";
+import SolverOptionsView from "#/components/solver/SolverOptionsView";
 import type { RubikskewbAlg } from "#/utils/alg";
 import {
     type LayerSolutions,
