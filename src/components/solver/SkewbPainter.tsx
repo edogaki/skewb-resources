@@ -31,7 +31,7 @@ export default function SkewbPainter({
     skewbRendererState: SkewbRendererState;
     setSkewbRendererState: Dispatch<SetStateAction<SkewbRendererState>>;
 }) {
-    const cornerPieceOrder = [0, 3, 2, 1, 4, 5, 6, 7] as readonly CornerPiece[];
+    const cornerPieceOrder = [0, 1, 2, 3, 4, 5, 6, 7] as readonly CornerPiece[];
     const [selectedColor, setSelectedColor] = useState<Color | null>(
         Color.Orange,
     );
