@@ -21,6 +21,25 @@ export const Route = createRootRoute({
             {
                 title: "Skewb Resources",
             },
+            {
+                property: "og:title",
+                content: "Skewb Resources",
+            },
+            {
+                property: "og:description",
+                content:
+                    "edogaki's Skewb Resources. Includes trainers and solvers.",
+            },
+            /*
+            {
+                property: "og:image",
+                content: "https://example.com",
+            },
+            {
+                property: "og:url",
+                content: "https://example.com/",
+            },
+            */
         ],
         links: [
             {
