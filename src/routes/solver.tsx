@@ -76,38 +76,37 @@ function RouteComponent() {
                 <h1 className="display-title mb-3 text-4xl font-bold text-[var(--sea-ink)] sm:text-5xl">
                     Skewb Layer Solver
                 </h1>
-                {/*
-                <p className="m-0 max-w-3xl text-base leading-8 text-[var(--sea-ink-soft)]">
-                    Yo
-                </p>
-                */}
-                <SkewbEditor state={skewbState} setState={setSkewbState} />
-                {/*
+                <div className="flex flex-wrap gap-10">
+                    <SkewbEditor state={skewbState} setState={setSkewbState} />
+                    {/*
                 <SkewbPlayer alg="R U R' U'" />
                 */}
-                <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
-                    Your Cube
-                </h2>
-                <div className="w-100 max-w-full">
-                    <SkewbRenderer
-                        state={skewbState.toSkewbRendererState()}
-                        options={null}
-                    />
+                    <div className="w-120">
+                        <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
+                            Your Cube
+                        </h2>
+                        <div className="w-100 max-w-full">
+                            <SkewbRenderer
+                                state={skewbState.toSkewbRendererState()}
+                                options={null}
+                            />
+                        </div>
+                        <button
+                            type="button"
+                            className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                            onClick={startSolving}
+                        >
+                            Solve for Layers!
+                        </button>
+                        {isSolving && <p className="mb-4">Solving layers...</p>}
+                        {layerSolutions && (
+                            <LayerSolutionsView
+                                layerSolutions={layerSolutions}
+                                pieceColors={skewbState.pieceColors}
+                            />
+                        )}
+                    </div>
                 </div>
-                <button
-                    type="button"
-                    className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
-                    onClick={startSolving}
-                >
-                    Solve for Layers!
-                </button>
-                {isSolving && <p className="mb-4">Solving layers...</p>}
-                {layerSolutions && (
-                    <LayerSolutionsView
-                        layerSolutions={layerSolutions}
-                        pieceColors={skewbState.pieceColors}
-                    />
-                )}
             </section>
             <section className="island-shell rounded-2xl p-6 sm:p-8">
                 <SolverOptionsView options={options} setOptions={setOptions} />
