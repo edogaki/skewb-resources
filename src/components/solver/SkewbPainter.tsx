@@ -59,7 +59,7 @@ export default function SkewbPainter({
                     onClick={() =>
                         setSkewbRendererState(
                             Array.from({ length: 30 }).fill(
-                                Color.White,
+                                Color.Gray,
                             ) as SkewbRendererState,
                         )
                     }

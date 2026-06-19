@@ -24,7 +24,7 @@ const config = defineConfig({
                 maxRedirects: 5,
                 failOnError: true,
                 onSuccess: ({ page }) => {
-                    console.log(`Rendered ${page.path}`);
+                    console.info(`Rendered ${page.path}`);
                 },
             },
         }),

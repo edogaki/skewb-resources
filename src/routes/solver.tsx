@@ -19,7 +19,9 @@ export const Route = createFileRoute("/solver")({
 
 function RouteComponent() {
     const [skewbState, setSkewbState] = useState(new SkewbState());
-    const [isSolving, setIsSolving] = useState(false);
+    const [lastStartedSolveTime, setLastStartedSolveTime] = useState<
+        number | null
+    >(null);
     // const [isStartedSolving, setIsStartedSolving] = useState(false);
     const [layerSolutions, setLayerSolutions] = useState<LayerSolutions | null>(
         null,
@@ -32,10 +34,10 @@ function RouteComponent() {
     const startSolving = () => {
         if (skewbState.uniqueColorCenters().length < 1) {
             setSolverErrorMessage("Solver error: no unique centers!");
-            setIsSolving(false);
+            setLastStartedSolveTime(null);
             return;
         }
-        setIsSolving(true);
+        setLastStartedSolveTime(Date.now());
         setLayerSolutions(null);
     };
 
@@ -50,33 +52,41 @@ function RouteComponent() {
         }
     }, [skewbState]);
 
+    // biome-ignore lint/correctness/useExhaustiveDependencies: should not immediately start solving if skewbstate change
     useEffect(() => {
-        if (!isSolving) return;
+        if (!lastStartedSolveTime) return;
+        let isThisSolveAborted = false;
         const abortFunction = solveLayers(
             skewbState,
             (c, solution) => {
                 setLayerSolutions((ls) =>
-                    ls
-                        ? {
-                              ...ls,
-                              [c]: [...ls[c], solution],
-                          }
-                        : (Object.fromEntries(
-                              CenterPiece.map((_c) => [
-                                  _c,
-                                  _c === c
-                                      ? [solution]
-                                      : ([] as RubikskewbAlg[]),
-                              ]),
-                          ) as Record<CenterPiece, RubikskewbAlg[]>),
+                    isThisSolveAborted
+                        ? ls
+                        : ls
+                          ? {
+                                ...ls,
+                                [c]: [...ls[c], solution],
+                            }
+                          : (Object.fromEntries(
+                                CenterPiece.map((_c) => [
+                                    _c,
+                                    _c === c
+                                        ? [solution]
+                                        : ([] as RubikskewbAlg[]),
+                                ]),
+                            ) as Record<CenterPiece, RubikskewbAlg[]>),
                 );
             },
             () => {
-                setIsSolving(false);
+                setLastStartedSolveTime(null);
             },
         );
-        return abortFunction;
-    }, [isSolving, skewbState]);
+        const abortFunctionWrapper = () => {
+            isThisSolveAborted = true;
+            abortFunction();
+        };
+        return abortFunctionWrapper;
+    }, [lastStartedSolveTime]);
 
     return (
         <main className="page-wrap px-4 py-12">
@@ -109,7 +119,7 @@ function RouteComponent() {
                                 Solve for Layers!
                             </button>
                             <p className="text-red-400">{solverErrorMessage}</p>
-                            {isSolving && (
+                            {lastStartedSolveTime && (
                                 <p className="mb-4">Solving layers...</p>
                             )}
                             {layerSolutions && (

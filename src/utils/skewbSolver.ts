@@ -116,10 +116,10 @@ export function solveLayers(
         const randomId = Math.random();
         queueRegistry.set(randomId, true);
         setTimeout(() => {
+            if (isAborted) {
+                return;
+            }
             (() => {
-                if (isAborted) {
-                    return;
-                }
                 const { isLayerSolved, solvedCorners } = stateData(
                     searchNode.skewbState,
                 );
@@ -214,6 +214,7 @@ export function solveLayers(
     }
 
     (function checkIfFinished() {
+        if (isAborted) return;
         if (queueRegistry.size === 0) {
             console.info(
                 "Time elapsed:",
@@ -227,7 +228,7 @@ export function solveLayers(
             );
             return finishedFunc();
         }
-        setTimeout(checkIfFinished, 100);
+        setTimeout(checkIfFinished, 50);
     })();
 
     return function abort() {
