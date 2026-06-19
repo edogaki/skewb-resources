@@ -31,6 +31,7 @@ export default function SkewbEditor({
                     <div>
                         <div className="flex items-center mb-2">
                             <input
+                                autoComplete="off"
                                 type="text"
                                 placeholder="WCA Alg, e.g. U R U L R' U' B' U'"
                                 className="w-full mr-2 p-3 border rounded-md"
@@ -94,6 +95,7 @@ export default function SkewbEditor({
                     <div>
                         <div className="flex items-center mb-2">
                             <input
+                                autoComplete="off"
                                 type="text"
                                 placeholder="Rubikskewb Alg, e.g. r' R r R' z b B' b' B"
                                 className="w-full mr-2 p-3 border rounded-md"

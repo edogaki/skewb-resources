@@ -15,6 +15,7 @@ export default function SolverOptionsView({
             </h2>
             <div className={`mb-2`}>
                 <input
+                    autoComplete="off"
                     type="checkbox"
                     id="startSolvingImmediately"
                     checked={options.startSolvingImmediately}
