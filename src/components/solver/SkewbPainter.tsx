@@ -41,6 +41,10 @@ export default function SkewbPainter({
 
     return (
         <div className="skewb-editor">
+            <p className="mb-2">
+                No need to fill in all the stickers. The solver will only solve
+                the centers that are filled in.
+            </p>
             <div className="flex">
                 {validColors.map((c) => (
                     <button
@@ -75,7 +79,6 @@ export default function SkewbPainter({
                             viewBox="-2 -2 22 22"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <title>{`Skewb Painter Button for corner ${cp}`}</title>
                             <polygon
                                 points="0,0 20,0 10,17.320508076"
                                 style={{ fill: "black" }}
@@ -127,7 +130,6 @@ export default function SkewbPainter({
                     viewBox="0 0 160 140"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-                    <title>Skewb Renderer</title>
                     {polygons[CubeOrientation.UpDown].map((polygon, pIndex) => (
                         // biome-ignore lint/a11y/useSemanticElements: should be polygon element not button
                         <polygon

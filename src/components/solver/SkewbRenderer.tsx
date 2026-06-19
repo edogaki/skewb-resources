@@ -19,7 +19,6 @@ function SkewbRenderer({
                 viewBox="0 0 160 140"
                 xmlns="http://www.w3.org/2000/svg"
             >
-                <title>Skewb Renderer</title>
                 {polygons[
                     options?.cubeOrientation || CubeOrientation.UpDown
                 ].map((polygon, i) => (
