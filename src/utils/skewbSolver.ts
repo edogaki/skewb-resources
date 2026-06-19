@@ -106,7 +106,6 @@ export function solveLayers(
     const shortestLayerFound = Object.fromEntries(
         centersToSearch.map((c) => [c, Infinity]),
     ) as Record<CenterPiece, number>;
-    console.log({ centersToSearch });
 
     const queueRegistry = new Map<number, boolean>();
 

@@ -3,7 +3,8 @@ import type { Tuple } from "./helperTypes";
 import { Color } from "./renderer/color";
 import type { SkewbRendererState } from "./renderer/skewbRenderer";
 
-export type Piece = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13;
+const Piece = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const;
+type Piece = (typeof Piece)[number];
 type Orientation = 0 | 1 | 2;
 
 const CornerPiece = [0, 1, 2, 3, 4, 5, 6, 7] as const;
@@ -737,4 +738,4 @@ export class SkewbState {
     }
 }
 
-export { WCATurn, CornerPiece, CenterPiece };
+export { Piece, CornerPiece, CenterPiece };

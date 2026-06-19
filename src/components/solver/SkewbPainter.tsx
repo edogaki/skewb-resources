@@ -8,6 +8,7 @@ import {
 import {
     basePieceColors,
     CornerPiece,
+    Piece,
     rendererStateIndices,
 } from "#/utils/skewbState";
 
@@ -38,7 +39,6 @@ export default function SkewbPainter({
         [CornerPiece, 0 | 1 | 2] | null
     >(null);
 
-    console.log({ selectedColor, selectedCorner });
     return (
         <div className="skewb-editor">
             <div className="flex">
@@ -141,19 +141,15 @@ export default function SkewbPainter({
                             }}
                             onClick={() => {
                                 if (selectedCorner) {
-                                    const clickedPiece = CornerPiece.find(
-                                        (cp) =>
-                                            rendererStateIndices[cp].includes(
-                                                pIndex,
-                                            ),
+                                    const clickedPiece = Piece.find((cp) =>
+                                        rendererStateIndices[cp].includes(
+                                            pIndex,
+                                        ),
                                     );
-                                    console.log({ clickedPiece });
                                     if (typeof clickedPiece !== "number")
                                         return;
                                     const clickedIndices =
                                         rendererStateIndices[clickedPiece];
-                                    console.log({ clickedIndices });
-                                    if (clickedIndices.length !== 3) return;
                                     const index =
                                         clickedIndices.indexOf(pIndex);
                                     const colorMap = {

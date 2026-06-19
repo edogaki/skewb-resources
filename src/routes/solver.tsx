@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import Accordion from "#/components/Accordion";
 import LayerSolutionsView from "#/components/solver/LayerSolutionsView";
 import SkewbEditor from "#/components/solver/SkewbEditor";
 import SkewbRenderer from "#/components/solver/SkewbRenderer";
@@ -83,37 +84,40 @@ function RouteComponent() {
                 <h1 className="display-title mb-3 text-4xl font-bold text-[var(--sea-ink)] sm:text-5xl">
                     Skewb Layer Solver
                 </h1>
-                <div className="flex flex-wrap gap-10">
+                <div className="flex flex-wrap gap-x-10 gap-y-4">
                     <SkewbEditor state={skewbState} setState={setSkewbState} />
                     {/*
                 <SkewbPlayer alg="R U R' U'" />
                 */}
-                    <div className="w-120">
-                        <h2 className="mb-3 text-2xl font-semibold text-[var(--sea-ink)]">
-                            Your Cube
-                        </h2>
-                        <div className="w-120 max-w-full">
-                            <SkewbRenderer
-                                state={skewbState.toSkewbRendererState()}
-                                options={null}
-                            />
+                    <div className="flex flex-col gap-4">
+                        <Accordion title="Your Cube" defaultIsOpen={true}>
+                            <div className="w-120 max-w-full">
+                                <SkewbRenderer
+                                    state={skewbState.toSkewbRendererState()}
+                                    options={null}
+                                />
+                            </div>
+                        </Accordion>
+                        <div className="w-120">
+                            <button
+                                type="button"
+                                className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                                onClick={startSolving}
+                            >
+                                Solve for Layers!
+                            </button>
+                            <p className="text-red-400">{solverErrorMessage}</p>
+                            {isSolving && (
+                                <p className="mb-4">Solving layers...</p>
+                            )}
+                            {layerSolutions && (
+                                <LayerSolutionsView
+                                    layerSolutions={layerSolutions}
+                                    pieceColors={skewbState.pieceColors}
+                                    skewbState={skewbState}
+                                />
+                            )}
                         </div>
-                        <button
-                            type="button"
-                            className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-[var(--sea-ink)] px-5 py-2.5 text-sm font-semibold text-[var(--foam)] no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
-                            onClick={startSolving}
-                        >
-                            Solve for Layers!
-                        </button>
-                        <p className="text-red-400">{solverErrorMessage}</p>
-                        {isSolving && <p className="mb-4">Solving layers...</p>}
-                        {layerSolutions && (
-                            <LayerSolutionsView
-                                layerSolutions={layerSolutions}
-                                pieceColors={skewbState.pieceColors}
-                                skewbState={skewbState}
-                            />
-                        )}
                     </div>
                 </div>
             </section>
