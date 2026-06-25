@@ -30,6 +30,20 @@ export default function Header() {
                     >
                         About
                     </Link>
+                    <Link
+                        to="/trainer"
+                        className="nav-link"
+                        activeProps={{ className: "nav-link is-active" }}
+                    >
+                        Trainer
+                    </Link>
+                    <Link
+                        to="/layer-solver"
+                        className="nav-link"
+                        activeProps={{ className: "nav-link is-active" }}
+                    >
+                        Layer Solver
+                    </Link>
                 </div>
 
                 <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
