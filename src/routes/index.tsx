@@ -27,7 +27,7 @@ function App() {
                         href="https://tanstack.com/router"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]"
+                        className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-[var(--sea-ink)] no-underline transition hover:-translate-y-0.5"
                     >
                         Router Guide
                     </a>
@@ -40,7 +40,7 @@ function App() {
                     [
                         "Skewb Trainer",
                         "Includes NS Center trainer.",
-                        "https://edogaki.github.io/skewb-trainer/",
+                        "/trainer",
                     ],
                     [
                         "Skewb Layer Solver",

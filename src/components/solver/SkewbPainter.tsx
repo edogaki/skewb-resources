@@ -59,7 +59,7 @@ export default function SkewbPainter({
                 ))}
                 <button
                     type="button"
-                    className={`rounded-full border border-[rgba(23,58,64,0.2)] bg-white/30 px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
+                    className={`rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5`}
                     onClick={() =>
                         setSkewbRendererState(
                             Array.from({ length: 30 }).fill(

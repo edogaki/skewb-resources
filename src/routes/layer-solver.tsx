@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import Accordion from "#/components/Accordion";
+import SkewbRenderer from "#/components/SkewbRenderer";
 import LayerSolutionsView from "#/components/solver/LayerSolutionsView";
 import SkewbEditor from "#/components/solver/SkewbEditor";
-import SkewbRenderer from "#/components/solver/SkewbRenderer";
 import SolverOptionsView from "#/components/solver/SolverOptionsView";
 import type { RubikskewbAlg } from "#/utils/solver/alg";
 import {

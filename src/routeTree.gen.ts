@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TrainerRouteImport } from './routes/trainer'
 import { Route as LayerSolverRouteImport } from './routes/layer-solver'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TrainerRoute = TrainerRouteImport.update({
+  id: '/trainer',
+  path: '/trainer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LayerSolverRoute = LayerSolverRouteImport.update({
   id: '/layer-solver',
   path: '/layer-solver',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
+  '/trainer': typeof TrainerRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
+  '/trainer': typeof TrainerRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
+  '/trainer': typeof TrainerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/layer-solver'
+  fullPaths: '/' | '/about' | '/layer-solver' | '/trainer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/layer-solver'
-  id: '__root__' | '/' | '/about' | '/layer-solver'
+  to: '/' | '/about' | '/layer-solver' | '/trainer'
+  id: '__root__' | '/' | '/about' | '/layer-solver' | '/trainer'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   LayerSolverRoute: typeof LayerSolverRoute
+  TrainerRoute: typeof TrainerRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/trainer': {
+      id: '/trainer'
+      path: '/trainer'
+      fullPath: '/trainer'
+      preLoaderRoute: typeof TrainerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/layer-solver': {
       id: '/layer-solver'
       path: '/layer-solver'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   LayerSolverRoute: LayerSolverRoute,
+  TrainerRoute: TrainerRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

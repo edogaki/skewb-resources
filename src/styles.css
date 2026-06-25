@@ -17,7 +17,8 @@
   --foam: #f3faf5;
   --surface: rgba(255, 255, 255, 0.74);
   --surface-strong: rgba(255, 255, 255, 0.9);
-  --line: rgba(23, 58, 64, 0.14);
+  --line: rgba(190, 208, 211, 0.651);
+  --line-heavy: rgb(109, 133, 139);
   --inset-glint: rgba(255, 255, 255, 0.82);
   --kicker: rgba(47, 106, 74, 0.9);
   --bg-base: #e7f3ec;
@@ -27,6 +28,8 @@
   --link-bg-hover: rgba(255, 255, 255, 0.9);
   --hero-a: rgba(79, 184, 178, 0.36);
   --hero-b: rgba(47, 106, 74, 0.2);
+  --error-bg: rgb(255, 195, 195);
+  --success-bg: rgb(195, 255, 195);
 }
 
 :root[data-theme="dark"] {
@@ -39,7 +42,8 @@
   --foam: #101d22;
   --surface: rgba(16, 30, 34, 0.8);
   --surface-strong: rgba(15, 27, 31, 0.92);
-  --line: rgba(141, 229, 219, 0.18);
+  --line: rgba(202, 231, 227, 0.507);
+  --line-heavy: rgb(220, 236, 234);
   --inset-glint: rgba(194, 247, 238, 0.14);
   --kicker: #b8efe5;
   --bg-base: #0a1418;
@@ -49,6 +53,8 @@
   --link-bg-hover: rgba(24, 44, 49, 0.8);
   --hero-a: rgba(96, 215, 207, 0.18);
   --hero-b: rgba(110, 200, 154, 0.12);
+  --error-bg: rgb(90, 38, 38);
+  --success-bg: rgb(22, 94, 22);
 }
 
 @media (prefers-color-scheme: dark) {
