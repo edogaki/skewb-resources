@@ -5,13 +5,13 @@ import LayerSolutionsView from "#/components/solver/LayerSolutionsView";
 import SkewbEditor from "#/components/solver/SkewbEditor";
 import SkewbRenderer from "#/components/solver/SkewbRenderer";
 import SolverOptionsView from "#/components/solver/SolverOptionsView";
-import type { RubikskewbAlg } from "#/utils/alg";
+import type { RubikskewbAlg } from "#/utils/solver/alg";
 import {
     type LayerSolutions,
     type SolverOptions,
     solveLayers,
-} from "#/utils/skewbSolver";
-import { CenterPiece, SkewbState } from "#/utils/skewbState";
+} from "#/utils/solver/skewbSolver";
+import { CenterPiece, SkewbState } from "#/utils/solver/skewbState";
 
 export const Route = createFileRoute("/layer-solver")({
     component: RouteComponent,

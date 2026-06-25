@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
-import type { SolverOptions } from "#/utils/skewbSolver";
+import type { SolverOptions } from "#/utils/solver/skewbSolver";
 
 export default function SolverOptionsView({
     options,

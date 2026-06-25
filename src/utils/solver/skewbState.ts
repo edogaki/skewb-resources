@@ -1,7 +1,7 @@
+import { Color } from "../renderer/color";
+import type { SkewbRendererState } from "../renderer/skewbRenderer";
 import { RubikskewbAlg, RubikskewbTurn, WCAAlg, WCATurn } from "./alg";
 import type { Tuple } from "./helperTypes";
-import { Color } from "./renderer/color";
-import type { SkewbRendererState } from "./renderer/skewbRenderer";
 
 const Piece = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const;
 type Piece = (typeof Piece)[number];

@@ -10,7 +10,7 @@ import {
     type CornerPiece,
     Piece,
     rendererStateIndices,
-} from "#/utils/skewbState";
+} from "#/utils/solver/skewbState";
 
 const cornerFaceIndexToPolygon = {
     0: "0,0 20,0 10,5.773502692",

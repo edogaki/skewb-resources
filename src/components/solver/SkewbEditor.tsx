@@ -1,8 +1,8 @@
 import { type Dispatch, type SetStateAction, useState } from "react";
-import { RubikskewbAlg, WCAAlg } from "#/utils/alg";
 import { Color } from "#/utils/renderer/color";
 import type { SkewbRendererState } from "#/utils/renderer/skewbRenderer";
-import { SkewbState } from "#/utils/skewbState";
+import { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
+import { SkewbState } from "#/utils/solver/skewbState";
 import Accordion from "../Accordion";
 import SkewbPainter from "./SkewbPainter";
 

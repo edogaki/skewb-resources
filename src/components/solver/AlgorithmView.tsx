@@ -1,4 +1,4 @@
-import type { RubikskewbAlg, WCAAlg } from "#/utils/alg";
+import type { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 
 export default function AlgorithmView({
     alg,

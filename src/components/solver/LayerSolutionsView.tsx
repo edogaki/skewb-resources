@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/alg";
 import { Color, tailwindColors } from "#/utils/renderer/color";
-import { type LayerSolutions, searchTurns } from "#/utils/skewbSolver";
-import type { CenterPiece, Piece, SkewbState } from "#/utils/skewbState";
+import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
+import { type LayerSolutions, searchTurns } from "#/utils/solver/skewbSolver";
+import type { CenterPiece, Piece, SkewbState } from "#/utils/solver/skewbState";
 import AlgorithmView from "./AlgorithmView";
 
 const colorsReverseMap = Object.fromEntries(
