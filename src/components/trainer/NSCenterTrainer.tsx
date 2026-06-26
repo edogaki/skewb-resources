@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react";
-import { nonWhiteColors } from "#/utils/renderer/color";
+import { Color, nonWhiteColors } from "#/utils/renderer/color";
 import { CubeRotation, shuffleArray } from "#/utils/renderer/math";
 import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
 import {
@@ -7,6 +7,7 @@ import {
     type NSCenterTrainerOptions,
     type NSCenterTrainerState,
     NSCenterTrainerType,
+    nonRandomNSCenterTrainerTypes,
     nsCenterTrainerStateToCenterPerm,
     nsCenterTrainerStateToSkewbRendererState,
 } from "#/utils/trainer/skewbUtils";
@@ -16,14 +17,54 @@ import SkewbRenderer from "../SkewbRenderer";
 import NSCenterTrainerAnswerButtons from "./NSCenterTrainerAnswerButtons";
 import OptionsEditor from "./NSCenterTrainerOptionsEditor";
 
-function generateNSCenters() {
+function generateNSCenterTrainerState(options: NSCenterTrainerOptions) {
     const centers = nonWhiteColors.slice();
     shuffleArray(centers, true);
     const randomRotation =
         CubeRotation[Math.floor(Math.random() * CubeRotation.length)];
+    const chosenTrainerType =
+        options.trainerType === NSCenterTrainerType.Random
+            ? nonRandomNSCenterTrainerTypes[
+                  Math.floor(
+                      Math.random() * nonRandomNSCenterTrainerTypes.length,
+                  )
+              ]
+            : options.trainerType;
+    const uCorners: Color[][] = [
+        [Color.Yellow, Color.Green, Color.Red],
+        [Color.Yellow, Color.Orange, Color.Green],
+        [Color.Yellow, Color.Blue, Color.Orange],
+        [Color.Yellow, Color.Red, Color.Blue],
+    ];
+    const randomNums = [
+        Math.floor(Math.random() * 3),
+        Math.floor(Math.random() * 3),
+        0,
+        0,
+    ];
+    [randomNums[2], randomNums[3]] = [3 - randomNums[0], 3 - randomNums[1]];
+    uCorners[0] = [
+        ...uCorners[0].slice(-randomNums[0]),
+        ...uCorners[0].slice(0, -randomNums[0]),
+    ];
+    uCorners[1] = [
+        ...uCorners[1].slice(-randomNums[1]),
+        ...uCorners[1].slice(0, -randomNums[1]),
+    ];
+    uCorners[2] = [
+        ...uCorners[2].slice(-randomNums[2]),
+        ...uCorners[2].slice(0, -randomNums[2]),
+    ];
+    uCorners[3] = [
+        ...uCorners[3].slice(-randomNums[3]),
+        ...uCorners[3].slice(0, -randomNums[3]),
+    ];
+
     const state: NSCenterTrainerState = {
         centers: centers,
         rotation: randomRotation,
+        chosenTrainerType,
+        uCorners,
     } as NSCenterTrainerState;
     return state;
 }
@@ -38,6 +79,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
         {
             trainerType: NSCenterTrainerType.HorizontalU,
             showRightCornerColors: true,
+            showRandomUCorners: false,
             renderer: {
                 cubeOrientation: CubeOrientation.UpDown,
             },
@@ -45,7 +87,9 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
         },
         true,
     );
-    const [nsCenterState, setNSCenterState] = useState(generateNSCenters());
+    const [nsCenterState, setNSCenterState] = useState(
+        generateNSCenterTrainerState(options),
+    );
     const centerPerm = nsCenterTrainerStateToCenterPerm(nsCenterState);
 
     const [isErrorButton, setIsErrorButton] = useState(
@@ -60,7 +104,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
     const [totalQuestions, setTotalQuestions] = useState(0);
 
     function newState() {
-        setNSCenterState(generateNSCenters());
+        setNSCenterState(generateNSCenterTrainerState(options));
         setIsErrorButton(isErrorButtonInitialState);
     }
 

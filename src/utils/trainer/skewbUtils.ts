@@ -6,11 +6,6 @@ import type {
     SkewbRendererState,
 } from "../renderer/skewbRenderer";
 
-type NSCenterTrainerState = {
-    centers: [Color, Color, Color, Color, Color];
-    rotation: CubeRotation;
-};
-
 const NSCenterTrainerType = {
     HorizontalU: "Show Horizontal U centers (LFR)",
     O: "Show O centers (FRU)",
@@ -24,9 +19,17 @@ const nonRandomNSCenterTrainerTypes = Object.values(NSCenterTrainerType).filter(
     (v) => v !== NSCenterTrainerType.Random,
 ) as NSCenterTrainerType[];
 
+type NSCenterTrainerState = {
+    centers: [Color, Color, Color, Color, Color];
+    rotation: CubeRotation;
+    chosenTrainerType: (typeof nonRandomNSCenterTrainerTypes)[number];
+    uCorners: Color[][];
+};
+
 interface NSCenterTrainerOptions {
     trainerType: NSCenterTrainerType;
     showRightCornerColors: boolean;
+    showRandomUCorners: boolean;
     renderer: RendererOptions;
     isKeyBindChangerOn: boolean;
 }
@@ -35,23 +38,28 @@ function nsCenterTrainerStateToSkewbRendererState(
     nsCenterTrainerState: NSCenterTrainerState,
     options: NSCenterTrainerOptions,
 ) {
-    const chosenTrainerType =
-        options.trainerType === NSCenterTrainerType.Random
-            ? nonRandomNSCenterTrainerTypes[
-                  Math.floor(
-                      Math.random() * nonRandomNSCenterTrainerTypes.length,
-                  )
-              ]
-            : options.trainerType;
+    const chosenTrainerType = nsCenterTrainerState.chosenTrainerType;
     const rotatedCenters = Object.fromEntries(
         Object.values(Color).map((c) => [
             c,
             rotateColor(c, nsCenterTrainerState.rotation),
         ]),
     ) as Record<Color, Color>;
+    const uCorners = nsCenterTrainerState.uCorners;
+
     return [
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
+        rotatedCenters[
+            chosenTrainerType === NSCenterTrainerType.HorizontalU &&
+            options.showRandomUCorners
+                ? uCorners[3][1]
+                : Color.Gray
+        ],
+        rotatedCenters[
+            chosenTrainerType === NSCenterTrainerType.HorizontalU &&
+            options.showRandomUCorners
+                ? uCorners[0][2]
+                : Color.Gray
+        ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU
                 ? Color.Red
@@ -68,8 +76,22 @@ function nsCenterTrainerStateToSkewbRendererState(
                 : Color.Gray
         ],
 
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
+                chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
+            options.showRandomUCorners
+                ? uCorners[0][1]
+                : Color.Gray
+        ],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
+                chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
+            options.showRandomUCorners
+                ? uCorners[1][2]
+                : Color.Gray
+        ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU ||
             chosenTrainerType === NSCenterTrainerType.O ||
@@ -98,10 +120,34 @@ function nsCenterTrainerStateToSkewbRendererState(
         rotatedCenters[Color.White],
         rotatedCenters[Color.White],
 
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
+            options.showRandomUCorners
+                ? uCorners[3][0]
+                : Color.Gray
+        ],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
+            options.showRandomUCorners
+                ? uCorners[2][0]
+                : Color.Gray
+        ],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
+            options.showRandomUCorners
+                ? uCorners[1][0]
+                : Color.Gray
+        ],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
+            options.showRandomUCorners
+                ? uCorners[0][0]
+                : Color.Gray
+        ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.O ||
             chosenTrainerType === NSCenterTrainerType.VerticalU
@@ -109,8 +155,24 @@ function nsCenterTrainerStateToSkewbRendererState(
                 : Color.Gray
         ],
 
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
+                chosenTrainerType === NSCenterTrainerType.O) &&
+            options.showRandomUCorners
+                ? options.showRightCornerColors
+                    ? uCorners[1][1]
+                    : Color.Gray
+                : Color.Gray
+        ],
+        rotatedCenters[
+            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
+                chosenTrainerType === NSCenterTrainerType.O) &&
+            options.showRandomUCorners
+                ? options.showRightCornerColors
+                    ? uCorners[2][2]
+                    : Color.Gray
+                : Color.Gray
+        ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU ||
             chosenTrainerType === NSCenterTrainerType.O
@@ -134,8 +196,22 @@ function nsCenterTrainerStateToSkewbRendererState(
                 : Color.Gray
         ],
 
-        rotatedCenters[Color.Gray],
-        rotatedCenters[Color.Gray],
+        rotatedCenters[
+            chosenTrainerType === NSCenterTrainerType.VerticalU &&
+            options.showRandomUCorners
+                ? options.showRightCornerColors
+                    ? uCorners[2][1]
+                    : Color.Gray
+                : Color.Gray
+        ],
+        rotatedCenters[
+            chosenTrainerType === NSCenterTrainerType.VerticalU &&
+            options.showRandomUCorners
+                ? options.showRightCornerColors
+                    ? uCorners[3][2]
+                    : Color.Gray
+                : Color.Gray
+        ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.VerticalU
                 ? options.showRightCornerColors
@@ -173,6 +249,25 @@ const CenterPerm = {
 } as const;
 
 type CenterPerm = (typeof CenterPerm)[keyof typeof CenterPerm];
+
+const CenterPermSpecificName = {
+    SwirlLeft: "Left",
+    SwirlRight: "Right",
+    WatOppLeft: "Opp Left",
+    WatOppRight: "Opp Right",
+    XAdjLeft: "Adj Left",
+    XAdjRight: "Adj Right",
+    HorizontalULeft: "Left",
+    HorizontalURight: "Right",
+    OLeft: "Left",
+    ORight: "Right",
+    ZConjULeft: "U Left",
+    ZConjURight: "U Right",
+    None: "",
+};
+
+type CenterPermSpecificName =
+    (typeof CenterPermSpecificName)[keyof typeof CenterPermSpecificName];
 
 // const nonWhiteColors: Color[] = [Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow];
 
@@ -363,6 +458,193 @@ const nsCenterPerms = {
     )]: CenterPerm.TripleSledge,
 };
 
+const nsCenterPermSpecificNames = {
+    [[Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Red, Color.Green, Color.Blue, Color.Yellow, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.ORight,
+    [[Color.Red, Color.Green, Color.Yellow, Color.Orange, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.OLeft,
+    [[Color.Red, Color.Orange, Color.Green, Color.Yellow, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjULeft,
+    [[Color.Red, Color.Orange, Color.Blue, Color.Green, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalURight,
+    [[Color.Red, Color.Orange, Color.Yellow, Color.Blue, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.ORight,
+    [[Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalULeft,
+    [[Color.Red, Color.Blue, Color.Orange, Color.Yellow, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Red, Color.Blue, Color.Yellow, Color.Green, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.OLeft,
+    [[Color.Red, Color.Yellow, Color.Orange, Color.Green, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Red, Color.Yellow, Color.Blue, Color.Orange, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjURight,
+
+    [[Color.Green, Color.Red, Color.Orange, Color.Yellow, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjURight,
+    [[Color.Green, Color.Red, Color.Blue, Color.Orange, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Green, Color.Red, Color.Yellow, Color.Blue, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjULeft,
+    [[Color.Green, Color.Orange, Color.Red, Color.Blue, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalURight,
+    [[Color.Green, Color.Orange, Color.Blue, Color.Yellow, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlRight,
+    [[Color.Green, Color.Orange, Color.Yellow, Color.Red, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlRight,
+    [[Color.Green, Color.Blue, Color.Red, Color.Yellow, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjRight,
+    [[Color.Green, Color.Blue, Color.Orange, Color.Red, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalURight,
+    [[Color.Green, Color.Blue, Color.Yellow, Color.Orange, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppLeft,
+    [[Color.Green, Color.Yellow, Color.Red, Color.Orange, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppRight,
+    [[Color.Green, Color.Yellow, Color.Orange, Color.Blue, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.ORight,
+    [[Color.Green, Color.Yellow, Color.Blue, Color.Red, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlRight,
+
+    [[Color.Orange, Color.Red, Color.Green, Color.Blue, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalULeft,
+    [[Color.Orange, Color.Red, Color.Blue, Color.Yellow, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppRight,
+    [[Color.Orange, Color.Red, Color.Yellow, Color.Green, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjLeft,
+    [[Color.Orange, Color.Green, Color.Red, Color.Yellow, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Orange, Color.Green, Color.Blue, Color.Red, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalURight,
+    [[Color.Orange, Color.Green, Color.Yellow, Color.Blue, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Orange, Color.Blue, Color.Red, Color.Green, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Orange, Color.Blue, Color.Green, Color.Yellow, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjLeft,
+    [[Color.Orange, Color.Blue, Color.Yellow, Color.Red, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjRight,
+    [[Color.Orange, Color.Yellow, Color.Red, Color.Blue, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Orange, Color.Yellow, Color.Green, Color.Red, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppLeft,
+    [[Color.Orange, Color.Yellow, Color.Blue, Color.Green, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjRight,
+
+    [[Color.Blue, Color.Red, Color.Green, Color.Yellow, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlLeft,
+    [[Color.Blue, Color.Red, Color.Orange, Color.Green, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalULeft,
+    [[Color.Blue, Color.Red, Color.Yellow, Color.Orange, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlLeft,
+    [[Color.Blue, Color.Green, Color.Red, Color.Orange, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.HorizontalULeft,
+    [[Color.Blue, Color.Green, Color.Orange, Color.Yellow, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.OLeft,
+    [[Color.Blue, Color.Green, Color.Yellow, Color.Red, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjURight,
+    [[Color.Blue, Color.Orange, Color.Red, Color.Yellow, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppLeft,
+    [[Color.Blue, Color.Orange, Color.Green, Color.Red, Color.Yellow].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Blue, Color.Orange, Color.Yellow, Color.Green, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppRight,
+    [[Color.Blue, Color.Yellow, Color.Red, Color.Green, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjLeft,
+    [[Color.Blue, Color.Yellow, Color.Green, Color.Orange, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlLeft,
+    [[Color.Blue, Color.Yellow, Color.Orange, Color.Red, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjULeft,
+
+    [[Color.Yellow, Color.Red, Color.Green, Color.Orange, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlLeft,
+    [[Color.Yellow, Color.Red, Color.Orange, Color.Blue, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.OLeft,
+    [[Color.Yellow, Color.Red, Color.Blue, Color.Green, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppLeft,
+    [[Color.Yellow, Color.Green, Color.Red, Color.Blue, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+    [[Color.Yellow, Color.Green, Color.Orange, Color.Red, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.ORight,
+    [[Color.Yellow, Color.Green, Color.Blue, Color.Orange, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjULeft,
+    [[Color.Yellow, Color.Orange, Color.Red, Color.Green, Color.Blue].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjRight,
+    [[Color.Yellow, Color.Orange, Color.Green, Color.Blue, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.ZConjURight,
+    [[Color.Yellow, Color.Orange, Color.Blue, Color.Red, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.SwirlRight,
+    [[Color.Yellow, Color.Blue, Color.Red, Color.Orange, Color.Green].join(
+        ",",
+    )]: CenterPermSpecificName.XAdjLeft,
+    [[Color.Yellow, Color.Blue, Color.Green, Color.Red, Color.Orange].join(
+        ",",
+    )]: CenterPermSpecificName.WatOppRight,
+    [[Color.Yellow, Color.Blue, Color.Orange, Color.Green, Color.Red].join(
+        ",",
+    )]: CenterPermSpecificName.None,
+};
+
 function nsCenterTrainerStateToCenterPerm(
     nsCenterTrainerState: NSCenterTrainerState,
 ) {
@@ -476,6 +758,7 @@ function nsCornerTrainerStateToCornerOrientation(
 export {
     type NSCenterTrainerState,
     NSCenterTrainerType,
+    nonRandomNSCenterTrainerTypes,
     type NSCenterTrainerOptions,
     nsCenterTrainerStateToSkewbRendererState,
     CenterPerm,

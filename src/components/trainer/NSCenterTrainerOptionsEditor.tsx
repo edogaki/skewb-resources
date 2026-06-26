@@ -57,6 +57,23 @@ function NSCenterTrainerOptionsEditor({
                 Show Right Corner Colors
             </label>
             <br />
+            <input
+                type="checkbox"
+                checked={options.showRandomUCorners}
+                name="showRandomUCorners"
+                id="nsCenterTrainer-showRandomUCorners"
+                className="mr-1"
+                onChange={(e) =>
+                    setOptions((values) => ({
+                        ...values,
+                        showRandomUCorners: e.target.checked,
+                    }))
+                }
+            />
+            <label htmlFor="nsCenterTrainer-showRandomUCorners">
+                Show Random U Corners
+            </label>
+            <br />
             <br />
             {(
                 Object.keys(CubeOrientation) as (keyof typeof CubeOrientation)[]

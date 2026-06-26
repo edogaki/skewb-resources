@@ -58,7 +58,6 @@ function useKeyBinds(
     };
 
     useEffect(() => {
-        console.log({ keyBinds, now: Date.now() });
         if (!isEnabled) {
             return () => {};
         }
