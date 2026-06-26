@@ -14,7 +14,9 @@ function NSCenterTrainerOptionsEditor({
 }) {
     return (
         <form>
-            <h3>Options</h3>
+            <h3 className="mb-3 text-xl font-semibold text-(--sea-ink)">
+                Options
+            </h3>
             {(Object.values(NSCenterTrainerType) as NSCenterTrainerType[]).map(
                 (tt) => (
                     <span key={tt}>

@@ -107,7 +107,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
             <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">
                 NS Center Trainer
             </h2>
-            <div className="flex flex-wrap gap-x-20 gap-y-10 content-around">
+            <div className="flex flex-wrap gap-x-20 gap-y-4 content-around">
                 <div className="flex-initial w-100">
                     <div>
                         {`${correctQuestions}/${totalQuestions} answered correctly`}
@@ -159,23 +159,25 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                     />
                 </div>
                 <div className="flex-[1_1_auto] w-80">
-                    <a
-                        target="_blank"
-                        href="https://www.youtube.com/watch?v=Sju93bAA5Wo&list=PLBdW0Yy1iGy4i4yhUsmYVnNsmpmFvR9gO&index=23"
-                        rel="noopener"
-                    >
-                        Video on center recognition by Elias Malomgré
-                    </a>
-                    <br />
-                    <br />
-                    <a
-                        target="_blank"
-                        href="https://docs.google.com/spreadsheets/d/1HcICTLEa15KYq-9FwdQqencTq9m9xHZiSsSZxGsRoTk"
-                        rel="noopener"
-                    >
-                        My SA/NS center recognition doc that lists all possible
-                        cases and easy-to-mistake ones
-                    </a>
+                    <p className="mb-2">
+                        <a
+                            target="_blank"
+                            href="https://www.youtube.com/watch?v=Sju93bAA5Wo&list=PLBdW0Yy1iGy4i4yhUsmYVnNsmpmFvR9gO&index=23"
+                            rel="noopener"
+                        >
+                            Video on center recognition by Elias Malomgré
+                        </a>
+                    </p>
+                    <p className="mb-2">
+                        <a
+                            target="_blank"
+                            href="https://docs.google.com/spreadsheets/d/1HcICTLEa15KYq-9FwdQqencTq9m9xHZiSsSZxGsRoTk"
+                            rel="noopener"
+                        >
+                            My SA/NS center recognition doc that lists all
+                            possible cases and easy-to-mistake ones
+                        </a>
+                    </p>
                     <OptionsEditor options={options} setOptions={setOptions} />
                 </div>
             </div>
