@@ -108,7 +108,7 @@ function NSCenterTrainerAnswerButtons({
                                     // easter egg that turns wat button into wat img after clicking it for more than 20 times consecutively
                                     <img
                                         src={`${import.meta.env.BASE_URL}/wat.png`}
-                                        className="wat-img"
+                                        className="w-10"
                                         alt="wat"
                                     />
                                 )}
