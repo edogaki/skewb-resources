@@ -40,17 +40,17 @@ export default function SkewbPainter({
     >(null);
 
     return (
-        <div className="skewb-editor">
+        <div>
             <p className="mb-2">
                 No need to fill in all the stickers. The solver will only solve
                 the centers that are filled in.
             </p>
-            <div className="flex">
+            <div className="flex items-center sm:gap-2">
                 {validColors.map((c) => (
                     <button
                         type="button"
                         key={c}
-                        className={`rounded-full w-10 h-10 mr-2 ${tailwindColors[c]} ${selectedColor === c ? "border-4" : "border"}`}
+                        className={`w-[12%] sm:w-[10%] h-auto flex-none aspect-square sm:rounded-full ${tailwindColors[c]} ${selectedColor === c ? "shadow-[0_0_0_4px_#000_inset]" : "shadow-[0_0_0_2px_#000_inset]"}`}
                         onClick={() => {
                             setSelectedColor(c);
                             setSelectedCorner(null);
@@ -59,7 +59,7 @@ export default function SkewbPainter({
                 ))}
                 <button
                     type="button"
-                    className={`rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5`}
+                    className={`text-nowrap overflow-hidden flex-auto rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-0 sm:px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5`}
                     onClick={() =>
                         setSkewbRendererState(
                             Array.from({ length: 30 }).fill(

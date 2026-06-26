@@ -108,7 +108,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                 NS Center Trainer
             </h2>
             <div className="flex flex-wrap gap-x-20 gap-y-10 content-around">
-                <div className="flex-none w-100">
+                <div className="flex-initial w-100">
                     <div>
                         {`${correctQuestions}/${totalQuestions} answered correctly`}
                     </div>
@@ -150,7 +150,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                         options={options.renderer}
                     />
                 </div>
-                <div className="flex-none w-60">
+                <div className="flex-initial w-60">
                     <NSCenterTrainerAnswerButtons
                         options={options}
                         selectCenterPerm={selectCenterPerm}
@@ -158,7 +158,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                         answeredCorrectButton={answeredCorrectButton}
                     />
                 </div>
-                <div className="flex-[1_0_auto] w-80">
+                <div className="flex-[1_1_auto] w-80">
                     <a
                         target="_blank"
                         href="https://www.youtube.com/watch?v=Sju93bAA5Wo&list=PLBdW0Yy1iGy4i4yhUsmYVnNsmpmFvR9gO&index=23"

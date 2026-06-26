@@ -28,7 +28,7 @@ export default function SkewbEditor({
 
     return (
         <div className="flex flex-wrap gap-x-10 gap-y-4">
-            <div className="w-100">
+            <div className="flex-initial basis-120">
                 <Accordion title="Set state using alg" defaultIsOpen={true}>
                     <p className="text-red-400">{algErrorMessage}</p>
                     <div>
@@ -169,7 +169,7 @@ export default function SkewbEditor({
                     </div>
                 </Accordion>
             </div>
-            <div className="w-100">
+            <div className="flex-initial basis-120">
                 <Accordion
                     title="Or, set state using Skewb Painter"
                     defaultIsOpen={false}

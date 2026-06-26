@@ -95,22 +95,21 @@ function RouteComponent() {
                     Skewb Layer Solver
                 </h1>
                 <div className="flex flex-wrap gap-x-10 gap-y-4">
-                    <SkewbEditor /* state={skewbState} */
-                        setState={setSkewbState}
-                    />
-                    {/*
-                <SkewbPlayer alg="R U R' U'" />
-                */}
-                    <div className="flex flex-col gap-4">
+                    <div className="basis-120 flex-initial">
+                        <SkewbEditor /* state={skewbState} */
+                            setState={setSkewbState}
+                        />
+                    </div>
+                    <div className="basis-120 flex-initial flex flex-col gap-4">
                         <Accordion title="Your Cube" defaultIsOpen={true}>
-                            <div className="w-120 max-w-full">
+                            <div className="w-full">
                                 <SkewbRenderer
                                     state={skewbState.toSkewbRendererState()}
                                     options={null}
                                 />
                             </div>
                         </Accordion>
-                        <div className="w-120">
+                        <div className="">
                             <button
                                 type="button"
                                 className={`${options.startSolvingImmediately && "hidden"} mb-4 rounded-full border border-[rgba(23,58,64,0.2)] bg-(--sea-ink) px-5 py-2.5 text-sm font-semibold text-(--foam) no-underline transition-all hover:-translate-y-0.5 hover:border-[rgba(23,58,64,0.35)]`}
