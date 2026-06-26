@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import NSCenterTrainer from "#/components/trainer/NSCenterTrainer";
 import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 
@@ -37,7 +37,9 @@ function RouteComponent() {
                         {globalOptions.isMuted ? "Unmute" : "Mute"}
                     </button>
                 </div>
-                <NSCenterTrainer isMuted={globalOptions.isMuted} />
+                <ClientOnly>
+                    <NSCenterTrainer isMuted={globalOptions.isMuted} />
+                </ClientOnly>
             </section>
         </main>
     );
