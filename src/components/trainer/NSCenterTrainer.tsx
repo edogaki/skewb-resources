@@ -150,7 +150,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                         options={options.renderer}
                     />
                 </div>
-                <div className="flex-initial w-60">
+                <div className="flex-initial w-80">
                     <NSCenterTrainerAnswerButtons
                         options={options}
                         selectCenterPerm={selectCenterPerm}
