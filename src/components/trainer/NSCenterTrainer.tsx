@@ -208,6 +208,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                             target="_blank"
                             href="https://www.youtube.com/watch?v=Sju93bAA5Wo&list=PLBdW0Yy1iGy4i4yhUsmYVnNsmpmFvR9gO&index=23"
                             rel="noopener"
+                            className="underline"
                         >
                             Video on center recognition by Elias Malomgré
                         </a>
@@ -217,6 +218,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                             target="_blank"
                             href="https://docs.google.com/spreadsheets/d/1HcICTLEa15KYq-9FwdQqencTq9m9xHZiSsSZxGsRoTk"
                             rel="noopener"
+                            className="underline"
                         >
                             My SA/NS center recognition doc that lists all
                             possible cases and easy-to-mistake ones
