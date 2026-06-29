@@ -5,7 +5,7 @@ import type { Tuple } from "./helperTypes";
 
 const Piece = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] as const;
 type Piece = (typeof Piece)[number];
-type Orientation = 0 | 1 | 2;
+export type Orientation = 0 | 1 | 2;
 
 const CornerPiece = [0, 1, 2, 3, 4, 5, 6, 7] as const;
 type CornerPiece = (typeof CornerPiece)[number];
