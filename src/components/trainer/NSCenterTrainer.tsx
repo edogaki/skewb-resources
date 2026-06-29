@@ -70,8 +70,8 @@ function generateNSCenterTrainerState(options: NSCenterTrainerOptions) {
 }
 
 const isErrorButtonInitialState = Object.fromEntries(
-    Object.keys(CenterPerm).map((k) => [k, false]),
-) as Record<keyof typeof CenterPerm, boolean>;
+    Object.values(CenterPerm).map((cp) => [cp, false]),
+) as Record<CenterPerm, boolean>;
 
 function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
     const [options, setOptions] = useLocalStorage<NSCenterTrainerOptions>(
@@ -96,9 +96,8 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
         isErrorButtonInitialState,
     );
 
-    const [answeredCorrectButton, setAnsweredCorrectButton] = useState<
-        keyof typeof CenterPerm | null
-    >(null);
+    const [answeredCorrectButton, setAnsweredCorrectButton] =
+        useState<CenterPerm | null>(null);
 
     const [correctQuestions, setCorrectQuestions] = useState(0);
     const [totalQuestions, setTotalQuestions] = useState(0);
@@ -108,14 +107,14 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
         setIsErrorButton(isErrorButtonInitialState);
     }
 
-    function selectCenterPerm(k: keyof typeof CenterPerm) {
-        if (CenterPerm[k] === centerPerm) {
+    function selectCenterPerm(cp: CenterPerm) {
+        if (cp === centerPerm) {
             Sound.correct.play();
             if (Object.values(isErrorButton).every((v) => v === false)) {
                 setCorrectQuestions((q) => q + 1);
                 setTotalQuestions((q) => q + 1);
             }
-            setAnsweredCorrectButton(k);
+            setAnsweredCorrectButton(cp);
             newState();
         } else {
             Sound.wrong.play();
@@ -123,7 +122,7 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                 setTotalQuestions((q) => q + 1);
             }
             setIsErrorButton((obj) => {
-                return { ...obj, [k]: true };
+                return { ...obj, [cp]: true };
             });
             setAnsweredCorrectButton(null);
         }
@@ -170,16 +169,13 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
                             }
                             setIsErrorButton((obj) => {
                                 return Object.fromEntries(
-                                    (
-                                        Object.keys(obj) as Array<
-                                            keyof typeof CenterPerm
-                                        >
-                                    ).map((k) =>
-                                        CenterPerm[k] === centerPerm
-                                            ? [k, false]
-                                            : [k, true],
+                                    (Object.keys(obj) as Array<CenterPerm>).map(
+                                        (cp) =>
+                                            cp === centerPerm
+                                                ? [cp, false]
+                                                : [cp, true],
                                     ),
-                                ) as Record<keyof typeof CenterPerm, boolean>;
+                                ) as Record<CenterPerm, boolean>;
                             });
                             setAnsweredCorrectButton(null);
                         }}

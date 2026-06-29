@@ -251,19 +251,23 @@ const CenterPerm = {
 type CenterPerm = (typeof CenterPerm)[keyof typeof CenterPerm];
 
 const CenterPermSpecificName = {
-    SwirlLeft: "Left",
-    SwirlRight: "Right",
-    WatOppLeft: "Opp Left",
-    WatOppRight: "Opp Right",
-    XAdjLeft: "Adj Left",
-    XAdjRight: "Adj Right",
-    HorizontalULeft: "Left",
-    HorizontalURight: "Right",
-    OLeft: "Left",
-    ORight: "Right",
-    ZConjULeft: "U Left",
-    ZConjURight: "U Right",
-    None: "",
+    SwirlLeft: "Swirl Left",
+    SwirlRight: "Swirl Right",
+    WatOppLeft: "Wat Opposite Left",
+    WatOppRight: "Wat Opposite Right",
+    XAdjLeft: "Wat Adjacent Left",
+    XAdjRight: "Wat Adjacent Right",
+    HorizontalULeft: "Horizontal U Left",
+    HorizontalURight: "Horizontal U Right",
+    VerticalU: "Vertical U",
+    OLeft: "O Left",
+    ORight: "O Right",
+    ZConjULeft: "Z Conjugate U Left",
+    ZConjURight: "Z Conjugate U Right",
+    TripleSledge: "Triple Sledge",
+    H: "H Perm",
+    Z: "Z Perm",
+    Pure: "Pure/Solved",
 };
 
 type CenterPermSpecificName =
@@ -461,7 +465,7 @@ const nsCenterPerms = {
 const nsCenterPermSpecificNames = {
     [[Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.Pure,
     [[Color.Red, Color.Green, Color.Blue, Color.Yellow, Color.Orange].join(
         ",",
     )]: CenterPermSpecificName.ORight,
@@ -482,16 +486,16 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.HorizontalULeft,
     [[Color.Red, Color.Blue, Color.Orange, Color.Yellow, Color.Green].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.VerticalU,
     [[Color.Red, Color.Blue, Color.Yellow, Color.Green, Color.Orange].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.TripleSledge,
     [[Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Orange].join(
         ",",
     )]: CenterPermSpecificName.OLeft,
     [[Color.Red, Color.Yellow, Color.Orange, Color.Green, Color.Blue].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.VerticalU,
     [[Color.Red, Color.Yellow, Color.Blue, Color.Orange, Color.Green].join(
         ",",
     )]: CenterPermSpecificName.ZConjURight,
@@ -501,7 +505,7 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.ZConjURight,
     [[Color.Green, Color.Red, Color.Blue, Color.Orange, Color.Yellow].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.Z,
     [[Color.Green, Color.Red, Color.Yellow, Color.Blue, Color.Orange].join(
         ",",
     )]: CenterPermSpecificName.ZConjULeft,
@@ -544,16 +548,16 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.XAdjLeft,
     [[Color.Orange, Color.Green, Color.Red, Color.Yellow, Color.Blue].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.TripleSledge,
     [[Color.Orange, Color.Green, Color.Blue, Color.Red, Color.Yellow].join(
         ",",
     )]: CenterPermSpecificName.HorizontalURight,
     [[Color.Orange, Color.Green, Color.Yellow, Color.Blue, Color.Red].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.VerticalU,
     [[Color.Orange, Color.Blue, Color.Red, Color.Green, Color.Yellow].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.H,
     [[Color.Orange, Color.Blue, Color.Green, Color.Yellow, Color.Red].join(
         ",",
     )]: CenterPermSpecificName.XAdjLeft,
@@ -562,7 +566,7 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.XAdjRight,
     [[Color.Orange, Color.Yellow, Color.Red, Color.Blue, Color.Green].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.TripleSledge,
     [[Color.Orange, Color.Yellow, Color.Green, Color.Red, Color.Blue].join(
         ",",
     )]: CenterPermSpecificName.WatOppLeft,
@@ -593,7 +597,7 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.WatOppLeft,
     [[Color.Blue, Color.Orange, Color.Green, Color.Red, Color.Yellow].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.Z,
     [[Color.Blue, Color.Orange, Color.Yellow, Color.Green, Color.Red].join(
         ",",
     )]: CenterPermSpecificName.WatOppRight,
@@ -618,7 +622,7 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.WatOppLeft,
     [[Color.Yellow, Color.Green, Color.Red, Color.Blue, Color.Orange].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.VerticalU,
     [[Color.Yellow, Color.Green, Color.Orange, Color.Red, Color.Blue].join(
         ",",
     )]: CenterPermSpecificName.ORight,
@@ -642,7 +646,7 @@ const nsCenterPermSpecificNames = {
     )]: CenterPermSpecificName.WatOppRight,
     [[Color.Yellow, Color.Blue, Color.Orange, Color.Green, Color.Red].join(
         ",",
-    )]: CenterPermSpecificName.None,
+    )]: CenterPermSpecificName.TripleSledge,
 };
 
 function nsCenterTrainerStateToCenterPerm(

@@ -1,10 +1,7 @@
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
 import NSCenterTrainer from "#/components/trainer/NSCenterTrainer";
+import type { GlobalOptions } from "#/utils/trainer/options";
 import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
-
-interface GlobalOptions {
-    isMuted: boolean;
-}
 
 export const Route = createFileRoute("/trainer")({
     component: RouteComponent,
