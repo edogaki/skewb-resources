@@ -64,9 +64,7 @@ const axisToColor = Object.fromEntries(
 ) as Record<string, Color>;
 
 function rotateColor(color: Color, rotation: CubeRotation) {
-    return axisToColor[
-        multiply(rotation, colorAxes[color]).toArray().join(",")
-    ];
+    return axisToColor[multiply(rotation, colorAxes[color]).join(",")];
 }
 
 export {
