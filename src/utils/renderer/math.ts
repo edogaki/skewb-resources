@@ -1,4 +1,4 @@
-import { matrix, multiply } from "mathjs";
+import { multiply } from "mathjs";
 
 /**
  * Computes sin(90 degrees * n) avoiding weirdness of floats.
@@ -45,11 +45,11 @@ const mod = (a: number, b: number) => ((a % b) + b) % b;
  */
 const rotationMatrix = (axis: [number, number, number], th: number) => {
     // biome-ignore format: matrix
-    const mat = matrix([
+    const mat = [
         [axis[0] * axis[0] * (1 - cos90(th)) + cos90(th), axis[0] * axis[1] * (1 - cos90(th)) - axis[2] * sin90(th), axis[0] * axis[2] * (1 - cos90(th)) + axis[1] * sin90(th)],
         [axis[0] * axis[1] * (1 - cos90(th)) + axis[2] * sin90(th), axis[1] * axis[1] * (1 - cos90(th)) + cos90(th), axis[1] * axis[2] * (1 - cos90(th)) - axis[0] * sin90(th)],
         [axis[0] * axis[2] * (1 - cos90(th)) - axis[1] * sin90(th), axis[1] * axis[2] * (1 - cos90(th)) + axis[0] * sin90(th), axis[2] * axis[2] * (1 - cos90(th)) + cos90(th)],
-    ]);
+    ];
     return mat;
 };
 

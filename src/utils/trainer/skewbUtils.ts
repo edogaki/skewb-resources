@@ -456,6 +456,8 @@ const nsCenterPerms = {
     [[Color.Yellow, Color.Blue, Color.Orange, Color.Green, Color.Red].join(
         ",",
     )]: CenterPerm.TripleSledge,
+} as {
+    [x: string]: CenterPerm;
 };
 
 const nsCenterPermSpecificNames = {
@@ -643,6 +645,8 @@ const nsCenterPermSpecificNames = {
     [[Color.Yellow, Color.Blue, Color.Orange, Color.Green, Color.Red].join(
         ",",
     )]: CenterPermSpecificName.None,
+} as {
+    [x: string]: CenterPermSpecificName;
 };
 
 function nsCenterTrainerStateToCenterPerm(
