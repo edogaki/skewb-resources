@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Test and Deploy to Github Pages
 
 on:
   push:
@@ -17,6 +17,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  tests:
+    uses: ./.github/workflows/playwright.yml
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
