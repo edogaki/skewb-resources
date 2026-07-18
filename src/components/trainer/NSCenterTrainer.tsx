@@ -82,11 +82,6 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
         return () => clearTimeout(id);
     }, [answeredCorrectButton]);
 
-    // biome-ignore lint/correctness/useExhaustiveDependencies: changing options need to reverse state for better ui
-    useLayoutEffect(() => {
-        newState();
-    }, [options.renderer, options.showRightCornerColors, options.trainerType]);
-
     useEffect(() => {
         setIsMuted(isMuted);
     }, [isMuted]);
