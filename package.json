@@ -15,7 +15,8 @@
     "test-ui": "playwright test --ui",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check"
+    "check": "biome check",
+    "generate-test-data": "npx tsx ./src/scripts/generateTestData.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",

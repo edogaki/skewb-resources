@@ -8,7 +8,7 @@ import {
     nonRandomNSCenterTrainerTypes,
 } from "./skewbUtils";
 
-function generateRandomQuestion(options: NSCenterTrainerOptions) {
+export function generateRandomQuestion(options: NSCenterTrainerOptions) {
     const centers = nonWhiteColors.slice();
     shuffleArray(centers, true);
     const randomRotation =
