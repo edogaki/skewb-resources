@@ -9,7 +9,7 @@ import {
 } from "#/utils/trainer/skewbUtils";
 import { Sound, setIsMuted } from "#/utils/trainer/sounds";
 import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
-import { useRandomQuestionGenerator } from "#/utils/trainer/useQuestionGenerator";
+import { useQuestionGenerator } from "#/utils/trainer/useQuestionGenerator";
 import SkewbRenderer from "../SkewbRenderer";
 import NSCenterTrainerAnswerButtons from "./NSCenterTrainerAnswerButtons";
 import OptionsEditor from "./NSCenterTrainerOptionsEditor";
@@ -33,7 +33,8 @@ function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
         true,
     );
     const [currentQuestion, generateNextQuestion] =
-        useRandomQuestionGenerator(options);
+        useQuestionGenerator(options);
+
     const correctAnswer = nsCenterTrainerStateToCenterPerm(currentQuestion);
 
     const [isErrorButton, setIsErrorButton] = useState(

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { testQuestions } from "#/test-data/testQuestions";
 import { Color, nonWhiteColors } from "#/utils/renderer/color";
 import { CubeRotation, shuffleArray } from "#/utils/renderer/math";
 import {
@@ -60,7 +61,7 @@ export function generateRandomQuestion(options: NSCenterTrainerOptions) {
     return state;
 }
 
-export function useRandomQuestionGenerator(options: NSCenterTrainerOptions) {
+function useRandomQuestionGenerator(options: NSCenterTrainerOptions) {
     const [currentQuestion, setCurrentQuestion] = useState(
         generateRandomQuestion(options),
     );
@@ -71,3 +72,27 @@ export function useRandomQuestionGenerator(options: NSCenterTrainerOptions) {
 
     return [currentQuestion, generateNextQuestion] as const;
 }
+
+function useTestQuestionGenerator(options: NSCenterTrainerOptions) {
+    const [generatorState, setGeneratorState] = useState({
+        i: 0,
+        currentQuestion: testQuestions[0].question,
+    });
+
+    function generateNextQuestion() {
+        setGeneratorState((state) => ({
+            i: state.i + 1,
+            currentQuestion:
+                state.i + 1 < 200
+                    ? testQuestions[state.i + 1].question
+                    : generateRandomQuestion(options),
+        }));
+    }
+
+    return [generatorState.currentQuestion, generateNextQuestion] as const;
+}
+
+export const useQuestionGenerator =
+    import.meta.env.VITE_API_TEST_MODE === "true"
+        ? useTestQuestionGenerator
+        : useRandomQuestionGenerator;

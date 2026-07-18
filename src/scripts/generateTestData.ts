@@ -1,4 +1,4 @@
-import fs from "node:fs/promises";
+import fs from "node:fs";
 import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
 import {
     type NSCenterTrainerOptions,
@@ -24,8 +24,12 @@ const questions = Array.from({ length: 200 }, () => {
     };
 });
 
-fs.writeFile(
-    "./test-data/testQuestions.json",
-    JSON.stringify(questions, null, 2),
-    "utf8",
-);
+const code = `import type { CenterPerm, NSCenterTrainerState } from '#/utils/trainer/skewbUtils';
+
+export const testQuestions: {
+    question: NSCenterTrainerState,
+    correctAnswer: CenterPerm,
+}[] = ${JSON.stringify(questions, null, 2)};
+`;
+
+fs.writeFileSync("./src/test-data/testQuestions.ts", code, "utf8");
