@@ -1,14 +1,11 @@
-import { useEffect, useLayoutEffect, useState } from "react";
-import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
+import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
 import {
     CenterPerm,
     type NSCenterTrainerOptions,
-    NSCenterTrainerType,
     nsCenterTrainerStateToCenterPerm,
     nsCenterTrainerStateToSkewbRendererState,
 } from "#/utils/trainer/skewbUtils";
 import { Sound, setIsMuted } from "#/utils/trainer/sounds";
-import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 import { useQuestionGenerator } from "#/utils/trainer/useQuestionGenerator";
 import SkewbRenderer from "../SkewbRenderer";
 import NSCenterTrainerAnswerButtons from "./NSCenterTrainerAnswerButtons";
@@ -18,20 +15,15 @@ const isErrorButtonInitialState = Object.fromEntries(
     Object.keys(CenterPerm).map((k) => [k, false]),
 ) as Record<keyof typeof CenterPerm, boolean>;
 
-function NSCenterTrainer({ isMuted }: { isMuted: boolean }) {
-    const [options, setOptions] = useLocalStorage<NSCenterTrainerOptions>(
-        "nsCenterTrainerOptions",
-        {
-            trainerType: NSCenterTrainerType.HorizontalU,
-            showRightCornerColors: true,
-            showRandomUCorners: false,
-            renderer: {
-                cubeOrientation: CubeOrientation.UpDown,
-            },
-            isKeyBindChangerOn: false,
-        },
-        true,
-    );
+function NSCenterTrainer({
+    isMuted,
+    options,
+    setOptions,
+}: {
+    isMuted: boolean;
+    options: NSCenterTrainerOptions;
+    setOptions: Dispatch<SetStateAction<NSCenterTrainerOptions>>;
+}) {
     const [currentQuestion, generateNextQuestion] =
         useQuestionGenerator(options);
 

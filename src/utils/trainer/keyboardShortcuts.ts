@@ -62,7 +62,13 @@ function useKeyBinds(
             return () => {};
         }
 
+        if (!keyBinds) {
+            return () => {};
+        }
+
         function handleEvent(e: KeyboardEvent) {
+            if (!keyBinds) return;
+
             if (keyBinds[e.code]) {
                 e.preventDefault();
                 centerPermFunc(keyBinds[e.code]);

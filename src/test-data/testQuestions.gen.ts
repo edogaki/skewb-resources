@@ -7,63 +7,11 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
         "rgb(0,0,255)",
-        "rgb(255,255,0)"
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
       ],
       "rotation": [
         [
@@ -72,22 +20,22 @@ export const testQuestions: {
           1
         ],
         [
-          -1,
           0,
+          1,
           0
         ],
         [
-          0,
           -1,
+          0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
-          "rgb(0,255,0)",
           "rgb(255,0,0)",
-          "rgb(255,255,0)"
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -95,9 +43,9 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
+          "rgb(0,0,255)",
           "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
+          "rgb(255,255,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -106,171 +54,15 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Horizontal U Perm"
+    "correctAnswer": "X Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
         "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
         "rgb(0,255,0)",
         "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
         "rgb(255,166,0)"
       ],
       "rotation": [
@@ -282,7 +74,59 @@ export const testQuestions: {
         [
           0,
           0,
-          1
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
         ],
         [
           1,
@@ -290,7 +134,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -320,536 +164,68 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
         "rgb(0,0,255)",
         "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
         "rgb(0,255,0)"
       ],
       "rotation": [
         [
           0,
-          1,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
           0
         ],
         [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
+          -1,
           0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
+          "rgb(255,0,0)",
           "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
+          "rgb(0,255,0)"
         ],
         [
-          "rgb(255,166,0)",
           "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
           "rgb(255,255,0)",
-          "rgb(0,0,255)",
           "rgb(255,166,0)"
         ],
         [
           "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
-    "correctAnswer": "Z Perm Conjugate"
+    "correctAnswer": "Vertical U Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
         "rgb(255,166,0)",
+        "rgb(0,255,0)",
         "rgb(255,0,0)",
+        "rgb(255,255,0)",
         "rgb(0,0,255)"
       ],
       "rotation": [
         [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
           0,
           0,
           1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
         ],
         [
           0,
@@ -857,64 +233,12 @@ export const testQuestions: {
           0
         ],
         [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
           -1,
-          0
-        ],
-        [
-          1,
           0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -935,422 +259,6 @@ export const testQuestions: {
           "rgb(0,0,255)",
           "rgb(255,255,0)",
           "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
         ]
       ]
     },
@@ -1359,114 +267,10 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "H Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
         "rgb(0,0,255)",
         "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
         "rgb(255,255,0)"
       ],
       "rotation": [
@@ -1476,277 +280,17 @@ export const testQuestions: {
           0
         ],
         [
-          -1,
-          0,
-          0
-        ],
-        [
           0,
           0,
           1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
         ],
         [
           1,
           0,
           0
-        ],
-        [
-          0,
-          0,
-          1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -1762,1202 +306,6 @@ export const testQuestions: {
           "rgb(255,255,0)",
           "rgb(0,0,255)",
           "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Triple Sledge"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -2972,274 +320,14 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(0,255,0)",
-        "rgb(0,0,255)",
+        "rgb(255,255,0)",
         "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
         "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
         "rgb(0,0,255)"
       ],
       "rotation": [
         [
           0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
           -1,
           0
         ],
@@ -3254,116 +342,12 @@ export const testQuestions: {
           1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
           "rgb(0,255,0)",
           "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "H Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -3371,9 +355,9 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
-          "rgb(255,166,0)",
           "rgb(255,255,0)",
-          "rgb(0,0,255)"
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -3387,167 +371,11 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
         "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
         "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
         "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)"
       ],
       "rotation": [
         [
@@ -3566,111 +394,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -3699,16 +423,16 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
         "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
         "rgb(0,255,0)"
       ],
       "rotation": [
         [
-          0,
           -1,
+          0,
           0
         ],
         [
@@ -3717,12 +441,12 @@ export const testQuestions: {
           -1
         ],
         [
-          1,
           0,
+          -1,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -3730,66 +454,14 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(255,166,0)",
-          "rgb(0,255,0)"
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
         ],
         [
           "rgb(0,0,255)",
           "rgb(255,166,0)",
           "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
         ],
         [
           "rgb(0,0,255)",
@@ -3798,224 +470,16 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Z Perm Conjugate"
+    "correctAnswer": "Wat Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
         "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
         "rgb(255,0,0)",
         "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
         "rgb(0,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Triple Sledge"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
+        "rgb(0,0,255)"
       ],
       "rotation": [
         [
@@ -4034,126 +498,22 @@ export const testQuestions: {
           1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
+          "rgb(255,255,0)",
           "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
+          "rgb(255,0,0)"
         ],
         [
-          "rgb(0,255,0)",
           "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
           "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -4167,11 +527,11 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
+        "rgb(255,0,0)",
         "rgb(255,166,0)",
+        "rgb(0,0,255)",
         "rgb(0,255,0)",
-        "rgb(255,0,0)"
+        "rgb(255,255,0)"
       ],
       "rotation": [
         [
@@ -4180,17 +540,69 @@ export const testQuestions: {
           0
         ],
         [
+          1,
           0,
-          0,
-          1
+          0
         ],
         [
-          1,
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
           0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -4219,13 +631,18 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
+        "rgb(255,255,0)",
         "rgb(255,0,0)",
-        "rgb(0,255,0)",
+        "rgb(255,166,0)",
         "rgb(0,0,255)",
-        "rgb(255,255,0)"
+        "rgb(0,255,0)"
       ],
       "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
         [
           0,
           1,
@@ -4235,14 +652,61 @@ export const testQuestions: {
           0,
           0,
           1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
         ],
         [
           1,
           0,
           0
+        ],
+        [
+          0,
+          -1,
+          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -4266,26 +730,26 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Horizontal U Perm"
+    "correctAnswer": "Wat Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
         "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)"
       ],
       "rotation": [
         [
+          1,
           0,
-          -1,
           0
         ],
         [
-          1,
           0,
+          1,
           0
         ],
         [
@@ -4294,7 +758,7 @@ export const testQuestions: {
           1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -4302,9 +766,9 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,166,0)",
@@ -4312,93 +776,41 @@ export const testQuestions: {
           "rgb(0,0,255)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
           "rgb(0,0,255)",
-          "rgb(255,166,0)",
           "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
         ]
       ]
     },
-    "correctAnswer": "H Perm"
+    "correctAnswer": "X Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
         "rgb(0,255,0)",
         "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
         "rgb(255,255,0)"
       ],
       "rotation": [
         [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
           1,
-          0,
           0
         ],
         [
-          0,
           -1,
+          0,
           0
-        ],
-        [
-          0,
-          0,
-          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -4428,10 +840,62 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
+        "rgb(0,0,255)",
         "rgb(0,255,0)",
-        "rgb(0,0,255)"
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
       ],
       "rotation": [
         [
@@ -4450,7 +914,215 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -4474,75 +1146,18 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "X Perm"
+    "correctAnswer": "Z Perm Conjugate"
   },
   {
     "question": {
       "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
         "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
         "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
         "rgb(0,0,255)",
-        "rgb(255,166,0)"
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
       ],
       "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
         [
           -1,
           0,
@@ -4550,11 +1165,16 @@ export const testQuestions: {
         ],
         [
           0,
+          0,
+          1
+        ],
+        [
+          0,
           1,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -4578,7 +1198,163 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Vertical U Perm"
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
   },
   {
     "question": {
@@ -4592,6 +1368,266 @@ export const testQuestions: {
       "rotation": [
         [
           0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Vertical U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
           1,
           0
         ],
@@ -4606,59 +1642,7 @@ export const testQuestions: {
           -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -4687,11 +1671,63 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(0,255,0)",
+        "rgb(255,166,0)",
         "rgb(255,0,0)",
+        "rgb(0,255,0)",
         "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
       ],
       "rotation": [
         [
@@ -4700,59 +1736,7 @@ export const testQuestions: {
           1
         ],
         [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
+          1,
           0,
           0
         ],
@@ -4762,59 +1746,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -4843,35 +1775,35 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
         "rgb(0,0,255)",
         "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
+        "rgb(255,166,0)"
       ],
       "rotation": [
         [
           0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
           0,
           1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
-          "rgb(255,0,0)",
           "rgb(255,255,0)",
-          "rgb(0,255,0)"
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
         ],
         [
           "rgb(255,166,0)",
@@ -4879,9 +1811,9 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
+          "rgb(255,255,0)",
           "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(0,0,255)",
@@ -4890,7 +1822,59 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "X Perm"
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
   },
   {
     "question": {
@@ -4904,11 +1888,11 @@ export const testQuestions: {
       "rotation": [
         [
           0,
-          1,
+          -1,
           0
         ],
         [
-          1,
+          -1,
           0,
           0
         ],
@@ -4918,7 +1902,111 @@ export const testQuestions: {
           -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -4947,11 +2035,271 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
         "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)"
+        "rgb(255,0,0)"
       ],
       "rotation": [
         [
@@ -4960,17 +2308,381 @@ export const testQuestions: {
           -1
         ],
         [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
           0,
           1,
           0
         ],
         [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
           1,
           0,
           0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -5000,162 +2712,6 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
         "rgb(255,255,0)",
         "rgb(255,166,0)",
         "rgb(0,0,255)",
@@ -5164,41 +2720,41 @@ export const testQuestions: {
       "rotation": [
         [
           0,
+          -1,
+          0
+        ],
+        [
+          0,
           0,
           -1
         ],
         [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
+          1,
           0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
           "rgb(0,255,0)",
+          "rgb(255,0,0)",
           "rgb(255,255,0)"
         ],
         [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
@@ -5207,11 +2763,63 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
+        "rgb(0,0,255)",
         "rgb(0,255,0)",
-        "rgb(0,0,255)"
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
       ],
       "rotation": [
         [
@@ -5221,16 +2829,16 @@ export const testQuestions: {
         ],
         [
           0,
-          0,
-          1
+          -1,
+          0
         ],
         [
           0,
-          1,
-          0
+          0,
+          1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -5254,27 +2862,27 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "X Perm"
+    "correctAnswer": "Z Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
+        "rgb(0,255,0)",
         "rgb(255,255,0)",
-        "rgb(0,0,255)",
+        "rgb(255,0,0)",
         "rgb(255,166,0)",
-        "rgb(0,255,0)"
+        "rgb(0,0,255)"
       ],
       "rotation": [
         [
           0,
-          -1,
-          0
+          0,
+          -1
         ],
         [
           0,
-          0,
-          1
+          -1,
+          0
         ],
         [
           -1,
@@ -5282,7 +2890,59 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -5303,110 +2963,6 @@ export const testQuestions: {
           "rgb(0,0,255)",
           "rgb(255,255,0)",
           "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
         ]
       ]
     },
@@ -5415,13 +2971,122 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
         "rgb(0,0,255)",
-        "rgb(0,255,0)"
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
       ],
       "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
         [
           0,
           -1,
@@ -5431,14 +3096,113 @@ export const testQuestions: {
           1,
           0,
           0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
         ],
         [
           0,
           0,
           1
+        ],
+        [
+          1,
+          0,
+          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -5462,26 +3226,182 @@ export const testQuestions: {
         ]
       ]
     },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
     "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
   },
   {
     "question": {
       "centers": [
         "rgb(255,255,0)",
         "rgb(0,0,255)",
+        "rgb(0,255,0)",
         "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)"
+        "rgb(255,166,0)"
       ],
       "rotation": [
         [
-          -1,
           0,
-          0
+          0,
+          1
         ],
         [
           0,
+          -1,
+          0
+        ],
+        [
           1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
           0
         ],
         [
@@ -5490,7 +3410,59 @@ export const testQuestions: {
           -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -5511,6 +3483,266 @@ export const testQuestions: {
           "rgb(0,0,255)",
           "rgb(255,255,0)",
           "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Vertical U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
         ]
       ]
     },
@@ -5521,392 +3753,28 @@ export const testQuestions: {
       "centers": [
         "rgb(0,255,0)",
         "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
         "rgb(0,0,255)",
         "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
         "rgb(255,255,0)"
       ],
       "rotation": [
         [
           0,
+          -1,
+          0
+        ],
+        [
+          0,
           0,
           -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "H Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
         ],
         [
           1,
           0,
           0
-        ],
-        [
-          0,
-          0,
-          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -5914,9 +3782,9 @@ export const testQuestions: {
           "rgb(255,0,0)"
         ],
         [
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -5924,21 +3792,21 @@ export const testQuestions: {
           "rgb(255,166,0)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(255,0,0)",
-          "rgb(0,0,255)"
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
-    "correctAnswer": "Wat Perm"
+    "correctAnswer": "Z Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
         "rgb(255,166,0)",
-        "rgb(255,0,0)",
         "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
         "rgb(0,255,0)"
       ],
       "rotation": [
@@ -5949,68 +3817,16 @@ export const testQuestions: {
         ],
         [
           0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
           -1,
           0
         ],
         [
-          -1,
           0,
-          0
+          0,
+          1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -6039,18 +3855,13 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
         "rgb(255,0,0)",
+        "rgb(255,166,0)",
         "rgb(0,0,255)",
         "rgb(0,255,0)",
-        "rgb(255,166,0)"
+        "rgb(255,255,0)"
       ],
       "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
         [
           -1,
           0,
@@ -6060,53 +3871,6 @@ export const testQuestions: {
           0,
           0,
           1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
         ],
         [
           0,
@@ -6114,7 +3878,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -6122,9 +3886,9 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
-          "rgb(255,166,0)",
           "rgb(0,255,0)",
-          "rgb(255,255,0)"
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,166,0)",
@@ -6132,113 +3896,9 @@ export const testQuestions: {
           "rgb(0,0,255)"
         ],
         [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
           "rgb(255,0,0)",
           "rgb(0,0,255)",
           "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
         ]
       ]
     },
@@ -6247,13 +3907,18 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
         "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
         "rgb(255,166,0)"
       ],
       "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
         [
           0,
           0,
@@ -6263,34 +3928,29 @@ export const testQuestions: {
           0,
           1,
           0
-        ],
-        [
-          1,
-          0,
-          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
+          "rgb(0,255,0)",
           "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
           "rgb(255,255,0)"
         ],
         [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
           "rgb(255,255,0)",
-          "rgb(255,0,0)",
           "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
         ]
       ]
     },
@@ -6300,12 +3960,69 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(255,0,0)",
+        "rgb(0,0,255)",
         "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(0,0,255)",
         "rgb(0,255,0)"
       ],
       "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Vertical U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
         [
           0,
           0,
@@ -6315,14 +4032,9 @@ export const testQuestions: {
           -1,
           0,
           0
-        ],
-        [
-          0,
-          1,
-          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -6346,16 +4058,16 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "O Perm"
+    "correctAnswer": "Vertical U Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
         "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(0,255,0)"
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
       ],
       "rotation": [
         [
@@ -6365,40 +4077,40 @@ export const testQuestions: {
         ],
         [
           0,
-          -1,
+          1,
           0
         ],
         [
-          1,
+          -1,
           0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
+          "rgb(255,255,0)",
           "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
           "rgb(255,0,0)",
+          "rgb(0,0,255)",
           "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
         ]
       ]
     },
-    "correctAnswer": "Vertical U Perm"
+    "correctAnswer": "X Perm"
   },
   {
     "question": {
@@ -6417,58 +4129,6 @@ export const testQuestions: {
         ],
         [
           0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
           -1,
           0
         ],
@@ -6478,59 +4138,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -6560,257 +4168,49 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
         "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Z Perm Conjugate"
-  },
-  {
-    "question": {
-      "centers": [
         "rgb(255,0,0)",
         "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
         "rgb(255,255,0)"
       ],
       "rotation": [
         [
-          1,
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
           0,
           0
         ],
         [
           0,
-          1,
-          0
-        ],
-        [
           0,
-          0,
-          1
+          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
-          "rgb(0,255,0)",
           "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)"
+          "rgb(0,255,0)"
         ],
         [
           "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
         ],
         [
-          "rgb(255,0,0)",
           "rgb(0,0,255)",
+          "rgb(255,166,0)",
           "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
         ]
       ]
     },
@@ -6819,16 +4219,16 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
+        "rgb(255,0,0)",
         "rgb(255,255,0)",
-        "rgb(255,0,0)"
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
       ],
       "rotation": [
         [
-          1,
           0,
+          1,
           0
         ],
         [
@@ -6837,27 +4237,183 @@ export const testQuestions: {
           1
         ],
         [
+          1,
           0,
-          -1,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
+          "rgb(0,255,0)",
           "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
+          "rgb(255,255,0)"
         ],
         [
           "rgb(255,255,0)",
           "rgb(255,166,0)",
           "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
         ],
         [
           "rgb(0,0,255)",
-          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
           "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
         ],
         [
           "rgb(255,255,0)",
@@ -6871,20 +4427,20 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
         "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
       ],
       "rotation": [
         [
           0,
           0,
-          -1
+          1
         ],
         [
-          -1,
+          1,
           0,
           0
         ],
@@ -6894,7 +4450,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -6902,36 +4458,36 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
           "rgb(255,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
         ]
       ]
     },
-    "correctAnswer": "Wat Perm"
+    "correctAnswer": "Pure/Solved"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
         "rgb(0,0,255)",
         "rgb(255,0,0)",
         "rgb(0,255,0)",
-        "rgb(255,255,0)"
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
       ],
       "rotation": [
         [
-          -1,
+          1,
           0,
           0
         ],
@@ -6943,10 +4499,10 @@ export const testQuestions: {
         [
           0,
           0,
-          1
+          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -6967,6 +4523,58 @@ export const testQuestions: {
           "rgb(0,0,255)",
           "rgb(255,255,0)",
           "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
@@ -6975,329 +4583,17 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
         "rgb(0,0,255)",
         "rgb(255,0,0)",
+        "rgb(255,255,0)",
         "rgb(255,166,0)",
         "rgb(0,255,0)"
       ],
       "rotation": [
         [
+          1,
           0,
-          0,
-          1
+          0
         ],
         [
           0,
@@ -7305,64 +4601,12 @@ export const testQuestions: {
           0
         ],
         [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
           0,
           0,
           -1
-        ],
-        [
-          0,
-          1,
-          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -7386,111 +4630,7 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
+    "correctAnswer": "Swirl Perm"
   },
   {
     "question": {
@@ -7503,27 +4643,27 @@ export const testQuestions: {
       ],
       "rotation": [
         [
+          1,
+          0,
+          0
+        ],
+        [
           0,
           0,
           1
         ],
         [
           0,
-          1,
-          0
-        ],
-        [
           -1,
-          0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
+          "rgb(255,0,0)",
           "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
+          "rgb(0,255,0)"
         ],
         [
           "rgb(0,255,0)",
@@ -7531,9 +4671,9 @@ export const testQuestions: {
           "rgb(255,166,0)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(0,0,255)",
-          "rgb(255,166,0)"
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
         ],
         [
           "rgb(255,0,0)",
@@ -7548,10 +4688,10 @@ export const testQuestions: {
     "question": {
       "centers": [
         "rgb(0,0,255)",
-        "rgb(255,255,0)",
+        "rgb(0,255,0)",
         "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
       ],
       "rotation": [
         [
@@ -7561,7 +4701,59 @@ export const testQuestions: {
         ],
         [
           0,
-          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
           0
         ],
         [
@@ -7570,7 +4762,111 @@ export const testQuestions: {
           -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -7578,9 +4874,9 @@ export const testQuestions: {
           "rgb(255,0,0)"
         ],
         [
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -7588,9 +4884,113 @@ export const testQuestions: {
           "rgb(255,166,0)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(255,0,0)",
-          "rgb(0,0,255)"
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
@@ -7599,11 +4999,63 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
+        "rgb(255,166,0)",
         "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "H Perm"
+  },
+  {
+    "question": {
+      "centers": [
         "rgb(255,255,0)",
         "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)"
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
       ],
       "rotation": [
         [
@@ -7622,7 +5074,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -7630,9 +5082,9 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
+          "rgb(255,166,0)",
           "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
+          "rgb(255,255,0)"
         ],
         [
           "rgb(255,166,0)",
@@ -7640,9 +5092,9 @@ export const testQuestions: {
           "rgb(0,0,255)"
         ],
         [
-          "rgb(255,0,0)",
           "rgb(0,0,255)",
-          "rgb(255,255,0)"
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
         ]
       ]
     },
@@ -7660,41 +5112,41 @@ export const testQuestions: {
       "rotation": [
         [
           0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
           0,
           -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
-          "rgb(255,255,0)",
           "rgb(0,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
         ],
         [
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
           "rgb(255,166,0)"
         ],
         [
+          "rgb(255,166,0)",
           "rgb(255,255,0)",
-          "rgb(255,0,0)",
           "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
@@ -7713,7 +5165,7 @@ export const testQuestions: {
         [
           0,
           0,
-          1
+          -1
         ],
         [
           0,
@@ -7721,12 +5173,480 @@ export const testQuestions: {
           0
         ],
         [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
           -1,
           0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -7755,11 +5675,323 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
+        "rgb(255,255,0)",
         "rgb(0,255,0)",
         "rgb(0,0,255)",
-        "rgb(255,255,0)"
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)"
       ],
       "rotation": [
         [
@@ -7778,7 +6010,319 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -7794,6 +6338,214 @@ export const testQuestions: {
           "rgb(255,255,0)",
           "rgb(0,0,255)",
           "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
         ],
         [
           "rgb(0,0,255)",
@@ -7807,22 +6559,22 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
         "rgb(0,255,0)",
-        "rgb(255,255,0)",
+        "rgb(255,166,0)",
         "rgb(255,0,0)",
-        "rgb(255,166,0)"
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
       ],
       "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
         [
           0,
           0,
           -1
+        ],
+        [
+          1,
+          0,
+          0
         ],
         [
           0,
@@ -7830,7 +6582,7 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -7838,9 +6590,9 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(255,166,0)",
-          "rgb(0,255,0)"
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
         ],
         [
           "rgb(255,166,0)",
@@ -7848,9 +6600,61 @@ export const testQuestions: {
           "rgb(0,0,255)"
         ],
         [
+          "rgb(0,0,255)",
           "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
           "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
           "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
@@ -7859,20 +6663,72 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
         "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
       ],
       "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
         [
           0,
           1,
           0
         ],
         [
-          1,
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "H Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
           0,
           0
         ],
@@ -7882,7 +6738,7 @@ export const testQuestions: {
           -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -7906,16 +6762,68 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Vertical U Perm"
+    "correctAnswer": "Swirl Perm"
   },
   {
     "question": {
       "centers": [
         "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
         "rgb(255,0,0)",
-        "rgb(0,255,0)"
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
       ],
       "rotation": [
         [
@@ -7934,7 +6842,7 @@ export const testQuestions: {
           -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -7942,14 +6850,66 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
+          "rgb(255,166,0)",
           "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
+          "rgb(255,255,0)"
         ],
         [
           "rgb(0,0,255)",
           "rgb(255,166,0)",
           "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
         ],
         [
           "rgb(255,0,0)",
@@ -7958,16 +6918,68 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Z Perm Conjugate"
+    "correctAnswer": "Wat Perm"
   },
   {
     "question": {
       "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
         "rgb(0,255,0)",
         "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
+        "rgb(255,255,0)",
+        "rgb(0,0,255)"
       ],
       "rotation": [
         [
@@ -7986,7 +6998,1567 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Vertical U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Swirl Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm Conjugate"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -8015,74 +8587,22 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,255,0)",
         "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
         "rgb(255,255,0)",
-        "rgb(0,255,0)"
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
       ],
       "rotation": [
         [
           0,
-          -1,
-          0
+          0,
+          -1
         ],
         [
           0,
-          0,
-          1
+          -1,
+          0
         ],
         [
           -1,
@@ -8090,27 +8610,27 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
-          "rgb(0,255,0)",
           "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
           "rgb(255,255,0)",
-          "rgb(0,0,255)"
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
         ],
         [
           "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
           "rgb(255,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
         ]
       ]
     },
@@ -8119,13 +8639,70 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
+        "rgb(0,255,0)",
         "rgb(255,255,0)",
         "rgb(255,0,0)",
         "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)"
+        "rgb(0,0,255)"
       ],
       "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
         [
           0,
           0,
@@ -8135,14 +8712,9 @@ export const testQuestions: {
           1,
           0,
           0
-        ],
-        [
-          0,
-          1,
-          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -8171,22 +8743,22 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
         "rgb(255,0,0)",
         "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
+        "rgb(255,255,0)"
       ],
       "rotation": [
         [
           0,
-          1,
+          -1,
           0
         ],
         [
           0,
           0,
-          -1
+          1
         ],
         [
           -1,
@@ -8194,7 +8766,59 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "H Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -8218,16 +8842,172 @@ export const testQuestions: {
         ]
       ]
     },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
     "correctAnswer": "Swirl Perm"
   },
   {
     "question": {
       "centers": [
         "rgb(255,166,0)",
+        "rgb(0,0,255)",
         "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
         "rgb(255,0,0)",
         "rgb(255,255,0)",
-        "rgb(0,0,255)"
+        "rgb(255,166,0)"
       ],
       "rotation": [
         [
@@ -8246,7 +9026,319 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Vertical U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Z Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,255,0)",
@@ -8270,15 +9362,15 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Triple Sledge"
+    "correctAnswer": "X Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
         "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
         "rgb(255,166,0)"
       ],
       "rotation": [
@@ -8298,46 +9390,46 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
       "uCorners": [
         [
+          "rgb(255,0,0)",
           "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
+          "rgb(0,255,0)"
         ],
         [
-          "rgb(255,166,0)",
           "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
           "rgb(255,255,0)",
-          "rgb(0,0,255)",
           "rgb(255,166,0)"
         ],
         [
           "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
-    "correctAnswer": "Swirl Perm"
+    "correctAnswer": "Wat Perm"
   },
   {
     "question": {
       "centers": [
         "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
         "rgb(0,255,0)",
-        "rgb(255,0,0)"
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(0,0,255)"
       ],
       "rotation": [
         [
-          1,
           0,
-          0
+          0,
+          1
         ],
         [
           0,
@@ -8345,12 +9437,12 @@ export const testQuestions: {
           0
         ],
         [
+          1,
           0,
-          0,
-          -1
+          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -8358,9 +9450,9 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,166,0)",
@@ -8368,13 +9460,13 @@ export const testQuestions: {
           "rgb(0,0,255)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(255,0,0)",
-          "rgb(0,0,255)"
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
-    "correctAnswer": "Triple Sledge"
+    "correctAnswer": "O Perm"
   },
   {
     "question": {
@@ -8392,22 +9484,22 @@ export const testQuestions: {
           0
         ],
         [
-          0,
-          0,
-          -1
-        ],
-        [
           -1,
           0,
           0
+        ],
+        [
+          0,
+          0,
+          1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
-          "rgb(255,0,0)",
           "rgb(255,255,0)",
-          "rgb(0,255,0)"
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -8415,9 +9507,9 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
+          "rgb(255,255,0)",
           "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -8433,85 +9525,33 @@ export const testQuestions: {
       "centers": [
         "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(255,0,0)",
         "rgb(0,0,255)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Triple Sledge"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
         "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
+        "rgb(255,0,0)"
       ],
       "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
         [
           1,
           0,
           0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
+          "rgb(255,255,0)",
           "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
+          "rgb(255,0,0)"
         ],
         [
           "rgb(0,255,0)",
@@ -8519,9 +9559,9 @@ export const testQuestions: {
           "rgb(255,166,0)"
         ],
         [
-          "rgb(255,166,0)",
           "rgb(255,255,0)",
-          "rgb(0,0,255)"
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,0,0)",
@@ -8530,21 +9570,21 @@ export const testQuestions: {
         ]
       ]
     },
-    "correctAnswer": "Pure/Solved"
+    "correctAnswer": "X Perm"
   },
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
         "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
         "rgb(0,255,0)"
       ],
       "rotation": [
         [
-          1,
           0,
+          -1,
           0
         ],
         [
@@ -8553,12 +9593,12 @@ export const testQuestions: {
           -1
         ],
         [
-          0,
           1,
+          0,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -8587,13 +9627,70 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
         "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
         "rgb(255,166,0)"
       ],
       "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
         [
           0,
           0,
@@ -8603,14 +9700,61 @@ export const testQuestions: {
           -1,
           0,
           0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "H Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
         ],
         [
           0,
-          1,
-          0
+          0,
+          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -8639,266 +9783,6 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Triple Sledge"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
         "rgb(255,255,0)",
         "rgb(255,166,0)",
         "rgb(255,0,0)",
@@ -8909,20 +9793,20 @@ export const testQuestions: {
         [
           0,
           0,
-          -1
+          1
         ],
         [
-          0,
           -1,
+          0,
           0
         ],
         [
-          -1,
           0,
+          -1,
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -8951,280 +9835,15 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
         "rgb(0,255,0)",
         "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
         "rgb(255,166,0)",
         "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Triple Sledge"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
         "rgb(0,0,255)"
       ],
       "rotation": [
         [
           0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
           -1,
           0
         ],
@@ -9232,217 +9851,14 @@ export const testQuestions: {
           0,
           0,
           -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "O Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
         ],
         [
           1,
           0,
           0
-        ],
-        [
-          0,
-          1,
-          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(0,255,0)",
@@ -9450,170 +9866,14 @@ export const testQuestions: {
           "rgb(255,255,0)"
         ],
         [
-          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)"
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
         ],
         [
           "rgb(255,166,0)",
           "rgb(255,255,0)",
           "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Wat Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -9627,122 +9887,13 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
         "rgb(0,255,0)",
+        "rgb(255,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
         "rgb(0,0,255)"
       ],
       "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
         [
           0,
           1,
@@ -9752,105 +9903,6 @@ export const testQuestions: {
           0,
           0,
           1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(0,255,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,255,0)",
-          "rgb(255,0,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
         ],
         [
           1,
@@ -9858,12 +9910,12 @@ export const testQuestions: {
           0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
-          "rgb(255,0,0)",
           "rgb(255,255,0)",
-          "rgb(0,255,0)"
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
         ],
         [
           "rgb(255,255,0)",
@@ -9871,66 +9923,14 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
+          "rgb(255,255,0)",
           "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
+          "rgb(255,166,0)"
         ],
         [
           "rgb(255,255,0)",
           "rgb(255,0,0)",
           "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Vertical U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
         ]
       ]
     },
@@ -9939,50 +9939,50 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
         "rgb(0,255,0)",
+        "rgb(0,0,255)",
         "rgb(255,166,0)",
+        "rgb(255,0,0)",
         "rgb(255,255,0)"
       ],
       "rotation": [
         [
+          0,
+          -1,
+          0
+        ],
+        [
           -1,
           0,
           0
         ],
         [
           0,
-          -1,
-          0
-        ],
-        [
           0,
-          0,
-          1
+          -1
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
       "uCorners": [
         [
-          "rgb(255,255,0)",
           "rgb(0,255,0)",
-          "rgb(255,0,0)"
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
         ],
         [
+          "rgb(0,255,0)",
           "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
           "rgb(255,166,0)"
         ],
         [
+          "rgb(255,166,0)",
           "rgb(255,255,0)",
-          "rgb(255,0,0)",
           "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
         ]
       ]
     },
@@ -9991,117 +9991,18 @@ export const testQuestions: {
   {
     "question": {
       "centers": [
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
         "rgb(255,0,0)",
         "rgb(255,255,0)",
+        "rgb(0,255,0)",
+        "rgb(0,0,255)",
         "rgb(255,166,0)"
       ],
       "rotation": [
         [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
           -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
           0,
           0
         ],
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          0,
-          1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,166,0)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
         [
           0,
           0,
@@ -10111,14 +10012,9 @@ export const testQuestions: {
           0,
           1,
           0
-        ],
-        [
-          -1,
-          0,
-          0
         ]
       ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
       "uCorners": [
         [
           "rgb(255,0,0)",
@@ -10126,274 +10022,14 @@ export const testQuestions: {
           "rgb(0,255,0)"
         ],
         [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "X Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(255,255,0)",
-        "rgb(255,0,0)",
-        "rgb(0,0,255)",
-        "rgb(0,255,0)"
-      ],
-      "rotation": [
-        [
-          0,
-          0,
-          -1
-        ],
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Triple Sledge"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,166,0)",
-        "rgb(0,255,0)",
-        "rgb(0,0,255)",
-        "rgb(255,0,0)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          -1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,0,0)",
-          "rgb(255,255,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(0,0,255)",
-          "rgb(255,166,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Horizontal U Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(0,0,255)",
-        "rgb(255,255,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(255,0,0)"
-      ],
-      "rotation": [
-        [
-          -1,
-          0,
-          0
-        ],
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(0,255,0)",
-          "rgb(255,0,0)",
-          "rgb(255,255,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,166,0)",
-          "rgb(0,255,0)"
-        ],
-        [
-          "rgb(255,166,0)",
-          "rgb(255,255,0)",
-          "rgb(0,0,255)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(255,0,0)",
-          "rgb(0,0,255)"
-        ]
-      ]
-    },
-    "correctAnswer": "Swirl Perm"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)",
-        "rgb(255,255,0)"
-      ],
-      "rotation": [
-        [
-          1,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
-          "rgb(0,255,0)",
-          "rgb(255,255,0)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,255,0)",
-          "rgb(0,0,255)",
-          "rgb(255,166,0)"
-        ],
-        [
-          "rgb(255,0,0)",
-          "rgb(0,0,255)",
-          "rgb(255,255,0)"
-        ]
-      ]
-    },
-    "correctAnswer": "Pure/Solved"
-  },
-  {
-    "question": {
-      "centers": [
-        "rgb(255,0,0)",
-        "rgb(0,255,0)",
-        "rgb(255,255,0)",
-        "rgb(255,166,0)",
-        "rgb(0,0,255)"
-      ],
-      "rotation": [
-        [
-          0,
-          -1,
-          0
-        ],
-        [
-          0,
-          0,
-          1
-        ],
-        [
-          -1,
-          0,
-          0
-        ]
-      ],
-      "chosenTrainerType": "Show Horizontal U centers (LFR)",
-      "uCorners": [
-        [
-          "rgb(255,255,0)",
-          "rgb(0,255,0)",
-          "rgb(255,0,0)"
-        ],
-        [
           "rgb(255,166,0)",
           "rgb(0,255,0)",
           "rgb(255,255,0)"
         ],
         [
-          "rgb(255,255,0)",
           "rgb(0,0,255)",
-          "rgb(255,166,0)"
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
         ],
         [
           "rgb(0,0,255)",
@@ -10403,5 +10039,369 @@ export const testQuestions: {
       ]
     },
     "correctAnswer": "O Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Wat Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,255,0)",
+        "rgb(0,0,255)",
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show O centers (FRU)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,255,0)",
+          "rgb(255,255,0)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,0,0)",
+          "rgb(0,0,255)",
+          "rgb(255,255,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "X Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,166,0)",
+        "rgb(0,255,0)",
+        "rgb(255,0,0)",
+        "rgb(255,255,0)",
+        "rgb(0,0,255)"
+      ],
+      "rotation": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Horizontal U centers (LFR)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Triple Sledge"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(255,166,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,0,0)",
+          "rgb(255,255,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,166,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)",
+        "rgb(0,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(255,255,0)",
+          "rgb(0,255,0)",
+          "rgb(255,0,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(0,255,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(0,0,255)",
+          "rgb(255,166,0)"
+        ],
+        [
+          "rgb(0,0,255)",
+          "rgb(255,255,0)",
+          "rgb(255,0,0)"
+        ]
+      ]
+    },
+    "correctAnswer": "Vertical U Perm"
+  },
+  {
+    "question": {
+      "centers": [
+        "rgb(255,0,0)",
+        "rgb(0,0,255)",
+        "rgb(0,255,0)",
+        "rgb(255,166,0)",
+        "rgb(255,255,0)"
+      ],
+      "rotation": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "randomlyChosenTrainerType": "Show Vertical U centers (FUB)",
+      "uCorners": [
+        [
+          "rgb(0,255,0)",
+          "rgb(255,0,0)",
+          "rgb(255,255,0)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,166,0)",
+          "rgb(0,255,0)"
+        ],
+        [
+          "rgb(255,166,0)",
+          "rgb(255,255,0)",
+          "rgb(0,0,255)"
+        ],
+        [
+          "rgb(255,255,0)",
+          "rgb(255,0,0)",
+          "rgb(0,0,255)"
+        ]
+      ]
+    },
+    "correctAnswer": "Horizontal U Perm"
   }
 ];

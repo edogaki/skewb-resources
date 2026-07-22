@@ -32,4 +32,4 @@ export const testQuestions: {
 }[] = ${JSON.stringify(questions, null, 2)};
 `;
 
-fs.writeFileSync("./src/test-data/testQuestions.ts", code, "utf8");
+fs.writeFileSync("./src/test-data/testQuestions.gen.ts", code, "utf8");

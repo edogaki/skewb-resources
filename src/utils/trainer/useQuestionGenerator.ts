@@ -1,27 +1,22 @@
 import { useState } from "react";
-import { testQuestions } from "#/test-data/testQuestions";
+import { testQuestions } from "#/test-data/testQuestions.gen";
 import { Color, nonWhiteColors } from "#/utils/renderer/color";
 import { CubeRotation, shuffleArray } from "#/utils/renderer/math";
 import {
     type NSCenterTrainerOptions,
     type NSCenterTrainerState,
-    NSCenterTrainerType,
     nonRandomNSCenterTrainerTypes,
 } from "./skewbUtils";
 
-export function generateRandomQuestion(options: NSCenterTrainerOptions) {
+export function generateRandomQuestion(_options: NSCenterTrainerOptions) {
     const centers = nonWhiteColors.slice();
     shuffleArray(centers, true);
     const randomRotation =
         CubeRotation[Math.floor(Math.random() * CubeRotation.length)];
-    const chosenTrainerType =
-        options.trainerType === NSCenterTrainerType.Random
-            ? nonRandomNSCenterTrainerTypes[
-                  Math.floor(
-                      Math.random() * nonRandomNSCenterTrainerTypes.length,
-                  )
-              ]
-            : options.trainerType;
+    const randomlyChosenTrainerType =
+        nonRandomNSCenterTrainerTypes[
+            Math.floor(Math.random() * nonRandomNSCenterTrainerTypes.length)
+        ];
     const uCorners: Color[][] = [
         [Color.Yellow, Color.Green, Color.Red],
         [Color.Yellow, Color.Orange, Color.Green],
@@ -55,7 +50,7 @@ export function generateRandomQuestion(options: NSCenterTrainerOptions) {
     const state: NSCenterTrainerState = {
         centers: centers,
         rotation: randomRotation,
-        chosenTrainerType,
+        randomlyChosenTrainerType,
         uCorners,
     } as NSCenterTrainerState;
     return state;
@@ -93,6 +88,6 @@ function useTestQuestionGenerator(options: NSCenterTrainerOptions) {
 }
 
 export const useQuestionGenerator =
-    import.meta.env.VITE_API_TEST_MODE === "true"
+    import.meta.env?.VITE_API_TEST_MODE === "true"
         ? useTestQuestionGenerator
         : useRandomQuestionGenerator;

@@ -23,8 +23,9 @@ function NSCenterTrainerAnswerButtons({
         selectCenterPerm,
         !options.isKeyBindChangerOn,
     );
+
     const keyBindsReverse = Object.fromEntries(
-        Object.entries(keyBinds).map(([k, v]) => [v, k]),
+        Object.entries(keyBinds || {}).map(([k, v]) => [v, k]),
     ) as Record<keyof typeof CenterPerm, string>;
 
     const [isEditing, setIsEditing] = useState<keyof typeof CenterPerm | null>(
@@ -57,8 +58,6 @@ function NSCenterTrainerAnswerButtons({
     }, [isEditing]);
 
     const [watPressCounter, setWatPressCounter] = useState(0);
-
-    console.log({ watPressCounter });
 
     return (
         <div className="flex flex-col gap-1">
