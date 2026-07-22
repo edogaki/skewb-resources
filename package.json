@@ -16,7 +16,8 @@
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check",
-    "generate-test-data": "npx tsx ./src/scripts/generateTestData.ts"
+    "generate-test-data": "npx tsx ./src/scripts/generateTestData.ts",
+    "check-typescript": "tsc --noEmit"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
