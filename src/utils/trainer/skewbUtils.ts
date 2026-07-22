@@ -160,7 +160,8 @@ function nsCenterTrainerStateToSkewbRendererState(
 
         rotatedCenters[
             (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-                chosenTrainerType === NSCenterTrainerType.O) &&
+                chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
             options.showRandomUCorners
                 ? options.showRightCornerColors
                     ? uCorners[1][1]
@@ -169,7 +170,8 @@ function nsCenterTrainerStateToSkewbRendererState(
         ],
         rotatedCenters[
             (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-                chosenTrainerType === NSCenterTrainerType.O) &&
+                chosenTrainerType === NSCenterTrainerType.O ||
+                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
             options.showRandomUCorners
                 ? options.showRightCornerColors
                     ? uCorners[2][2]
@@ -178,7 +180,8 @@ function nsCenterTrainerStateToSkewbRendererState(
         ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-            chosenTrainerType === NSCenterTrainerType.O
+            chosenTrainerType === NSCenterTrainerType.O ||
+            chosenTrainerType === NSCenterTrainerType.VerticalU
                 ? options.showRightCornerColors
                     ? Color.Orange
                     : Color.Gray
@@ -186,7 +189,8 @@ function nsCenterTrainerStateToSkewbRendererState(
         ],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-            chosenTrainerType === NSCenterTrainerType.O
+            chosenTrainerType === NSCenterTrainerType.O ||
+            chosenTrainerType === NSCenterTrainerType.VerticalU
                 ? options.showRightCornerColors
                     ? Color.Orange
                     : Color.Gray
@@ -199,36 +203,10 @@ function nsCenterTrainerStateToSkewbRendererState(
                 : Color.Gray
         ],
 
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.VerticalU &&
-            options.showRandomUCorners
-                ? options.showRightCornerColors
-                    ? uCorners[2][1]
-                    : Color.Gray
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.VerticalU &&
-            options.showRandomUCorners
-                ? options.showRightCornerColors
-                    ? uCorners[3][2]
-                    : Color.Gray
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.VerticalU
-                ? options.showRightCornerColors
-                    ? Color.Blue
-                    : Color.Gray
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.VerticalU
-                ? options.showRightCornerColors
-                    ? Color.Blue
-                    : Color.Gray
-                : Color.Gray
-        ],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.VerticalU
                 ? nsCenterTrainerState.centers[3]
