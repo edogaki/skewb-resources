@@ -22,7 +22,7 @@ const nonRandomNSCenterTrainerTypes = Object.values(NSCenterTrainerType).filter(
 type NSCenterTrainerState = {
     centers: [Color, Color, Color, Color, Color];
     rotation: CubeRotation;
-    chosenTrainerType: (typeof nonRandomNSCenterTrainerTypes)[number];
+    randomlyChosenTrainerType: (typeof nonRandomNSCenterTrainerTypes)[number];
     uCorners: Color[][];
 };
 
@@ -38,7 +38,10 @@ function nsCenterTrainerStateToSkewbRendererState(
     nsCenterTrainerState: NSCenterTrainerState,
     options: NSCenterTrainerOptions,
 ) {
-    const chosenTrainerType = nsCenterTrainerState.chosenTrainerType;
+    const chosenTrainerType =
+        options.trainerType === NSCenterTrainerType.Random
+            ? nsCenterTrainerState.randomlyChosenTrainerType
+            : options.trainerType;
     const rotatedCenters = Object.fromEntries(
         Object.values(Color).map((c) => [
             c,
@@ -655,6 +658,12 @@ function nsCenterTrainerStateToCenterPerm(
     return nsCenterPerms[nsCenterTrainerState.centers.join(",")];
 }
 
+function nsCenterTrainerStateToCenterPermSpecificName(
+    nsCenterTrainerState: NSCenterTrainerState,
+) {
+    return nsCenterPermSpecificNames[nsCenterTrainerState.centers.join(",")];
+}
+
 // const nonWhiteColors: Color[] = [Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow];
 
 type NSCornerTrainerState = {
@@ -767,6 +776,7 @@ export {
     nsCenterTrainerStateToSkewbRendererState,
     CenterPerm,
     nsCenterTrainerStateToCenterPerm,
+    nsCenterTrainerStateToCenterPermSpecificName,
     type NSCornerTrainerState,
     type NSCornerTrainerOptions,
     nsCornerTrainerStateToSkewbRendererState,

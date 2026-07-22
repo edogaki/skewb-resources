@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { testQuestions } from "#/test-data/testQuestions";
+import { testQuestions } from "#/test-data/testQuestions.gen";
 import { CenterPerm } from "#/utils/trainer/skewbUtils";
 
 function getRandomCenterPerm() {
