@@ -3,9 +3,11 @@ import NSCaseTrainer from "#/components/trainer/NSCaseTrainer";
 import NSCenterTrainer from "#/components/trainer/NSCenterTrainer";
 import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
 import {
+    type NSCase,
     NSCaseButtonsViewType,
     type NSCaseTrainerOptions,
     NSCaseTrainerType,
+    nsCases,
 } from "#/utils/trainer/nsCase";
 import {
     type NSCenterTrainerOptions,
@@ -21,6 +23,28 @@ export const Route = createFileRoute("/trainer")({
     component: RouteComponent,
 });
 
+const nsCenterTrainerOptionsDefault: NSCenterTrainerOptions = {
+    trainerType: NSCenterTrainerType.HorizontalU,
+    showRightCornerColors: true,
+    showRandomUCorners: false,
+    renderer: {
+        cubeOrientation: CubeOrientation.UpDown,
+    },
+    isKeyBindChangerOn: false,
+};
+const nsCaseTrainerOptionsDefault: NSCaseTrainerOptions = {
+    trainerType: NSCaseTrainerType.EntireCube,
+    buttonsViewType: NSCaseButtonsViewType.Type1,
+    type2ShowRenderedCaseInButton: true,
+    renderer: {
+        cubeOrientation: CubeOrientation.UpDown,
+    },
+    caseEnabled: Object.fromEntries(
+        nsCases.map(([_nscc, nsc]) => [nsc, true]),
+    ) as Record<NSCase, boolean>,
+    isCaseEnabledMenuOn: false,
+};
+
 function RouteComponent() {
     const [globalOptions, setGlobalOptions] = useLocalStorage<GlobalOptions>(
         "globalOptions",
@@ -33,29 +57,14 @@ function RouteComponent() {
     const [nsCenterTrainerOptions, setNSCenterTrainerOptions] =
         useLocalStorage<NSCenterTrainerOptions>(
             "nsCenterTrainerOptions",
-            {
-                trainerType: NSCenterTrainerType.HorizontalU,
-                showRightCornerColors: true,
-                showRandomUCorners: false,
-                renderer: {
-                    cubeOrientation: CubeOrientation.UpDown,
-                },
-                isKeyBindChangerOn: false,
-            },
+            nsCenterTrainerOptionsDefault,
             true,
         );
 
     const [nsCaseTrainerOptions, setNSCaseTrainerOptions] =
         useLocalStorage<NSCaseTrainerOptions>(
             "nsCaseTrainerOptions",
-            {
-                trainerType: NSCaseTrainerType.EntireCube,
-                buttonsViewType: NSCaseButtonsViewType.Type1,
-                type2ShowRenderedCaseInButton: true,
-                renderer: {
-                    cubeOrientation: CubeOrientation.UpDown,
-                },
-            },
+            nsCaseTrainerOptionsDefault,
             true,
         );
 

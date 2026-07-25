@@ -10,29 +10,43 @@ import {
 } from "./nsCase";
 
 export function generateRandomNSCaseQuestion(options: NSCaseTrainerOptions) {
-    const randomYRotationIndex = Math.floor(
+    let enabledNSCases = nsCases.filter(
+        ([_nscc, nsc]) => options.caseEnabled[nsc],
+    );
+    if (enabledNSCases.length === 0) {
+        enabledNSCases = [nsCases[nsCases.length - 1]];
+    }
+
+    let randomYRotationIndex = Math.floor(
         Math.random() * 4,
     ) as CubeYRotationIndex;
 
-    let nsCase = nsCases[Math.floor(Math.random() * nsCases.length)];
+    let [caseCore, answer] =
+        enabledNSCases[Math.floor(Math.random() * enabledNSCases.length)];
 
     if (options.trainerType === NSCaseTrainerType.Pseudo2) {
+        let counter = 0;
         while (
-            nsCase[0].centers[(4 - randomYRotationIndex + 1) % 4] ===
+            caseCore.centers[(4 - randomYRotationIndex + 1) % 4] ===
                 Color.Yellow ||
-            nsCase[0].centers[(4 - randomYRotationIndex + 2) % 4] ===
+            caseCore.centers[(4 - randomYRotationIndex + 2) % 4] ===
                 Color.Yellow
         ) {
-            nsCase = nsCases[Math.floor(Math.random() * nsCases.length)];
+            [caseCore, answer] =
+                enabledNSCases[
+                    Math.floor(Math.random() * enabledNSCases.length)
+                ];
+            randomYRotationIndex = Math.floor(
+                Math.random() * 4,
+            ) as CubeYRotationIndex;
+            counter++;
+            if (counter > 10000) break;
         }
+        console.log(counter);
     }
-
-    const caseCore: NSCaseCore = nsCase[0];
 
     const randomRotation =
         CubeRotation[Math.floor(Math.random() * CubeRotation.length)];
-
-    const answer = nsCase[1];
 
     const question: NSCaseTrainerQuestion = {
         caseCore,

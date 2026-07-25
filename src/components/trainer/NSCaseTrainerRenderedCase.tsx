@@ -34,6 +34,8 @@ function NSCaseTrainerRenderedCase({ name }: { name: NSCase }) {
             buttonsViewType: NSCaseButtonsViewType.Type1,
             renderer: rendererOptions,
             type2ShowRenderedCaseInButton: false,
+            caseEnabled: {},
+            isCaseEnabledMenuOn: false,
         },
     );
 

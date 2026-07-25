@@ -319,6 +319,8 @@ export interface NSCaseTrainerOptions {
     buttonsViewType: NSCaseButtonsViewType;
     type2ShowRenderedCaseInButton: boolean;
     renderer: RendererOptions;
+    caseEnabled: Partial<Record<NSCase, boolean>>;
+    isCaseEnabledMenuOn: boolean;
 }
 
 export interface NSCaseTrainerQuestion {

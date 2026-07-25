@@ -126,6 +126,24 @@ function NSCaseTrainerOptionsEditor({
                     <br />
                 </>
             )}
+            <br />
+            <button
+                name="isCaseEnabledMenuOn"
+                type="button"
+                className="rounded-full border border-(--line) bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
+                onClick={(e) => {
+                    setOptions((values) => ({
+                        ...values,
+                        isCaseEnabledMenuOn: !values.isCaseEnabledMenuOn,
+                    }));
+                    e.currentTarget.blur();
+                }}
+            >
+                {options.isCaseEnabledMenuOn
+                    ? "Save Changes"
+                    : "Choose Enabled Cases"}
+            </button>
+            <br />
         </form>
     );
 }

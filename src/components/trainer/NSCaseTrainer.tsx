@@ -12,6 +12,7 @@ import SkewbRenderer from "../SkewbRenderer";
 import NSCaseTrainerAnswerButtons from "./NSCaseTrainerAnswerButtons";
 import NSCaseTrainerAnswerButtonsAlt from "./NSCaseTrainerAnswerButtonsAlt";
 import NSCaseTrainerAnswerButtonTooltip from "./NSCaseTrainerAnswerButtonTooltip";
+import NSCaseTrainerCaseEnabledMenu from "./NSCaseTrainerCaseEnabledMenu";
 import NSCaseTrainerOptionsEditor from "./NSCaseTrainerOptionsEditor";
 
 const isErrorButtonInitialState = Object.fromEntries(
@@ -132,7 +133,12 @@ function NSCaseTrainer({
                         </div>
                     )}
                 </div>
-                {options.buttonsViewType === NSCaseButtonsViewType.Type1 ? (
+                {options.isCaseEnabledMenuOn ? (
+                    <NSCaseTrainerCaseEnabledMenu
+                        options={options}
+                        setOptions={setOptions}
+                    />
+                ) : options.buttonsViewType === NSCaseButtonsViewType.Type1 ? (
                     <NSCaseTrainerAnswerButtons
                         options={options}
                         selectAnswer={selectAnswer}
