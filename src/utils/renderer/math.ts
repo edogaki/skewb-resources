@@ -87,6 +87,17 @@ const CubeRotation = [
 
 type CubeRotation = (typeof CubeRotation)[number];
 
+const CubeYRotation = [
+    rotationMatrix([0, 1, 0], 0),
+    rotationMatrix([0, 1, 0], 1),
+    rotationMatrix([0, 1, 0], 2),
+    rotationMatrix([0, 1, 0], 3),
+] as const;
+
+type CubeYRotationIndex = 0 | 1 | 2 | 3;
+
+type CubeYRotation = (typeof CubeYRotation)[CubeYRotationIndex];
+
 function shuffleArray(array: unknown[], keepParity: boolean = false) {
     let numSwaps = 0;
     for (let i = array.length - 1; i > 0; i--) {
@@ -99,4 +110,11 @@ function shuffleArray(array: unknown[], keepParity: boolean = false) {
     }
 }
 
-export { mod, rotationMatrix, CubeRotation, shuffleArray };
+export {
+    mod,
+    rotationMatrix,
+    CubeRotation,
+    CubeYRotation,
+    type CubeYRotationIndex,
+    shuffleArray,
+};

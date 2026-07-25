@@ -15,7 +15,10 @@
             "**/vite.config.ts",
             "!**/src/routeTree.gen.ts",
             "!**/src/styles.css",
-            "!**/dist/**/*"
+            "!**/dist/**/*",
+            "!**/test-data/**/*",
+            "!**/test-results/**/*",
+            "!**/playwright-report/**/*"
         ]
     },
     "formatter": {

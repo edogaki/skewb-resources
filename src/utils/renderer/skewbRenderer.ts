@@ -541,6 +541,7 @@ const stateLength = polygons[CubeOrientation.UpDown].length;
 
 interface RendererOptions {
     cubeOrientation: CubeOrientation;
+    hideDFace?: boolean;
 }
 
 export {

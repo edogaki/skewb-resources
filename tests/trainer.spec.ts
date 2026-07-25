@@ -55,3 +55,5 @@ test("some wrong answers", async ({ page }) => {
         page.getByText(`${correctAnswers}/${i} answered correctly`),
     ).toBeVisible();
 });
+
+test("change options and nothing errors", async ({ page }) => {});

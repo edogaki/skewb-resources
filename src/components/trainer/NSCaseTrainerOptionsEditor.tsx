@@ -1,0 +1,108 @@
+import type React from "react";
+import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
+import {
+    NSCaseButtonsViewType,
+    type NSCaseTrainerOptions,
+    NSCaseTrainerType,
+} from "#/utils/trainer/nsCase";
+
+function NSCaseTrainerOptionsEditor({
+    options,
+    setOptions,
+}: {
+    options: NSCaseTrainerOptions;
+    setOptions: React.Dispatch<React.SetStateAction<NSCaseTrainerOptions>>;
+}) {
+    return (
+        <form>
+            <h3 className="mb-3 text-xl font-semibold text-(--sea-ink)">
+                Options
+            </h3>
+            {(Object.values(NSCaseTrainerType) as NSCaseTrainerType[]).map(
+                (tt) => (
+                    <span key={tt}>
+                        <input
+                            id={`nsCaseTrainer-${tt}`}
+                            type="radio"
+                            name="nsCaseTrainerType"
+                            value={tt}
+                            className="mr-1"
+                            checked={options.trainerType === tt}
+                            onChange={() =>
+                                setOptions((values) => ({
+                                    ...values,
+                                    trainerType: tt,
+                                }))
+                            }
+                        />
+                        <label htmlFor={`nsCaseTrainer-${tt}`}>{tt}</label>
+                        <br />
+                    </span>
+                ),
+            )}
+            <br />
+            {(
+                Object.keys(CubeOrientation) as (keyof typeof CubeOrientation)[]
+            ).map((k) => (
+                <span key={k}>
+                    <input
+                        id={`nsCaseTrainer-${k}`}
+                        type="radio"
+                        name="cubeOrientation"
+                        value={CubeOrientation[k]}
+                        checked={
+                            options.renderer.cubeOrientation ===
+                            CubeOrientation[k]
+                        }
+                        className="mr-1"
+                        onChange={() =>
+                            setOptions((values) => ({
+                                ...values,
+                                renderer: {
+                                    ...values.renderer,
+                                    cubeOrientation: CubeOrientation[k],
+                                },
+                            }))
+                        }
+                    />
+                    <label htmlFor={`nsCaseTrainer-${k}`}>
+                        {CubeOrientation[k]}
+                    </label>
+                    <br />
+                </span>
+            ))}
+            <br />
+            {(
+                Object.keys(
+                    NSCaseButtonsViewType,
+                ) as (keyof typeof NSCaseButtonsViewType)[]
+            ).map((k) => (
+                <span key={k}>
+                    <input
+                        id={`nsCaseTrainer-${k}`}
+                        type="radio"
+                        name="nsCaseButtonsViewType"
+                        value={NSCaseButtonsViewType[k]}
+                        checked={
+                            options.buttonsViewType === NSCaseButtonsViewType[k]
+                        }
+                        className="mr-1"
+                        onChange={() =>
+                            setOptions((values) => ({
+                                ...values,
+                                buttonsViewType: NSCaseButtonsViewType[k],
+                            }))
+                        }
+                    />
+                    <label htmlFor={`nsCaseTrainer-${k}`}>
+                        {NSCaseButtonsViewType[k]}
+                    </label>
+                    <br />
+                </span>
+            ))}
+            <br />
+        </form>
+    );
+}
+
+export default NSCaseTrainerOptionsEditor;

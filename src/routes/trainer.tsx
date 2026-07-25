@@ -1,6 +1,12 @@
 import { ClientOnly, createFileRoute } from "@tanstack/react-router";
+import NSCaseTrainer from "#/components/trainer/NSCaseTrainer";
 import NSCenterTrainer from "#/components/trainer/NSCenterTrainer";
 import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
+import {
+    NSCaseButtonsViewType,
+    type NSCaseTrainerOptions,
+    NSCaseTrainerType,
+} from "#/utils/trainer/nsCase";
 import {
     type NSCenterTrainerOptions,
     NSCenterTrainerType,
@@ -24,19 +30,33 @@ function RouteComponent() {
         true,
     );
 
-    const [options, setOptions] = useLocalStorage<NSCenterTrainerOptions>(
-        "nsCenterTrainerOptions",
-        {
-            trainerType: NSCenterTrainerType.HorizontalU,
-            showRightCornerColors: true,
-            showRandomUCorners: false,
-            renderer: {
-                cubeOrientation: CubeOrientation.UpDown,
+    const [nsCenterTrainerOptions, setNSCenterTrainerOptions] =
+        useLocalStorage<NSCenterTrainerOptions>(
+            "nsCenterTrainerOptions",
+            {
+                trainerType: NSCenterTrainerType.HorizontalU,
+                showRightCornerColors: true,
+                showRandomUCorners: false,
+                renderer: {
+                    cubeOrientation: CubeOrientation.UpDown,
+                },
+                isKeyBindChangerOn: false,
             },
-            isKeyBindChangerOn: false,
-        },
-        true,
-    );
+            true,
+        );
+
+    const [nsCaseTrainerOptions, setNSCaseTrainerOptions] =
+        useLocalStorage<NSCaseTrainerOptions>(
+            "nsCaseTrainerOptions",
+            {
+                trainerType: NSCaseTrainerType.EntireCube,
+                buttonsViewType: NSCaseButtonsViewType.Type1,
+                renderer: {
+                    cubeOrientation: CubeOrientation.UpDown,
+                },
+            },
+            true,
+        );
 
     return (
         <main className="page-wrap px-4 py-12">
@@ -58,12 +78,20 @@ function RouteComponent() {
                         {globalOptions?.isMuted ? "Unmute" : "Mute"}
                     </button>
                 </div>
-                {options && (
+                {nsCenterTrainerOptions && (
                     <ClientOnly>
                         <NSCenterTrainer
                             isMuted={globalOptions?.isMuted || false}
-                            options={options}
-                            setOptions={setOptions}
+                            options={nsCenterTrainerOptions}
+                            setOptions={setNSCenterTrainerOptions}
+                        />
+                    </ClientOnly>
+                )}
+                {nsCaseTrainerOptions && (
+                    <ClientOnly>
+                        <NSCaseTrainer
+                            options={nsCaseTrainerOptions}
+                            setOptions={setNSCaseTrainerOptions}
                         />
                     </ClientOnly>
                 )}
