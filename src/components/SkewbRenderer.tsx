@@ -18,7 +18,7 @@ function SkewbRenderer({
         <div className="skewb-box">
             <svg
                 version="1.1"
-                viewBox={`0 0 160 ${options?.hideDFace ? 100 : 142}`}
+                viewBox={`0 0 160 ${options?.hideDFace ? 90 : 142}`}
                 xmlns="http://www.w3.org/2000/svg"
             >
                 {polygons[

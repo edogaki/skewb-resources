@@ -101,6 +101,31 @@ function NSCaseTrainerOptionsEditor({
                 </span>
             ))}
             <br />
+            {options.buttonsViewType === NSCaseButtonsViewType.Type2 && (
+                <>
+                    <input
+                        type="checkbox"
+                        checked={options.type2ShowRenderedCaseInButton}
+                        name="type2ShowRenderedCaseInButton"
+                        id="nsCaseTrainer-type2ShowRenderedCaseInButton"
+                        className="mr-1"
+                        onChange={(e) =>
+                            setOptions((values) => ({
+                                ...values,
+                                type2ShowRenderedCaseInButton: e.target.checked,
+                            }))
+                        }
+                        disabled={
+                            options.buttonsViewType !==
+                            NSCaseButtonsViewType.Type2
+                        }
+                    />
+                    <label htmlFor="nsCaseTrainer-type2ShowRenderedCaseInButton">
+                        Show Mini Skewb inside button
+                    </label>
+                    <br />
+                </>
+            )}
         </form>
     );
 }

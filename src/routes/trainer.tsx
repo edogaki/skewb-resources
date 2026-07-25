@@ -51,6 +51,7 @@ function RouteComponent() {
             {
                 trainerType: NSCaseTrainerType.EntireCube,
                 buttonsViewType: NSCaseButtonsViewType.Type1,
+                type2ShowRenderedCaseInButton: true,
                 renderer: {
                     cubeOrientation: CubeOrientation.UpDown,
                 },

@@ -317,6 +317,7 @@ export type NSCaseButtonsViewType =
 export interface NSCaseTrainerOptions {
     trainerType: NSCaseTrainerType;
     buttonsViewType: NSCaseButtonsViewType;
+    type2ShowRenderedCaseInButton: boolean;
     renderer: RendererOptions;
 }
 

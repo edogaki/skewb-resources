@@ -1,6 +1,7 @@
 import { type MouseEventHandler, useEffect, useRef, useState } from "react";
 import { type NSCase, nsCasesInfo } from "#/utils/trainer/nsCase";
 import NSCaseTrainerAnswerButtonTooltip from "./NSCaseTrainerAnswerButtonTooltip";
+import NSCaseTrainerRenderedCase from "./NSCaseTrainerRenderedCase";
 
 function NSCaseTrainerAnswerButton({
     name,
@@ -8,12 +9,14 @@ function NSCaseTrainerAnswerButton({
     isCorrect,
     onClick,
     useAltName,
+    showSkewbRenderer,
 }: {
     name: NSCase;
     isError: boolean;
     isCorrect: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
     useAltName?: boolean;
+    showSkewbRenderer?: boolean;
 }) {
     const [isTooltipOpen, setIsTooltipOpen] = useState(false);
     const [mouseEnteredEvent, setMouseEnteredEvent] = useState<
@@ -23,6 +26,7 @@ function NSCaseTrainerAnswerButton({
     >(null);
 
     useEffect(() => {
+        if (showSkewbRenderer && useAltName) return;
         if (mouseEnteredEvent === null) {
             setIsTooltipOpen(false);
             return;
@@ -35,7 +39,7 @@ function NSCaseTrainerAnswerButton({
 
         const id = setTimeout(() => setIsTooltipOpen(true), 500);
         return () => clearTimeout(id);
-    }, [mouseEnteredEvent]);
+    }, [mouseEnteredEvent, showSkewbRenderer, useAltName]);
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const tooltipContainerRef = useRef<HTMLDivElement>(null);
@@ -56,11 +60,12 @@ function NSCaseTrainerAnswerButton({
             setIsRenderTooltipLeft(false);
         }
     }, [isTooltipOpen]);
+
     return (
         <div className="w-full relative">
             <button
                 type="button"
-                className={`w-full rounded-full border border-(--line) ${isError ? "bg-(--error-bg)" : isCorrect ? "bg-(--success-bg)" : "bg-(--surface)"} text-sm  px-0 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)`}
+                className={`w-full ${showSkewbRenderer ? "rounded-4xl" : "rounded-full"} border border-(--line) ${isError ? "bg-(--error-bg)" : isCorrect ? "bg-(--success-bg)" : "bg-(--surface)"} text-sm  px-0 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)`}
                 onClick={onClick}
                 onMouseEnter={(e) => setMouseEnteredEvent(e)}
                 onMouseLeave={() => setMouseEnteredEvent(null)}
@@ -69,9 +74,18 @@ function NSCaseTrainerAnswerButton({
                 onContextMenu={(e) => e.preventDefault()}
                 ref={buttonRef}
             >
-                {useAltName
-                    ? `${name}: ${nsCasesInfo.get(name)?.altName}`
-                    : name}
+                <div>
+                    {useAltName
+                        ? `${name}: ${nsCasesInfo.get(name)?.altName}`
+                        : name}
+                </div>
+                {showSkewbRenderer && (
+                    <div className="w-full flex justify-center-safe">
+                        <div className="w-[60%]">
+                            <NSCaseTrainerRenderedCase name={name} />
+                        </div>
+                    </div>
+                )}
             </button>
             <div
                 className={`${!isTooltipOpen && "hidden"} absolute top-full ${isRenderTooltipLeft ? "right-full" : "left-full"} w-50 z-50 bg-(--surface-strong)`}

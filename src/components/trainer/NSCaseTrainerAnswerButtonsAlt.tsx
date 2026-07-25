@@ -62,17 +62,21 @@ function NSCaseTrainerAnswerButtonsAlt({
                 </div>
             ))}
             <div>
-                <div className="flex gap-1 w-60 flex-wrap">
+                <div className="flex gap-1 w-111 flex-wrap">
                     {selectedSet &&
                         selectedSetCases.map((c) => (
-                            <NSCaseTrainerAnswerButton
-                                key={c}
-                                name={c}
-                                isError={isErrorButton[c]}
-                                isCorrect={answeredCorrectButton === c}
-                                onClick={() => selectAnswer(c)}
-                                useAltName={true}
-                            ></NSCaseTrainerAnswerButton>
+                            <div key={c} className="w-55">
+                                <NSCaseTrainerAnswerButton
+                                    name={c}
+                                    isError={isErrorButton[c]}
+                                    isCorrect={answeredCorrectButton === c}
+                                    onClick={() => selectAnswer(c)}
+                                    useAltName={true}
+                                    showSkewbRenderer={
+                                        options.type2ShowRenderedCaseInButton
+                                    }
+                                ></NSCaseTrainerAnswerButton>
+                            </div>
                         ))}
                 </div>
             </div>
