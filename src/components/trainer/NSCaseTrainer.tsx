@@ -88,35 +88,46 @@ function NSCaseTrainer({
                     <div>
                         {`${correctQuestions}/${totalQuestions} answered correctly`}
                     </div>
-                    <button
-                        type="button"
-                        className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
-                        onClick={async () => {
-                            setIsShowAnswer(true);
-                            Sound.wrong.play();
-                            if (
-                                Object.values(isErrorButton).every(
-                                    (v) => v === false,
-                                )
-                            ) {
-                                setTotalQuestions((q) => q + 1);
-                            }
-                            setIsErrorButton((obj) => {
-                                const x = Object.fromEntries(
-                                    (Object.keys(obj) as Array<NSCase>).map(
-                                        (nsc) =>
-                                            nsc === correctAnswer
-                                                ? [nsc, false]
-                                                : [nsc, true],
-                                    ),
-                                ) as Record<NSCase, boolean>;
-                                return x;
-                            });
-                            setAnsweredCorrectButton(null);
-                        }}
-                    >
-                        Show answer
-                    </button>
+                    <div className="flex gap-1">
+                        <button
+                            type="button"
+                            className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
+                            onClick={async () => {
+                                setIsShowAnswer(true);
+                                Sound.wrong.play();
+                                if (
+                                    Object.values(isErrorButton).every(
+                                        (v) => v === false,
+                                    )
+                                ) {
+                                    setTotalQuestions((q) => q + 1);
+                                }
+                                setIsErrorButton((obj) => {
+                                    const x = Object.fromEntries(
+                                        (Object.keys(obj) as Array<NSCase>).map(
+                                            (nsc) =>
+                                                nsc === correctAnswer
+                                                    ? [nsc, false]
+                                                    : [nsc, true],
+                                        ),
+                                    ) as Record<NSCase, boolean>;
+                                    return x;
+                                });
+                                setAnsweredCorrectButton(null);
+                            }}
+                        >
+                            Show answer
+                        </button>
+                        <button
+                            type="button"
+                            className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
+                            onClick={async () => {
+                                newQuestion();
+                            }}
+                        >
+                            Skip to next question
+                        </button>
+                    </div>
                     <SkewbRenderer
                         state={nsCaseTrainerQuestionToSkewbRendererState(
                             currentQuestion,
