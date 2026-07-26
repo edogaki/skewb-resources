@@ -31,11 +31,11 @@ export default function Header() {
                         About
                     </Link>
                     <Link
-                        to="/trainer"
+                        to="/trainers"
                         className="nav-link"
                         activeProps={{ className: "nav-link is-active" }}
                     >
-                        Trainer
+                        Trainers
                     </Link>
                     <Link
                         to="/layer-solver"

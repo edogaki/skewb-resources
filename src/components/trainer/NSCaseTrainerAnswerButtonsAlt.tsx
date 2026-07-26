@@ -4,7 +4,6 @@ import {
     type NSCaseSet,
     type NSCaseTrainerOptions,
     nsCaseButtonsLayout,
-    nsCasesInfo,
 } from "#/utils/trainer/nsCase";
 import NSCaseTrainerAnswerButton from "./NSCaseTrainerAnswerButton";
 
@@ -36,21 +35,7 @@ function NSCaseTrainerAnswerButtonsAlt({
                                 className={`w-full rounded-full border border-(--line) ${cases.every((nsc) => isErrorButton[nsc]) ? "bg-(--error-bg)" : "bg-(--surface)"} text-sm  px-0 py-2 ${selectedSet === caseSet ? "font-extrabold border-(--line-heavy)" : "font-semibold"} text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)`}
                                 onClick={() => {
                                     setSelectedSet(caseSet);
-                                    setSelectedSetCases(
-                                        cases,
-                                        /*
-                                            .slice()
-                                            .sort(
-                                                (c1, c2) =>
-                                                    nsCasesInfo
-                                                        .get(c1)
-                                                        ?.altName.localeCompare(
-                                                            nsCasesInfo.get(c2)
-                                                                ?.altName || "",
-                                                        ) || 0,
-                                            ),
-                                        */
-                                    );
+                                    setSelectedSetCases(cases);
                                 }}
                             >
                                 {caseSet
@@ -75,6 +60,7 @@ function NSCaseTrainerAnswerButtonsAlt({
                                     showSkewbRenderer={
                                         options.type2ShowRenderedCaseInButton
                                     }
+                                    altNames={options.altNames}
                                 ></NSCaseTrainerAnswerButton>
                             </div>
                         ))}

@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Color } from "../renderer/color";
-import { CubeRotation, type CubeYRotationIndex } from "../renderer/math";
 import {
-    type NSCaseCore,
+    CubeRotation,
+    type CubeYRotationIndex,
+    pickRandomNElements,
+} from "../renderer/math";
+import {
+    NSCaseCentersShown,
     type NSCaseTrainerOptions,
     type NSCaseTrainerQuestion,
     NSCaseTrainerType,
@@ -42,16 +46,50 @@ export function generateRandomNSCaseQuestion(options: NSCaseTrainerOptions) {
             counter++;
             if (counter > 10000) break;
         }
-        console.log(counter);
     }
 
     const randomRotation =
         CubeRotation[Math.floor(Math.random() * CubeRotation.length)];
 
+    let randomCentersShown = [0, 1, 2];
+    switch (options.centersShown) {
+        case NSCaseCentersShown.HorizontalU:
+            randomCentersShown = pickRandomNElements([0, 1, 2, 3], 3);
+            break;
+        case NSCaseCentersShown.O: {
+            const randomMiddleCenter = Math.floor(Math.random() * 4);
+            randomCentersShown = [
+                4,
+                randomMiddleCenter,
+                (randomMiddleCenter + 1) % 4,
+            ];
+            break;
+        }
+        case NSCaseCentersShown.VerticalU: {
+            const randomMiddleCenter = Math.floor(Math.random() * 4);
+            randomCentersShown = [
+                4,
+                randomMiddleCenter,
+                (randomMiddleCenter + 2) % 4,
+            ];
+            break;
+        }
+        case NSCaseCentersShown.Random:
+            randomCentersShown = pickRandomNElements([0, 1, 2, 3, 4], 3);
+            break;
+    }
+
+    const randomCornersShown = [
+        Math.floor(Math.random() * 2) * 2, // random number 0 or 2
+        Math.floor(Math.random() * 2) * 2 + 1, // random number 1 or 3
+    ];
+
     const question: NSCaseTrainerQuestion = {
         caseCore,
         randomYRotationIndex,
         randomRotation,
+        randomCentersShown,
+        randomCornersShown,
         answer,
     } as NSCaseTrainerQuestion;
     return question;

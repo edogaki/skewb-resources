@@ -34,6 +34,7 @@ function NSCaseTrainerAnswerButtons({
                                                 answeredCorrectButton === c
                                             }
                                             onClick={() => selectAnswer(c)}
+                                            altNames={options.altNames}
                                         />
                                     </div>
                                 ))}

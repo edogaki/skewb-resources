@@ -1,5 +1,5 @@
 import { type MouseEventHandler, useEffect, useRef, useState } from "react";
-import { type NSCase, nsCasesInfo } from "#/utils/trainer/nsCase";
+import type { NSCase } from "#/utils/trainer/nsCase";
 import NSCaseTrainerAnswerButtonTooltip from "./NSCaseTrainerAnswerButtonTooltip";
 import NSCaseTrainerRenderedCase from "./NSCaseTrainerRenderedCase";
 
@@ -10,6 +10,7 @@ function NSCaseTrainerAnswerButton({
     onClick,
     useAltName,
     showSkewbRenderer,
+    altNames,
 }: {
     name: NSCase;
     isError: boolean;
@@ -17,6 +18,7 @@ function NSCaseTrainerAnswerButton({
     onClick: MouseEventHandler<HTMLButtonElement>;
     useAltName?: boolean;
     showSkewbRenderer?: boolean;
+    altNames: Partial<Record<NSCase, string>>;
 }) {
     const [isTooltipOpen, setIsTooltipOpen] = useState(false);
     const [mouseEnteredEvent, setMouseEnteredEvent] = useState<
@@ -74,11 +76,12 @@ function NSCaseTrainerAnswerButton({
                 onContextMenu={(e) => e.preventDefault()}
                 ref={buttonRef}
             >
-                <div>
-                    {useAltName
-                        ? `${name}: ${nsCasesInfo.get(name)?.altName}`
-                        : name}
-                </div>
+                <div>{name}</div>
+                {useAltName && altNames[name] ? (
+                    <div>{altNames[name]}</div>
+                ) : (
+                    name
+                )}
                 {showSkewbRenderer && (
                     <div className="w-full flex justify-center-safe">
                         <div className="w-[60%]">
@@ -94,6 +97,7 @@ function NSCaseTrainerAnswerButton({
                 <NSCaseTrainerAnswerButtonTooltip
                     name={name}
                     closeTooltip={() => setIsTooltipOpen(false)}
+                    altNames={altNames}
                 />
             </div>
         </div>

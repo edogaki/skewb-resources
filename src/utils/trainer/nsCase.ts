@@ -156,152 +156,13 @@ export type NSCaseCore = (typeof nsCases)[number][0];
 
 export type NSCase = (typeof nsCases)[number][1];
 
-export const nsCasesInfo = new Map<NSCase, { altName: string }>([
-    ["1a", { altName: "x z2 S <Z perm conj U left> (cancel)" }],
-    ["1b", { altName: "x H <Z perm conj U right> (cancel)" }],
-    ["2a", { altName: "x H <Z perm>" }],
-    ["2b", { altName: "x z2 S z' <Z perm>" }],
-    ["1c", { altName: "x H <Z perm conj U left>" }],
-    ["1d", { altName: "x z2 S <Z perm conj U right>" }],
-    ["2c", { altName: "x z2 S <Z perm> (cancel)" }],
-    ["2d", { altName: "x H z' <Z perm> (cancel)" }],
-    ["3a", { altName: "Pi + Wat case 4" }],
-    ["3b", { altName: "Pi + Wat case 3" }],
-    ["4a", { altName: "x z2 S x <U perm>" }],
-    ["4b", { altName: "x H x' <U perm>" }],
-    ["3c", { altName: "Pi + Wat case 2" }],
-    ["3d", { altName: "Pi + Wat case 1" }],
-    ["4c", { altName: "x H x <U perm>" }],
-    ["4d", { altName: "x z2 S x' <U perm>" }],
-    ["5a", { altName: "x z2 S z' S S S" }],
-    ["5b", { altName: "x H z S S S" }],
-    ["6a", { altName: "x H x z2 <U perm>" }],
-    ["6b", { altName: "x z2 S <U perm alt>" }],
-    ["5c", { altName: "x H z' S S S" }],
-    ["5d", { altName: "x z2 S z S S S" }],
-    ["6c", { altName: "x z2 S x z2 <U perm>" }],
-    ["6d", { altName: "x H <alt U perm>" }],
-    ["7a", { altName: "x S S <U perm alt>" }],
-    ["7b", { altName: "x S S x' <U perm>" }],
-    ["7c", { altName: "x S S x z2 <U perm>" }],
-    ["7d", { altName: "x S S x <U perm>" }],
-    ["8a", { altName: "x z S z S (cancel) z S" }],
-    ["8b", { altName: "x z' S z H z S" }],
-    ["8c", { altName: "x z H z' H z' H (double cancel)" }],
-    ["8d", { altName: "x z' S z' S z' S" }],
-    ["9a", { altName: "x S S z' <U perm>" }],
-    ["9b", { altName: "x S S z <U perm>" }],
-    ["10a", { altName: "Sledge H perm skip" }],
-    ["10b", { altName: "Hedge H perm skip" }],
-    ["11a", { altName: "x H z <U perm>" }],
-    ["11b", { altName: "x z2 S z' <U perm>" }],
-    ["12a", { altName: "x z2 S z x' <U perm>" }],
-    ["12b", { altName: "x H z' x <U perm>" }],
-    ["11c", { altName: "x z2 S z <U perm>" }],
-    ["11d", { altName: "x H z' <U perm>" }],
-    ["12c", { altName: "x H z x' <U perm>" }],
-    ["12d", { altName: "x z2 S z' x <U perm>" }],
-    ["13a", { altName: "x H z x <U perm>" }],
-    ["13b", { altName: "x z2 S z' x' <U perm>" }],
-    ["13c", { altName: "x H z' x' <U perm>" }],
-    ["13d", { altName: "x z2 S z x <U perm>" }],
-    ["14a", { altName: "x z S z S (cancel) z' H" }],
-    ["14b", { altName: "x z' S z H z' H (cancel)" }],
-    ["14c", { altName: "x z H z' H (cancel) z S" }],
-    ["14d", { altName: "x z' H z' S z S (cancel)" }],
-    ["15a", { altName: "Pi + Triple sledge case 1" }],
-    ["15b", { altName: "Pi + Triple sledge case 2" }],
-    ["135", { altName: "Sledge" }],
-    ["136", { altName: "Hedge" }],
-    ["16", { altName: "x z2 S z2 <U perm>" }],
-    ["17a", { altName: "Pi + Z perm case 1" }],
-    ["17b", { altName: "Pi + Z perm case 2" }],
-    ["17d", { altName: "Pure Pi" }],
-    ["18a", { altName: "x S z H z x <U perm>" }],
-    ["18b", { altName: "x z H z' S z' x' <U perm>" }],
-    ["18c", { altName: "x z2 H z' H (cancel) z' x' <U perm>" }],
-    ["18d", { altName: "x z' S z S (cancel) z x <U perm>" }],
-    ["18e", { altName: "x z2 H z S z x <U perm>" }],
-    ["18f", { altName: "x z' S z' H z' x' <U perm>" }],
-    ["18g", { altName: "x S z' S z' x' <U perm>" }],
-    ["18h", { altName: "x z H z H z x <U perm>" }],
-    ["19a", { altName: "x z H z' S x' <U perm>" }],
-    ["19b", { altName: "x S z H x <U perm>" }],
-    ["19c", { altName: "x z' S z S (cancel) x <U perm>" }],
-    ["19d", { altName: "x z2 H z' H (cancel) x' <U perm>" }],
-    ["19e", { altName: "x z' S z' H x' <U perm>" }],
-    ["19f", { altName: "x z2 H z S x <U perm>" }],
-    ["19g", { altName: "x z H z H x <U perm>" }],
-    ["19h", { altName: "x S z' S x' <U perm>" }],
-    ["20a", { altName: "x z' S z S (cancel)" }],
-    ["20b", { altName: "x S z' S" }],
-    ["20c", { altName: "x z2 H z' H (cancel)" }],
-    ["20d", { altName: "x z H z H" }],
-    ["20e", { altName: "x S z H" }],
-    ["20f", { altName: "x z' S z' H" }],
-    ["20g", { altName: "x z H z' S" }],
-    ["20h", { altName: "x z2 H z S" }],
-    ["21a", { altName: "x z' H z' H (cancel) z' S" }],
-    ["21b", { altName: "x z' H z S z S (cancel)" }],
-    ["21c", { altName: "x z2 S z S (cancel) z H" }],
-    ["21d", { altName: "x z2 S z' H z' H (cancel)" }],
-    ["21e", { altName: "x z S z H z H" }],
-    ["21f", { altName: "x z S z' S z' H" }],
-    ["21g", { altName: "x H z' S z' S" }],
-    ["21h", { altName: "x H z H z S" }],
-    ["22a", { altName: "Pn + Vertical U case 2" }],
-    ["22b", { altName: "Pn + Vertical U case 1" }],
-    ["22c", { altName: "Pn + Vertical U case 4" }],
-    ["22d", { altName: "Pn + Vertical U case 3" }],
-    ["23a", { altName: "x z2 H z' <Hedge H perm skip>" }],
-    ["23b", { altName: "x z' S <Sledge H perm skip>" }],
-    ["23c", { altName: "x z H z <Hedge H perm skip>" }],
-    ["23d", { altName: "x S z2 <Sledge H perm skip>" }],
-    ["23e", { altName: "x S z <Hedge H perm skip>" }],
-    ["23f", { altName: "x z H z2 <Sledge H perm skip>" }],
-    ["23g", { altName: "x z2 H <Sledge H perm skip>" }],
-    ["23h", { altName: "x z' S z' <Hedge H perm skip>" }],
-    ["24a", { altName: "x z S z H z' S" }],
-    ["24b", { altName: "x H z' S z H" }],
-    ["24c", { altName: "x z' H z S z' H" }],
-    ["24d", { altName: "x z2 S z' H z S" }],
-    ["25a", { altName: "x z2 S z S (cancel) z' S" }],
-    ["25b", { altName: "x z S z' S z S (cancel)" }],
-    ["25c", { altName: "x z' H z' H (cancel) z H" }],
-    ["25d", { altName: "x H z H z' H (cancel)" }],
-    ["26a", { altName: "x S z S (cancel) S" }],
-    ["26b", { altName: "x z' S z' S S" }],
-    ["26c", { altName: "x z H z S S" }],
-    ["26d", { altName: "x z2 H z' S S" }],
-    ["27", { altName: "Pure Peanut" }],
-    ["28", { altName: "Pn + H perm" }],
-    ["29a", { altName: "Pn + Z perm case 1" }],
-    ["29b", { altName: "Pn + Z perm case 2" }],
-    ["30a", { altName: "Z perm conj U left" }],
-    ["30b", { altName: " Z perm conj U right" }],
-    ["31", { altName: "Triple Sledge" }],
-    ["H-U L", { altName: "Horizontal U perm Left" }],
-    ["H-U R", { altName: "Horizontal U perm Right" }],
-    ["V-U", { altName: "Vertical U perm" }],
-    ["32", { altName: "Z perm" }],
-    ["33", { altName: "H perm" }],
-    ["34a", { altName: "O perm left" }],
-    ["34b", { altName: "O perm right" }],
-    ["35a", { altName: "<U perm> z' x <U perm> Wat perm" }],
-    ["35b", { altName: "<U perm> z x' <U perm> Wat perm" }],
-    ["36a", { altName: "<U perm> z x <U perm> X perm" }],
-    ["36b", { altName: "<U perm> z' x' <U perm> X perm" }],
-    ["37a", { altName: "Swirl perm left" }],
-    ["37b", { altName: "Swirl perm right" }],
-    ["137a", { altName: "Solved" }],
-]);
-
 export const nsCasesReverseMap = new Map<NSCase, NSCaseCore>(
     nsCases.map(([nscc, nsc]) => [nsc, nscc]),
 );
 
 export const NSCaseTrainerType = {
     EntireCube: "Entire Cube Visible",
+    OneLookingMode: "1-Looking Mode",
     Pseudo2: "Pseudo 2-Sided Recognition",
 } as const;
 export type NSCaseTrainerType =
@@ -314,6 +175,19 @@ export const NSCaseButtonsViewType = {
 export type NSCaseButtonsViewType =
     (typeof NSCaseButtonsViewType)[keyof typeof NSCaseButtonsViewType];
 
+export const NSCaseCentersShown = {
+    HorizontalU: "Show Horizontal U centers (LFR)",
+    O: "Show O centers (FRU)",
+    VerticalU: "Show Vertical U centers (FUB)",
+    Random: "Show random centers subset",
+} as const;
+export type NSCaseCentersShown =
+    (typeof NSCaseCentersShown)[keyof typeof NSCaseCentersShown];
+
+export const nonRandomNSCaseCentersShown = Object.values(
+    NSCaseCentersShown,
+).filter((v) => v !== NSCaseCentersShown.Random) as NSCaseCentersShown[];
+
 export interface NSCaseTrainerOptions {
     trainerType: NSCaseTrainerType;
     buttonsViewType: NSCaseButtonsViewType;
@@ -321,12 +195,16 @@ export interface NSCaseTrainerOptions {
     renderer: RendererOptions;
     caseEnabled: Partial<Record<NSCase, boolean>>;
     isCaseEnabledMenuOn: boolean;
+    centersShown: NSCaseCentersShown;
+    altNames: Partial<Record<NSCase, string>>;
 }
 
 export interface NSCaseTrainerQuestion {
     caseCore: NSCaseCore;
     randomYRotationIndex: CubeYRotationIndex;
     randomRotation: CubeRotation;
+    randomCentersShown: [number, number, number];
+    randomCornersShown: [number, number];
     answer: NSCase;
 }
 
@@ -341,8 +219,13 @@ export function nsCaseTrainerQuestionToSkewbRendererState(
     nsCaseTrainerQuestion: NSCaseTrainerQuestion,
     options: NSCaseTrainerOptions,
 ) {
-    const { caseCore, randomYRotationIndex, randomRotation } =
-        nsCaseTrainerQuestion;
+    const {
+        caseCore,
+        randomYRotationIndex,
+        randomRotation,
+        randomCentersShown,
+        randomCornersShown,
+    } = nsCaseTrainerQuestion;
 
     const yRotator = Object.fromEntries(
         Object.values(Color).map((c) => [
@@ -398,38 +281,76 @@ export function nsCaseTrainerQuestionToSkewbRendererState(
 
     return [
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[3][1] === Color.Yellow &&
+                randomCornersShown.includes(3))
                 ? uCorners[3][1]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[0][2] === Color.Yellow &&
+                randomCornersShown.includes(0))
                 ? uCorners[0][2]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.OneLookingMode
                 ? Color.Red
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.OneLookingMode
                 ? Color.Red
                 : Color.Gray
         ],
         stickerRotator[
             options.trainerType === NSCaseTrainerType.EntireCube ||
             (options.trainerType === NSCaseTrainerType.Pseudo2 &&
-                yRotatedCenters[0] === Color.Yellow)
+                yRotatedCenters[0] === Color.Yellow) ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                randomCentersShown.includes(0))
                 ? yRotatedCenters[0]
                 : Color.Gray
         ],
 
-        stickerRotator[uCorners[0][1]],
-        stickerRotator[uCorners[1][2]],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[0][1] === Color.Yellow &&
+                randomCornersShown.includes(0)) ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? uCorners[0][1]
+                : Color.Gray
+        ],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[1][2] === Color.Yellow &&
+                randomCornersShown.includes(1)) ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? uCorners[1][2]
+                : Color.Gray
+        ],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? Color.Green
+                : Color.Gray
+        ],
         stickerRotator[Color.Green],
-        stickerRotator[Color.Green],
-        stickerRotator[yRotatedCenters[1]],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.Pseudo2 ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                randomCentersShown.includes(1))
+                ? yRotatedCenters[1]
+                : Color.Gray
+        ],
 
         stickerRotator[Color.White],
         stickerRotator[Color.White],
@@ -438,51 +359,105 @@ export function nsCaseTrainerQuestionToSkewbRendererState(
         stickerRotator[Color.White],
 
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[3][0] === Color.Yellow &&
+                randomCornersShown.includes(3))
                 ? uCorners[3][0]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[2][0] === Color.Yellow &&
+                randomCornersShown.includes(2))
                 ? uCorners[2][0]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[1][0] === Color.Yellow &&
+                randomCornersShown.includes(1))
                 ? uCorners[1][0]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[0][0] === Color.Yellow &&
+                randomCornersShown.includes(0))
                 ? uCorners[0][0]
                 : Color.Gray
         ],
         stickerRotator[
             options.trainerType === NSCaseTrainerType.EntireCube ||
             (options.trainerType === NSCaseTrainerType.Pseudo2 &&
-                yRotatedCenters[4] === Color.Yellow)
+                yRotatedCenters[4] === Color.Yellow) ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                randomCentersShown.includes(4))
                 ? yRotatedCenters[4]
                 : Color.Gray
         ],
 
-        stickerRotator[uCorners[1][1]],
-        stickerRotator[uCorners[2][2]],
-        stickerRotator[Color.Orange],
-        stickerRotator[Color.Orange],
-        stickerRotator[yRotatedCenters[2]],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[1][1] === Color.Yellow &&
+                randomCornersShown.includes(1)) ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? uCorners[1][1]
+                : Color.Gray
+        ],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[2][2] === Color.Yellow &&
+                randomCornersShown.includes(2)) ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? uCorners[2][2]
+                : Color.Gray
+        ],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? Color.Orange
+                : Color.Gray
+        ],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.Pseudo2
+                ? Color.Orange
+                : Color.Gray
+        ],
+        stickerRotator[
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.Pseudo2 ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                randomCentersShown.includes(2))
+                ? yRotatedCenters[2]
+                : Color.Gray
+        ],
 
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[2][1] === Color.Yellow &&
+                randomCornersShown.includes(2))
                 ? uCorners[2][1]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                uCorners[3][2] === Color.Yellow &&
+                randomCornersShown.includes(3))
                 ? uCorners[3][2]
                 : Color.Gray
         ],
         stickerRotator[
-            options.trainerType === NSCaseTrainerType.EntireCube
+            options.trainerType === NSCaseTrainerType.EntireCube ||
+            options.trainerType === NSCaseTrainerType.OneLookingMode
                 ? Color.Blue
                 : Color.Gray
         ],
@@ -494,7 +469,9 @@ export function nsCaseTrainerQuestionToSkewbRendererState(
         stickerRotator[
             options.trainerType === NSCaseTrainerType.EntireCube ||
             (options.trainerType === NSCaseTrainerType.Pseudo2 &&
-                yRotatedCenters[3] === Color.Yellow)
+                yRotatedCenters[3] === Color.Yellow) ||
+            (options.trainerType === NSCaseTrainerType.OneLookingMode &&
+                randomCentersShown.includes(3))
                 ? yRotatedCenters[3]
                 : Color.Gray
         ],

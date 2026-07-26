@@ -91,7 +91,7 @@ function RouteComponent() {
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
-                <h1 className="display-title mb-3 text-4xl font-bold text-(--sea-ink) sm:text-5xl">
+                <h1 className="display-title mb-3 text-4xl font-bold text-(--sea-ink) sm:text-4xl">
                     Skewb Layer Solver
                 </h1>
                 <div className="flex flex-wrap gap-x-10 gap-y-4">

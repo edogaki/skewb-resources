@@ -110,6 +110,17 @@ function shuffleArray(array: unknown[], keepParity: boolean = false) {
     }
 }
 
+function pickRandomNElements<T>(array: T[], n: number) {
+    const arrayCopy = [...array];
+    const out: T[] = [];
+    for (let i = 0; i < n && i < array.length; i++) {
+        const j = Math.floor(Math.random() * arrayCopy.length);
+        out.push(arrayCopy[j]);
+        arrayCopy.splice(j, 1);
+    }
+    return out;
+}
+
 export {
     mod,
     rotationMatrix,
@@ -117,4 +128,5 @@ export {
     CubeYRotation,
     type CubeYRotationIndex,
     shuffleArray,
+    pickRandomNElements,
 };

@@ -38,9 +38,14 @@ function App() {
             <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                     [
-                        "Skewb Trainer",
-                        "Includes NS Center trainer.",
-                        "/trainer",
+                        "NS Center trainer",
+                        "Train your NS center recogition!",
+                        "/trainers/ns-center",
+                    ],
+                    [
+                        "NS Case trainer",
+                        "Includes option to train specific cases. Also includes 1-looking mode, and many other config options.",
+                        "/trainers/ns-center",
                     ],
                     [
                         "Skewb Layer Solver",

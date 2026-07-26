@@ -6,6 +6,7 @@ import {
 import {
     type NSCase,
     NSCaseButtonsViewType,
+    NSCaseCentersShown,
     type NSCaseCore,
     NSCaseTrainerType,
     nsCasesReverseMap,
@@ -27,6 +28,8 @@ function NSCaseTrainerRenderedCase({ name }: { name: NSCase }) {
             caseCore,
             randomYRotationIndex: 2,
             randomRotation: rotationMatrix([0, 1, 0], 2),
+            randomCentersShown: [0, 1, 2],
+            randomCornersShown: [0, 1],
             answer: name,
         },
         {
@@ -36,6 +39,8 @@ function NSCaseTrainerRenderedCase({ name }: { name: NSCase }) {
             type2ShowRenderedCaseInButton: false,
             caseEnabled: {},
             isCaseEnabledMenuOn: false,
+            centersShown: NSCaseCentersShown.HorizontalU,
+            altNames: {},
         },
     );
 

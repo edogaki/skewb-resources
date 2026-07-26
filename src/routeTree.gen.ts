@@ -13,6 +13,9 @@ import { Route as TrainerRouteImport } from './routes/trainer'
 import { Route as LayerSolverRouteImport } from './routes/layer-solver'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TrainersIndexRouteImport } from './routes/trainers/index'
+import { Route as TrainersNsCenterRouteImport } from './routes/trainers/ns-center'
+import { Route as TrainersNsCaseRouteImport } from './routes/trainers/ns-case'
 
 const TrainerRoute = TrainerRouteImport.update({
   id: '/trainer',
@@ -34,18 +37,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrainersIndexRoute = TrainersIndexRouteImport.update({
+  id: '/trainers/',
+  path: '/trainers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrainersNsCenterRoute = TrainersNsCenterRouteImport.update({
+  id: '/trainers/ns-center',
+  path: '/trainers/ns-center',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrainersNsCaseRoute = TrainersNsCaseRouteImport.update({
+  id: '/trainers/ns-case',
+  path: '/trainers/ns-case',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
   '/trainer': typeof TrainerRoute
+  '/trainers/ns-case': typeof TrainersNsCaseRoute
+  '/trainers/ns-center': typeof TrainersNsCenterRoute
+  '/trainers/': typeof TrainersIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
   '/trainer': typeof TrainerRoute
+  '/trainers/ns-case': typeof TrainersNsCaseRoute
+  '/trainers/ns-center': typeof TrainersNsCenterRoute
+  '/trainers': typeof TrainersIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +77,38 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
   '/trainer': typeof TrainerRoute
+  '/trainers/ns-case': typeof TrainersNsCaseRoute
+  '/trainers/ns-center': typeof TrainersNsCenterRoute
+  '/trainers/': typeof TrainersIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/layer-solver' | '/trainer'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/layer-solver'
+    | '/trainer'
+    | '/trainers/ns-case'
+    | '/trainers/ns-center'
+    | '/trainers/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/layer-solver' | '/trainer'
-  id: '__root__' | '/' | '/about' | '/layer-solver' | '/trainer'
+  to:
+    | '/'
+    | '/about'
+    | '/layer-solver'
+    | '/trainer'
+    | '/trainers/ns-case'
+    | '/trainers/ns-center'
+    | '/trainers'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/layer-solver'
+    | '/trainer'
+    | '/trainers/ns-case'
+    | '/trainers/ns-center'
+    | '/trainers/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +116,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   LayerSolverRoute: typeof LayerSolverRoute
   TrainerRoute: typeof TrainerRoute
+  TrainersNsCaseRoute: typeof TrainersNsCaseRoute
+  TrainersNsCenterRoute: typeof TrainersNsCenterRoute
+  TrainersIndexRoute: typeof TrainersIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +151,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trainers/': {
+      id: '/trainers/'
+      path: '/trainers'
+      fullPath: '/trainers/'
+      preLoaderRoute: typeof TrainersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trainers/ns-center': {
+      id: '/trainers/ns-center'
+      path: '/trainers/ns-center'
+      fullPath: '/trainers/ns-center'
+      preLoaderRoute: typeof TrainersNsCenterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trainers/ns-case': {
+      id: '/trainers/ns-case'
+      path: '/trainers/ns-case'
+      fullPath: '/trainers/ns-case'
+      preLoaderRoute: typeof TrainersNsCaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +180,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   LayerSolverRoute: LayerSolverRoute,
   TrainerRoute: TrainerRoute,
+  TrainersNsCaseRoute: TrainersNsCaseRoute,
+  TrainersNsCenterRoute: TrainersNsCenterRoute,
+  TrainersIndexRoute: TrainersIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

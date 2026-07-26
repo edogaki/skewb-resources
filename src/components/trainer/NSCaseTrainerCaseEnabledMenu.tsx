@@ -1,11 +1,10 @@
-import { type Dispatch, Fragment, type SetStateAction, useState } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import {
     type NSCase,
     type NSCaseSet,
     type NSCaseTrainerOptions,
     nsCaseButtonsLayout,
     nsCases,
-    nsCasesInfo,
 } from "#/utils/trainer/nsCase";
 import NSCaseTrainerRenderedCase from "./NSCaseTrainerRenderedCase";
 
@@ -66,16 +65,25 @@ function NSCaseTrainerCaseEnabledMenu({
                                         }))
                                     }
                                 />
-                                <label htmlFor={`caseEnabled-${c}`}>
-                                    {`${c}: ${nsCasesInfo.get(c)?.altName}`}
-                                    <div className="w-full flex justify-center-safe">
-                                        <div className="w-[60%]">
-                                            <NSCaseTrainerRenderedCase
-                                                name={c}
-                                            />
-                                        </div>
+                                <label htmlFor={`caseEnabled-${c}`}>{c}</label>
+                                <div className="w-full flex flex-col items-center-safe">
+                                    <textarea
+                                        className="rounded-md bg-(--foam)"
+                                        value={options.altNames[c]}
+                                        onChange={(e) =>
+                                            setOptions((values) => ({
+                                                ...values,
+                                                altNames: {
+                                                    ...values.altNames,
+                                                    [c]: e.target.value,
+                                                },
+                                            }))
+                                        }
+                                    />
+                                    <div className="w-[60%]">
+                                        <NSCaseTrainerRenderedCase name={c} />
                                     </div>
-                                </label>
+                                </div>
                             </div>
                         ))}
                 </div>

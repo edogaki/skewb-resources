@@ -2,6 +2,7 @@ import type React from "react";
 import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
 import {
     NSCaseButtonsViewType,
+    NSCaseCentersShown,
     type NSCaseTrainerOptions,
     NSCaseTrainerType,
 } from "#/utils/trainer/nsCase";
@@ -40,37 +41,40 @@ function NSCaseTrainerOptionsEditor({
                     </span>
                 ),
             )}
-            <br />
-            {(
-                Object.keys(CubeOrientation) as (keyof typeof CubeOrientation)[]
-            ).map((k) => (
-                <span key={k}>
-                    <input
-                        id={`nsCaseTrainer-${k}`}
-                        type="radio"
-                        name="cubeOrientation"
-                        value={CubeOrientation[k]}
-                        checked={
-                            options.renderer.cubeOrientation ===
-                            CubeOrientation[k]
-                        }
-                        className="mr-1"
-                        onChange={() =>
-                            setOptions((values) => ({
-                                ...values,
-                                renderer: {
-                                    ...values.renderer,
-                                    cubeOrientation: CubeOrientation[k],
-                                },
-                            }))
-                        }
-                    />
-                    <label htmlFor={`nsCaseTrainer-${k}`}>
-                        {CubeOrientation[k]}
-                    </label>
+            {options.trainerType === NSCaseTrainerType.OneLookingMode && (
+                <>
                     <br />
-                </span>
-            ))}
+                    {(
+                        Object.keys(
+                            NSCaseCentersShown,
+                        ) as (keyof typeof NSCaseCentersShown)[]
+                    ).map((k) => (
+                        <span key={k}>
+                            <input
+                                id={`nsCaseTrainer-${k}`}
+                                type="radio"
+                                name="nsCaseCentersShown"
+                                value={NSCaseCentersShown[k]}
+                                checked={
+                                    options.centersShown ===
+                                    NSCaseCentersShown[k]
+                                }
+                                className="mr-1"
+                                onChange={() =>
+                                    setOptions((values) => ({
+                                        ...values,
+                                        centersShown: NSCaseCentersShown[k],
+                                    }))
+                                }
+                            />
+                            <label htmlFor={`nsCaseTrainer-${k}`}>
+                                {NSCaseCentersShown[k]}
+                            </label>
+                            <br />
+                        </span>
+                    ))}
+                </>
+            )}
             <br />
             {(
                 Object.keys(
@@ -100,9 +104,9 @@ function NSCaseTrainerOptionsEditor({
                     <br />
                 </span>
             ))}
-            <br />
             {options.buttonsViewType === NSCaseButtonsViewType.Type2 && (
                 <>
+                    <br />
                     <input
                         type="checkbox"
                         checked={options.type2ShowRenderedCaseInButton}
@@ -143,6 +147,38 @@ function NSCaseTrainerOptionsEditor({
                     ? "Save Changes"
                     : "Choose Enabled Cases"}
             </button>
+            <br />
+            <br />
+            {(
+                Object.keys(CubeOrientation) as (keyof typeof CubeOrientation)[]
+            ).map((k) => (
+                <span key={k}>
+                    <input
+                        id={`nsCaseTrainer-${k}`}
+                        type="radio"
+                        name="cubeOrientation"
+                        value={CubeOrientation[k]}
+                        checked={
+                            options.renderer.cubeOrientation ===
+                            CubeOrientation[k]
+                        }
+                        className="mr-1"
+                        onChange={() =>
+                            setOptions((values) => ({
+                                ...values,
+                                renderer: {
+                                    ...values.renderer,
+                                    cubeOrientation: CubeOrientation[k],
+                                },
+                            }))
+                        }
+                    />
+                    <label htmlFor={`nsCaseTrainer-${k}`}>
+                        {CubeOrientation[k]}
+                    </label>
+                    <br />
+                </span>
+            ))}
             <br />
         </form>
     );

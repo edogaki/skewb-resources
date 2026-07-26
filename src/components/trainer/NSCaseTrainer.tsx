@@ -79,99 +79,95 @@ function NSCaseTrainer({
     const [isShowAnswer, setIsShowAnswer] = useState(false);
 
     return (
-        <>
-            <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">
-                NS Case Trainer
-            </h2>
-            <div className="flex flex-wrap gap-x-20 gap-y-4 content-around">
-                <div className="flex-initial w-100">
-                    <div>
-                        {`${correctQuestions}/${totalQuestions} answered correctly`}
-                    </div>
-                    <div className="flex gap-1">
-                        <button
-                            type="button"
-                            className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
-                            onClick={async () => {
-                                setIsShowAnswer(true);
-                                Sound.wrong.play();
-                                if (
-                                    Object.values(isErrorButton).every(
-                                        (v) => v === false,
-                                    )
-                                ) {
-                                    setTotalQuestions((q) => q + 1);
-                                }
-                                setIsErrorButton((obj) => {
-                                    const x = Object.fromEntries(
-                                        (Object.keys(obj) as Array<NSCase>).map(
-                                            (nsc) =>
-                                                nsc === correctAnswer
-                                                    ? [nsc, false]
-                                                    : [nsc, true],
-                                        ),
-                                    ) as Record<NSCase, boolean>;
-                                    return x;
-                                });
-                                setAnsweredCorrectButton(null);
-                            }}
-                        >
-                            Show answer
-                        </button>
-                        <button
-                            type="button"
-                            className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
-                            onClick={async () => {
-                                newQuestion();
-                            }}
-                        >
-                            Skip to next question
-                        </button>
-                    </div>
-                    <SkewbRenderer
-                        state={nsCaseTrainerQuestionToSkewbRendererState(
-                            currentQuestion,
-                            options,
-                        )}
-                        options={options.renderer}
-                    />
-                    {isShowAnswer && (
-                        <div className="w-80">
-                            <NSCaseTrainerAnswerButtonTooltip
-                                name={correctAnswer}
-                                closeTooltip={() => {}}
-                            />
-                        </div>
+        <div className="flex flex-wrap gap-x-20 gap-y-4 content-around">
+            <div className="flex-initial w-100">
+                <div>
+                    {`${correctQuestions}/${totalQuestions} answered correctly`}
+                </div>
+                <div className="flex gap-1">
+                    <button
+                        type="button"
+                        className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
+                        onClick={async () => {
+                            setIsShowAnswer(true);
+                            Sound.wrong.play();
+                            if (
+                                Object.values(isErrorButton).every(
+                                    (v) => v === false,
+                                )
+                            ) {
+                                setTotalQuestions((q) => q + 1);
+                            }
+                            setIsErrorButton((obj) => {
+                                const x = Object.fromEntries(
+                                    (Object.keys(obj) as Array<NSCase>).map(
+                                        (nsc) =>
+                                            nsc === correctAnswer
+                                                ? [nsc, false]
+                                                : [nsc, true],
+                                    ),
+                                ) as Record<NSCase, boolean>;
+                                return x;
+                            });
+                            setAnsweredCorrectButton(null);
+                        }}
+                    >
+                        Show answer
+                    </button>
+                    <button
+                        type="button"
+                        className="rounded-full border border-(--line)  bg-(--surface) text-sm  px-4 py-2 font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 hover:border-(--line-heavy)"
+                        onClick={async () => {
+                            newQuestion();
+                        }}
+                    >
+                        Skip to next question
+                    </button>
+                </div>
+                <SkewbRenderer
+                    state={nsCaseTrainerQuestionToSkewbRendererState(
+                        currentQuestion,
+                        options,
                     )}
-                </div>
-                {options.isCaseEnabledMenuOn ? (
-                    <NSCaseTrainerCaseEnabledMenu
-                        options={options}
-                        setOptions={setOptions}
-                    />
-                ) : options.buttonsViewType === NSCaseButtonsViewType.Type1 ? (
-                    <NSCaseTrainerAnswerButtons
-                        options={options}
-                        selectAnswer={selectAnswer}
-                        isErrorButton={isErrorButton}
-                        answeredCorrectButton={answeredCorrectButton}
-                    />
-                ) : options.buttonsViewType === NSCaseButtonsViewType.Type2 ? (
-                    <NSCaseTrainerAnswerButtonsAlt
-                        options={options}
-                        selectAnswer={selectAnswer}
-                        isErrorButton={isErrorButton}
-                        answeredCorrectButton={answeredCorrectButton}
-                    />
-                ) : null}
-                <div className="flex-initial w-100">
-                    <NSCaseTrainerOptionsEditor
-                        options={options}
-                        setOptions={setOptions}
-                    />
-                </div>
+                    options={options.renderer}
+                />
+                {isShowAnswer && (
+                    <div className="w-80">
+                        <NSCaseTrainerAnswerButtonTooltip
+                            name={correctAnswer}
+                            closeTooltip={() => {}}
+                            altNames={options.altNames}
+                        />
+                    </div>
+                )}
             </div>
-        </>
+            {options.isCaseEnabledMenuOn ? (
+                <NSCaseTrainerCaseEnabledMenu
+                    options={options}
+                    setOptions={setOptions}
+                />
+            ) : options.buttonsViewType === NSCaseButtonsViewType.Type1 ? (
+                <NSCaseTrainerAnswerButtons
+                    options={options}
+                    selectAnswer={selectAnswer}
+                    isErrorButton={isErrorButton}
+                    answeredCorrectButton={answeredCorrectButton}
+                />
+            ) : options.buttonsViewType === NSCaseButtonsViewType.Type2 ? (
+                <NSCaseTrainerAnswerButtonsAlt
+                    options={options}
+                    selectAnswer={selectAnswer}
+                    isErrorButton={isErrorButton}
+                    answeredCorrectButton={answeredCorrectButton}
+                />
+            ) : null}
+            <div className="flex-initial w-100">
+                <NSCaseTrainerOptionsEditor
+                    options={options}
+                    setOptions={setOptions}
+                />
+            </div>
+        </div>
     );
 }
 
