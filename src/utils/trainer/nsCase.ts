@@ -1,6 +1,7 @@
+import type { KTransformationData } from "cubing/kpuzzle";
 import { Color, rotateColor } from "#/utils/renderer/color";
 import {
-    type CubeRotation,
+    CubeRotation,
     CubeYRotation,
     type CubeYRotationIndex,
 } from "#/utils/renderer/math";
@@ -8,6 +9,10 @@ import type {
     RendererOptions,
     SkewbRendererState,
 } from "#/utils/renderer/skewbRenderer";
+import type {
+    SkewbRenderer3DState,
+    StickeringMask,
+} from "../renderer/skewbRenderer3D";
 
 export type CornerOrie = 0 | 1 | 2;
 
@@ -542,3 +547,169 @@ export const nsCaseButtonsLayout = [
 ] as const;
 
 export type NSCaseSet = (typeof nsCaseButtonsLayout)[number][1][number][0];
+
+const colorToRenderer3DCenterIndex = {
+    [Color.Green]: 0,
+    [Color.Orange]: 1,
+    [Color.White]: 2,
+    [Color.Yellow]: 3,
+    [Color.Red]: 4,
+    [Color.Blue]: 5,
+    [Color.Gray]: -999,
+};
+
+function cubeRotationToAlg(rotation: CubeRotation) {
+    return (
+        [
+            "",
+            "x",
+            "x2",
+            "x'",
+
+            "y",
+            "x y",
+            "x2 y",
+            "x' y",
+
+            "y2",
+            "x y2",
+            "x2 y2",
+            "x' y2",
+
+            "y'",
+            "x y'",
+            "x2 y'",
+            "x' y'",
+
+            "z",
+            "x z",
+            "x2 z",
+            "x' z",
+
+            "z'",
+            "x z'",
+            "x2 z'",
+            "x' z'",
+        ][CubeRotation.indexOf(rotation)] || ""
+    );
+}
+
+export function nsCaseTrainerQuestionToSkewbRenderer3DState(
+    question: NSCaseTrainerQuestion,
+    options: NSCaseTrainerOptions,
+): SkewbRenderer3DState {
+    const {
+        caseCore,
+        randomYRotationIndex,
+        randomRotation,
+        randomCentersShown,
+        randomCornersShown,
+    } = question;
+
+    const yRotator = Object.fromEntries(
+        Object.values(Color).map((c) => [
+            c,
+            rotateColor(c, CubeYRotation[randomYRotationIndex]),
+        ]),
+    ) as Record<Color, Color>;
+
+    const yRotatedCenters = [
+        yRotator[caseCore.centers[(4 - randomYRotationIndex + 0) % 4]],
+        yRotator[caseCore.centers[(4 - randomYRotationIndex + 1) % 4]],
+        yRotator[caseCore.centers[(4 - randomYRotationIndex + 2) % 4]],
+        yRotator[caseCore.centers[(4 - randomYRotationIndex + 3) % 4]],
+        yRotator[caseCore.centers[4]],
+    ];
+
+    const cornerOries = [
+        caseCore.corners[0],
+        caseCore.corners[1],
+        3 - caseCore.corners[0],
+        3 - caseCore.corners[1],
+    ];
+
+    const yRotatedCorners = [
+        cornerOries[(4 - randomYRotationIndex + 0) % 4],
+        cornerOries[(4 - randomYRotationIndex + 1) % 4],
+        cornerOries[(4 - randomYRotationIndex + 2) % 4],
+        cornerOries[(4 - randomYRotationIndex + 3) % 4],
+    ];
+
+    console.log({ yRotatedCorners });
+
+    const transformationData: KTransformationData = {
+        CORNERS: {
+            permutation: [0, 1, 2, 3, 4, 5, 6, 7],
+            orientationDelta: [
+                yRotatedCorners[0],
+                yRotatedCorners[2],
+                0,
+                yRotatedCorners[1],
+                0,
+                0,
+                yRotatedCorners[3],
+                0,
+            ],
+        },
+        CENTERS: {
+            permutation: [
+                colorToRenderer3DCenterIndex[yRotatedCenters[1]],
+                colorToRenderer3DCenterIndex[yRotatedCenters[2]],
+                2,
+                colorToRenderer3DCenterIndex[yRotatedCenters[4]],
+                colorToRenderer3DCenterIndex[yRotatedCenters[0]],
+                colorToRenderer3DCenterIndex[yRotatedCenters[3]],
+            ],
+            orientationDelta: [0, 0, 0, 0, 0, 0],
+        },
+    };
+
+    const mask: StickeringMask = {
+        name: "My Skewb",
+
+        orbits: {
+            CORNERS: {
+                pieces: [
+                    { facelets: ["regular", "regular", "regular"] }, // U F L
+                    { facelets: ["regular", "regular", "regular"] }, // U B R
+                    { facelets: ["regular", "regular", "regular"] }, // D F R
+                    { facelets: ["regular", "regular", "regular"] }, // U R F
+                    { facelets: ["regular", "regular", "regular"] }, // D L F
+                    { facelets: ["regular", "regular", "regular"] }, // D R B
+                    { facelets: ["regular", "regular", "regular"] }, // U L B
+                    { facelets: ["regular", "regular", "regular"] }, // D B L
+                ],
+            },
+
+            CENTERS: {
+                pieces: [
+                    {
+                        facelets: ["regular", "regular", "regular", "regular"], // F
+                    },
+                    {
+                        facelets: ["ignored", "ignored", "ignored", "ignored"], // R
+                    },
+                    {
+                        facelets: ["regular", "regular", "regular", "regular"], // D
+                    },
+                    {
+                        facelets: ["regular", "regular", "regular", "regular"], // U
+                    },
+                    {
+                        facelets: ["regular", "regular", "regular", "regular"], // L
+                    },
+                    {
+                        facelets: ["regular", "regular", "regular", "regular"], // B
+                    },
+                ],
+            },
+        },
+    };
+
+    return {
+        transformationData,
+        yRotation: question.randomYRotationIndex,
+        rotationAlg: cubeRotationToAlg(question.randomRotation),
+        mask,
+    };
+}

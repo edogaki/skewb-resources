@@ -4,11 +4,13 @@ import {
     NSCaseButtonsViewType,
     type NSCaseTrainerOptions,
     nsCases,
+    nsCaseTrainerQuestionToSkewbRenderer3DState,
     nsCaseTrainerQuestionToSkewbRendererState,
 } from "#/utils/trainer/nsCase";
 import { Sound } from "#/utils/trainer/sounds";
 import { useNSCaseQuestionGenerator } from "#/utils/trainer/useNSCaseQuestionGenerator";
 import SkewbRenderer from "../SkewbRenderer";
+import SkewbRenderer3D from "../SkewbRenderer3D";
 import NSCaseTrainerAnswerButtons from "./NSCaseTrainerAnswerButtons";
 import NSCaseTrainerAnswerButtonsAlt from "./NSCaseTrainerAnswerButtonsAlt";
 import NSCaseTrainerAnswerButtonTooltip from "./NSCaseTrainerAnswerButtonTooltip";
@@ -130,6 +132,12 @@ function NSCaseTrainer({
                         options,
                     )}
                     options={options.renderer}
+                />
+                <SkewbRenderer3D
+                    state={nsCaseTrainerQuestionToSkewbRenderer3DState(
+                        currentQuestion,
+                        options,
+                    )}
                 />
                 {isShowAnswer && (
                     <div className="w-80">
