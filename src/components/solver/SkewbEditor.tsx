@@ -1,3 +1,4 @@
+import { randomScrambleForEvent } from "cubing/scramble";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import { Color } from "#/utils/renderer/color";
 import type { SkewbRendererState } from "#/utils/renderer/skewbRenderer";
@@ -25,6 +26,7 @@ export default function SkewbEditor({
     const [rubikskewbAlgErrorMessage, setRubikskewbAlgErrorMessage] =
         useState("");
     const [painterErrorMessage, setPainterErrorMessage] = useState("");
+    const [randomScrambleText, setRandomScrambleText] = useState("");
 
     return (
         <div className="flex flex-wrap gap-x-10 gap-y-4">
@@ -167,6 +169,24 @@ export default function SkewbEditor({
                             Apply Rubikskewb Alg
                         </button>
                     </div>
+                    {randomScrambleText && (
+                        <p>Random Scramble: {randomScrambleText}</p>
+                    )}
+                    <button
+                        type="button"
+                        className="mb-4 rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5"
+                        onClick={async () => {
+                            const scr = (
+                                await randomScrambleForEvent("skewb")
+                            ).toString();
+                            setRandomScrambleText(scr);
+                            const newState = new SkewbState();
+                            newState.applyWCAAlg(new WCAAlg(scr));
+                            setState(newState);
+                        }}
+                    >
+                        Generate Random Scramble and Apply
+                    </button>
                 </Accordion>
             </div>
             <div className="flex-initial basis-120">
