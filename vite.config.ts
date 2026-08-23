@@ -30,9 +30,6 @@ const config = defineConfig({
         }),
         viteReact(),
     ],
-    optimizeDeps: {
-        exclude: ["cubing"],
-    },
 });
 
 export default config;
