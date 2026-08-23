@@ -1,0 +1,121 @@
+import { shuffleArray } from "../renderer/math";
+import { WCAAlg } from "../solver/alg";
+import type { Tuple } from "../solver/helperTypes";
+import { type Orientation, type Piece, SkewbState } from "../solver/skewbState";
+
+export function generateRandomSkewbState() {
+    const orie = [
+        Math.floor(Math.random() * 3),
+        Math.floor(Math.random() * 3),
+        Math.floor(Math.random() * 3),
+        Math.floor(Math.random() * 3),
+        Math.floor(Math.random() * 3),
+        Math.floor(Math.random() * 3),
+        NaN, // placeholder since this corners orientation depends on the orientation of 3 other corners
+        Math.floor(Math.random() * 3),
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ];
+    orie[6] = (9 - (orie[1] + orie[3] + orie[4])) % 3;
+    const staticCornerOrieParity = (orie[0] + orie[2] + orie[5] + orie[7]) % 3;
+
+    const movingCornerPermPossibleBaseStates = [
+        [1, 3, 4, 6],
+        [3, 1, 6, 4],
+        [4, 6, 1, 3],
+        [6, 4, 3, 1],
+    ];
+    const movingCornersPerm =
+        movingCornerPermPossibleBaseStates[
+            Math.floor(
+                Math.random() * movingCornerPermPossibleBaseStates.length,
+            )
+        ];
+    [movingCornersPerm[0], movingCornersPerm[1], movingCornersPerm[2]] = [
+        movingCornersPerm[(staticCornerOrieParity + 0) % 3],
+        movingCornersPerm[(staticCornerOrieParity + 1) % 3],
+        movingCornersPerm[(staticCornerOrieParity + 2) % 3],
+    ];
+
+    const cornersPerm = [
+        0,
+        movingCornersPerm[0],
+        2,
+        movingCornersPerm[1],
+        movingCornersPerm[2],
+        5,
+        movingCornersPerm[3],
+        7,
+    ];
+    const centersPerm = [8, 9, 10, 11, 12, 13];
+    shuffleArray(centersPerm, true);
+    const perm = [...cornersPerm, ...centersPerm];
+    const skewbState = new SkewbState(
+        perm as Tuple<Piece, 14>,
+        orie as Tuple<Orientation, 14>,
+    );
+    if (orie[0] === 1) {
+        skewbState.turnWCA("z").turnWCA("x");
+    } else if (orie[0] === 2) {
+        skewbState.turnWCA("x'").turnWCA("z'");
+    }
+    return skewbState;
+}
+
+// Already assumes cube is in a valid state
+export function solveValidSkewb(skewbState: SkewbState) {
+    const state = skewbState.clone();
+    const alg = standardizeState(state);
+    return alg;
+}
+
+// Move state to standard position (perm = [0, ....], orie = [0, ...])
+export function standardizeState(state: SkewbState) {
+    const alg1 = new WCAAlg("");
+    const wrgLocation = state.perm.indexOf(0);
+    switch (wrgLocation) {
+        // nothing to do for case 0
+        case 1:
+            alg1.addTurn("y'");
+            break;
+        case 2:
+            alg1.addTurn("y2");
+            break;
+        case 3:
+            alg1.addTurn("y");
+            break;
+        case 4:
+            alg1.addTurn("x");
+            break;
+        case 5:
+            alg1.addTurn("y'").addTurn("x");
+            break;
+        case 6:
+            alg1.addTurn("y2").addTurn("x");
+            break;
+        case 7:
+            alg1.addTurn("y").addTurn("x");
+            break;
+    }
+    state.applyWCAAlg(alg1);
+    const alg2 = new WCAAlg("");
+    switch (state.orie[0]) {
+        // nothing to do for case 0
+        case 1:
+            alg2.addTurn("z").addTurn("x");
+            break;
+        case 2:
+            alg2.addTurn("x'").addTurn("z'");
+            break;
+    }
+    state.applyWCAAlg(alg2);
+    return alg1.concat(alg2);
+}
+
+export function generateScramble() {
+    return new WCAAlg("U R L B'");
+}

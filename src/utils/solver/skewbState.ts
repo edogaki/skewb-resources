@@ -738,4 +738,4 @@ export class SkewbState {
     }
 }
 
-export { Piece, CornerPiece, CenterPiece };
+export { Piece, CornerPiece, CenterPiece, type Orientation };
