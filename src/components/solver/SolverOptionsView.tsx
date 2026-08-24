@@ -31,6 +31,24 @@ export default function SolverOptionsView({
                     Start solving immediately after setting state
                 </label>
             </div>
+            <div className={`mb-2`}>
+                <input
+                    autoComplete="off"
+                    type="checkbox"
+                    id="hideSolutionsInitially"
+                    checked={options.hideSolutionsInitially}
+                    onChange={(e) =>
+                        setOptions((o) => ({
+                            ...o,
+                            hideSolutionsInitially: e.target.checked,
+                        }))
+                    }
+                    className="mr-1"
+                />
+                <label htmlFor="hideSolutionsInitially">
+                    Hide solutions initially (Trainer Mode)
+                </label>
+            </div>
         </div>
     );
 }

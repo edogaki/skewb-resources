@@ -5,7 +5,10 @@ import {
     type SkewbState,
 } from "./skewbState";
 
-export type LayerSolutions = Record<CenterPiece, RubikskewbAlg[]>;
+export type LayerSolutions = Record<
+    CenterPiece,
+    Record<number, RubikskewbAlg[]>
+>;
 
 class SearchNode<A extends WCAAlg | RubikskewbAlg> {
     centerPiece: CenterPiece;
@@ -238,4 +241,5 @@ export function solveLayers(
 
 export interface SolverOptions {
     startSolvingImmediately: boolean;
+    hideSolutionsInitially: boolean;
 }

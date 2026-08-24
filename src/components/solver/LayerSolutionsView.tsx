@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { Fragment, useCallback, useMemo, useState } from "react";
 import { Color, tailwindColors } from "#/utils/renderer/color";
-import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
-import { type LayerSolutions, searchTurns } from "#/utils/solver/skewbSolver";
+import type { LayerSolutions, SolverOptions } from "#/utils/solver/skewbSolver";
 import type { CenterPiece, Piece, SkewbState } from "#/utils/solver/skewbState";
 import AlgorithmView from "./AlgorithmView";
 
@@ -9,57 +8,69 @@ const colorsReverseMap = Object.fromEntries(
     Object.entries(Color).map(([k, v]) => [v, k]),
 );
 
-function algLength(alg: RubikskewbAlg) {
-    return alg.turns.filter((t) =>
-        (searchTurns as readonly RubikskewbTurn[]).includes(t),
-    ).length;
-}
-
 export default function LayerSolutionsView({
     layerSolutions,
     pieceColors,
     skewbState,
+    options,
 }: {
     layerSolutions: LayerSolutions;
     pieceColors: Record<Piece, Color[]>;
     skewbState: SkewbState;
+    options: SolverOptions;
 }) {
+    const [optsCopy] = useState(options);
     const centersToShow = skewbState.uniqueColorCenters();
-    const shortestSolution = Object.fromEntries(
-        centersToShow.map((c) => [
-            c,
-            layerSolutions[c][0] ? algLength(layerSolutions[c][0]) : Infinity,
-        ]),
+    const [numGroupsToShow, setNumGroupsToShow] = useState(
+        Object.fromEntries(
+            centersToShow.map((c) => [
+                c,
+                optsCopy.hideSolutionsInitially ? 0 : 1,
+            ]),
+        ) as Record<CenterPiece, number>,
+    );
+
+    const [isShowShortestLength, setIsShowShortestLength] = useState(
+        Object.fromEntries(centersToShow.map((c) => [c, false])) as Record<
+            CenterPiece,
+            boolean
+        >,
+    );
+
+    const numGroupsTotal = Object.fromEntries(
+        centersToShow.map((c) => [c, Object.keys(layerSolutions[c]).length]),
     ) as Record<CenterPiece, number>;
 
-    const [longestSolutionShown, setLongestSolutionShown] =
-        useState(shortestSolution);
-    const isMoreSolutionsAvailable = Object.fromEntries(
+    const groupsToShow = Object.fromEntries(
         centersToShow.map((c) => [
             c,
-            layerSolutions[c].length > 0 &&
-                algLength(layerSolutions[c][layerSolutions[c].length - 1]) >
-                    shortestSolution[c],
+            Object.keys(layerSolutions[c])
+                .map(Number)
+                .slice(0, numGroupsToShow[c]) as number[],
         ]),
-    ) as Record<CenterPiece, boolean>;
-
-    useEffect(() => {
-        for (const c of centersToShow) {
-            if (
-                shortestSolution[c] !== Infinity &&
-                longestSolutionShown[c] === Infinity
-            ) {
-                setLongestSolutionShown((lss) => ({
-                    ...lss,
-                    [c]: shortestSolution[c],
-                }));
-            }
-        }
-    }, [shortestSolution, longestSolutionShown, centersToShow]);
+    ) as Record<CenterPiece, number[]>;
 
     return (
         <div>
             <div className="flex flex-col gap-2">
+                {optsCopy.hideSolutionsInitially &&
+                Object.values(isShowShortestLength).some((x) => x === false) ? (
+                    <div>
+                        <button
+                            type="button"
+                            className="p-1 rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-2.5"
+                            onClick={() =>
+                                setIsShowShortestLength(
+                                    Object.fromEntries(
+                                        centersToShow.map((c) => [c, true]),
+                                    ) as Record<CenterPiece, boolean>,
+                                )
+                            }
+                        >
+                            Show all hints
+                        </button>
+                    </div>
+                ) : null}
                 {centersToShow.map((c) => {
                     const color: Color = pieceColors[c][0];
                     const colorName = colorsReverseMap[color];
@@ -71,39 +82,90 @@ export default function LayerSolutionsView({
                                 &nbsp;
                             </span>
                             &nbsp;
-                            <span>{colorName}</span>:{" "}
-                            {layerSolutions[c].map((solution, i) => {
-                                return (
-                                    algLength(solution) <=
-                                        longestSolutionShown[c] && (
-                                        <span key={solution.toString()}>
-                                            <AlgorithmView alg={solution} />
-                                            {i !==
-                                                layerSolutions[c].length - 1 &&
-                                                ", "}
-                                        </span>
-                                    )
-                                );
-                            })}
-                            {isMoreSolutionsAvailable[c] && (
+                            <span className="inline-block py-1.5">
+                                {colorName}
+                            </span>
+                            :&nbsp;
+                            {!optsCopy.hideSolutionsInitially ? null : isShowShortestLength[
+                                  c
+                              ] ? (
+                                <span>
+                                    {Object.keys(layerSolutions[c])[0]} move
+                                    {Object.keys(layerSolutions[c])[0] !==
+                                        "1" && "s"}
+                                    {", "}
+                                    {
+                                        layerSolutions[c][
+                                            Number(
+                                                Object.keys(
+                                                    layerSolutions[c],
+                                                )[0],
+                                            )
+                                        ].length
+                                    }
+                                    {" optimal solution"}
+                                    {layerSolutions[c][
+                                        Number(
+                                            Object.keys(layerSolutions[c])[0],
+                                        )
+                                    ].length !== 1 && "s"}
+                                </span>
+                            ) : Object.keys(layerSolutions[c]).length > 0 ? (
                                 <button
                                     type="button"
                                     className="p-1 rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-2.5"
                                     onClick={() =>
-                                        setLongestSolutionShown((lss) => ({
-                                            ...lss,
-                                            [c]:
-                                                longestSolutionShown[c] ===
-                                                shortestSolution[c]
-                                                    ? lss[c] + 2
-                                                    : shortestSolution[c],
+                                        setIsShowShortestLength((issl) => ({
+                                            ...issl,
+                                            [c]: !issl[c],
                                         }))
                                     }
                                 >
-                                    {longestSolutionShown[c] ===
-                                    shortestSolution[c]
-                                        ? `Show longer solutions`
-                                        : "Hide longer solutions"}{" "}
+                                    Show hint
+                                </button>
+                            ) : null}
+                            <div>
+                                {groupsToShow[c].map((g) => (
+                                    <div key={g}>
+                                        <span>{g}-movers: </span>
+                                        {layerSolutions[c][g].map(
+                                            (solution, i) => (
+                                                <Fragment
+                                                    key={solution.toString()}
+                                                >
+                                                    <AlgorithmView
+                                                        alg={solution}
+                                                    />
+                                                    {i <
+                                                        layerSolutions[c][g]
+                                                            .length -
+                                                            1 && ", "}
+                                                </Fragment>
+                                            ),
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                            {numGroupsTotal[c] > 0 && (
+                                <button
+                                    type="button"
+                                    className="p-1 rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-2.5"
+                                    onClick={() =>
+                                        setNumGroupsToShow((ngs) => ({
+                                            ...ngs,
+                                            [c]:
+                                                numGroupsToShow[c] >=
+                                                numGroupsTotal[c]
+                                                    ? 0
+                                                    : numGroupsToShow[c] + 1,
+                                        }))
+                                    }
+                                >
+                                    {numGroupsToShow[c] === numGroupsTotal[c]
+                                        ? "Hide solutions"
+                                        : numGroupsToShow[c] === 0
+                                          ? "Show solutions"
+                                          : "Show longer solutions"}
                                 </button>
                             )}
                         </div>

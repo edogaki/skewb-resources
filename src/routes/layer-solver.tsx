@@ -5,13 +5,20 @@ import SkewbRenderer from "#/components/SkewbRenderer";
 import LayerSolutionsView from "#/components/solver/LayerSolutionsView";
 import SkewbEditor from "#/components/solver/SkewbEditor";
 import SolverOptionsView from "#/components/solver/SolverOptionsView";
-import type { RubikskewbAlg } from "#/utils/solver/alg";
+import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
 import {
     type LayerSolutions,
     type SolverOptions,
+    searchTurns,
     solveLayers,
 } from "#/utils/solver/skewbSolver";
 import { CenterPiece, SkewbState } from "#/utils/solver/skewbState";
+
+function algLength(alg: RubikskewbAlg) {
+    return alg.turns.filter((t) =>
+        (searchTurns as readonly RubikskewbTurn[]).includes(t),
+    ).length;
+}
 
 export const Route = createFileRoute("/layer-solver")({
     component: RouteComponent,
@@ -28,6 +35,7 @@ function RouteComponent() {
     );
     const [options, setOptions] = useState<SolverOptions>({
         startSolvingImmediately: false,
+        hideSolutionsInitially: false,
     });
     const [solverErrorMessage, setSolverErrorMessage] = useState("");
 
@@ -65,16 +73,27 @@ function RouteComponent() {
                         : ls
                           ? {
                                 ...ls,
-                                [c]: [...ls[c], solution],
+                                [c]: {
+                                    ...ls[c],
+                                    [algLength(solution)]: [
+                                        ...(ls[c][algLength(solution)] || []),
+                                        solution,
+                                    ],
+                                },
                             }
                           : (Object.fromEntries(
                                 CenterPiece.map((_c) => [
                                     _c,
                                     _c === c
-                                        ? [solution]
-                                        : ([] as RubikskewbAlg[]),
+                                        ? {
+                                              [algLength(solution)]: [solution],
+                                          }
+                                        : {},
                                 ]),
-                            ) as Record<CenterPiece, RubikskewbAlg[]>),
+                            ) as Record<
+                                CenterPiece,
+                                Record<number, RubikskewbAlg[]>
+                            >),
                 );
             },
             () => {
@@ -126,6 +145,7 @@ function RouteComponent() {
                                     layerSolutions={layerSolutions}
                                     pieceColors={skewbState.pieceColors}
                                     skewbState={skewbState}
+                                    options={options}
                                 />
                             )}
                         </div>
