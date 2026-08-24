@@ -1,7 +1,8 @@
 import { shuffleArray } from "../renderer/math";
-import { WCAAlg } from "../solver/alg";
+import { WCAAlg, WCATurn } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import { type Orientation, type Piece, SkewbState } from "../solver/skewbState";
+import preloadShortSolutionStates from "./preloadShortSolutionStates";
 
 export function generateRandomSkewbState() {
     const orie = [
@@ -66,13 +67,6 @@ export function generateRandomSkewbState() {
     return skewbState;
 }
 
-// Already assumes cube is in a valid state
-export function solveValidSkewb(skewbState: SkewbState) {
-    const state = skewbState.clone();
-    const alg = standardizeState(state);
-    return alg;
-}
-
 // Move state to standard position (perm = [0, ....], orie = [0, ...])
 export function standardizeState(state: SkewbState) {
     const alg1 = new WCAAlg("");
@@ -116,6 +110,114 @@ export function standardizeState(state: SkewbState) {
     return alg1.concat(alg2);
 }
 
-export function generateScramble() {
-    return new WCAAlg("U R L B'");
+interface SearchNode {
+    alg: WCAAlg;
+    skewbState: SkewbState;
+    hash: string;
+    depth: number;
+}
+
+const searchTurns = [
+    WCATurn.R,
+    WCATurn.Rprime,
+    WCATurn.U,
+    WCATurn.Uprime,
+    WCATurn.L,
+    WCATurn.Lprime,
+    WCATurn.B,
+    WCATurn.Bprime,
+];
+
+let shortSolutionStates: Map<string, string>;
+
+// Already assumes cube is in a valid state
+export async function solveValidSkewb(skewbState: SkewbState) {
+    const state = skewbState.clone();
+    const alg = standardizeState(state);
+
+    // Start searching
+    if (!shortSolutionStates)
+        shortSolutionStates = await preloadShortSolutionStates();
+
+    const stateHashes = new Map<string, string>();
+
+    function saveStateHash(searchNode: SearchNode) {
+        stateHashes.set(searchNode.hash, searchNode.alg.toString());
+    }
+
+    function isAlreadySearched(searchNode: SearchNode) {
+        return stateHashes.has(searchNode.hash);
+    }
+
+    let isAbort = false;
+
+    function addToQueue(
+        searchNode: SearchNode,
+        submitSolution: (solution: WCAAlg) => void,
+    ) {
+        setTimeout(() => {
+            if (isAbort) {
+                return;
+            }
+
+            const shortSolution = shortSolutionStates.get(searchNode.hash);
+            if (shortSolution) {
+                submitSolution(
+                    new WCAAlg(`${searchNode.alg} ${shortSolution}`),
+                );
+                isAbort = true;
+            }
+            if (isAlreadySearched(searchNode)) {
+                return;
+            }
+
+            saveStateHash(searchNode);
+            shuffleArray(searchTurns);
+
+            for (const searchTurn of searchTurns) {
+                if (
+                    searchNode.alg.turns.length > 0 &&
+                    // check if previous turn is the same as or inverse of search turn
+                    searchTurn[0] ===
+                        searchNode.alg.turns[searchNode.alg.turns.length - 1][0]
+                ) {
+                    continue;
+                }
+                const newState = searchNode.skewbState
+                    .clone()
+                    .turnWCA(searchTurn);
+                addToQueue(
+                    {
+                        alg: searchNode.alg.clone().addTurn(searchTurn),
+                        skewbState: newState,
+                        hash: newState.generateHash(),
+                        depth: searchNode.depth + 1,
+                    },
+                    submitSolution,
+                );
+            }
+        }, 0);
+    }
+
+    return await new Promise<WCAAlg>((resolve, _reject) => {
+        addToQueue(
+            {
+                alg,
+                skewbState: state,
+                hash: state.generateHash(),
+                depth: 0,
+            },
+            resolve,
+        );
+    });
+}
+
+export async function generateScramble() {
+    let randomState: SkewbState;
+    let soln: WCAAlg;
+    do {
+        randomState = generateRandomSkewbState();
+        soln = await solveValidSkewb(randomState);
+    } while (soln.turns.length < 7);
+    return soln.invert().toString();
 }

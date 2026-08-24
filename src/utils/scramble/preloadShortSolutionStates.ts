@@ -11,7 +11,7 @@ interface SearchNode {
 
 const maxDepth = 6;
 
-const stateHashes = {} as Record<string, string>;
+const stateHashes = new Map<string, string>();
 
 const searchTurns = [
     WCATurn.R,
@@ -25,15 +25,18 @@ const searchTurns = [
 ];
 
 function saveStateHash(searchNode: SearchNode) {
-    stateHashes[searchNode.hash] = searchNode.alg.toString();
+    stateHashes.set(
+        searchNode.hash,
+        searchNode.alg.clone().invert().toString(),
+    );
 }
 
 function isAlreadySearched(searchNode: SearchNode) {
-    return stateHashes[searchNode.hash] !== undefined;
+    return stateHashes.has(searchNode.hash);
 }
 
-let searchedCount = 0;
-let depthSoFar = 0;
+// let searchedCount = 0;
+// let depthSoFar = 0;
 
 const runningNodeHashes = new Map<string, boolean>();
 
@@ -47,12 +50,14 @@ function addToQueue(searchNode: SearchNode) {
 
             saveStateHash(searchNode);
 
+            /*
             if (depthSoFar < searchNode.depth) {
-                // console.log(`depth ${depthSoFar}: ${searchedCount} states`);
+                console.log(`depth ${depthSoFar}: ${searchedCount} states`);
                 depthSoFar = searchNode.depth;
                 searchedCount = 0;
             }
             searchedCount++;
+            */
 
             if (searchNode.depth >= maxDepth) {
                 return;
@@ -85,7 +90,7 @@ function addToQueue(searchNode: SearchNode) {
 }
 
 export default async function preloadShortSolutionStates(): Promise<
-    Record<string, string>
+    Map<string, string>
 > {
     const timeStarted = Date.now();
     return new Promise((resolve, _reject) => {
