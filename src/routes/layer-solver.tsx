@@ -5,10 +5,6 @@ import SkewbRenderer from "#/components/SkewbRenderer";
 import LayerSolutionsView from "#/components/solver/LayerSolutionsView";
 import SkewbEditor from "#/components/solver/SkewbEditor";
 import SolverOptionsView from "#/components/solver/SolverOptionsView";
-import {
-    generateRandomSkewbState,
-    solveValidSkewb,
-} from "#/utils/scramble/scrambleGenerator";
 import type { RubikskewbAlg } from "#/utils/solver/alg";
 import {
     type LayerSolutions,
@@ -22,9 +18,6 @@ export const Route = createFileRoute("/layer-solver")({
 });
 
 function RouteComponent() {
-    const [testState, setTestState] = useState(new SkewbState());
-    const [testStateSoln, setTestStateSoln] = useState("");
-
     const [skewbState, setSkewbState] = useState(new SkewbState());
     const [lastStartedSolveTime, setLastStartedSolveTime] = useState<
         number | null
@@ -141,25 +134,6 @@ function RouteComponent() {
             </section>
             <section className="island-shell rounded-2xl p-6 sm:p-8">
                 <SolverOptionsView options={options} setOptions={setOptions} />
-                <button
-                    type="button"
-                    onClick={async () => {
-                        const state = generateRandomSkewbState();
-                        setTestStateSoln(
-                            (await solveValidSkewb(state)).toString(),
-                        );
-                        setTestState(state);
-                    }}
-                >
-                    regen
-                </button>
-                <div>solution: {testStateSoln}</div>
-                <div className="w-100">
-                    <SkewbRenderer
-                        state={testState.toSkewbRendererState()}
-                        options={null}
-                    />
-                </div>
             </section>
         </main>
     );
