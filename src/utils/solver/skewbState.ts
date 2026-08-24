@@ -736,6 +736,11 @@ export class SkewbState {
                 ).length === 1,
         );
     }
+
+    // this only works as a hash due to the unique nature of perm and orie
+    generateHash() {
+        return `${this.perm.join("")}${this.orie.join("").substring(0, 8)}`;
+    }
 }
 
-export { Piece, CornerPiece, CenterPiece };
+export { Piece, CornerPiece, CenterPiece, type Orientation };

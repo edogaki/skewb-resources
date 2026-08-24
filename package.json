@@ -17,6 +17,7 @@
     "lint": "biome lint",
     "check": "biome check",
     "generate-test-data": "npx tsx ./src/scripts/generateTestData.ts",
+    "generate-short-solution-states": "npx tsx ./src/scripts/generateShortSolutionStates.ts",
     "check-typescript": "tsc --noEmit"
   },
   "dependencies": {
