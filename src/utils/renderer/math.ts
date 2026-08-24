@@ -99,4 +99,23 @@ function shuffleArray(array: unknown[], keepParity: boolean = false) {
     }
 }
 
-export { mod, rotationMatrix, CubeRotation, shuffleArray };
+// Weighted random variable from 0 to weights.length - 1
+// First ensure that sum(weights) === 1 or very close to it
+// https://stackoverflow.com/a/57130749
+function weightedRandom(weights: number[]) {
+    const cumulative = weights.map(
+        (
+            (sum) => (value) =>
+                (sum += value)
+        )(0),
+    );
+    // Account for possible floating point error where sum(probArray) is slightly less than 1
+    cumulative[cumulative.length - 1] = Math.max(
+        cumulative[cumulative.length - 1],
+        1,
+    );
+    const rand = Math.random();
+    return cumulative.findIndex((el) => rand <= el);
+}
+
+export { mod, rotationMatrix, CubeRotation, shuffleArray, weightedRandom };
