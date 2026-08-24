@@ -59,6 +59,10 @@ function NSCenterTrainerAnswerButtons({
 
     const [watPressCounter, setWatPressCounter] = useState(0);
 
+    if (!keyBinds) {
+        return null;
+    }
+
     return (
         <div className="flex flex-col gap-1">
             {(Object.keys(CenterPerm) as Array<keyof typeof CenterPerm>).map(
