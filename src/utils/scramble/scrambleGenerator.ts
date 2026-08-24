@@ -136,19 +136,17 @@ const scrambleSuboptimalDepthWeightedVariables = {
     11: [1],
 };
 
-let shortSolutionStates: Map<string, string>;
+const shortSolutionStates: Promise<Map<string, string>> =
+    preloadShortSolutionStates();
 
 // Already assumes cube is in a valid state
 export async function solveValidSkewb(
     skewbState: SkewbState,
     scrambleMode?: boolean,
 ) {
+    const shortSolutionStatesAwaited = await shortSolutionStates;
     const state = skewbState.clone();
     const alg = standardizeState(state);
-
-    // Start searching
-    if (!shortSolutionStates)
-        shortSolutionStates = await preloadShortSolutionStates();
 
     const stateHashes = new Map<string, string>();
 
@@ -174,7 +172,9 @@ export async function solveValidSkewb(
                 return;
             }
 
-            const shortSolution = shortSolutionStates.get(searchNode.hash);
+            const shortSolution = shortSolutionStatesAwaited.get(
+                searchNode.hash,
+            );
             if (shortSolution) {
                 const fullSolutionAlg = new WCAAlg(
                     `${searchNode.alg} ${shortSolution}`,
