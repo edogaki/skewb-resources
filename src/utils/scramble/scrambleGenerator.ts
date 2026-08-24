@@ -253,12 +253,12 @@ export async function solveValidSkewb(
     });
 }
 
-export async function generateScramble() {
+export async function generateScramble(isOptimalSoln?: boolean) {
     let randomState: SkewbState;
     let soln: WCAAlg;
     do {
         randomState = generateRandomSkewbState();
-        soln = await solveValidSkewb(randomState, true);
+        soln = await solveValidSkewb(randomState, !isOptimalSoln);
     } while (soln.turns.length < 8);
     return soln.invert().toString();
 }

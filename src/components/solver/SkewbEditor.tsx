@@ -183,7 +183,9 @@ export default function SkewbEditor({
                             setRandomScrambleText(
                                 (text) => text || "Generating...",
                             );
-                            const scr = (await generateScramble()).toString();
+                            const scr = (
+                                await generateScramble(true)
+                            ).toString();
                             setIsScrambleButtonDisabled(false);
                             setRandomScrambleText(scr);
                             const newState = new SkewbState();
