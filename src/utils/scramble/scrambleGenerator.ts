@@ -1,4 +1,4 @@
-import { shuffleArray } from "../renderer/math";
+import { shuffleArray, weightedRandom } from "../renderer/math";
 import { WCAAlg, WCATurn } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import { type Orientation, type Piece, SkewbState } from "../solver/skewbState";
@@ -128,10 +128,21 @@ const searchTurns = [
     WCATurn.Bprime,
 ];
 
+const scrambleSuboptimalDepthWeightedVariables = {
+    7: [0, 0, 0.425, 0.425, 0.05],
+    8: [0, 0.425, 0.425, 0.05],
+    9: [0.425, 0.425, 0.05],
+    10: [0.5, 0.5],
+    11: [1],
+};
+
 let shortSolutionStates: Map<string, string>;
 
 // Already assumes cube is in a valid state
-export async function solveValidSkewb(skewbState: SkewbState) {
+export async function solveValidSkewb(
+    skewbState: SkewbState,
+    scrambleMode?: boolean,
+) {
     const state = skewbState.clone();
     const alg = standardizeState(state);
 
@@ -151,6 +162,9 @@ export async function solveValidSkewb(skewbState: SkewbState) {
 
     let isAbort = false;
 
+    let optimalDepth = Infinity;
+    let movesAboveOptimal = 0;
+
     function addToQueue(
         searchNode: SearchNode,
         submitSolution: (solution: WCAAlg) => void,
@@ -162,11 +176,38 @@ export async function solveValidSkewb(skewbState: SkewbState) {
 
             const shortSolution = shortSolutionStates.get(searchNode.hash);
             if (shortSolution) {
-                submitSolution(
-                    new WCAAlg(`${searchNode.alg} ${shortSolution}`),
+                const fullSolutionAlg = new WCAAlg(
+                    `${searchNode.alg} ${shortSolution}`,
                 );
-                isAbort = true;
+                const fullDepth = fullSolutionAlg.turns.length;
+                if (scrambleMode && fullDepth >= 7) {
+                    if (optimalDepth === Infinity) {
+                        optimalDepth = fullDepth;
+                        movesAboveOptimal = weightedRandom(
+                            scrambleSuboptimalDepthWeightedVariables[
+                                fullDepth as 7 | 8 | 9 | 10 | 11
+                            ],
+                        );
+                        console.info(
+                            "optimal solution:",
+                            fullSolutionAlg.toString(),
+                            fullDepth,
+                            "moves. Moves above optimal:",
+                            movesAboveOptimal,
+                        );
+                    }
+                    if (fullDepth >= optimalDepth + movesAboveOptimal) {
+                        submitSolution(fullSolutionAlg);
+                        isAbort = true;
+                    }
+                } else {
+                    // if scrambleMode is true and skewbState solution is too short, submit optimal solution anyway and let the caller reject it and try again
+                    submitSolution(fullSolutionAlg);
+                    isAbort = true;
+                    return;
+                }
             }
+
             if (isAlreadySearched(searchNode)) {
                 return;
             }
@@ -217,7 +258,7 @@ export async function generateScramble() {
     let soln: WCAAlg;
     do {
         randomState = generateRandomSkewbState();
-        soln = await solveValidSkewb(randomState);
-    } while (soln.turns.length < 7);
+        soln = await solveValidSkewb(randomState, true);
+    } while (soln.turns.length < 8);
     return soln.invert().toString();
 }
