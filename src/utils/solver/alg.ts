@@ -195,6 +195,10 @@ export abstract class Alg<T extends WCATurn | RubikskewbTurn> {
     invert() {
         return this.setTurns(this.turns.reverse().map((t) => this.inverse[t]));
     }
+
+    concat(alg2: Alg<T>) {
+        return this.empty().setTurns([...this.turns, ...alg2.turns]);
+    }
 }
 
 export class WCAAlg extends Alg<WCATurn> {
