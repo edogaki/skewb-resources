@@ -22,6 +22,18 @@ function algLength(alg: RubikskewbAlg) {
 
 export const Route = createFileRoute("/layer-solver")({
     component: RouteComponent,
+    head: () => ({
+        meta: [
+            {
+                title: "Layer Solver | Skewb Resources",
+            },
+            {
+                property: "og:description",
+                content:
+                    "Skewb Layer Solver. Input a scramble and see the optimal layer solutions for each color. Also includes Skewb Painter and random scramble input.",
+            },
+        ],
+    }),
 });
 
 function RouteComponent() {

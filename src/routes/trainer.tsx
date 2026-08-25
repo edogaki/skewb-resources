@@ -13,6 +13,18 @@ interface GlobalOptions {
 
 export const Route = createFileRoute("/trainer")({
     component: RouteComponent,
+    head: () => ({
+        meta: [
+            {
+                title: "Trainer | Skewb Resources",
+            },
+            {
+                property: "og:description",
+                content:
+                    "Skewb Trainer. Includes NS Center Trainer. Drill all the center perms: Swirl, Wat, X perm, O perm, etc.",
+            },
+        ],
+    }),
 });
 
 function RouteComponent() {
