@@ -18,6 +18,8 @@
     "check": "biome check",
     "generate-test-data": "npx tsx ./src/scripts/generateTestData.ts",
     "generate-short-solution-states": "npx tsx ./src/scripts/generateShortSolutionStates.ts",
+    "generate-all-layer-cases": "npx tsx ./src/scripts/generateAllLayerCases.ts",
+    "generate-all-layer-solutions-complete": "npx tsx ./src/scripts/generateAllLayerSolutionsComplete.ts",
     "check-typescript": "tsc --noEmit"
   },
   "dependencies": {
