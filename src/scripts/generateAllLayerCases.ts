@@ -1,35 +1,40 @@
 import { writeFileSync } from "node:fs";
 
+/*
+const toRight = { a: "d", d: "c", c: "b", b: "a", e: "i", i: "m", m: "q", q: "e", f: "j", j: "n", n: "r", r: "f", h: "l", l: "p", p: "t", t: "h", g: "k", k: "o", o: "s", s: "g", x: "u", u: "v", v: "w", w: "x", } as const;
+const corners = [ ["aer", "cmj", "ugl", "wot"], ["dif", "bqn", "xsh", "vkp"], ] as const;
+*/
+
 const toRight = {
-    a: "d",
-    d: "c",
-    c: "b",
-    b: "a",
-    e: "i",
-    i: "m",
-    m: "q",
-    q: "e",
-    f: "j",
-    j: "n",
-    n: "r",
-    r: "f",
-    h: "l",
-    l: "p",
-    p: "t",
-    t: "h",
-    g: "k",
-    k: "o",
-    o: "s",
-    s: "g",
-    x: "u",
-    u: "v",
-    v: "w",
-    w: "x",
+    a: "b",
+    b: "c",
+    c: "d",
+    d: "a",
+    e: "g",
+    g: "i",
+    i: "k",
+    k: "e",
+    f: "h",
+    h: "j",
+    j: "l",
+    l: "f",
+    m: "p",
+    p: "s",
+    s: "v",
+    v: "m",
+    n: "q",
+    q: "t",
+    t: "w",
+    w: "n",
+    o: "r",
+    r: "u",
+    u: "x",
+    x: "o",
 } as const;
 
 const corners = [
-    ["aer", "cmj", "ugl", "wot"],
-    ["dif", "bqn", "xsh", "vkp"],
+    ["aef", "rqp", "cij", "xwv"],
+    ["bgh", "uts", "dkl", "onm"],
 ] as const;
 
 const hashes = new Set<string>();
@@ -93,7 +98,7 @@ console.log({ layerCasesWithIso });
 console.log({ layerCasesNoIso: hashes.size });
 // console.log({ sortedCases });
 
-const barLetters = ["u", "v", "w", "x"];
+const barLetters = ["a", "b", "c", "d"];
 
 console.log({
     noBarCases: sortedCases.filter((c) =>

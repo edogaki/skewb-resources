@@ -10,35 +10,36 @@ import {
 import type { LayerCase } from "./layerCases.gen";
 
 const cornerToIndexOrie = {
-    a: [2, 0],
-    b: [3, 0],
-    c: [0, 0],
-    d: [1, 0],
+    a: [6, 0],
+    b: [5, 0],
+    c: [4, 0],
+    d: [7, 0],
 
-    e: [2, 2],
-    f: [1, 1],
+    e: [6, 2],
+    f: [6, 1],
     g: [5, 2],
-    h: [6, 1],
+    h: [5, 1],
 
-    i: [1, 2],
-    j: [0, 1],
-    k: [4, 2],
-    l: [5, 1],
+    i: [4, 2],
+    j: [4, 1],
+    k: [7, 2],
+    l: [7, 1],
 
-    m: [0, 2],
-    n: [3, 1],
-    o: [7, 2],
-    p: [4, 1],
+    m: [2, 1],
+    n: [2, 2],
+    o: [2, 0],
 
-    q: [3, 2],
-    r: [2, 1],
-    s: [6, 2],
-    t: [7, 1],
+    p: [1, 1],
+    q: [1, 2],
+    r: [1, 0],
 
-    u: [5, 0],
-    v: [4, 0],
-    w: [7, 0],
-    x: [6, 0],
+    s: [0, 1],
+    t: [0, 2],
+    u: [0, 0],
+
+    v: [3, 1],
+    w: [3, 2],
+    x: [3, 0],
 } as Record<string, [Piece, Orientation]>;
 
 const pieceColors = {
@@ -59,7 +60,7 @@ export let layerSolutionsComplete:
     | undefined;
 
 export function layerCaseToSkewbState(lc: LayerCase) {
-    const perm = [-1, -1, -1, -1, -1, -1, -1, -1, 8, 9, 10, 11, 12, 13];
+    const perm = [-1, -1, -1, -1, -1, -1, -1, -1, 13, 9, 10, 11, 12, 8];
     const orie = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     const whiteCorners = [2, 3, 0, 1];
     const yellowCorners = [4, 5, 6, 7];
@@ -78,9 +79,7 @@ export function layerCaseToSkewbState(lc: LayerCase) {
         perm as Tuple<Piece, 14>,
         orie as Tuple<Orientation, 14>,
         pieceColors,
-    )
-        .turnWCA(WCATurn.z2)
-        .turnWCA(WCATurn.yprime);
+    );
 }
 
 export async function preloadLayerSolutionsComplete() {
