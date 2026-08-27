@@ -1,55 +1,24 @@
 import { writeFileSync } from "node:fs";
+import { computeHash, cornerLetters } from "#/utils/layers-catalog/baseMethods";
 
 /*
 const toRight = { a: "d", d: "c", c: "b", b: "a", e: "i", i: "m", m: "q", q: "e", f: "j", j: "n", n: "r", r: "f", h: "l", l: "p", p: "t", t: "h", g: "k", k: "o", o: "s", s: "g", x: "u", u: "v", v: "w", w: "x", } as const;
 const corners = [ ["aer", "cmj", "ugl", "wot"], ["dif", "bqn", "xsh", "vkp"], ] as const;
 */
 
-const toRight = {
-    a: "b",
-    b: "c",
-    c: "d",
-    d: "a",
-    e: "g",
-    g: "i",
-    i: "k",
-    k: "e",
-    f: "h",
-    h: "j",
-    j: "l",
-    l: "f",
-    m: "p",
-    p: "s",
-    s: "v",
-    v: "m",
-    n: "q",
-    q: "t",
-    t: "w",
-    w: "n",
-    o: "r",
-    r: "u",
-    u: "x",
-    x: "o",
-} as const;
-
-const corners = [
-    ["aef", "rqp", "cij", "xwv"],
-    ["bgh", "uts", "dkl", "onm"],
-] as const;
-
 const hashes = new Set<string>();
 
 const cornerCombinations = [];
 
-for (let i = 0; i < corners[0].length - 1; i++) {
-    for (let j = i + 1; j < corners[0].length; j++) {
-        for (let k = 0; k < corners[1].length; k++) {
-            for (let l = 1; l < corners[1].length; l++) {
+for (let i = 0; i < cornerLetters[0].length - 1; i++) {
+    for (let j = i + 1; j < cornerLetters[0].length; j++) {
+        for (let k = 0; k < cornerLetters[1].length; k++) {
+            for (let l = 1; l < cornerLetters[1].length; l++) {
                 const cornerCombination = [
-                    corners[0][i],
-                    corners[1][k],
-                    corners[0][j],
-                    corners[1][(k + l) % corners[1].length],
+                    cornerLetters[0][i],
+                    cornerLetters[1][k],
+                    cornerLetters[0][j],
+                    cornerLetters[1][(k + l) % cornerLetters[1].length],
                 ];
                 cornerCombinations.push(cornerCombination);
             }
@@ -60,19 +29,7 @@ for (let i = 0; i < corners[0].length - 1; i++) {
 console.log("cornerCombinations.length", cornerCombinations.length);
 
 function saveHash(layerCase: string[]) {
-    let hash = "zzzz";
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 4; j++) {
-            const currHash = [
-                ...layerCase.slice(j, 4),
-                ...layerCase.slice(0, j),
-            ].join("");
-            if (currHash < hash) {
-                hash = currHash;
-            }
-        }
-        layerCase = layerCase.map((c) => toRight[c as keyof typeof toRight]);
-    }
+    const hash = computeHash(layerCase);
     hashes.add(hash);
 }
 

@@ -1,5 +1,4 @@
 import { Color } from "../renderer/color";
-import { WCATurn } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import {
     basePieceColors,
@@ -7,6 +6,7 @@ import {
     type Piece,
     SkewbState,
 } from "../solver/skewbState";
+import { computeHash } from "./baseMethods";
 import type { LayerCase } from "./layerCases.gen";
 
 const cornerToIndexOrie = {
@@ -42,6 +42,13 @@ const cornerToIndexOrie = {
     x: [3, 0],
 } as Record<string, [Piece, Orientation]>;
 
+const indexOrieToCorner = {} as Record<Piece, Record<Orientation, string>>;
+
+for (const [c, [i, o]] of Object.entries(cornerToIndexOrie)) {
+    indexOrieToCorner[i] = indexOrieToCorner[i] || {};
+    indexOrieToCorner[i][o] = c;
+}
+
 const pieceColors = {
     ...basePieceColors,
     4: [Color.Gray, Color.Gray, Color.Gray],
@@ -54,10 +61,6 @@ const pieceColors = {
     12: [Color.Gray],
     13: [Color.Gray],
 };
-
-export let layerSolutionsComplete:
-    | Record<LayerCase, Record<number, string[]>>
-    | undefined;
 
 export function layerCaseToSkewbState(lc: LayerCase) {
     const perm = [-1, -1, -1, -1, -1, -1, -1, -1, 13, 9, 10, 11, 12, 8];
@@ -82,11 +85,37 @@ export function layerCaseToSkewbState(lc: LayerCase) {
     );
 }
 
-export async function preloadLayerSolutionsComplete() {
-    if (!layerSolutionsComplete) {
-        const importedVariable = await import(
-            "#/utils/layers-catalog/layerSolutionsComplete.gen"
-        );
-        layerSolutionsComplete = importedVariable.layerSolutionsComplete;
+// Assumes base color scheme.
+export function skewbStateWhiteToLayerCase(skewbState: SkewbState) {
+    const state = skewbState.clone();
+    const whiteLocation = state.perm.indexOf(8);
+    switch (whiteLocation) {
+        case 13:
+            break;
+        case 8:
+            state.turnRubikskewb("x2");
+            break;
+        case 9:
+            state.turnRubikskewb("z");
+            break;
+        case 10:
+            state.turnRubikskewb("x'");
+            break;
+        case 11:
+            state.turnRubikskewb("z'");
+            break;
+        case 12:
+            state.turnRubikskewb("x");
+            break;
     }
+    const whiteCorners = [2, 3, 0, 1] as Piece[];
+    const letters = [] as string[];
+    for (const wc of whiteCorners) {
+        const index = state.perm.indexOf(wc) as Piece;
+        const orie = state.orie[index];
+        const letter = indexOrieToCorner[index][orie];
+        letters.push(letter);
+    }
+    const layerCase = computeHash(letters) as LayerCase;
+    return layerCase;
 }

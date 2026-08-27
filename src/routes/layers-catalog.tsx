@@ -1,16 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Fragment, useState } from "react";
+import TagsView from "#/components/layers-catalog/TagsView";
 import SkewbRenderer from "#/components/SkewbRenderer";
 import AlgorithmView from "#/components/solver/AlgorithmView";
-import {
-    layerCaseToSkewbState,
-    layerSolutionsComplete,
-    preloadLayerSolutionsComplete,
-} from "#/utils/layers-catalog/layerCaseMethods";
+import { layerCaseToSkewbState } from "#/utils/layers-catalog/layerCaseMethods";
 import {
     type LayerCase,
     layerCases,
 } from "#/utils/layers-catalog/layerCases.gen";
+import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
+import { preloadLayerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionMethods";
 import { RubikskewbAlg } from "#/utils/solver/alg";
 
 export const Route = createFileRoute("/layers-catalog")({
@@ -35,6 +34,11 @@ function RouteComponent() {
 
     const [loadLayerSolutionsStatus, setLoadLayerSolutionsStatus] =
         useState("unloaded");
+
+    const [layerSolutionsComplete, setLayerSolutionsComplete] = useState<Record<
+        LayerCase,
+        Record<number, string[]>
+    > | null>(null);
 
     const [numGroupsToShow, setNumGroupsToShow] = useState(
         Object.fromEntries(
@@ -79,7 +83,9 @@ function RouteComponent() {
                     className="p-1 rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-2.5 disabled:opacity-50"
                     onClick={async () => {
                         setLoadLayerSolutionsStatus("loading");
-                        await preloadLayerSolutionsComplete();
+                        setLayerSolutionsComplete(
+                            await preloadLayerSolutionsComplete(),
+                        );
                         setLoadLayerSolutionsStatus("finished");
                     }}
                     disabled={loadLayerSolutionsStatus !== "unloaded"}
@@ -96,6 +102,7 @@ function RouteComponent() {
                     {layerCases.map((lc, i) => (
                         <div className="w-60" key={lc}>
                             #{i + 1}: {lc}
+                            <TagsView tags={layerCaseTags[lc]} />
                             <SkewbRenderer
                                 state={layerCaseToSkewbState(
                                     lc,
