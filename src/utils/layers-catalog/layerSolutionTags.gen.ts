@@ -7,7 +7,8 @@ export const solutionTags = [
   "2 to opposite layer",
   "2 to diagadj layer",
   "Preserves 2 corners",
-  "Preserves centers"
+  "Preserves centers",
+  "Pres. 2 corners + Pres. centers"
 ] as const;
 
 export type SolutionTag = (typeof solutionTags)[number];
@@ -20,13 +21,15 @@ export const solutionTagAbbrev: Record<SolutionTag, string> = {
   "2 to opposite layer": "2o",
   "2 to diagadj layer": "2d",
   "Preserves 2 corners": "pco",
-  "Preserves centers": "pce"
+  "Preserves centers": "pce",
+  "Pres. 2 corners + Pres. centers": "pcoce"
 } as const;
 
 export const layerSolutionTags = {
   "x": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R r R' r'": [],
   "x r' b' r b": [],
@@ -2074,7 +2077,8 @@ export const layerSolutionTags = {
   "x R B b' B R' b": [],
   "x R b' r b R' B": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r b r' B' R b": [],
   "x R' r R r B' r": [],
@@ -2110,7 +2114,8 @@ export const layerSolutionTags = {
   "x r R' b B b' R": [
     "1 to adjacent layer",
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r b R' B b R'": [
     "1 to adjacent layer"
@@ -3107,7 +3112,8 @@ export const layerSolutionTags = {
   "x b' B r' R' r B'": [
     "1 to adjacent layer",
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r R' B r R'": [],
   "x r R' B R' r": [],
@@ -3285,7 +3291,8 @@ export const layerSolutionTags = {
   "x b R' B' R' b' B": [],
   "x B' r b' r' B R'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B' R' r R' B r'": [],
   "x B' R' b' B R' b": [],
@@ -5489,7 +5496,8 @@ export const layerSolutionTags = {
   "x r b B' r' R B'": [],
   "x r b B' r' B' R": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' B R r' B R'": [],
   "x R' B' b r' R b": [
@@ -5535,7 +5543,8 @@ export const layerSolutionTags = {
   "x R' B' b' r' R b R'": [
     "2 to diagadj layer",
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' b' R b R' B' r'": [],
   "x r' R r R B r' B": [],
@@ -10810,7 +10819,8 @@ export const layerSolutionTags = {
   "x R B r R' r B'": [],
   "x R B R' r B r'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r B R' r R r'": [
     "2 to adjacent layer",
@@ -15087,7 +15097,8 @@ export const layerSolutionTags = {
   "x B r' R B r' B'": [],
   "x B' b' r B r R'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B' b' r B R' r": [],
   "x B' b' B R' r B": [],
@@ -15102,7 +15113,8 @@ export const layerSolutionTags = {
   "x R r b B R' b' R": [
     "2 to diagadj layer",
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R b R' b' R r B": [],
   "x R b' B r' R' b' B'": [],
@@ -15824,7 +15836,8 @@ export const layerSolutionTags = {
   "x R b' R B' r' b'": [],
   "x R' r' R B' r' B": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' r' B' R B' r": [],
   "x r' B R' r' R r'": [
@@ -24038,7 +24051,8 @@ export const layerSolutionTags = {
   "x R' r b' B R b' B'": [],
   "x R' B R B r' b' R'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' B b' B' r b R'": [],
   "x R' b B' b r' R' b": [],
@@ -24217,7 +24231,8 @@ export const layerSolutionTags = {
   ],
   "x B b B b R' r'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R r' b' B' r b B'": [],
   "x R B' R b' R' r' b": [
@@ -25405,7 +25420,8 @@ export const layerSolutionTags = {
   "x b' B' b R' B' r' B": [],
   "x r' B r R b' R'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x b' R' b r' B r": [],
   "x R r b' R' r B r": [],
@@ -25426,7 +25442,8 @@ export const layerSolutionTags = {
   "x r b' R' r b B r": [],
   "x r b' R' b r B r": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r b' R' b B r B": [],
   "x R' r' B R' r b' R'": [],
@@ -25576,7 +25593,8 @@ export const layerSolutionTags = {
   "x R B' r' b' r R' r'": [],
   "x R B' b' R' b r' b'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r R r' B' b' R' r'": [],
   "x r B r' B' b r R": [],
@@ -25592,7 +25610,8 @@ export const layerSolutionTags = {
   "x r' b r B' R' r' R'": [],
   "x r' b B r B' R B": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B R r' b R' b B": [
     "Preserves centers"
@@ -25606,7 +25625,8 @@ export const layerSolutionTags = {
   "x b R r' B R' r R": [],
   "x b r B' R r B r'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x b R' r B R' r B": [],
   "x b r' R' r B' R' r'": [],
@@ -25615,19 +25635,22 @@ export const layerSolutionTags = {
   "x b B R' r B R' B": [],
   "x b B' r B R r' B": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B' R r R' b r R": [],
   "x B' R B' b' R' r B'": [],
   "x B' r R' b' r R' b'": [],
   "x B' R' b r' R' b' R": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B' r' R b' r R' r'": [],
   "x B' b R' b' r' R b'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B' b' r R' b' r b'": [],
   "x B' b' R' r' B' b B": [],
@@ -25937,7 +25960,8 @@ export const layerSolutionTags = {
   "x b' r' R' b B r": [],
   "x R b' R' r' B r": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B r B' R b' R'": [],
   "x R b B R' b B' r": [],
@@ -25967,7 +25991,8 @@ export const layerSolutionTags = {
   "x R' B r R' B' b' R'": [],
   "x R' B r B' R' b' R'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' B r B' b' R' b'": [],
   "x R' B R' b' R' B r'": [],
@@ -26285,14 +26310,16 @@ export const layerSolutionTags = {
   "x B R r R' b' R'": [],
   "x B R r b' R' b'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B R' r R b' R'": [],
   "x b' r R' r' B r": [],
   "x b' r' R' r B r": [],
   "x b' r' R' B r B": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R b R' B r R' b": [],
   "x r R' r' b B r R": [],
@@ -34793,13 +34820,15 @@ export const layerSolutionTags = {
   "x r b' R' r B' r": [],
   "x R' b' R' r b B": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r' b r R' B' b": [],
   "x r' b R' r b B'": [],
   "x B r B b' r' R'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x b r' B b' r' R": [],
   "x b r' b' B R r'": [],
@@ -37413,7 +37442,8 @@ export const layerSolutionTags = {
   "x b' r R' r B' b": [],
   "x b' R' b r B r'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B' b r R": [
     "2 to adjacent layer"
@@ -39139,7 +39169,8 @@ export const layerSolutionTags = {
   "x R r' b' R B' R": [],
   "x r B r' b' R' b": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r b' B b' R r'": [],
   "x R' b' R' r' b' B'": [],
@@ -40527,7 +40558,8 @@ export const layerSolutionTags = {
   "x R' r B b' R' b' r'": [],
   "x R' r' R b' R' B' b": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' r' R' B b' R' B": [],
   "x R' r' R' b' R B' R": [],
@@ -40537,7 +40569,8 @@ export const layerSolutionTags = {
   "x R' r' b' R' B b' B": [],
   "x R' b r' R' b' R B'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R' b r' R' b' B' R": [],
   "x R' B' b' R' b' r B": [],
@@ -40547,7 +40580,8 @@ export const layerSolutionTags = {
   "x r' R b' r R' r' B'": [],
   "x r' B r b B' r R": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r' b r b R B b'": [],
   "x r' b r b R b' B": [],
@@ -40560,7 +40594,8 @@ export const layerSolutionTags = {
   "x B r' b B r R B'": [],
   "x B r' b B r B' R": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B b r B R' r R'": [],
   "x B b R' r B r R'": [],
@@ -40570,14 +40605,16 @@ export const layerSolutionTags = {
   "x B b B R' r B R'": [],
   "x B b B' r B R r'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x B b' R' r B r b": [],
   "x B b' R' B r b B": [],
   "x b r R' B' r b R": [],
   "x b R' b' r' R b' B'": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x b r' B b' r' B' R'": [],
   "x b r' b' r' B' r R'": [],
@@ -41600,7 +41637,8 @@ export const layerSolutionTags = {
   "x r B' b B' R r B'": [],
   "x r b' r' b' R B r": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x r b' B b R' B' r": [],
   "x R' r b' r B b B'": [],
@@ -41738,7 +41776,8 @@ export const layerSolutionTags = {
   ],
   "x b' B' b' B' r R": [
     "Preserves 2 corners",
-    "Preserves centers"
+    "Preserves centers",
+    "Pres. 2 corners + Pres. centers"
   ],
   "x R r B r b' B' R'": [],
   "x R r' b' r' B' R' r'": [],

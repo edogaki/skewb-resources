@@ -41,6 +41,7 @@ const solutionTags = [
     "2 to diagadj layer",
     "Preserves 2 corners",
     "Preserves centers",
+    "Pres. 2 corners + Pres. centers",
 ] as const;
 
 type SolutionTag = (typeof solutionTags)[number];
@@ -54,6 +55,7 @@ const solutionTagAbbrev: Record<SolutionTag, string> = {
     "2 to diagadj layer": "2d",
     "Preserves 2 corners": "pco",
     "Preserves centers": "pce",
+    "Pres. 2 corners + Pres. centers": "pcoce",
 } as const;
 
 const layerSolutionTags = {} as Record<string, Set<SolutionTag>>;
@@ -212,6 +214,15 @@ for (const lc of layerCases) {
             const threeCenters = [8, 9, 10] as Piece[];
             if (threeCenters.every((c) => permBefore[c] === permAfter[c])) {
                 layerSolutionTags[algStr].add("Preserves centers");
+            }
+
+            if (
+                layerSolutionTags[algStr].has("Preserves 2 corners") &&
+                layerSolutionTags[algStr].has("Preserves centers")
+            ) {
+                layerSolutionTags[algStr].add(
+                    "Pres. 2 corners + Pres. centers",
+                );
             }
         }
     }

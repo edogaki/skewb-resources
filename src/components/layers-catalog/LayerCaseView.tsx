@@ -1,8 +1,5 @@
 import { Fragment, useState } from "react";
-import {
-    layerCaseNum,
-    layerCaseToSkewbState,
-} from "#/utils/layers-catalog/layerCaseMethods";
+import { layerCaseToSkewbState } from "#/utils/layers-catalog/layerCaseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
 import { pluralize } from "#/utils/methods";
@@ -13,9 +10,11 @@ import TagsViewForCase from "./TagsViewForCase";
 
 export default function LayerCaseView({
     layerCase,
+    index,
     layerSolutionsComplete,
 }: {
     layerCase: LayerCase;
+    index: number;
     layerSolutionsComplete: Record<LayerCase, Record<number, string[]>> | null;
 }) {
     const lc = layerCase;
@@ -40,7 +39,7 @@ export default function LayerCaseView({
 
     return (
         <div className="w-60" key={lc}>
-            #{layerCaseNum[lc]}: {lc}
+            #{index}: {lc}
             <TagsViewForCase layerCase={lc} caseTags={layerCaseTags[lc]} />
             <SkewbRenderer
                 state={layerCaseToSkewbState(lc).toSkewbRendererState()}

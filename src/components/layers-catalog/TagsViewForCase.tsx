@@ -1,6 +1,7 @@
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import type { CaseTag } from "#/utils/layers-catalog/layerCaseTags.gen";
 import {
+    filterRedundantHasTags,
     layerCaseHasTagsShortest,
     layerCaseHasTagsSuboptimal,
 } from "#/utils/layers-catalog/tagsMethods";
@@ -25,7 +26,7 @@ export default function TagsViewForCase({
                     {caseTag}
                 </span>
             ))}
-            {hasTagsShortest.map(([tag, algStrs]) => (
+            {filterRedundantHasTags(hasTagsShortest).map(([tag, algStrs]) => (
                 <span key={tag}>
                     <Tooltip
                         content={algStrs.map((algStr) => (
@@ -38,7 +39,7 @@ export default function TagsViewForCase({
                     </Tooltip>
                 </span>
             ))}
-            {hasTagsSuboptimal.map(([tag, algStrs]) => (
+            {filterRedundantHasTags(hasTagsSuboptimal).map(([tag, algStrs]) => (
                 <span key={tag}>
                     <Tooltip
                         content={algStrs.map((algStr) => (

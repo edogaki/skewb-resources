@@ -118,4 +118,16 @@ function weightedRandom(weights: number[]) {
     return cumulative.findIndex((el) => rand <= el);
 }
 
-export { mod, rotationMatrix, CubeRotation, shuffleArray, weightedRandom };
+function intersection<T>(arr1: T[], arr2: T[]) {
+    const set2 = new Set<T>(arr2);
+    return arr1.filter((e1) => set2.has(e1));
+}
+
+export {
+    mod,
+    rotationMatrix,
+    CubeRotation,
+    shuffleArray,
+    weightedRandom,
+    intersection,
+};

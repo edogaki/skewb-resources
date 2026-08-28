@@ -10,6 +10,7 @@
 :root {
   --sea-ink: #173a40;
   --sea-ink-soft: #416166;
+  --sea-ink-softer: #788d91;
   --lagoon: #4fb8b2;
   --lagoon-deep: #328f97;
   --palm: #2f6a4a;
@@ -35,6 +36,7 @@
 :root[data-theme="dark"] {
   --sea-ink: #d7ece8;
   --sea-ink-soft: #afcdc8;
+  --sea-ink-softer: #588f86;
   --lagoon: #60d7cf;
   --lagoon-deep: #8de5db;
   --palm: #6ec89a;

@@ -2,6 +2,7 @@ import {
     layerSolutionTags,
     solutionTagAbbrev,
 } from "#/utils/layers-catalog/layerSolutionTags.gen";
+import { filterRedundantSolutionTags } from "#/utils/layers-catalog/tagsMethods";
 import type { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 import Tooltip from "../Tooltip";
 
@@ -23,13 +24,15 @@ export default function AlgorithmView({
         >
             {algString.length === 0 ? "(solved)" : algString}
             {includeTags &&
-                layerSolutionTags[algString].map((tag) => (
-                    <Tooltip key={tag} content={tag}>
-                        <span className="text-xs align-sub">
-                            {solutionTagAbbrev[tag]}
-                        </span>
-                    </Tooltip>
-                ))}
+                filterRedundantSolutionTags(layerSolutionTags[algString]).map(
+                    (tag) => (
+                        <Tooltip key={tag} content={tag}>
+                            <span className="text-xs align-sub">
+                                {solutionTagAbbrev[tag]}
+                            </span>
+                        </Tooltip>
+                    ),
+                )}
         </span>
     );
 }
