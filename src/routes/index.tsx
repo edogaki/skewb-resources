@@ -47,6 +47,11 @@ function App() {
                         "Input your skewb and find out the minimum layer alg for each face.",
                         "/layer-solver",
                     ],
+                    [
+                        "Skewb Layers Catalog",
+                        "A list of all layer cases, with solutions & other info. Includes sort and filter functions.",
+                        "/layer-solver",
+                    ],
                 ].map(([title, desc, href], index) => (
                     <Link to={href} key={title}>
                         <article

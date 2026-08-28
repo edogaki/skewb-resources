@@ -44,6 +44,13 @@ export default function Header() {
                     >
                         Layer Solver
                     </Link>
+                    <Link
+                        to="/layers-catalog"
+                        className="nav-link"
+                        activeProps={{ className: "nav-link is-active" }}
+                    >
+                        Layers Catalog
+                    </Link>
                 </div>
 
                 <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
