@@ -148,7 +148,7 @@ export default function LayerCaseFilter({
                                 </div>
                             ))}
                         </div>
-                        <div className="min-h-6">
+                        <div>
                             {allSelectedTags.map((tag, _i) => (
                                 <span
                                     key={tag}
