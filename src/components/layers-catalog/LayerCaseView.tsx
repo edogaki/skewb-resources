@@ -5,6 +5,7 @@ import {
 } from "#/utils/layers-catalog/layerCaseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
+import { pluralize } from "#/utils/methods";
 import { RubikskewbAlg } from "#/utils/solver/alg";
 import SkewbRenderer from "../SkewbRenderer";
 import AlgorithmView from "../solver/AlgorithmView";
@@ -48,9 +49,11 @@ export default function LayerCaseView({
             <div>
                 {!layerSolutionsComplete ? null : !optsCopy.hideSolutionsInitially ? null : isShowShortestLength ? (
                     <span>
-                        {Object.keys(layerSolutionsComplete[lc])[0]} move
-                        {Object.keys(layerSolutionsComplete[lc])[0] !== "1" &&
-                            "s"}
+                        {Object.keys(layerSolutionsComplete[lc])[0]}
+                        {pluralize(
+                            " move",
+                            Number(Object.keys(layerSolutionsComplete[lc])[0]),
+                        )}
                         {", "}
                         {
                             layerSolutionsComplete[lc][
@@ -59,10 +62,14 @@ export default function LayerCaseView({
                                 )
                             ].length
                         }
-                        {" optimal solution"}
-                        {layerSolutionsComplete[lc][
-                            Number(Object.keys(layerSolutionsComplete[lc])[0])
-                        ].length !== 1 && "s"}
+                        {pluralize(
+                            " optimal solution",
+                            layerSolutionsComplete[lc][
+                                Number(
+                                    Object.keys(layerSolutionsComplete[lc])[0],
+                                )
+                            ].length,
+                        )}
                     </span>
                 ) : Object.keys(layerSolutionsComplete[lc]).length > 0 ? (
                     <button

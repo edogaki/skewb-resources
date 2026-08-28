@@ -1,4 +1,5 @@
 import { Fragment, useCallback, useMemo, useState } from "react";
+import { pluralize } from "#/utils/methods";
 import { Color, tailwindColors } from "#/utils/renderer/color";
 import type { LayerSolutions, SolverOptions } from "#/utils/solver/skewbSolver";
 import type { CenterPiece, Piece, SkewbState } from "#/utils/solver/skewbState";
@@ -90,9 +91,13 @@ export default function LayerSolutionsView({
                                   c
                               ] ? (
                                 <span>
-                                    {Object.keys(layerSolutions[c])[0]} move
-                                    {Object.keys(layerSolutions[c])[0] !==
-                                        "1" && "s"}
+                                    {Object.keys(layerSolutions[c])[0]}
+                                    {pluralize(
+                                        " move",
+                                        Number(
+                                            Object.keys(layerSolutions[c])[0],
+                                        ),
+                                    )}
                                     {", "}
                                     {
                                         layerSolutions[c][
@@ -103,12 +108,16 @@ export default function LayerSolutionsView({
                                             )
                                         ].length
                                     }
-                                    {" optimal solution"}
-                                    {layerSolutions[c][
-                                        Number(
-                                            Object.keys(layerSolutions[c])[0],
-                                        )
-                                    ].length !== 1 && "s"}
+                                    {pluralize(
+                                        " optimal solution",
+                                        layerSolutions[c][
+                                            Number(
+                                                Object.keys(
+                                                    layerSolutions[c],
+                                                )[0],
+                                            )
+                                        ].length,
+                                    )}
                                 </span>
                             ) : Object.keys(layerSolutions[c]).length > 0 ? (
                                 <button
