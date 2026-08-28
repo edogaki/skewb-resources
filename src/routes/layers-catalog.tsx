@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Fragment, useState } from "react";
-import TagsView from "#/components/layers-catalog/TagsView";
+import { Fragment, useEffect, useState } from "react";
+import TagsViewForCase from "#/components/layers-catalog/TagsViewForCase";
 import SkewbRenderer from "#/components/SkewbRenderer";
 import AlgorithmView from "#/components/solver/AlgorithmView";
-import { layerCaseToSkewbState } from "#/utils/layers-catalog/layerCaseMethods";
+import {
+    layerCaseNum,
+    layerCaseToSkewbState,
+} from "#/utils/layers-catalog/layerCaseMethods";
 import {
     type LayerCase,
     layerCases,
@@ -33,7 +36,7 @@ function RouteComponent() {
     };
 
     const [loadLayerSolutionsStatus, setLoadLayerSolutionsStatus] =
-        useState("unloaded");
+        useState("loading");
 
     const [layerSolutionsComplete, setLayerSolutionsComplete] = useState<Record<
         LayerCase,
@@ -72,37 +75,26 @@ function RouteComponent() {
         ]),
     ) as Record<LayerCase, number[]>;
 
+    useEffect(() => {
+        (async () => {
+            setLayerSolutionsComplete(await preloadLayerSolutionsComplete());
+            setLoadLayerSolutionsStatus("finished");
+        })();
+    }, []);
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
                 <h1 className="display-title mb-3 text-4xl font-bold text-(--sea-ink) sm:text-5xl">
                     Skewb Layers Catalog
                 </h1>
-                <button
-                    type="button"
-                    className="p-1 rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-2.5 disabled:opacity-50"
-                    onClick={async () => {
-                        setLoadLayerSolutionsStatus("loading");
-                        setLayerSolutionsComplete(
-                            await preloadLayerSolutionsComplete(),
-                        );
-                        setLoadLayerSolutionsStatus("finished");
-                    }}
-                    disabled={loadLayerSolutionsStatus !== "unloaded"}
-                >
-                    {loadLayerSolutionsStatus === "unloaded"
-                        ? "Load layer solutions"
-                        : loadLayerSolutionsStatus === "loading"
-                          ? "Loading..."
-                          : loadLayerSolutionsStatus === "finished"
-                            ? "Finished loading!"
-                            : "Error"}
-                </button>
                 <div className="flex flex-wrap gap-x-10 gap-y-4">
-                    {layerCases.map((lc, i) => (
+                    {layerCases.map((lc) => (
                         <div className="w-60" key={lc}>
-                            #{i + 1}: {lc}
-                            <TagsView tags={layerCaseTags[lc]} />
+                            #{layerCaseNum[lc]}: {lc}
+                            <TagsViewForCase
+                                layerCase={lc}
+                                caseTags={layerCaseTags[lc]}
+                            />
                             <SkewbRenderer
                                 state={layerCaseToSkewbState(
                                     lc,
@@ -177,6 +169,7 @@ function RouteComponent() {
                                                                       solution,
                                                                   )
                                                               }
+                                                              includeTags={true}
                                                           />
                                                           {layerSolutionsComplete &&
                                                               i <

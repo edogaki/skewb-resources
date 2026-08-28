@@ -20,7 +20,7 @@
     "generate-short-solution-states": "npx tsx ./src/scripts/generateShortSolutionStates.ts",
     "generate-all-layer-cases": "npx tsx ./src/scripts/generateAllLayerCases.ts",
     "generate-all-layer-solutions-complete": "npx tsx ./src/scripts/generateAllLayerSolutionsComplete.ts",
-    "generate-all-layer-case-tags": "npx tsx ./src/scripts/generateAllLayerCaseTags.ts",
+    "generate-all-tags": "npx tsx ./src/scripts/generateAllTags.ts",
     "check-typescript": "tsc --noEmit"
   },
   "dependencies": {

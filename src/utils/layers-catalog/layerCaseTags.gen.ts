@@ -1,6 +1,6 @@
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 
-export const tags = [
+export const caseTags = [
   "0-mover",
   "1-mover",
   "2-mover",
@@ -12,16 +12,10 @@ export const tags = [
   "Adjacent layer",
   "Opposite layer",
   "Diagadj layer",
-  "No-bar layer",
-  "1 to adjacent layer",
-  "1 to opposite layer",
-  "1 to diagadj layer",
-  "2 to adjacent layer",
-  "2 to opposite layer",
-  "2 to diagadj layer"
+  "No-bar layer"
 ] as const;
 
-export type Tag = (typeof tags)[number];
+export type CaseTag = (typeof caseTags)[number];
 
 export const layerCaseTags = {
   "abcd": [
@@ -380,14 +374,11 @@ export const layerCaseTags = {
   ],
   "adim": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adin": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adio": [
     "5-mover",
@@ -395,23 +386,19 @@ export const layerCaseTags = {
   ],
   "adis": [
     "4-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adit": [
     "4-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adiu": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adjg": [
     "6-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adjh": [
     "5-mover",
@@ -419,28 +406,23 @@ export const layerCaseTags = {
   ],
   "adjm": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adjn": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adjo": [
     "5-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adjs": [
     "5-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adjt": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adju": [
     "5-mover",
@@ -448,53 +430,43 @@ export const layerCaseTags = {
   ],
   "adpg": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adph": [
     "4-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adpm": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adpn": [
     "3-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adpo": [
     "6-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adps": [
     "5-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adpt": [
     "4-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adpu": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adqg": [
     "5-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adqh": [
     "4-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adqm": [
     "5-mover",
@@ -502,23 +474,19 @@ export const layerCaseTags = {
   ],
   "adqn": [
     "4-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adqo": [
     "4-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adqs": [
     "5-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adqt": [
     "5-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "adqu": [
     "5-mover",
@@ -530,8 +498,7 @@ export const layerCaseTags = {
   ],
   "adrh": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adrm": [
     "5-mover",
@@ -539,14 +506,11 @@ export const layerCaseTags = {
   ],
   "adrn": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adro": [
     "6-mover",
-    "Diagadj layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adrs": [
     "5-mover",
@@ -554,79 +518,63 @@ export const layerCaseTags = {
   ],
   "adrt": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adru": [
     "4-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "advg": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "advh": [
     "5-mover",
-    "Diagadj layer",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "advm": [
     "4-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "advn": [
     "4-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "advo": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "advs": [
     "4-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "advt": [
     "3-mover",
-    "Diagadj layer",
-    "1 to adjacent layer"
+    "Diagadj layer"
   ],
   "advu": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adwg": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adwh": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adwm": [
     "6-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adwn": [
     "4-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adwo": [
     "5-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adws": [
     "5-mover",
@@ -634,8 +582,7 @@ export const layerCaseTags = {
   ],
   "adwt": [
     "5-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adwu": [
     "5-mover",
@@ -643,8 +590,7 @@ export const layerCaseTags = {
   ],
   "adxg": [
     "5-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adxh": [
     "5-mover",
@@ -652,13 +598,11 @@ export const layerCaseTags = {
   ],
   "adxm": [
     "5-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adxn": [
     "5-mover",
-    "Diagadj layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "adxo": [
     "5-mover",
@@ -666,19 +610,15 @@ export const layerCaseTags = {
   ],
   "adxs": [
     "4-mover",
-    "Diagadj layer",
-    "2 to opposite layer"
+    "Diagadj layer"
   ],
   "adxt": [
     "6-mover",
-    "Diagadj layer",
-    "1 to opposite layer"
+    "Diagadj layer"
   ],
   "adxu": [
     "6-mover",
-    "Diagadj layer",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "Diagadj layer"
   ],
   "agck": [
     "5-mover",
@@ -719,37 +659,31 @@ export const layerCaseTags = {
     "6-mover"
   ],
   "agim": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "agin": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "agio": [
     "5-mover"
   ],
   "agis": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "agit": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "agiu": [
     "5-mover"
   ],
   "agjk": [
-    "6-mover",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "agjl": [
     "6-mover"
   ],
   "agjm": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "agjn": [
     "5-mover"
@@ -758,66 +692,49 @@ export const layerCaseTags = {
     "6-mover"
   ],
   "agjs": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "agjt": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "agju": [
-    "6-mover",
-    "2 to diagadj layer",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "agpk": [
-    "5-mover",
-    "2 to diagadj layer"
+    "5-mover"
   ],
   "agpl": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "agpm": [
-    "4-mover",
-    "1 to diagadj layer"
+    "4-mover"
   ],
   "agpn": [
-    "6-mover",
-    "1 to adjacent layer",
-    "1 to opposite layer"
+    "6-mover"
   ],
   "agpo": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "agps": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "agpt": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "agpu": [
-    "5-mover",
-    "2 to diagadj layer"
+    "5-mover"
   ],
   "agqk": [
     "5-mover"
   ],
   "agql": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "agqm": [
-    "6-mover",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "agqn": [
-    "4-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "agqo": [
     "5-mover"
@@ -826,12 +743,10 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "agqt": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "agqu": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "agrk": [
     "6-mover"
@@ -840,20 +755,16 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "agrm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "agrn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "agro": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "agrs": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "agrt": [
     "5-mover"
@@ -865,63 +776,49 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "agvl": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "agvm": [
     "5-mover"
   ],
   "agvn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "agvo": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "agvs": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "agvt": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "agvu": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "agwk": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "agwl": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "agwm": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "agwn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "agwo": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "agws": [
-    "5-mover",
-    "1 to opposite layer",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "agwt": [
     "5-mover"
   ],
   "agwu": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "agxk": [
     "5-mover"
@@ -930,8 +827,7 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "agxm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "agxn": [
     "5-mover"
@@ -940,16 +836,13 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "agxs": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "agxt": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "agxu": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "ahcl": [
     "5-mover",
@@ -983,16 +876,13 @@ export const layerCaseTags = {
     "6-mover"
   ],
   "ahil": [
-    "6-mover",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "ahim": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "ahin": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "ahio": [
     "6-mover"
@@ -1004,8 +894,7 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahiu": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "ahjk": [
     "6-mover"
@@ -1014,19 +903,16 @@ export const layerCaseTags = {
     "6-mover"
   ],
   "ahjm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "ahjn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "ahjo": [
     "5-mover"
   ],
   "ahjs": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "ahjt": [
     "5-mover"
@@ -1035,36 +921,28 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahpk": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "ahpl": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "ahpm": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "ahpn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "ahpo": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "ahps": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "ahpt": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "ahpu": [
-    "6-mover",
-    "1 to opposite layer"
+    "6-mover"
   ],
   "ahqk": [
     "5-mover"
@@ -1076,12 +954,10 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahqn": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "ahqo": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "ahqs": [
     "5-mover"
@@ -1090,8 +966,7 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahqu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "ahrk": [
     "5-mover"
@@ -1103,24 +978,19 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahrn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "ahro": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "ahrs": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "ahrt": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "ahru": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "ahvk": [
     "5-mover"
@@ -1132,54 +1002,43 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahvn": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "ahvo": [
     "5-mover"
   ],
   "ahvs": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "ahvt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "ahvu": [
     "5-mover"
   ],
   "ahwk": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "ahwl": [
-    "5-mover",
-    "2 to diagadj layer"
+    "5-mover"
   ],
   "ahwm": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "ahwn": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "ahwo": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "ahws": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "ahwt": [
     "5-mover"
   ],
   "ahwu": [
-    "5-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "ahxk": [
     "5-mover"
@@ -1188,12 +1047,10 @@ export const layerCaseTags = {
     "6-mover"
   ],
   "ahxm": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "ahxn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "ahxo": [
     "5-mover"
@@ -1205,8 +1062,7 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "ahxu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akcg": [
     "3-mover",
@@ -1241,50 +1097,40 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "akig": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akih": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akim": [
     "5-mover"
   ],
   "akin": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "akio": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akis": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "akit": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akiu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akjg": [
     "5-mover"
   ],
   "akjh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akjm": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akjn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "akjo": [
     "5-mover"
@@ -1296,199 +1142,151 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "akju": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akpg": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "akph": [
     "5-mover"
   ],
   "akpm": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "akpn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "akpo": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "akps": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "akpt": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "akpu": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "akqg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akqh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akqm": [
     "5-mover"
   ],
   "akqn": [
-    "4-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "akqo": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akqs": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "akqt": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akqu": [
     "5-mover"
   ],
   "akrg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akrh": [
-    "4-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "akrm": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akrn": [
     "5-mover"
   ],
   "akro": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "akrs": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "akrt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akru": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akvg": [
-    "4-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akvh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akvm": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akvn": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "akvo": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akvs": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "akvt": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "akvu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akwg": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "akwh": [
     "5-mover"
   ],
   "akwm": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "akwn": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akwo": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "akws": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "akwt": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "akwu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akxg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akxh": [
-    "4-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "akxm": [
     "5-mover"
   ],
   "akxn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "akxo": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "akxs": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "akxt": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "akxu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alch": [
     "3-mover",
@@ -1519,8 +1317,7 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "alig": [
-    "6-mover",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "alih": [
     "5-mover"
@@ -1529,245 +1326,187 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "alin": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "alio": [
     "5-mover"
   ],
   "alis": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "alit": [
-    "6-mover",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "aliu": [
-    "6-mover",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "aljg": [
-    "6-mover",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "aljh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aljm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "aljn": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aljo": [
     "5-mover"
   ],
   "aljs": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "aljt": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "alju": [
     "5-mover"
   ],
   "alpg": [
-    "5-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "alph": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "alpm": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "alpn": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "alpo": [
-    "6-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "alps": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "alpt": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "alpu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alqg": [
     "5-mover"
   ],
   "alqh": [
-    "4-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "alqm": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alqn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "alqo": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alqs": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "alqt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alqu": [
-    "5-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "alrg": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alrh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alrm": [
     "5-mover"
   ],
   "alrn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "alro": [
-    "5-mover",
-    "2 to diagadj layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "alrs": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "alrt": [
     "5-mover"
   ],
   "alru": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "alvg": [
     "5-mover"
   ],
   "alvh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alvm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "alvn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "alvo": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "alvs": [
     "5-mover"
   ],
   "alvt": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alvu": [
     "5-mover"
   ],
   "alwg": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alwh": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "alwm": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "alwn": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "alwo": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alws": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "alwt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alwu": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "alxg": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "alxh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "alxm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "alxn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "alxo": [
     "5-mover"
   ],
   "alxs": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "alxt": [
     "5-mover"
   ],
   "alxu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amcs": [
     "5-mover",
@@ -1782,127 +1521,97 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "amig": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amih": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amik": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amil": [
     "5-mover"
   ],
   "amis": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amit": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amiu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amjg": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amjh": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amjk": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "amjl": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amjs": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amjt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amju": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "ampg": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "amph": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "ampk": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "ampl": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amps": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "ampt": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "ampu": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amqg": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amqh": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "amqk": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "amql": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amqs": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amqt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amqu": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "amrg": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "amrh": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "amrk": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amrl": [
     "5-mover"
@@ -1911,99 +1620,73 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "amrt": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amru": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "amvg": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "amvh": [
-    "4-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "amvk": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "amvl": [
-    "4-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amvs": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "amvt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "amvu": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "amwg": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "amwh": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amwk": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amwl": [
-    "6-mover",
-    "1 to opposite layer",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "amws": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "amwt": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amwu": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "amxg": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amxh": [
     "5-mover"
   ],
   "amxk": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amxl": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "amxs": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "amxt": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "amxu": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "anct": [
     "4-mover",
@@ -2014,20 +1697,16 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "anig": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anih": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "anik": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anil": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "anis": [
     "5-mover"
@@ -2036,8 +1715,7 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "aniu": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anjg": [
     "5-mover"
@@ -2046,60 +1724,46 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "anjk": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anjl": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anjs": [
-    "6-mover",
-    "1 to diagadj layer",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "anjt": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anju": [
     "5-mover"
   ],
   "anpg": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "anph": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "anpk": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "anpl": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "anps": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "anpt": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "anpu": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "anqg": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anqh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "anqk": [
     "5-mover"
@@ -2108,35 +1772,28 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "anqs": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "anqt": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "anqu": [
     "5-mover"
   ],
   "anrg": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anrh": [
     "5-mover"
   ],
   "anrk": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "anrl": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anrs": [
-    "6-mover",
-    "1 to diagadj layer",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "anrt": [
     "5-mover"
@@ -2145,9 +1802,7 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "anvg": [
-    "5-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "anvh": [
     "5-mover"
@@ -2156,77 +1811,58 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "anvl": [
-    "6-mover",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "anvs": [
-    "6-mover",
-    "1 to diagadj layer",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "anvt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "anvu": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "anwg": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "anwh": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "anwk": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "anwl": [
-    "4-mover",
-    "1 to diagadj layer"
+    "4-mover"
   ],
   "anws": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "anwt": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "anwu": [
-    "4-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "anxg": [
     "5-mover"
   ],
   "anxh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "anxk": [
     "5-mover"
   ],
   "anxl": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "anxs": [
-    "5-mover",
-    "1 to diagadj layer",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "anxt": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "anxu": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aocu": [
     "5-mover",
@@ -2245,23 +1881,19 @@ export const layerCaseTags = {
     "6-mover"
   ],
   "aois": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "aoit": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aoiu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aojg": [
     "5-mover"
   ],
   "aojh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aojk": [
     "6-mover"
@@ -2273,72 +1905,58 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "aojt": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aoju": [
     "5-mover"
   ],
   "aopg": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "aoph": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "aopk": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "aopl": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "aops": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "aopt": [
-    "6-mover",
-    "1 to opposite layer"
+    "6-mover"
   ],
   "aopu": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "aoqg": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "aoqh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aoqk": [
     "5-mover"
   ],
   "aoql": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aoqs": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "aoqt": [
     "5-mover"
   ],
   "aoqu": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "aorg": [
     "5-mover"
   ],
   "aorh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aork": [
     "5-mover"
@@ -2347,101 +1965,76 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "aors": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "aort": [
-    "4-mover",
-    "1 to diagadj layer"
+    "4-mover"
   ],
   "aoru": [
-    "6-mover",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "aovg": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "aovh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aovk": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aovl": [
     "5-mover"
   ],
   "aovs": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "aovt": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "aovu": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aowg": [
-    "6-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "6-mover"
   ],
   "aowh": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "aowk": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "aowl": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "aows": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "aowt": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "aowu": [
     "5-mover"
   ],
   "aoxg": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "5-mover"
   ],
   "aoxh": [
-    "5-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aoxk": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "aoxl": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aoxs": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "aoxt": [
     "5-mover"
   ],
   "aoxu": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "ascm": [
     "4-mover",
@@ -2456,8 +2049,7 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "asig": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "asih": [
     "5-mover"
@@ -2466,54 +2058,43 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "asil": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "asim": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "asin": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asio": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asjg": [
-    "6-mover",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "asjh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asjk": [
     "5-mover"
   ],
   "asjl": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "asjm": [
     "5-mover"
   ],
   "asjn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "asjo": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aspg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asph": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "aspk": [
     "5-mover"
@@ -2522,136 +2103,106 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "aspm": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "aspn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "aspo": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "asqg": [
-    "5-mover",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "asqh": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "asqk": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asql": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "asqm": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asqn": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asqo": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "asrg": [
     "5-mover"
   ],
   "asrh": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "asrk": [
     "5-mover"
   ],
   "asrl": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "asrm": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "asrn": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "asro": [
     "5-mover"
   ],
   "asvg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asvh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "asvk": [
     "5-mover"
   ],
   "asvl": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "asvm": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "asvn": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asvo": [
     "5-mover"
   ],
   "aswg": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "aswh": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "aswk": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "aswl": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "aswm": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aswn": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "aswo": [
-    "6-mover",
-    "1 to opposite layer"
+    "6-mover"
   ],
   "asxg": [
     "5-mover"
   ],
   "asxh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "asxk": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "asxl": [
     "5-mover"
@@ -2660,12 +2211,10 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "asxn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "asxo": [
-    "4-mover",
-    "1 to diagadj layer"
+    "4-mover"
   ],
   "atcn": [
     "5-mover",
@@ -2676,150 +2225,115 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "atig": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atih": [
     "5-mover"
   ],
   "atik": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atil": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "atim": [
-    "6-mover",
-    "1 to adjacent layer",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "atin": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atio": [
     "5-mover"
   ],
   "atjg": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "atjh": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atjk": [
     "5-mover"
   ],
   "atjl": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atjm": [
     "5-mover"
   ],
   "atjn": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "atjo": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atpg": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "atph": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "atpk": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "atpl": [
-    "5-mover",
-    "1 to opposite layer",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atpm": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atpn": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "atpo": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atqg": [
     "5-mover"
   ],
   "atqh": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atqk": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atql": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "atqm": [
-    "6-mover",
-    "1 to adjacent layer",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "atqn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atqo": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atrg": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "atrh": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atrk": [
     "5-mover"
   ],
   "atrl": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atrm": [
-    "5-mover",
-    "1 to adjacent layer",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "atrn": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atro": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "atvg": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atvh": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "atvk": [
     "5-mover"
@@ -2828,72 +2342,55 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "atvm": [
-    "5-mover",
-    "1 to diagadj layer"
+    "5-mover"
   ],
   "atvn": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "atvo": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atwg": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "atwh": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atwk": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atwl": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "atwm": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atwn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atwo": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "atxg": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atxh": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "atxk": [
-    "5-mover",
-    "1 to adjacent layer"
+    "5-mover"
   ],
   "atxl": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "atxm": [
-    "6-mover",
-    "1 to adjacent layer",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "atxn": [
     "5-mover"
   ],
   "atxo": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "auco": [
     "5-mover",
@@ -2903,79 +2400,61 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "auih": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "auik": [
     "5-mover"
   ],
   "auil": [
-    "6-mover",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "auim": [
     "5-mover"
   ],
   "auin": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "auio": [
     "5-mover"
   ],
   "aujg": [
-    "6-mover",
-    "2 to adjacent layer"
+    "6-mover"
   ],
   "aujh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aujk": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aujl": [
     "5-mover"
   ],
   "aujm": [
-    "6-mover",
-    "1 to diagadj layer"
+    "6-mover"
   ],
   "aujn": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aujo": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aupg": [
-    "4-mover",
-    "1 to opposite layer"
+    "4-mover"
   ],
   "auph": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aupk": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "aupl": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "aupm": [
-    "4-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "aupn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "aupo": [
     "5-mover"
@@ -2984,122 +2463,94 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "auqh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "auqk": [
     "5-mover"
   ],
   "auql": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "auqm": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "auqn": [
-    "6-mover",
-    "1 to adjacent layer"
+    "6-mover"
   ],
   "auqo": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aurg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aurh": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aurk": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "aurl": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aurm": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "aurn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "auro": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "auvg": [
-    "5-mover",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "auvh": [
     "5-mover"
   ],
   "auvk": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "auvl": [
-    "5-mover",
-    "2 to opposite layer"
+    "5-mover"
   ],
   "auvm": [
     "5-mover"
   ],
   "auvn": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "auvo": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "auwg": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "auwh": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "auwk": [
-    "6-mover",
-    "1 to opposite layer"
+    "6-mover"
   ],
   "auwl": [
-    "5-mover",
-    "2 to diagadj layer"
+    "5-mover"
   ],
   "auwm": [
-    "5-mover",
-    "1 to opposite layer"
+    "5-mover"
   ],
   "auwn": [
-    "4-mover",
-    "1 to adjacent layer"
+    "4-mover"
   ],
   "auwo": [
-    "3-mover",
-    "1 to opposite layer"
+    "3-mover"
   ],
   "auxg": [
-    "4-mover",
-    "2 to opposite layer"
+    "4-mover"
   ],
   "auxh": [
-    "5-mover",
-    "2 to adjacent layer"
+    "5-mover"
   ],
   "auxk": [
-    "4-mover",
-    "2 to adjacent layer"
+    "4-mover"
   ],
   "auxl": [
     "5-mover"
@@ -3108,13 +2559,10 @@ export const layerCaseTags = {
     "5-mover"
   ],
   "auxn": [
-    "3-mover",
-    "1 to adjacent layer"
+    "3-mover"
   ],
   "auxo": [
-    "6-mover",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "6-mover"
   ],
   "egik": [
     "6-mover",
@@ -3126,8 +2574,7 @@ export const layerCaseTags = {
   ],
   "egim": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egin": [
     "5-mover",
@@ -3183,13 +2630,11 @@ export const layerCaseTags = {
   ],
   "egpm": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egpn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egpo": [
     "6-mover",
@@ -3197,8 +2642,7 @@ export const layerCaseTags = {
   ],
   "egps": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egpt": [
     "6-mover",
@@ -3206,8 +2650,7 @@ export const layerCaseTags = {
   ],
   "egpu": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egql": [
     "6-mover",
@@ -3215,13 +2658,11 @@ export const layerCaseTags = {
   ],
   "egqm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egqn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egqo": [
     "5-mover",
@@ -3233,8 +2674,7 @@ export const layerCaseTags = {
   ],
   "egqt": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egqu": [
     "5-mover",
@@ -3246,8 +2686,7 @@ export const layerCaseTags = {
   ],
   "egrm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egrn": [
     "5-mover",
@@ -3263,8 +2702,7 @@ export const layerCaseTags = {
   ],
   "egrt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egru": [
     "6-mover",
@@ -3276,8 +2714,7 @@ export const layerCaseTags = {
   ],
   "egvm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egvn": [
     "6-mover",
@@ -3285,8 +2722,7 @@ export const layerCaseTags = {
   ],
   "egvo": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egvs": [
     "5-mover",
@@ -3294,14 +2730,11 @@ export const layerCaseTags = {
   ],
   "egvt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egvu": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egwl": [
     "6-mover",
@@ -3313,8 +2746,7 @@ export const layerCaseTags = {
   ],
   "egwn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "egwo": [
     "6-mover",
@@ -3338,8 +2770,7 @@ export const layerCaseTags = {
   ],
   "egxm": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "egxn": [
     "5-mover",
@@ -3383,8 +2814,7 @@ export const layerCaseTags = {
   ],
   "ehit": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ehiu": [
     "5-mover",
@@ -3440,8 +2870,7 @@ export const layerCaseTags = {
   ],
   "ehpt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ehpu": [
     "5-mover",
@@ -3469,8 +2898,7 @@ export const layerCaseTags = {
   ],
   "ehqt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ehqu": [
     "6-mover",
@@ -3506,18 +2934,15 @@ export const layerCaseTags = {
   ],
   "ehvl": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ehvm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ehvn": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ehvo": [
     "5-mover",
@@ -3525,8 +2950,7 @@ export const layerCaseTags = {
   ],
   "ehvs": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ehvt": [
     "6-mover",
@@ -3558,8 +2982,7 @@ export const layerCaseTags = {
   ],
   "ehwt": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ehwu": [
     "5-mover",
@@ -3643,8 +3066,7 @@ export const layerCaseTags = {
   ],
   "ekjs": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ekjt": [
     "6-mover",
@@ -3660,13 +3082,11 @@ export const layerCaseTags = {
   ],
   "ekpm": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekpn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekpo": [
     "6-mover",
@@ -3694,8 +3114,7 @@ export const layerCaseTags = {
   ],
   "ekqn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekqo": [
     "6-mover",
@@ -3707,8 +3126,7 @@ export const layerCaseTags = {
   ],
   "ekqt": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekqu": [
     "5-mover",
@@ -3736,8 +3154,7 @@ export const layerCaseTags = {
   ],
   "ekrt": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekru": [
     "6-mover",
@@ -3745,18 +3162,15 @@ export const layerCaseTags = {
   ],
   "ekvh": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ekvm": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekvn": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ekvo": [
     "5-mover",
@@ -3768,9 +3182,7 @@ export const layerCaseTags = {
   ],
   "ekvt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ekvu": [
     "6-mover",
@@ -3786,8 +3198,7 @@ export const layerCaseTags = {
   ],
   "ekwn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ekwo": [
     "6-mover",
@@ -3795,8 +3206,7 @@ export const layerCaseTags = {
   ],
   "ekws": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ekwt": [
     "5-mover",
@@ -3824,8 +3234,7 @@ export const layerCaseTags = {
   ],
   "ekxs": [
     "5-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "ekxt": [
     "5-mover",
@@ -3873,8 +3282,7 @@ export const layerCaseTags = {
   ],
   "eljn": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eljo": [
     "6-mover",
@@ -3898,14 +3306,11 @@ export const layerCaseTags = {
   ],
   "elpm": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elpn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "elpo": [
     "6-mover",
@@ -3913,8 +3318,7 @@ export const layerCaseTags = {
   ],
   "elps": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elpt": [
     "6-mover",
@@ -3922,8 +3326,7 @@ export const layerCaseTags = {
   ],
   "elpu": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elqh": [
     "6-mover",
@@ -3935,8 +3338,7 @@ export const layerCaseTags = {
   ],
   "elqn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elqo": [
     "6-mover",
@@ -3948,8 +3350,7 @@ export const layerCaseTags = {
   ],
   "elqt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elqu": [
     "5-mover",
@@ -3977,8 +3378,7 @@ export const layerCaseTags = {
   ],
   "elrt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elru": [
     "6-mover",
@@ -3994,24 +3394,19 @@ export const layerCaseTags = {
   ],
   "elvn": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "elvo": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elvs": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elvt": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elvu": [
     "5-mover",
@@ -4039,8 +3434,7 @@ export const layerCaseTags = {
   ],
   "elwt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elwu": [
     "5-mover",
@@ -4056,8 +3450,7 @@ export const layerCaseTags = {
   ],
   "elxn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "elxo": [
     "5-mover",
@@ -4105,13 +3498,11 @@ export const layerCaseTags = {
   ],
   "emju": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "emph": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "empl": [
     "5-mover",
@@ -4139,23 +3530,19 @@ export const layerCaseTags = {
   ],
   "emqs": [
     "5-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "emqt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "emqu": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "emrh": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "emrl": [
     "5-mover",
@@ -4175,29 +3562,23 @@ export const layerCaseTags = {
   ],
   "emvh": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "emvl": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "emvs": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "emvt": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "emvu": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "emwh": [
     "6-mover",
@@ -4217,8 +3598,7 @@ export const layerCaseTags = {
   ],
   "emwu": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "emxh": [
     "5-mover",
@@ -4246,8 +3626,7 @@ export const layerCaseTags = {
   ],
   "eniu": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "enjh": [
     "6-mover",
@@ -4275,8 +3654,7 @@ export const layerCaseTags = {
   ],
   "enpl": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "enps": [
     "5-mover",
@@ -4292,13 +3670,11 @@ export const layerCaseTags = {
   ],
   "enqh": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "enql": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "enqs": [
     "5-mover",
@@ -4310,8 +3686,7 @@ export const layerCaseTags = {
   ],
   "enqu": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "enrh": [
     "5-mover",
@@ -4331,8 +3706,7 @@ export const layerCaseTags = {
   ],
   "enru": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "envh": [
     "5-mover",
@@ -4344,13 +3718,11 @@ export const layerCaseTags = {
   ],
   "envs": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "envt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "envu": [
     "6-mover",
@@ -4362,8 +3734,7 @@ export const layerCaseTags = {
   ],
   "enwl": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "enws": [
     "5-mover",
@@ -4371,13 +3742,11 @@ export const layerCaseTags = {
   ],
   "enwt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "enwu": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "enxh": [
     "6-mover",
@@ -4437,8 +3806,7 @@ export const layerCaseTags = {
   ],
   "eopt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eopu": [
     "5-mover",
@@ -4446,28 +3814,23 @@ export const layerCaseTags = {
   ],
   "eoqh": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eoql": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eoqs": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eoqt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eoqu": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eorh": [
     "6-mover",
@@ -4483,8 +3846,7 @@ export const layerCaseTags = {
   ],
   "eort": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eoru": [
     "5-mover",
@@ -4492,8 +3854,7 @@ export const layerCaseTags = {
   ],
   "eovh": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eovl": [
     "5-mover",
@@ -4505,8 +3866,7 @@ export const layerCaseTags = {
   ],
   "eovt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eovu": [
     "5-mover",
@@ -4522,8 +3882,7 @@ export const layerCaseTags = {
   ],
   "eows": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eowt": [
     "5-mover",
@@ -4547,8 +3906,7 @@ export const layerCaseTags = {
   ],
   "eoxt": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eoxu": [
     "6-mover",
@@ -4564,8 +3922,7 @@ export const layerCaseTags = {
   ],
   "esio": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "esjh": [
     "6-mover",
@@ -4597,19 +3954,15 @@ export const layerCaseTags = {
   ],
   "espm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "espn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "espo": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "esqh": [
     "6-mover",
@@ -4625,13 +3978,11 @@ export const layerCaseTags = {
   ],
   "esqn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "esqo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "esrh": [
     "6-mover",
@@ -4655,18 +4006,15 @@ export const layerCaseTags = {
   ],
   "esvh": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "esvl": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "esvm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "esvn": [
     "5-mover",
@@ -4674,8 +4022,7 @@ export const layerCaseTags = {
   ],
   "esvo": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "eswh": [
     "6-mover",
@@ -4703,23 +4050,19 @@ export const layerCaseTags = {
   ],
   "esxl": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "esxm": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "esxn": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "esxo": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etin": [
     "5-mover",
@@ -4731,8 +4074,7 @@ export const layerCaseTags = {
   ],
   "etjh": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etjl": [
     "7-mover",
@@ -4748,8 +4090,7 @@ export const layerCaseTags = {
   ],
   "etjo": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etph": [
     "5-mover",
@@ -4765,18 +4106,15 @@ export const layerCaseTags = {
   ],
   "etpn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etpo": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etqh": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etql": [
     "5-mover",
@@ -4788,8 +4126,7 @@ export const layerCaseTags = {
   ],
   "etqn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etqo": [
     "5-mover",
@@ -4797,8 +4134,7 @@ export const layerCaseTags = {
   ],
   "etrh": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etrl": [
     "6-mover",
@@ -4810,8 +4146,7 @@ export const layerCaseTags = {
   ],
   "etrn": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "etro": [
     "5-mover",
@@ -4819,18 +4154,15 @@ export const layerCaseTags = {
   ],
   "etvh": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etvl": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etvm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etvn": [
     "5-mover",
@@ -4838,13 +4170,11 @@ export const layerCaseTags = {
   ],
   "etvo": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etwh": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etwl": [
     "5-mover",
@@ -4852,8 +4182,7 @@ export const layerCaseTags = {
   ],
   "etwm": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etwn": [
     "6-mover",
@@ -4861,8 +4190,7 @@ export const layerCaseTags = {
   ],
   "etwo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "etxh": [
     "6-mover",
@@ -4878,8 +4206,7 @@ export const layerCaseTags = {
   ],
   "etxn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "etxo": [
     "6-mover",
@@ -4939,13 +4266,11 @@ export const layerCaseTags = {
   ],
   "euqm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "euqn": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "euqo": [
     "6-mover",
@@ -4961,8 +4286,7 @@ export const layerCaseTags = {
   ],
   "eurm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "eurn": [
     "6-mover",
@@ -4982,18 +4306,15 @@ export const layerCaseTags = {
   ],
   "euvm": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "euvn": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "euvo": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "euwh": [
     "5-mover",
@@ -5005,19 +4326,15 @@ export const layerCaseTags = {
   ],
   "euwm": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "euwn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "euwo": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "euxh": [
     "6-mover",
@@ -5061,8 +4378,7 @@ export const layerCaseTags = {
   ],
   "fhjt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fhju": [
     "5-mover",
@@ -5070,13 +4386,11 @@ export const layerCaseTags = {
   ],
   "fhpm": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhpn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhpo": [
     "5-mover",
@@ -5084,8 +4398,7 @@ export const layerCaseTags = {
   ],
   "fhps": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhpt": [
     "6-mover",
@@ -5097,18 +4410,15 @@ export const layerCaseTags = {
   ],
   "fhqm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fhqn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhqo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fhqs": [
     "6-mover",
@@ -5116,13 +4426,11 @@ export const layerCaseTags = {
   ],
   "fhqt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhqu": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fhrm": [
     "5-mover",
@@ -5142,8 +4450,7 @@ export const layerCaseTags = {
   ],
   "fhrt": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fhru": [
     "6-mover",
@@ -5151,8 +4458,7 @@ export const layerCaseTags = {
   ],
   "fhvm": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhvn": [
     "6-mover",
@@ -5160,8 +4466,7 @@ export const layerCaseTags = {
   ],
   "fhvo": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhvs": [
     "5-mover",
@@ -5169,9 +4474,7 @@ export const layerCaseTags = {
   ],
   "fhvt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhvu": [
     "5-mover",
@@ -5183,8 +4486,7 @@ export const layerCaseTags = {
   ],
   "fhwn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhwo": [
     "6-mover",
@@ -5208,8 +4510,7 @@ export const layerCaseTags = {
   ],
   "fhxn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fhxo": [
     "6-mover",
@@ -5221,8 +4522,7 @@ export const layerCaseTags = {
   ],
   "fhxt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fhxu": [
     "5-mover",
@@ -5262,9 +4562,7 @@ export const layerCaseTags = {
   ],
   "flpn": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flpo": [
     "5-mover",
@@ -5272,8 +4570,7 @@ export const layerCaseTags = {
   ],
   "flps": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flpt": [
     "6-mover",
@@ -5281,13 +4578,11 @@ export const layerCaseTags = {
   ],
   "flpu": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flqm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "flqn": [
     "5-mover",
@@ -5295,8 +4590,7 @@ export const layerCaseTags = {
   ],
   "flqo": [
     "5-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "flqs": [
     "5-mover",
@@ -5336,13 +4630,11 @@ export const layerCaseTags = {
   ],
   "flvm": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flvn": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "flvo": [
     "6-mover",
@@ -5350,13 +4642,11 @@ export const layerCaseTags = {
   ],
   "flvs": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flvt": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flvu": [
     "6-mover",
@@ -5368,8 +4658,7 @@ export const layerCaseTags = {
   ],
   "flwn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flwo": [
     "5-mover",
@@ -5381,8 +4670,7 @@ export const layerCaseTags = {
   ],
   "flwt": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "flwu": [
     "6-mover",
@@ -5434,9 +4722,7 @@ export const layerCaseTags = {
   ],
   "fmpu": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "fmqs": [
     "5-mover",
@@ -5448,18 +4734,15 @@ export const layerCaseTags = {
   ],
   "fmqu": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fmrs": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmrt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmru": [
     "6-mover",
@@ -5467,28 +4750,23 @@ export const layerCaseTags = {
   ],
   "fmvs": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmvt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmvu": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmws": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmwt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fmwu": [
     "5-mover",
@@ -5496,8 +4774,7 @@ export const layerCaseTags = {
   ],
   "fmxs": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "fmxt": [
     "5-mover",
@@ -5513,13 +4790,11 @@ export const layerCaseTags = {
   ],
   "fnju": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fnps": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fnpt": [
     "5-mover",
@@ -5527,23 +4802,19 @@ export const layerCaseTags = {
   ],
   "fnpu": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fnqs": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fnqt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fnqu": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fnrs": [
     "5-mover",
@@ -5551,8 +4822,7 @@ export const layerCaseTags = {
   ],
   "fnrt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fnru": [
     "5-mover",
@@ -5568,8 +4838,7 @@ export const layerCaseTags = {
   ],
   "fnvu": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fnws": [
     "5-mover",
@@ -5577,8 +4846,7 @@ export const layerCaseTags = {
   ],
   "fnwt": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fnwu": [
     "6-mover",
@@ -5594,8 +4862,7 @@ export const layerCaseTags = {
   ],
   "fnxu": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "foju": [
     "6-mover",
@@ -5603,8 +4870,7 @@ export const layerCaseTags = {
   ],
   "fops": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fopt": [
     "6-mover",
@@ -5612,23 +4878,19 @@ export const layerCaseTags = {
   ],
   "fopu": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "foqs": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "foqt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "foqu": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fors": [
     "6-mover",
@@ -5636,8 +4898,7 @@ export const layerCaseTags = {
   ],
   "fort": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "foru": [
     "5-mover",
@@ -5649,8 +4910,7 @@ export const layerCaseTags = {
   ],
   "fovt": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fovu": [
     "6-mover",
@@ -5658,14 +4918,11 @@ export const layerCaseTags = {
   ],
   "fows": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fowt": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fowu": [
     "5-mover",
@@ -5693,13 +4950,11 @@ export const layerCaseTags = {
   ],
   "fsjo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fspm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fspn": [
     "5-mover",
@@ -5711,18 +4966,15 @@ export const layerCaseTags = {
   ],
   "fsqm": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fsqn": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fsqo": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fsrm": [
     "6-mover",
@@ -5734,8 +4986,7 @@ export const layerCaseTags = {
   ],
   "fsro": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fsvm": [
     "5-mover",
@@ -5743,13 +4994,11 @@ export const layerCaseTags = {
   ],
   "fsvn": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fsvo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fswm": [
     "5-mover",
@@ -5761,8 +5010,7 @@ export const layerCaseTags = {
   ],
   "fswo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fsxm": [
     "5-mover",
@@ -5774,8 +5022,7 @@ export const layerCaseTags = {
   ],
   "fsxo": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ftjn": [
     "5-mover",
@@ -5795,19 +5042,15 @@ export const layerCaseTags = {
   ],
   "ftpo": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ftqm": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "ftqn": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ftqo": [
     "5-mover",
@@ -5831,13 +5074,11 @@ export const layerCaseTags = {
   ],
   "ftvn": [
     "5-mover",
-    "No-bar layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "ftvo": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "ftwm": [
     "5-mover",
@@ -5869,13 +5110,11 @@ export const layerCaseTags = {
   ],
   "fupm": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fupn": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fupo": [
     "5-mover",
@@ -5887,8 +5126,7 @@ export const layerCaseTags = {
   ],
   "fuqn": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fuqo": [
     "5-mover",
@@ -5908,18 +5146,15 @@ export const layerCaseTags = {
   ],
   "fuvm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fuvn": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fuvo": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "fuwm": [
     "5-mover",
@@ -5935,8 +5170,7 @@ export const layerCaseTags = {
   ],
   "fuxm": [
     "5-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "fuxn": [
     "5-mover",
@@ -5948,9 +5182,7 @@ export const layerCaseTags = {
   ],
   "mpsv": [
     "6-mover",
-    "No-bar layer",
-    "2 to diagadj layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mpsw": [
     "5-mover",
@@ -5958,13 +5190,11 @@ export const layerCaseTags = {
   ],
   "mpsx": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mptw": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mptx": [
     "5-mover",
@@ -5972,13 +5202,11 @@ export const layerCaseTags = {
   ],
   "mpuw": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mpux": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "mqsw": [
     "6-mover",
@@ -5986,8 +5214,7 @@ export const layerCaseTags = {
   ],
   "mqsx": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "mqtw": [
     "5-mover",
@@ -5999,8 +5226,7 @@ export const layerCaseTags = {
   ],
   "mquw": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "mqux": [
     "6-mover",
@@ -6008,13 +5234,11 @@ export const layerCaseTags = {
   ],
   "mrsx": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mrtw": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mrtx": [
     "5-mover",
@@ -6022,29 +5246,23 @@ export const layerCaseTags = {
   ],
   "mruw": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mrux": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mvsp": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mvsq": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mvsr": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "mvtq": [
     "5-mover",
@@ -6052,8 +5270,7 @@ export const layerCaseTags = {
   ],
   "mvtr": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mvuq": [
     "5-mover",
@@ -6061,13 +5278,11 @@ export const layerCaseTags = {
   ],
   "mvur": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mwsq": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mwsr": [
     "5-mover",
@@ -6075,13 +5290,11 @@ export const layerCaseTags = {
   ],
   "mwtq": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mwtr": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mwuq": [
     "5-mover",
@@ -6089,8 +5302,7 @@ export const layerCaseTags = {
   ],
   "mwur": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "mxsr": [
     "6-mover",
@@ -6106,55 +5318,43 @@ export const layerCaseTags = {
   ],
   "mxuq": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "mxur": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "nqtw": [
     "6-mover",
-    "No-bar layer",
-    "2 to adjacent layer",
-    "2 to diagadj layer"
+    "No-bar layer"
   ],
   "nqtx": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "nqux": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "nrtx": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "nrux": [
     "4-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "nwtq": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "nwtr": [
     "4-mover",
-    "No-bar layer",
-    "2 to opposite layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "nwur": [
     "5-mover",
-    "No-bar layer",
-    "2 to adjacent layer"
+    "No-bar layer"
   ],
   "nxtr": [
     "6-mover",
@@ -6162,8 +5362,7 @@ export const layerCaseTags = {
   ],
   "nxur": [
     "6-mover",
-    "No-bar layer",
-    "2 to opposite layer"
+    "No-bar layer"
   ],
   "orux": [
     "7-mover",
@@ -6173,4 +5372,4 @@ export const layerCaseTags = {
     "5-mover",
     "No-bar layer"
   ]
-} as Record<LayerCase, Tag[]>;
+} as Record<LayerCase, CaseTag[]>;

@@ -7,7 +7,11 @@ import {
     SkewbState,
 } from "../solver/skewbState";
 import { computeHash } from "./baseMethods";
-import type { LayerCase } from "./layerCases.gen";
+import { type LayerCase, layerCases } from "./layerCases.gen";
+
+export const layerCaseNum = Object.fromEntries(
+    layerCases.map((lc, i) => [lc, i + 1]),
+) as Record<LayerCase, number>;
 
 const cornerToIndexOrie = {
     a: [6, 0],
