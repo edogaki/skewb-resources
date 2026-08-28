@@ -9,6 +9,7 @@ import {
 } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
+import type { Piece } from "#/utils/solver/skewbState";
 
 const caseTags = [
     "0-mover",
@@ -38,6 +39,8 @@ const solutionTags = [
     "2 to adjacent layer",
     "2 to opposite layer",
     "2 to diagadj layer",
+    "Preserves 2 corners",
+    "Preserves centers",
 ] as const;
 
 type SolutionTag = (typeof solutionTags)[number];
@@ -49,6 +52,8 @@ const solutionTagAbbrev: Record<SolutionTag, string> = {
     "2 to adjacent layer": "2a",
     "2 to opposite layer": "2o",
     "2 to diagadj layer": "2d",
+    "Preserves 2 corners": "pco",
+    "Preserves centers": "pce",
 } as const;
 
 const layerSolutionTags = {} as Record<string, Set<SolutionTag>>;
@@ -169,6 +174,44 @@ for (const lc of layerCases) {
             }
             if (layerCaseTags[newLc].has("Opposite layer")) {
                 layerSolutionTags[algStr].add("2 to opposite layer");
+            }
+        }
+    }
+}
+
+for (const lc of layerCases) {
+    for (const n of Object.keys(layerSolutionsComplete[lc]).map(
+        Number,
+    ) as number[]) {
+        for (const algStr of layerSolutionsComplete[lc][n]) {
+            const skewbState = layerCaseToSkewbState(lc);
+            const permBefore = [...skewbState.perm];
+            const orieBefore = [...skewbState.orie];
+            const alg = new RubikskewbAlg(algStr);
+            skewbState.applyRubikskewbAlg(alg);
+            skewbState.turnRubikskewb("x'");
+            const permAfter = skewbState.perm;
+            const orieAfter = skewbState.orie;
+
+            const uCornerSets = [
+                [0, 2],
+                [1, 3],
+            ] as Piece[][];
+            if (
+                uCornerSets.every((set) =>
+                    set.some(
+                        (c) =>
+                            permBefore[c] === permAfter[c] &&
+                            orieBefore[c] === orieAfter[c],
+                    ),
+                )
+            ) {
+                layerSolutionTags[algStr].add("Preserves 2 corners");
+            }
+
+            const threeCenters = [8, 9, 10] as Piece[];
+            if (threeCenters.every((c) => permBefore[c] === permAfter[c])) {
+                layerSolutionTags[algStr].add("Preserves centers");
             }
         }
     }
