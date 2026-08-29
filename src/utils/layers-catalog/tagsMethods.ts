@@ -43,7 +43,9 @@ export const layerCaseHasTagsSuboptimal = Object.fromEntries(
     layerCases.map((lc) => [lc, computeHasTagsSuboptimal(lc)]),
 ) as Record<LayerCase, HasTag[]>;
 
-export function filterRedundantSolutionTags(solnTags: SolutionTag[]) {
+export function filterRedundantSolutionTags(
+    solnTags: SolutionTag[],
+): SolutionTag[] {
     return solnTags.includes("Pres. 2 corners + Pres. centers")
         ? solnTags.filter(
               (solnTag) =>
@@ -54,15 +56,21 @@ export function filterRedundantSolutionTags(solnTags: SolutionTag[]) {
         : solnTags;
 }
 
-export function filterRedundantHasTags(hasTags: HasTag[]) {
-    return hasTags.find(
-        ([hasTags, _algs]) => hasTags === "Pres. 2 corners + Pres. centers",
-    )
-        ? hasTags.filter(
-              ([hasTags, _algs]) =>
-                  !["Preserves 2 corners", "Preserves centers"].includes(
-                      hasTags,
-                  ),
-          )
-        : hasTags;
+export function filterRedundantHasTags(hasTags: HasTag[]): HasTag[] {
+    const doubleTag = hasTags.find(
+        ([hasTag, _algs]) => hasTag === "Pres. 2 corners + Pres. centers",
+    );
+    if (!doubleTag) return hasTags;
+
+    const filteredTags = hasTags.map(
+        ([hasTag, algs]) =>
+            [
+                hasTag,
+                ["Preserves 2 corners", "Preserves centers"].includes(hasTag)
+                    ? algs.filter((alg) => !doubleTag[1].includes(alg))
+                    : algs,
+            ] as HasTag,
+    );
+
+    return filteredTags.filter(([_hasTag, algs]) => algs.length > 0);
 }

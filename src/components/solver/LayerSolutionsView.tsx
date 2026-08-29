@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useMemo, useState } from "react";
+import { Fragment, useState } from "react";
 import { pluralize } from "#/utils/methods";
 import { Color, tailwindColors } from "#/utils/renderer/color";
 import type { LayerSolutions, SolverOptions } from "#/utils/solver/skewbSolver";

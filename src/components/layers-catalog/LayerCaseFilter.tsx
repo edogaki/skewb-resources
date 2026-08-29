@@ -19,7 +19,6 @@ import {
 import { intersection } from "#/utils/renderer/math";
 
 export default function LayerCaseFilter({
-    layerCasesToShow,
     setLayerCasesToShow,
 }: {
     layerCasesToShow: LayerCase[];
