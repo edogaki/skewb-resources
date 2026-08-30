@@ -37,10 +37,20 @@ export default function LayerCaseView({
         .map(Number)
         .slice(0, numGroupsToShow) as number[];
 
+    const firstGroup = Object.keys(layerSolutionsComplete?.[lc] || {}).map(
+        Number,
+    )[0];
+    const setupAlgInverse =
+        layerSolutionsComplete?.[lc][firstGroup][0].slice(2);
+    const setupAlg = setupAlgInverse
+        ? new RubikskewbAlg(setupAlgInverse).addTurn("x").invert().toString()
+        : null;
+
     return (
         <div className="w-60" key={lc}>
             #{index}: {lc}
             <TagsViewForCase layerCase={lc} caseTags={layerCaseTags[lc]} />
+            {setupAlg && setupAlg.length > 3 && <div>Setup: {setupAlg}</div>}
             <SkewbRenderer
                 state={layerCaseToSkewbState(lc).toSkewbRendererState()}
                 options={null}
