@@ -21,7 +21,7 @@ import {
     layerCaseHasTagsShortest,
     layerCaseHasTagsSuboptimal,
 } from "#/utils/layers-catalog/tagsMethods";
-import { intersection, xor } from "#/utils/renderer/math";
+import { intersection, xor } from "#/utils/math";
 
 type HasDoesNotHave = "Has" | "Does not have";
 

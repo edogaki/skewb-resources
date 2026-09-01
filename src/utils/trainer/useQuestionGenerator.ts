@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { testQuestions } from "#/test-data/testQuestions.gen";
+import { CubeRotation, shuffleArray } from "#/utils/math";
 import { Color, nonWhiteColors } from "#/utils/renderer/color";
-import { CubeRotation, shuffleArray } from "#/utils/renderer/math";
 import {
     type NSCenterTrainerOptions,
     type NSCenterTrainerState,

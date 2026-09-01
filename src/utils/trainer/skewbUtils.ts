@@ -1,6 +1,6 @@
 import { mod } from "mathjs";
+import type { CubeRotation } from "../math";
 import { Color, rotateColor } from "../renderer/color";
-import type { CubeRotation } from "../renderer/math";
 import type {
     RendererOptions,
     SkewbRendererState,

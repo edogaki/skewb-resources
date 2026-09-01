@@ -1,4 +1,4 @@
-import { shuffleArray, weightedRandom } from "../renderer/math";
+import { shuffleArray, weightedRandom } from "../math";
 import { WCAAlg, WCATurn } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import { type Orientation, type Piece, SkewbState } from "../solver/skewbState";

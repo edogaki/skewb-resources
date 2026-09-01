@@ -1,6 +1,6 @@
 import { WCAAlg, WCATurn } from "#/utils/solver/alg";
 import { SkewbState } from "#/utils/solver/skewbState";
-import { shuffleArray } from "../renderer/math";
+import { shuffleArray } from "../math";
 
 interface SearchNode {
     alg: WCAAlg;

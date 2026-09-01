@@ -1,5 +1,5 @@
 import { multiply } from "mathjs";
-import type { CubeRotation } from "#/utils/renderer/math";
+import type { CubeRotation } from "#/utils/math";
 
 const Color = {
     Gray: "rgb(127,127,127)",
