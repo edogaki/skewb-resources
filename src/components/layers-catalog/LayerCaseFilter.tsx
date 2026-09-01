@@ -16,14 +16,17 @@ import LayerCaseFilterByTags from "./LayerCaseFilterByTags";
 const filterOptions: {
     optionName: string;
     Component: FC<{ setFilterFunc: Dispatch<FilterFunc> }>;
+    width: string;
 }[] = [
     {
         optionName: "Filter By Tags",
         Component: LayerCaseFilterByTags,
+        width: "w-full",
     },
     {
         optionName: "Filter By Corners",
         Component: LayerCaseFilterByCorners,
+        width: "w-100",
     },
 ];
 
@@ -34,9 +37,6 @@ export default function LayerCaseFilter({
     setLayerCasesToShow: Dispatch<SetStateAction<LayerCase[]>>;
 }) {
     const [filterFuncs, setFilterFuncs] = useState<FilterFunc[]>([]);
-    const [isUseFilter, setIsUseFilter] = useState<boolean[]>(
-        filterOptions.map(() => false),
-    );
 
     const setFilterFuncByIndex = useMemo(
         () =>
@@ -52,43 +52,19 @@ export default function LayerCaseFilter({
     );
     return (
         <div className="mb-3">
-            <div className="flex flex-wrap mb-3">
-                {filterOptions.map(({ optionName, Component }, index) => (
-                    <div className="w-100" key={optionName}>
-                        <div className="flex items-center mb-3">
-                            <input
-                                type="checkbox"
-                                checked={isUseFilter[index]}
-                                name="useTagsFilter"
-                                id="useTagsFilter"
-                                className="mr-1"
-                                onChange={(e) =>
-                                    setIsUseFilter((iuf) => {
-                                        const newIuf = iuf.slice();
-                                        newIuf[index] = e.target.checked;
-                                        return newIuf;
-                                    })
-                                }
-                                autoComplete="off"
-                            />
-                            <label htmlFor="useTagsFilter">
-                                <h3
-                                    className={`text-xl font-semibold ${isUseFilter[index] ? "text-(--sea-ink)" : "text-(--sea-ink-softer)"}`}
-                                >
-                                    {optionName}
-                                </h3>
-                            </label>
-                        </div>
-                        <div className="relative border border-(--line) p-2">
+            <div className="flex flex-wrap mb-3 gap-10">
+                {filterOptions.map(
+                    ({ optionName, Component, width }, index) => (
+                        <div className={width} key={optionName}>
+                            <h3 className="text-xl font-semibold text-(--sea-ink) mb-1">
+                                {optionName}
+                            </h3>
                             <Component
                                 setFilterFunc={setFilterFuncByIndex[index]}
                             ></Component>
-                            <div
-                                className={`${isUseFilter[index] ? "hidden" : ""}absolute top-0 left-0 w-full h-full bg-(--line)`}
-                            ></div>
                         </div>
-                    </div>
-                ))}
+                    ),
+                )}
             </div>
             <button
                 type="button"
@@ -97,10 +73,8 @@ export default function LayerCaseFilter({
                     setLayerCasesToShow(() => {
                         let newLayerCases = layerCases.slice();
                         for (const filterFunc of filterFuncs) {
-                            console.log({ newLayerCases });
                             newLayerCases = filterFunc(newLayerCases);
                         }
-                        console.log({ newLayerCases });
                         return newLayerCases;
                     });
                 }}

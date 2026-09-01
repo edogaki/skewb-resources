@@ -6,6 +6,33 @@ import { layerSolutionTags, type SolutionTag } from "./layerSolutionTags.gen";
 export type Tag = CaseTag | SolutionTag;
 export type HasTag = [SolutionTag, string[]];
 
+export const caseTagCategories: [string, CaseTag[]][] = [
+    [
+        "Number of moves",
+        [
+            "0-mover",
+            "1-mover",
+            "2-mover",
+            "3-mover",
+            "4-mover",
+            "5-mover",
+            "6-mover",
+            "7-mover",
+        ],
+    ],
+    [
+        "Layer Type",
+        [
+            "Basic layer",
+            "Adjacent layer",
+            "Opposite layer",
+            "Diagadj layer",
+            "One-bar layer",
+            "No-bar layer",
+        ],
+    ],
+];
+
 function computeHasTagsShortest(lc: LayerCase): HasTag[] {
     const hasTags = {} as Record<SolutionTag, string[]>;
     const shortestMover = Number(Object.keys(layerSolutionsComplete[lc])[0]);

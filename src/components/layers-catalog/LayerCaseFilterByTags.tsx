@@ -1,4 +1,10 @@
-import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
+import {
+    type Dispatch,
+    Fragment,
+    type SetStateAction,
+    useEffect,
+    useState,
+} from "react";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import {
     type CaseTag,
@@ -11,6 +17,7 @@ import {
 } from "#/utils/layers-catalog/layerSolutionTags.gen";
 import type { FilterFunc } from "#/utils/layers-catalog/layersCatalogMethods";
 import {
+    caseTagCategories,
     layerCaseHasTagsShortest,
     layerCaseHasTagsSuboptimal,
 } from "#/utils/layers-catalog/tagsMethods";
@@ -32,31 +39,50 @@ export default function LayerCaseFilterByTags({
         SolutionTag[]
     >([]);
 
-    const allSelectedTags = [
-        ...caseTagsSelected,
-        ...hasTagsShortestSelected.map((tag) => `has:${tag}`),
-        ...hasTagsSuboptimalSelected.map((tag) => `has sub:${tag}`),
-    ];
-
     useEffect(() => {
+        console.log(
+            caseTagsSelected,
+            hasTagsShortestSelected,
+            hasTagsSuboptimalSelected,
+        );
+        const caseTagsSelectedByCategory = caseTagCategories.map(
+            ([catName, catTags]) =>
+                [
+                    catName,
+                    catTags.filter((catTag) =>
+                        caseTagsSelected.includes(catTag),
+                    ),
+                ] as const,
+        );
         setFilterFunc((layerCasesToShow: LayerCase[]) =>
-            layerCasesToShow.filter(
-                (lc) =>
-                    intersection<string>(layerCaseTags[lc], caseTagsSelected)
-                        .length === caseTagsSelected.length &&
-                    intersection<string>(
+            layerCasesToShow.filter((lc) => {
+                return (
+                    (intersection<string>(
+                        caseTagsSelectedByCategory[0][1],
+                        layerCaseTags[lc],
+                    ).length > 0 ||
+                        caseTagsSelectedByCategory[0][1].length === 0) &&
+                    (intersection<string>(
+                        caseTagsSelectedByCategory[1][1],
+                        layerCaseTags[lc],
+                    ).length > 0 ||
+                        caseTagsSelectedByCategory[1][1].length === 0) &&
+                    (intersection<string>(
                         layerCaseHasTagsShortest[lc].map(
                             ([tag, _algStrs]) => tag,
                         ),
                         hasTagsShortestSelected,
-                    ).length === hasTagsShortestSelected.length &&
-                    intersection<string>(
+                    ).length > 0 ||
+                        hasTagsShortestSelected.length === 0) &&
+                    (intersection<string>(
                         layerCaseHasTagsSuboptimal[lc].map(
                             ([tag, _algStrs]) => tag,
                         ),
                         hasTagsSuboptimalSelected,
-                    ).length === hasTagsSuboptimalSelected.length,
-            ),
+                    ).length > 0 ||
+                        hasTagsSuboptimalSelected.length === 0)
+                );
+            }),
         );
     }, [
         setFilterFunc,
@@ -66,28 +92,36 @@ export default function LayerCaseFilterByTags({
     ]);
 
     return (
-        <>
-            <div className="h-80 overflow-scroll mb-2">
-                {caseTags.map((tag) => (
-                    <div key={tag}>
-                        <input
-                            type="checkbox"
-                            checked={caseTagsSelected.includes(tag)}
-                            name={`useTagsFilter-${tag}`}
-                            id={`useTagsFilter-${tag}`}
-                            className="mr-1"
-                            onChange={(e) =>
-                                setCaseTagsSelected((ts) =>
-                                    e.target.checked
-                                        ? ts.concat([tag]).sort()
-                                        : ts.filter((t) => t !== tag),
-                                )
-                            }
-                            autoComplete="off"
-                        />
-                        <label htmlFor={`useTagsFilter-${tag}`}>{tag}</label>
-                    </div>
-                ))}
+        <div className="flex gap-10 flex-wrap">
+            {caseTagCategories.map(([category, tags]) => (
+                <div key={category}>
+                    <div className="font-semibold">{category}</div>
+                    {tags.map((tag) => (
+                        <div key={tag}>
+                            <input
+                                type="checkbox"
+                                checked={caseTagsSelected.includes(tag)}
+                                name={`useTagsFilter-${tag}`}
+                                id={`useTagsFilter-${tag}`}
+                                className="mr-1"
+                                onChange={(e) =>
+                                    setCaseTagsSelected((ts) =>
+                                        e.target.checked
+                                            ? ts.concat([tag]).sort()
+                                            : ts.filter((t) => t !== tag),
+                                    )
+                                }
+                                autoComplete="off"
+                            />
+                            <label htmlFor={`useTagsFilter-${tag}`}>
+                                {tag}
+                            </label>
+                        </div>
+                    ))}
+                </div>
+            ))}
+            <div>
+                <div className="font-semibold">Has an optimal alg that is:</div>
                 {hasTagsShortest.map((tag) => (
                     <div key={tag}>
                         <input
@@ -106,10 +140,15 @@ export default function LayerCaseFilterByTags({
                             autoComplete="off"
                         />
                         <label htmlFor={`useTagsFilter-has:${tag}`}>
-                            has:{tag}
+                            {tag}
                         </label>
                     </div>
                 ))}
+            </div>
+            <div>
+                <div className="font-semibold">
+                    Has a suboptimal alg that is:
+                </div>
                 {hasTagsSuboptimal.map((tag) => (
                     <div key={tag}>
                         <input
@@ -128,21 +167,11 @@ export default function LayerCaseFilterByTags({
                             autoComplete="off"
                         />
                         <label htmlFor={`useTagsFilter-has sub:${tag}`}>
-                            has sub:{tag}
+                            {tag}
                         </label>
                     </div>
                 ))}
             </div>
-            <div>
-                {allSelectedTags.map((tag, _i) => (
-                    <span
-                        key={tag}
-                        className="inline-block p-1 rounded-full border border-(--line) px-2 text-sm"
-                    >
-                        {tag}
-                    </span>
-                ))}
-            </div>
-        </>
+        </div>
     );
 }

@@ -31,36 +31,92 @@ export const layerSolutionTags = {
     "Preserves centers",
     "Pres. 2 corners + Pres. centers"
   ],
-  "x R r R' r'": [],
-  "x r' b' r b": [],
-  "x r' R r' R' r'": [],
-  "x r' b' r' b r'": [],
-  "x r R r' R'": [],
-  "x b' r' b r": [],
-  "x r R r R' r": [],
-  "x r b' r b r": [],
-  "x b' r b": [],
-  "x R r' R' r'": [],
-  "x b' r' b r'": [],
+  "x R r R' r'": [
+    "1 to adjacent layer"
+  ],
+  "x r' b' r b": [
+    "2 to adjacent layer"
+  ],
+  "x r' R r' R' r'": [
+    "2 to adjacent layer"
+  ],
+  "x r' b' r' b r'": [
+    "2 to adjacent layer"
+  ],
+  "x r R r' R'": [
+    "2 to adjacent layer"
+  ],
+  "x b' r' b r": [
+    "1 to adjacent layer"
+  ],
+  "x r R r R' r": [
+    "2 to adjacent layer"
+  ],
+  "x r b' r b r": [
+    "2 to adjacent layer"
+  ],
+  "x b' r b": [
+    "1 to adjacent layer"
+  ],
+  "x R r' R' r'": [
+    "1 to adjacent layer"
+  ],
+  "x b' r' b r'": [
+    "1 to adjacent layer"
+  ],
   "x r": [],
-  "x r' R r' R'": [],
-  "x r b' r' b r": [],
-  "x R' B R B' r": [],
-  "x r' R r R' r": [],
-  "x r' b' r b r": [],
-  "x b R r R' b'": [],
-  "x b B' b' B r": [],
+  "x r' R r' R'": [
+    "2 to adjacent layer"
+  ],
+  "x r b' r' b r": [
+    "2 to adjacent layer"
+  ],
+  "x R' B R B' r": [
+    "1 to adjacent layer"
+  ],
+  "x r' R r R' r": [
+    "2 to adjacent layer"
+  ],
+  "x r' b' r b r": [
+    "2 to adjacent layer"
+  ],
+  "x b R r R' b'": [
+    "1 to adjacent layer"
+  ],
+  "x b B' b' B r": [
+    "1 to adjacent layer"
+  ],
   "x r'": [],
-  "x R r' R'": [],
-  "x R r R' r": [],
-  "x b' r b r": [],
-  "x r b' r b": [],
-  "x r R r' R' r'": [],
-  "x r b' r' b r'": [],
-  "x R' B R B' r'": [],
-  "x R' b' r' b R": [],
-  "x r' R r R' r'": [],
-  "x b B' b' B r'": [],
+  "x R r' R'": [
+    "1 to adjacent layer"
+  ],
+  "x R r R' r": [
+    "1 to adjacent layer"
+  ],
+  "x b' r b r": [
+    "1 to adjacent layer"
+  ],
+  "x r b' r b": [
+    "2 to adjacent layer"
+  ],
+  "x r R r' R' r'": [
+    "2 to adjacent layer"
+  ],
+  "x r b' r' b r'": [
+    "2 to adjacent layer"
+  ],
+  "x R' B R B' r'": [
+    "1 to adjacent layer"
+  ],
+  "x R' b' r' b R": [
+    "1 to adjacent layer"
+  ],
+  "x r' R r R' r'": [
+    "2 to adjacent layer"
+  ],
+  "x b B' b' B r'": [
+    "1 to adjacent layer"
+  ],
   "x r R' r' R": [
     "Preserves 2 corners"
   ],

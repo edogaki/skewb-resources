@@ -20,9 +20,11 @@ const caseTags = [
     "5-mover",
     "6-mover",
     "7-mover",
+    "Basic layer",
     "Adjacent layer",
     "Opposite layer",
     "Diagadj layer",
+    "One-bar layer",
     "No-bar layer",
 ] as const;
 
@@ -85,17 +87,17 @@ for (const lc of layerCases) {
         moverTags[Number(Object.keys(layerSolutionsComplete[lc])[0])],
     );
 
-    if (lc.startsWith("ab")) {
+    if (lc.startsWith("abc")) {
+        layerCaseTags[lc].add("Basic layer");
+    } else if (lc.startsWith("ab")) {
         layerCaseTags[lc].add("Adjacent layer");
-    }
-    if (lc.startsWith("ad")) {
-        layerCaseTags[lc].add("Diagadj layer");
-    }
-    if (lc.startsWith("a") && lc.includes("c")) {
+    } else if (lc.startsWith("a") && lc.includes("c")) {
         layerCaseTags[lc].add("Opposite layer");
-    }
-
-    if (!lc.startsWith("a")) {
+    } else if (lc.startsWith("ad")) {
+        layerCaseTags[lc].add("Diagadj layer");
+    } else if (lc.startsWith("a")) {
+        layerCaseTags[lc].add("One-bar layer");
+    } else {
         layerCaseTags[lc].add("No-bar layer");
     }
 }

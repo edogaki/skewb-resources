@@ -9,9 +9,11 @@ export const caseTags = [
   "5-mover",
   "6-mover",
   "7-mover",
+  "Basic layer",
   "Adjacent layer",
   "Opposite layer",
   "Diagadj layer",
+  "One-bar layer",
   "No-bar layer"
 ] as const;
 
@@ -20,48 +22,39 @@ export type CaseTag = (typeof caseTags)[number];
 export const layerCaseTags = {
   "abcd": [
     "0-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abck": [
     "4-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abcl": [
     "4-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abcm": [
     "3-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abcn": [
     "1-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abco": [
     "4-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abcs": [
     "1-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abct": [
     "3-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abcu": [
     "4-mover",
-    "Adjacent layer",
-    "Opposite layer"
+    "Basic layer"
   ],
   "abik": [
     "4-mover",
@@ -321,47 +314,38 @@ export const layerCaseTags = {
   ],
   "adcb": [
     "7-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adcg": [
     "4-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adch": [
     "4-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adcm": [
     "6-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adcn": [
     "4-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adco": [
     "5-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adcs": [
     "4-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adct": [
     "6-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adcu": [
     "5-mover",
-    "Diagadj layer",
     "Opposite layer"
   ],
   "adig": [
@@ -653,196 +637,260 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "agik": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agil": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agim": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agin": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agio": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agis": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agit": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agiu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agjk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agjl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agjm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agjn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agjo": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agjs": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agjt": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agju": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agpk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agpl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agpm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agpn": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agpo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agps": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agpt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agpu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agqk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agql": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agqm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agqn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agqo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agqs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agqt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agqu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agrk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agrl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agrm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agrn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agro": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agrs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agrt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agru": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agvk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agvl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agvm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agvn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agvo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agvs": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agvt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agvu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agwk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agwl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agwm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agwn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agwo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agws": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agwt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agwu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "agxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agxl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agxm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "agxn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agxo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agxs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agxt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "agxu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahcl": [
     "5-mover",
@@ -873,196 +921,260 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "ahik": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahil": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahim": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahin": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahio": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahis": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahit": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahiu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahjk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahjl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahjm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahjn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahjo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahjs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahjt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahju": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahpk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahpl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahpm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahpn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahpo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahps": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahpt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahpu": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahqk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahql": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahqm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahqn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahqo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahqs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahqt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahqu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahrk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahrl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahrm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahrn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahro": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahrs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahrt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahru": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahvk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahvl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahvm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahvn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahvo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahvs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahvt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahvu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahwk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahwl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahwm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahwn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahwo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahws": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahwt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahwu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahxl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "ahxm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahxn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ahxo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahxs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahxt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ahxu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akcg": [
     "3-mover",
@@ -1097,196 +1209,260 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "akig": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akim": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akin": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akio": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akis": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akit": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akiu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akjg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akjh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akjm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akjn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akjo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akjs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akjt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akju": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akpg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akph": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akpm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akpn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akpo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akps": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "akpt": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "akpu": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "akqg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akqh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akqm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akqn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akqo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akqs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akqt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akqu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akrg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akrh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akrm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akrn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akro": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akrs": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "akrt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akru": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akvg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akvh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akvm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akvn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akvo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akvs": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "akvt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akvu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akwg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akwh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akwm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akwn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akwo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akws": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akwt": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "akwu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akxg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akxh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akxm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akxn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "akxo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "akxs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akxt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "akxu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alch": [
     "3-mover",
@@ -1317,196 +1493,260 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "alig": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "alih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alim": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alin": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alio": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alis": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alit": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aliu": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aljg": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aljh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aljm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aljn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aljo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aljs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aljt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alju": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alpg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alph": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alpm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alpn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "alpo": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "alps": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alpt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alpu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alqg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alqh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alqm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alqn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "alqo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alqs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alqt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alqu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alrg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alrh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alrm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alrn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alro": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alrs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alrt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alru": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alvg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alvh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alvm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "alvn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alvo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alvs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alvt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alvu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alwg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alwh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alwm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alwn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "alwo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alws": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alwt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alwu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alxg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alxh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "alxm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "alxn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "alxo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alxs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alxt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "alxu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amcs": [
     "5-mover",
@@ -1521,172 +1761,228 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "amig": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amih": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amik": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amil": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amis": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amit": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amiu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amjg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amjh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amjk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "amjl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amjs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amjt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amju": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ampg": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amph": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "ampk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ampl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amps": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ampt": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "ampu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amqg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amqh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amqk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amql": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amqs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amqt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amqu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amrg": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amrh": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amrk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amrl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amrs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amrt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amru": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amvg": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amvh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amvk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amvl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amvs": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amvt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amvu": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "amwg": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amwh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amwk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amwl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "amws": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amwt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amwu": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "amxg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amxh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amxl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "amxs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amxt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "amxu": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "anct": [
     "4-mover",
@@ -1697,344 +1993,456 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "anig": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anik": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anil": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anis": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anit": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aniu": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anjg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anjh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anjk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anjl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anjs": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anjt": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anju": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anpg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anph": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anpk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anpl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anps": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "anpt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anpu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anqg": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anqh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anqk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anql": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anqs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anqt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anqu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anrg": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anrh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anrk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anrl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anrs": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anrt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anru": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anvg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anvh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anvk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anvl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anvs": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anvt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anvu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anwg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anwh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anwk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anwl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anws": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anwt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anwu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anxg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anxh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "anxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anxl": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "anxs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anxt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "anxu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aocu": [
     "5-mover",
     "Opposite layer"
   ],
   "aoig": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoik": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoil": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aois": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoit": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoiu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aojg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aojh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aojk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aojl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aojs": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aojt": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoju": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aopg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoph": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aopk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aopl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aops": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aopt": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aopu": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aoqg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoqh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoqk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoql": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoqs": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aoqt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoqu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aorg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aorh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aork": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aorl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aors": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aort": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoru": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aovg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aovh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aovk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aovl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aovs": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aovt": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aovu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aowg": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aowh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aowk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aowl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aows": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aowt": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aowu": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoxg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoxh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoxl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoxs": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aoxt": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aoxu": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "ascm": [
     "4-mover",
@@ -2049,172 +2457,228 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "asig": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asik": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asil": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "asim": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "asin": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asio": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asjg": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "asjh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asjk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asjl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asjm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asjn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asjo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aspg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asph": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aspk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aspl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aspm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aspn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aspo": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "asqg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asqh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asqk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asql": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asqm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asqn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asqo": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "asrg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asrh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asrk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asrl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asrm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asrn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asro": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asvg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asvh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asvk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asvl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asvm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asvn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asvo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aswg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aswh": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aswk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aswl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aswm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aswn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aswo": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "asxg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asxh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asxl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asxm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "asxn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "asxo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atcn": [
     "5-mover",
@@ -2225,344 +2689,456 @@ export const layerCaseTags = {
     "Opposite layer"
   ],
   "atig": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atik": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atil": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "atim": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "atin": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atio": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atjg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atjh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atjk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atjl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atjm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atjn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atjo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atpg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atph": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atpk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atpl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atpm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atpn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atpo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atqg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atqh": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atqk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atql": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "atqm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "atqn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atqo": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atrg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atrh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atrk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atrl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atrm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atrn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atro": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atvg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atvh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atvk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atvl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atvm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atvn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atvo": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atwg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atwh": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atwk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atwl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atwm": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atwn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atwo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atxg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atxh": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "atxk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atxl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "atxm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "atxn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "atxo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auco": [
     "5-mover",
     "Opposite layer"
   ],
   "auig": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auih": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auik": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auil": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "auim": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auin": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auio": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aujg": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aujh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aujk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aujl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aujm": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "aujn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aujo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aupg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auph": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aupk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aupl": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aupm": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aupn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "aupo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auqg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auqh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auqk": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auql": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auqm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auqn": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "auqo": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aurg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aurh": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aurk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "aurl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aurm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "aurn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "auro": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auvg": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auvh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auvk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auvl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auvm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auvn": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auvo": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auwg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auwh": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "auwk": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "auwl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auwm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auwn": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auwo": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "auxg": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auxh": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auxk": [
-    "4-mover"
+    "4-mover",
+    "One-bar layer"
   ],
   "auxl": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auxm": [
-    "5-mover"
+    "5-mover",
+    "One-bar layer"
   ],
   "auxn": [
-    "3-mover"
+    "3-mover",
+    "One-bar layer"
   ],
   "auxo": [
-    "6-mover"
+    "6-mover",
+    "One-bar layer"
   ],
   "egik": [
     "6-mover",
