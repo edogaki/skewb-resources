@@ -40,11 +40,6 @@ export default function LayerCaseFilterByTags({
     >([]);
 
     useEffect(() => {
-        console.log(
-            caseTagsSelected,
-            hasTagsShortestSelected,
-            hasTagsSuboptimalSelected,
-        );
         const caseTagsSelectedByCategory = caseTagCategories.map(
             ([catName, catTags]) =>
                 [

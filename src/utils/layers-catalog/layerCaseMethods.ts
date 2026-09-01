@@ -6,7 +6,7 @@ import {
     type Piece,
     SkewbState,
 } from "../solver/skewbState";
-import { computeHash } from "./baseMethods";
+import { computeHash, toRight } from "./baseMethods";
 import { type LayerCase, layerCases } from "./layerCases.gen";
 
 export const layerCaseNum = Object.fromEntries(
@@ -123,3 +123,28 @@ export function skewbStateWhiteToLayerCase(skewbState: SkewbState) {
     const layerCase = computeHash(letters) as LayerCase;
     return layerCase;
 }
+
+export function generateAllLayerCaseRotations(lc: LayerCase) {
+    const rotations: string[] = [lc];
+    for (let i = 0; i < 3; i++) {
+        const lastLc = rotations[rotations.length - 1];
+        rotations.push(`${lastLc.slice(1, 4)}${lastLc.slice(0, 1)}`);
+    }
+    for (let n = 1; n < 4; n++) {
+        let newLc = "";
+        for (let i = 0; i < lc.length; i++) {
+            const lastLc = rotations[rotations.length - 1];
+            newLc += toRight[lastLc[i] as keyof typeof toRight];
+        }
+        rotations.push(newLc);
+        for (let i = 0; i < 3; i++) {
+            const lastLc = rotations[rotations.length - 1];
+            rotations.push(`${lastLc.slice(1, 4)}${lastLc.slice(0, 1)}`);
+        }
+    }
+    return rotations;
+}
+
+export const allLayerCaseRotations = Object.fromEntries(
+    layerCases.map((lc) => [lc, generateAllLayerCaseRotations(lc)]),
+) as Record<LayerCase, string[]>;

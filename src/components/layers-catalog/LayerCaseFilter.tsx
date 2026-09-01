@@ -26,7 +26,7 @@ const filterOptions: {
     {
         optionName: "Filter By Corners",
         Component: LayerCaseFilterByCorners,
-        width: "w-100",
+        width: "w-full",
     },
 ];
 
