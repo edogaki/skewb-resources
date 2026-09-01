@@ -11,7 +11,7 @@ const state = new SkewbState(undefined, undefined, {
     5: [Color.Gray, Color.Gray, Color.Gray],
     6: [Color.Gray, Color.Gray, Color.Gray],
     7: [Color.Gray, Color.Gray, Color.Gray],
-    8: [Color.Gray, Color.Gray, Color.Gray],
+    8: [Color.White],
     9: [Color.Gray],
     10: [Color.Gray],
     11: [Color.Gray],
