@@ -15,7 +15,7 @@ export default function LayerCasesStats({
     );
     return (
         <div>
-            <div>Search results: {layerCasesToShow.length}</div>
+            <div>Results: {layerCasesToShow.length}</div>
             {layerCasesToShow.length > 0 && (
                 <div>
                     Average number of moves:{" "}

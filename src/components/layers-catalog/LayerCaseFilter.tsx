@@ -37,6 +37,7 @@ export default function LayerCaseFilter({
     setLayerCasesToShow: Dispatch<SetStateAction<LayerCase[]>>;
 }) {
     const [filterFuncs, setFilterFuncs] = useState<FilterFunc[]>([]);
+    const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 
     const setFilterFuncByIndex = useMemo(
         () =>
@@ -51,7 +52,23 @@ export default function LayerCaseFilter({
         [],
     );
     return (
-        <div className="mb-3">
+        <form
+            className="mb-3"
+            onSubmit={async (e) => {
+                e.preventDefault();
+                setIsSubmitDisabled(true);
+                setTimeout(() => {
+                    setLayerCasesToShow(() => {
+                        let newLayerCases = layerCases.slice();
+                        for (const filterFunc of filterFuncs) {
+                            newLayerCases = filterFunc(newLayerCases);
+                        }
+                        return newLayerCases;
+                    });
+                    setIsSubmitDisabled(false);
+                }, 0);
+            }}
+        >
             <div className="flex flex-wrap mb-3 gap-10">
                 {filterOptions.map(
                     ({ optionName, Component, width }, index) => (
@@ -67,20 +84,12 @@ export default function LayerCaseFilter({
                 )}
             </div>
             <button
-                type="button"
-                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5"
-                onClick={() => {
-                    setLayerCasesToShow(() => {
-                        let newLayerCases = layerCases.slice();
-                        for (const filterFunc of filterFuncs) {
-                            newLayerCases = filterFunc(newLayerCases);
-                        }
-                        return newLayerCases;
-                    });
-                }}
+                type="submit"
+                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
+                disabled={isSubmitDisabled}
             >
                 Apply Filters
             </button>
-        </div>
+        </form>
     );
 }
