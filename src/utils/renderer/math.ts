@@ -123,6 +123,10 @@ function intersection<T>(arr1: T[], arr2: T[]) {
     return arr1.filter((e1) => set2.has(e1));
 }
 
+function xor(a: unknown, b: unknown) {
+    return !a === !b;
+}
+
 export {
     mod,
     rotationMatrix,
@@ -130,4 +134,5 @@ export {
     shuffleArray,
     weightedRandom,
     intersection,
+    xor,
 };

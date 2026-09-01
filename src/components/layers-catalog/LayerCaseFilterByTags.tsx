@@ -21,7 +21,9 @@ import {
     layerCaseHasTagsShortest,
     layerCaseHasTagsSuboptimal,
 } from "#/utils/layers-catalog/tagsMethods";
-import { intersection } from "#/utils/renderer/math";
+import { intersection, xor } from "#/utils/renderer/math";
+
+type HasDoesNotHave = "Has" | "Does not have";
 
 export default function LayerCaseFilterByTags({
     setFilterFunc,
@@ -38,6 +40,10 @@ export default function LayerCaseFilterByTags({
     const [hasTagsSuboptimalSelected, setHasTagsSuboptimalSelected] = useState<
         SolutionTag[]
     >([]);
+
+    const [hasAnOptimal, setHasAnOptimal] = useState<HasDoesNotHave>("Has");
+
+    const [hasASuboptimal, setHasASuboptimal] = useState<HasDoesNotHave>("Has");
 
     useEffect(() => {
         const caseTagsSelectedByCategory = caseTagCategories.map(
@@ -62,19 +68,25 @@ export default function LayerCaseFilterByTags({
                         layerCaseTags[lc],
                     ).length > 0 ||
                         caseTagsSelectedByCategory[1][1].length === 0) &&
-                    (intersection<string>(
-                        layerCaseHasTagsShortest[lc].map(
-                            ([tag, _algStrs]) => tag,
-                        ),
-                        hasTagsShortestSelected,
-                    ).length > 0 ||
+                    (xor(
+                        intersection<string>(
+                            layerCaseHasTagsShortest[lc].map(
+                                ([tag, _algStrs]) => tag,
+                            ),
+                            hasTagsShortestSelected,
+                        ).length > 0,
+                        hasAnOptimal === "Has",
+                    ) ||
                         hasTagsShortestSelected.length === 0) &&
-                    (intersection<string>(
-                        layerCaseHasTagsSuboptimal[lc].map(
-                            ([tag, _algStrs]) => tag,
-                        ),
-                        hasTagsSuboptimalSelected,
-                    ).length > 0 ||
+                    (xor(
+                        intersection<string>(
+                            layerCaseHasTagsSuboptimal[lc].map(
+                                ([tag, _algStrs]) => tag,
+                            ),
+                            hasTagsSuboptimalSelected,
+                        ).length > 0,
+                        hasASuboptimal === "Has",
+                    ) ||
                         hasTagsSuboptimalSelected.length === 0)
                 );
             }),
@@ -84,6 +96,8 @@ export default function LayerCaseFilterByTags({
         caseTagsSelected,
         hasTagsShortestSelected,
         hasTagsSuboptimalSelected,
+        hasAnOptimal,
+        hasASuboptimal,
     ]);
 
     return (
@@ -116,7 +130,24 @@ export default function LayerCaseFilterByTags({
                 </div>
             ))}
             <div>
-                <div className="font-semibold">Has an optimal alg that is:</div>
+                <div className="font-semibold">
+                    <select
+                        id="hasAnOptimal"
+                        className="field-sizing-content border border-(--line) px-1 rounded-lg"
+                        value={hasAnOptimal}
+                        onChange={(e) =>
+                            setHasAnOptimal(e.target.value as HasDoesNotHave)
+                        }
+                    >
+                        <option selected value="Has">
+                            Has
+                        </option>
+                        <option selected value="Does not have">
+                            Does not have
+                        </option>
+                    </select>{" "}
+                    an optimal alg that is:
+                </div>
                 {hasTagsShortest.map((tag) => (
                     <div key={tag}>
                         <input
@@ -142,7 +173,22 @@ export default function LayerCaseFilterByTags({
             </div>
             <div>
                 <div className="font-semibold">
-                    Has a suboptimal alg that is:
+                    <select
+                        id="hasASuboptimal"
+                        className="field-sizing-content border border-(--line) px-1 rounded-lg"
+                        value={hasASuboptimal}
+                        onChange={(e) =>
+                            setHasASuboptimal(e.target.value as HasDoesNotHave)
+                        }
+                    >
+                        <option selected value="Has">
+                            Has
+                        </option>
+                        <option selected value="Does not have">
+                            Does not have
+                        </option>
+                    </select>{" "}
+                    a suboptimal alg that is:
                 </div>
                 {hasTagsSuboptimal.map((tag) => (
                     <div key={tag}>
