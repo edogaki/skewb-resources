@@ -45,6 +45,13 @@ export default function Header() {
                         Layer Solver
                     </Link>
                     <Link
+                        to="/one-look-trainer"
+                        className="nav-link"
+                        activeProps={{ className: "nav-link is-active" }}
+                    >
+                        One Look Trainer
+                    </Link>
+                    <Link
                         to="/layers-catalog"
                         className="nav-link"
                         activeProps={{ className: "nav-link is-active" }}

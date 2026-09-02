@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TrainerRouteImport } from './routes/trainer'
+import { Route as OneLookTrainerRouteImport } from './routes/one-look-trainer'
 import { Route as LayersCatalogRouteImport } from './routes/layers-catalog'
 import { Route as LayerSolverRouteImport } from './routes/layer-solver'
 import { Route as AboutRouteImport } from './routes/about'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TrainerRoute = TrainerRouteImport.update({
   id: '/trainer',
   path: '/trainer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OneLookTrainerRoute = OneLookTrainerRouteImport.update({
+  id: '/one-look-trainer',
+  path: '/one-look-trainer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LayersCatalogRoute = LayersCatalogRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
   '/layers-catalog': typeof LayersCatalogRoute
+  '/one-look-trainer': typeof OneLookTrainerRoute
   '/trainer': typeof TrainerRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
   '/layers-catalog': typeof LayersCatalogRoute
+  '/one-look-trainer': typeof OneLookTrainerRoute
   '/trainer': typeof TrainerRoute
 }
 export interface FileRoutesById {
@@ -61,19 +69,33 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/layer-solver': typeof LayerSolverRoute
   '/layers-catalog': typeof LayersCatalogRoute
+  '/one-look-trainer': typeof OneLookTrainerRoute
   '/trainer': typeof TrainerRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/layer-solver' | '/layers-catalog' | '/trainer'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/layer-solver'
+    | '/layers-catalog'
+    | '/one-look-trainer'
+    | '/trainer'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/layer-solver' | '/layers-catalog' | '/trainer'
+  to:
+    | '/'
+    | '/about'
+    | '/layer-solver'
+    | '/layers-catalog'
+    | '/one-look-trainer'
+    | '/trainer'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/layer-solver'
     | '/layers-catalog'
+    | '/one-look-trainer'
     | '/trainer'
   fileRoutesById: FileRoutesById
 }
@@ -82,6 +104,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   LayerSolverRoute: typeof LayerSolverRoute
   LayersCatalogRoute: typeof LayersCatalogRoute
+  OneLookTrainerRoute: typeof OneLookTrainerRoute
   TrainerRoute: typeof TrainerRoute
 }
 
@@ -92,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/trainer'
       fullPath: '/trainer'
       preLoaderRoute: typeof TrainerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/one-look-trainer': {
+      id: '/one-look-trainer'
+      path: '/one-look-trainer'
+      fullPath: '/one-look-trainer'
+      preLoaderRoute: typeof OneLookTrainerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/layers-catalog': {
@@ -130,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   LayerSolverRoute: LayerSolverRoute,
   LayersCatalogRoute: LayersCatalogRoute,
+  OneLookTrainerRoute: OneLookTrainerRoute,
   TrainerRoute: TrainerRoute,
 }
 export const routeTree = rootRouteImport
