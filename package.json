@@ -21,9 +21,11 @@
     "generate-all-layer-cases": "npx tsx ./src/scripts/generateAllLayerCases.ts",
     "generate-all-layer-solutions-complete": "npx tsx ./src/scripts/generateAllLayerSolutionsComplete.ts",
     "generate-all-tags": "npx tsx ./src/scripts/generateAllTags.ts",
+    "test-script": "npx tsx ./src/scripts/test-script.ts",
     "check-typescript": "tsc --noEmit"
   },
   "dependencies": {
+    "@datastructures-js/queue": "^4.3.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",
