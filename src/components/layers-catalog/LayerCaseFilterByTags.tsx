@@ -139,12 +139,8 @@ export default function LayerCaseFilterByTags({
                             setHasAnOptimal(e.target.value as HasDoesNotHave)
                         }
                     >
-                        <option selected value="Has">
-                            Has
-                        </option>
-                        <option selected value="Does not have">
-                            Does not have
-                        </option>
+                        <option value="Has">Has</option>
+                        <option value="Does not have">Does not have</option>
                     </select>{" "}
                     an optimal alg that is:
                 </div>
@@ -181,12 +177,8 @@ export default function LayerCaseFilterByTags({
                             setHasASuboptimal(e.target.value as HasDoesNotHave)
                         }
                     >
-                        <option selected value="Has">
-                            Has
-                        </option>
-                        <option selected value="Does not have">
-                            Does not have
-                        </option>
+                        <option value="Has">Has</option>
+                        <option value="Does not have">Does not have</option>
                     </select>{" "}
                     a suboptimal alg that is:
                 </div>
