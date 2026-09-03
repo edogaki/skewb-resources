@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 
@@ -8,6 +8,12 @@ export default function CopyLayerSolutionsToClipboard({
     layerCasesToShow: LayerCase[];
 }) {
     const [isFinishedCopying, setIsFinishedCopying] = useState(false);
+    useEffect(() => {
+        if (isFinishedCopying) {
+            const id = setTimeout(() => setIsFinishedCopying(false), 5000);
+            return () => clearTimeout(id);
+        }
+    }, [isFinishedCopying]);
     return (
         <div className="flex gap-2 items-center">
             <button
