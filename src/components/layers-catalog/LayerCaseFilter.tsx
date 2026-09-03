@@ -9,6 +9,7 @@ import {
     type LayerCase,
     layerCases,
 } from "#/utils/layers-catalog/layerCases.gen";
+import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import type { FilterFunc } from "#/utils/layers-catalog/layersCatalogMethods";
 import LayerCaseFilterByCorners from "./LayerCaseFilterByCorners";
 import LayerCaseFilterByTags from "./LayerCaseFilterByTags";
@@ -31,6 +32,7 @@ const filterOptions: {
 ];
 
 export default function LayerCaseFilter({
+    layerCasesToShow,
     setLayerCasesToShow,
 }: {
     layerCasesToShow: LayerCase[];
