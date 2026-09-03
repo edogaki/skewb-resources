@@ -7,6 +7,10 @@ export const Route = createFileRoute("/about")({
             {
                 title: "About | Skewb Resources",
             },
+            {
+                property: "og:title",
+                content: "About | Skewb Resources",
+            },
         ],
     }),
 });

@@ -16,6 +16,10 @@ export const Route = createFileRoute("/layers-catalog")({
                 title: "Layers Catalog | Skewb Resources",
             },
             {
+                property: "og:title",
+                content: "Layers Catalog | Skewb Resources",
+            },
+            {
                 property: "og:description",
                 content:
                     "Skewb Layers Catalog. A list of all layer cases, with solutions & other info. Includes sort and filter functions.",

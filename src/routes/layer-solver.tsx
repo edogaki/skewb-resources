@@ -28,6 +28,10 @@ export const Route = createFileRoute("/layer-solver")({
                 title: "Layer Solver | Skewb Resources",
             },
             {
+                property: "og:title",
+                content: "Layer Solver | Skewb Resources",
+            },
+            {
                 property: "og:description",
                 content:
                     "Skewb Layer Solver. Input a scramble and see the optimal layer solutions for each color. Also includes Skewb Painter and random scramble input.",

@@ -15,6 +15,10 @@ export const Route = createFileRoute("/one-look-trainer")({
                 title: "One Look Trainer | Skewb Resources",
             },
             {
+                property: "og:title",
+                content: "One Look Trainer | Skewb Resources",
+            },
+            {
                 property: "og:description",
                 content:
                     "Skewb One Look Trainer. Generates scrambles with layer algs inputted by user.",
