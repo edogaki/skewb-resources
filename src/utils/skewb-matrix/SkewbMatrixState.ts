@@ -1,13 +1,16 @@
 /** biome-ignore-all lint/complexity/useSimpleNumberKeys: binary representation for keys is simpler */
+import { SQRT1_2 } from "mathjs";
 import { mod } from "../math";
 import { Color } from "../renderer/color";
 import type { SkewbRendererState } from "../renderer/skewbRenderer";
-import { WCAAlg, WCATurn } from "../solver/alg";
+import { RubikskewbAlg, RubikskewbTurn, WCAAlg, WCATurn } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import {
     type Axis,
-    type CubeRotation,
+    CubeRotation,
     type DiagonalAxis,
+    invertAxis,
+    invertRotation,
     mask1,
     mask2,
     mask3,
@@ -16,15 +19,21 @@ import {
     mask21,
     mask22,
     mask31,
+    mask112131,
+    multiplyRotationByAxis,
     multiplyRotations,
+    prettyPrint,
     rotateAroundAxis,
     rotateAroundDiagonalAxis,
+    rotateAroundDiagonalAxisLookup,
+    rotationToAxis,
+    rotationToDiagAxis,
 } from "./matrixMath";
 
-const CornerPiece = [0, 1, 2, 3, 4, 5, 6, 7] as const;
-type CornerPiece = (typeof CornerPiece)[number];
-const CenterPiece = [0, 1, 2, 3, 4, 5] as const;
-type CenterPiece = (typeof CenterPiece)[number];
+export const CornerPiece = [0, 1, 2, 3, 4, 5, 6, 7] as const;
+export type CornerPiece = (typeof CornerPiece)[number];
+export const CenterPiece = [0, 1, 2, 3, 4, 5] as const;
+export type CenterPiece = (typeof CenterPiece)[number];
 
 const baseCornerPieceColors = {
     0: [Color.White, Color.Red, Color.Green],
@@ -85,9 +94,7 @@ export const defaultCenterPieces: Tuple<CubeRotation, 6> = [
     rotateAroundAxis(0b000100, 2),
     rotateAroundAxis(0b000100, 1),
     rotateAroundAxis(0b000001, 3),
-];
-
-const mask112131 = 0b110000110000110000;
+] as const;
 
 const rendererStateCornerIndices = {
     0b010101: [17, 20, 6],
@@ -109,6 +116,82 @@ const rendererStateCenterIndices = {
     0b001100: 14,
 } as const as Record<Axis, number>;
 
+const wcaTurnToStateTurn: Partial<Record<WCATurn, [DiagonalAxis, 0 | 1 | 2]>> =
+    {
+        U: [0b110111, 2],
+        "U'": [0b110111, 1],
+        R: [0b011111, 2],
+        "R'": [0b011111, 1],
+        L: [0b111101, 2],
+        "L'": [0b111101, 1],
+        B: [0b111111, 2],
+        "B'": [0b111111, 1],
+    };
+const wcaTurnToStateRotation: Partial<Record<WCATurn, [Axis, 0 | 1 | 2 | 3]>> =
+    {
+        x: [0b010000, 3],
+        "x'": [0b010000, 1],
+        x2: [0b010000, 2],
+        y: [0b000100, 3],
+        "y'": [0b000100, 1],
+        y2: [0b000100, 2],
+        z: [0b000001, 3],
+        "z'": [0b000001, 1],
+        z2: [0b000001, 2],
+    };
+
+const rubikskewbTurnToStateTurn: Partial<
+    Record<RubikskewbTurn, [DiagonalAxis, 0 | 1 | 2]>
+> = {
+    r: [0b011111, 2],
+    "r'": [0b011111, 1],
+    R: [0b010111, 2],
+    "R'": [0b010111, 1],
+    b: [0b111111, 2],
+    "b'": [0b111111, 1],
+    B: [0b110111, 2],
+    "B'": [0b110111, 1],
+    f: [0b011101, 2],
+    "f'": [0b011101, 1],
+    F: [0b010101, 2],
+    "F'": [0b010101, 1],
+    l: [0b111101, 2],
+    "l'": [0b111101, 1],
+    L: [0b110101, 2],
+    "L'": [0b110101, 1],
+};
+
+export const rubikskewbTurnToStateRotation: Partial<
+    Record<RubikskewbTurn, [Axis, 0 | 1 | 2 | 3]>
+> = {
+    x: [0b010000, 3],
+    "x'": [0b010000, 1],
+    x2: [0b010000, 2],
+    y: [0b000100, 3],
+    "y'": [0b000100, 1],
+    y2: [0b000100, 2],
+    z: [0b000001, 3],
+    "z'": [0b000001, 1],
+    z2: [0b000001, 2],
+};
+
+const standardizedCenterRotation: Record<CubeRotation, CubeRotation> =
+    Object.fromEntries(
+        CubeRotation.map((r) => [
+            r,
+            defaultCenterPieces.find((cpr, i) =>
+                [0, 1, 2, 3]
+                    .map((j) =>
+                        multiplyRotations(
+                            rotateAroundAxis(centerPieceAxis[i], j),
+                            r,
+                        ),
+                    )
+                    .includes(cpr),
+            ),
+        ]),
+    ) as Record<CubeRotation, CubeRotation>;
+
 export class SkewbMatrixState {
     cornerPieces: Tuple<CubeRotation, 8>;
     centerPieces: Tuple<CubeRotation, 6>;
@@ -122,15 +205,26 @@ export class SkewbMatrixState {
         centerPieceColors?: Record<CenterPiece, Color>,
     ) {
         this.cornerPieces =
-            cornerPieces ??
+            (cornerPieces?.slice() as Tuple<CubeRotation, 8>) ??
             (defaultCornerPieces.slice() as Tuple<CubeRotation, 8>);
         this.centerPieces =
-            centerPieces ??
+            (centerPieces?.slice() as Tuple<CubeRotation, 6>) ??
             (defaultCenterPieces.slice() as Tuple<CubeRotation, 6>);
         this.cornerPieceColors =
-            cornerPieceColors ?? structuredClone(baseCornerPieceColors);
+            structuredClone(cornerPieceColors) ??
+            structuredClone(baseCornerPieceColors);
         this.centerPieceColors =
-            centerPieceColors ?? structuredClone(baseCenterPieceColors);
+            structuredClone(centerPieceColors) ??
+            structuredClone(baseCenterPieceColors);
+    }
+
+    applyRotation(r: CubeRotation) {
+        for (let i = 0; i < this.cornerPieces.length; i++) {
+            this.cornerPieces[i] = multiplyRotations(r, this.cornerPieces[i]);
+        }
+        for (let i = 0; i < this.centerPieces.length; i++) {
+            this.centerPieces[i] = multiplyRotations(r, this.centerPieces[i]);
+        }
     }
 
     rotate(axis: Axis, th: number) {
@@ -155,14 +249,12 @@ export class SkewbMatrixState {
                 (this.cornerPieces[i] & mask112131) |
                 ((this.cornerPieces[i] & (mask112131 >> 2)) << 2) |
                 ((this.cornerPieces[i] & (mask112131 >> 4)) << 4);
-            console.log(i, cornerDiag.toString(2).padStart(18, "0"));
             const cd1 =
                 ((cornerDiag & mask11) >> 12) ^ (diagAxis & mask1) ? 1 : 0;
             const cd2 =
                 ((cornerDiag & mask21) >> 8) ^ (diagAxis & mask2) ? 1 : 0;
             const cd3 =
                 ((cornerDiag & mask31) >> 4) ^ (diagAxis & mask3) ? 1 : 0;
-            console.log({ cd1, cd2, cd3 });
             if (cd1 + cd2 + cd3 <= 1) {
                 this.cornerPieces[i] = multiplyRotations(
                     rotateAroundDiagonalAxis(diagAxis, th),
@@ -197,13 +289,7 @@ export class SkewbMatrixState {
             () => null,
         ) as Tuple<Color | null, 30>;
         for (let i = 0; i < this.cornerPieces.length; i++) {
-            const cornerDiag =
-                (this.cornerPieces[i] & mask112131) |
-                ((this.cornerPieces[i] & (mask112131 >> 2)) << 2) |
-                ((this.cornerPieces[i] & (mask112131 >> 4)) << 4);
-            const cornerDiagAxis = (((cornerDiag & mask11) >> 12) |
-                ((cornerDiag & mask21) >> 8) |
-                ((cornerDiag & mask31) >> 4)) as DiagonalAxis;
+            const cornerDiagAxis = rotationToDiagAxis(this.cornerPieces[i]);
             const orie =
                 this.cornerPieces[i] & mask22
                     ? 0
@@ -218,73 +304,23 @@ export class SkewbMatrixState {
             }
         }
         for (let i = 0; i < this.centerPieces.length; i++) {
-            const centerAxis = (((this.centerPieces[i] & mask11) >> 12) |
-                ((this.centerPieces[i] & mask21) >> 8) |
-                ((this.centerPieces[i] & mask31) >> 4)) as Axis;
-
+            const centerAxis = rotationToAxis(this.centerPieces[i]);
             skewbRendererState[rendererStateCenterIndices[centerAxis]] =
                 this.centerPieceColors[i as CenterPiece];
         }
         if (skewbRendererState.some((c) => c === null)) {
             throw new Error(
-                `invalid skewb matrix state! please contact site owner and send him this message:\n${skewbRendererState} ${this.cornerPieces} ${this.centerPieces} ${Object.values(this.cornerPieceColors)} ${Object.values(this.centerPieceColors)}`,
+                `invalid skewb matrix state! please contact site owner and send him this message:\nskewbRendererState:${skewbRendererState}\ncornerPieces:${this.cornerPieces}\ncenterPieces:${this.centerPieces}\ncornerPieceColors:${Object.values(this.cornerPieceColors)}\ncenterPieceColors:${Object.values(this.centerPieceColors)}`,
             );
         }
         return skewbRendererState as Tuple<Color, 30>;
     }
+
     turnWCA(turn: WCATurn) {
-        switch (turn) {
-            case WCATurn.U:
-                this.turn(0b110111, 2);
-                break;
-            case WCATurn.Uprime:
-                this.turn(0b110111, 1);
-                break;
-            case WCATurn.R:
-                this.turn(0b011111, 2);
-                break;
-            case WCATurn.Rprime:
-                this.turn(0b011111, 1);
-                break;
-            case WCATurn.L:
-                this.turn(0b111101, 2);
-                break;
-            case WCATurn.Lprime:
-                this.turn(0b111101, 1);
-                break;
-            case WCATurn.B:
-                this.turn(0b111111, 2);
-                break;
-            case WCATurn.Bprime:
-                this.turn(0b111111, 1);
-                break;
-            case WCATurn.x:
-                this.rotate(0b010000, 3);
-                break;
-            case WCATurn.xprime:
-                this.rotate(0b010000, 1);
-                break;
-            case WCATurn.x2:
-                this.rotate(0b010000, 2);
-                break;
-            case WCATurn.y:
-                this.rotate(0b000100, 3);
-                break;
-            case WCATurn.yprime:
-                this.rotate(0b000100, 1);
-                break;
-            case WCATurn.y2:
-                this.rotate(0b000100, 2);
-                break;
-            case WCATurn.z:
-                this.rotate(0b000001, 3);
-                break;
-            case WCATurn.zprime:
-                this.rotate(0b000001, 1);
-                break;
-            case WCATurn.z2:
-                this.rotate(0b000001, 2);
-                break;
+        if (wcaTurnToStateTurn[turn]) {
+            this.turn(...wcaTurnToStateTurn[turn]);
+        } else if (wcaTurnToStateRotation[turn]) {
+            this.rotate(...wcaTurnToStateRotation[turn]);
         }
         return this;
     }
@@ -296,6 +332,22 @@ export class SkewbMatrixState {
         return this;
     }
 
+    turnRubikskewb(turn: RubikskewbTurn) {
+        if (rubikskewbTurnToStateTurn[turn]) {
+            this.turn(...rubikskewbTurnToStateTurn[turn]);
+        } else if (rubikskewbTurnToStateRotation[turn]) {
+            this.rotate(...rubikskewbTurnToStateRotation[turn]);
+        }
+        return this;
+    }
+
+    applyRubikskewbAlg(alg: RubikskewbAlg) {
+        for (const turn of alg.turns) {
+            this.turnRubikskewb(turn);
+        }
+        return this;
+    }
+
     clone() {
         return new SkewbMatrixState(
             this.cornerPieces,
@@ -303,5 +355,99 @@ export class SkewbMatrixState {
             this.cornerPieceColors,
             this.centerPieceColors,
         );
+    }
+
+    turnCornerPiece(cp: CornerPiece, th: number) {
+        const cornerDiagAxis = rotationToDiagAxis(this.cornerPieces[cp]);
+        this.cornerPieces[cp] = multiplyRotations(
+            rotateAroundDiagonalAxisLookup[cornerDiagAxis][mod(th, 3)],
+            this.cornerPieces[cp],
+        );
+        return this;
+    }
+
+    getLayerPieceLocations(center: CenterPiece) {
+        const color = this.centerPieceColors[center];
+        return {
+            cornerPieceLocations: CornerPiece.filter((cp) =>
+                this.cornerPieceColors[cp].includes(color),
+            ),
+            centerPieceLocations: [center],
+        };
+    }
+
+    getL2LPieceLocations(center: CenterPiece) {
+        const color = this.centerPieceColors[center];
+        const oppositeColor =
+            this.centerPieceColors[
+                centerPieceAxis.indexOf(
+                    invertAxis(centerPieceAxis[center]),
+                ) as CenterPiece
+            ];
+        const cornerPieceLocations = [
+            CornerPiece.find(
+                (cp) => !this.cornerPieceColors[cp].includes(color),
+            ),
+        ];
+        for (let i = 1; i < 4; i++) {
+            const prevCorner = cornerPieceLocations[i - 1] as CornerPiece;
+            const prevCornerColors = this.cornerPieceColors[prevCorner];
+            const prevCornerCenterOppColorIndex =
+                prevCornerColors.indexOf(oppositeColor);
+            const commonColor =
+                prevCornerColors[mod(prevCornerCenterOppColorIndex + 1, 3)];
+            cornerPieceLocations.push(
+                CornerPiece.find(
+                    (cp) =>
+                        cp !== prevCorner &&
+                        !this.cornerPieceColors[cp].includes(color) &&
+                        this.cornerPieceColors[cp].includes(commonColor),
+                ),
+            );
+        }
+        if (cornerPieceLocations.some((cp) => cp === undefined)) {
+            throw new Error(
+                `ran getL2LPieceLocations on a bad color scheme ${Object.values(this.cornerPieceColors)} ${Object.values(this.centerPieceColors)})}`,
+            );
+        }
+        return {
+            // cornerPieceLocations is sorted ccw
+            cornerPieceLocations: cornerPieceLocations as CornerPiece[],
+            centerPieceLocations: CenterPiece.filter(
+                (cp) => this.centerPieceColors[cp] !== color,
+            ),
+        };
+    }
+
+    rotateCenterToAxis(center: CenterPiece, axis: Axis) {
+        const centerCurrRotation = this.centerPieces[center];
+        const rotationToExecute = CubeRotation.find(
+            (r) =>
+                rotationToAxis(multiplyRotations(r, centerCurrRotation)) ===
+                axis,
+        );
+        if (rotationToExecute === undefined) {
+            throw new Error(
+                "impossible error! check if matrix operations are closed",
+            );
+        }
+        this.applyRotation(rotationToExecute);
+    }
+
+    standardizeForWCA() {
+        const wrgIndex: CornerPiece = Object.values(
+            this.cornerPieceColors,
+        ).findIndex(
+            (cArr) =>
+                cArr.includes(Color.White) &&
+                cArr.includes(Color.Red) &&
+                cArr.includes(Color.Green),
+        ) as CornerPiece;
+        if (wrgIndex === undefined) return;
+        this.applyRotation(invertRotation(this.cornerPieces[wrgIndex]));
+    }
+
+    generateHash() {
+        return `${this.centerPieces.map((r) => standardizedCenterRotation[r])} ${this.cornerPieces}`;
     }
 }

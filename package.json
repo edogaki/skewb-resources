@@ -25,6 +25,7 @@
     "check-typescript": "tsc --noEmit"
   },
   "dependencies": {
+    "@datastructures-js/queue": "^4.3.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",

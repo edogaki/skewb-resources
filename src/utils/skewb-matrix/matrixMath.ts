@@ -46,6 +46,7 @@ export const shift1 = 4;
 export const shift2 = 2;
 export const shift3 = 0;
 
+// opposite axes in both Axis and DiagonalAxis must be in adjacent pairs otherwise some functions may not work (invertAxis)
 export const Axis = [
     0b000001, //  [0, 0, 1],
     0b000011, //  [0, 0, -1],
@@ -58,15 +59,27 @@ export type Axis = (typeof Axis)[number];
 
 export const DiagonalAxis = [
     0b010101, //  [1, 1, 1],
+    0b111111, //  [-1, -1, -1],
     0b010111, //  [1, 1, -1],
+    0b111101, //  [-1, -1, 1],
     0b011101, //  [1, -1, 1],
+    0b110111, //  [-1, 1, -1],
     0b011111, //  [1, -1, -1],
     0b110101, //  [-1, 1, 1],
-    0b110111, //  [-1, 1, -1],
-    0b111101, //  [-1, -1, 1],
-    0b111111, //  [-1, -1, -1],
 ] as const;
 export type DiagonalAxis = (typeof DiagonalAxis)[number];
+
+export function invertAxis(a: Axis) {
+    const index = Axis.indexOf(a);
+    const base = index - (index % 2);
+    return Axis[base + ((index + 1) % 2)];
+}
+
+export function invertDiagonalAxis(da: DiagonalAxis) {
+    const index = DiagonalAxis.indexOf(da);
+    const base = index - (index % 2);
+    return DiagonalAxis[base + ((index + 1) % 2)];
+}
 
 export const mask11 = 0b110000000000000000;
 export const mask12 = 0b001100000000000000;
@@ -241,4 +254,23 @@ export function prettyPrint(r: CubeRotation | Axis | DiagonalAxis) {
             bitsLookup[((r & mask33) >> shift33) as 3 | 1 | 0],
         ].toString(),
     ];
+}
+
+export const mask112131 = 0b110000110000110000;
+
+export function rotationToDiagAxis(r: CubeRotation) {
+    const cornerDiag =
+        (r & mask112131) |
+        ((r & (mask112131 >> 2)) << 2) |
+        ((r & (mask112131 >> 4)) << 4);
+    const cornerDiagAxis = (((cornerDiag & mask11) >> 12) |
+        ((cornerDiag & mask21) >> 8) |
+        ((cornerDiag & mask31) >> 4)) as DiagonalAxis;
+    return cornerDiagAxis;
+}
+
+export function rotationToAxis(r: CubeRotation) {
+    return (((r & mask11) >> 12) |
+        ((r & mask21) >> 8) |
+        ((r & mask31) >> 4)) as Axis;
 }

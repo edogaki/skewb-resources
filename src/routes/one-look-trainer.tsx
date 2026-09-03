@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import SkewbRenderer from "#/components/SkewbRenderer";
+import {
+    generateRandomNSCase,
+    generateRandomOneLookCase,
+} from "#/utils/one-look-trainer/generator";
 import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
-import { WCAAlg } from "#/utils/solver/alg";
+import { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 
 export const Route = createFileRoute("/one-look-trainer")({
     component: RouteComponent,
@@ -19,12 +23,26 @@ export const Route = createFileRoute("/one-look-trainer")({
     }),
 });
 
+function createAlgsFromText(text: string): RubikskewbAlg[] {
+    const algs = text.split("\n").map((algText) => {
+        const algTextSanitized = algText.trim();
+        if (algTextSanitized.length === 0) return null;
+        try {
+            return new RubikskewbAlg(algTextSanitized);
+        } catch {
+            throw new Error(`Invalid alg: ${algText}`);
+        }
+    });
+    return algs.filter((a) => a !== null);
+}
+
 function RouteComponent() {
-    const [skewbState, setSkewbState] = useState(
-        new SkewbMatrixState().applyWCAAlg(
-            new WCAAlg("R L' R' U' B U' B R' U'"),
-        ),
+    const [skewbState, setSkewbState] = useState<SkewbMatrixState>(
+        new SkewbMatrixState(),
     );
+    const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>();
+    const [errorMessage, setErrorMessage] = useState("");
+    const [layerSolutionAlgsText, setLayerSolutionAlgsText] = useState("");
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
@@ -32,11 +50,76 @@ function RouteComponent() {
                     <h1 className="display-title mb-3 text-4xl font-bold text-(--sea-ink) sm:text-5xl">
                         Skewb One Look Trainer
                     </h1>
+                    <div className="flex gap-10">
+                        <div className="flex flex-col gap-2 w-100">
+                            <div>
+                                <p>
+                                    Input layer solutions in rubikskewb
+                                    notation.
+                                </p>
+                                <p>
+                                    A scramble with one of the layer solutions,
+                                    randomly chosen, will be generated.
+                                </p>
+                                <p>
+                                    Rotation moves (x, y, z, etc.) at the start
+                                    and end of the alg will be disregarded.
+                                </p>
+                                <textarea
+                                    className="border border-(--line) w-full h-50"
+                                    value={layerSolutionAlgsText}
+                                    onChange={(e) =>
+                                        setLayerSolutionAlgsText(e.target.value)
+                                    }
+                                    placeholder={
+                                        "Layer solution algs, e.g.:\nR\nR'\nR r' R'\nr' R r"
+                                    }
+                                ></textarea>
+                                <p className="text-red-400">{errorMessage}</p>
+                            </div>
+                            <div>
+                                <button
+                                    type="button"
+                                    className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
+                                    onClick={async () => {
+                                        try {
+                                            const { state, scrambleAlg } =
+                                                await generateRandomOneLookCase(
+                                                    createAlgsFromText(
+                                                        layerSolutionAlgsText,
+                                                    ),
+                                                );
+                                            setSkewbState(state);
+                                            setScrambleAlg(scrambleAlg);
+                                            setErrorMessage("");
+                                        } catch (error) {
+                                            if (error instanceof Error) {
+                                                setErrorMessage(error.message);
+                                            } else {
+                                                throw error;
+                                            }
+                                        }
+                                    }}
+                                >
+                                    Generate One Look Case
+                                </button>
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-2 w-100">
+                            <div className="w-100">
+                                Scramble: {scrambleAlg?.toString()}
+                            </div>
+                            <div className="w-100">
+                                {skewbState && (
+                                    <SkewbRenderer
+                                        state={skewbState.toSkewbRendererState()}
+                                        options={null}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <SkewbRenderer
-                    state={skewbState.toSkewbRendererState()}
-                    options={null}
-                />
             </section>
         </main>
     );
