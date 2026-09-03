@@ -30,6 +30,11 @@ export const Route = createRootRoute({
                 content:
                     "edogaki's Skewb Resources website. Includes trainer and layer solver.",
             },
+            {
+                property: "og:image",
+                content:
+                    "https://edogaki.github.io/skewb-resources/favicon.png",
+            },
             /*
             {
                 property: "og:image",
