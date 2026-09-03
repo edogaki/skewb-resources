@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import type { OneLookTrainerOptions } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
@@ -37,7 +38,7 @@ export default function OneLookTrainer({
         <>
             <div className="flex gap-10">
                 <div className="flex flex-col gap-2 w-100">
-                    <div>
+                    <div className="space-y-2">
                         <p>Input layer solutions in rubikskewb notation.</p>
                         <p>
                             A scramble with one of the layer solutions, randomly
@@ -46,6 +47,18 @@ export default function OneLookTrainer({
                         <p>
                             Rotation moves (x, y, z, etc.) at the start and end
                             of the alg will be disregarded.
+                        </p>
+                        <p>
+                            Try using the{" "}
+                            <Link to="/layers-catalog" className="underline">
+                                Layers Catalog
+                            </Link>
+                            , which lists all the layer cases (will take a few
+                            seconds to load). Use the filter functionality to
+                            filter by the preferred layer case types (e.g.
+                            2-movers, adjacent cases) then click on "Copy Layer
+                            Solutions to Clipboard" button and paste the layer
+                            solutions here.
                         </p>
                         <textarea
                             className="border border-(--line) w-full h-50"
