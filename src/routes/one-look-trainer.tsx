@@ -43,6 +43,7 @@ function RouteComponent() {
     const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>();
     const [errorMessage, setErrorMessage] = useState("");
     const [layerSolutionAlgsText, setLayerSolutionAlgsText] = useState("");
+    const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
@@ -89,6 +90,7 @@ function RouteComponent() {
                                                         layerSolutionAlgsText,
                                                     ),
                                                 );
+                                            setIsShowSkewbRenderer(false);
                                             setSkewbState(state);
                                             setScrambleAlg(scrambleAlg);
                                             setErrorMessage("");
@@ -109,7 +111,25 @@ function RouteComponent() {
                             <div className="w-100">
                                 Scramble: {scrambleAlg?.toString()}
                             </div>
-                            <div className="w-100">
+                            <div>
+                                <input
+                                    type="checkbox"
+                                    checked={isShowSkewbRenderer}
+                                    name="isShowSkewbRenderer"
+                                    id="isShowSkewbRenderer"
+                                    className="mr-1"
+                                    onChange={(e) =>
+                                        setIsShowSkewbRenderer(e.target.checked)
+                                    }
+                                    autoComplete="off"
+                                />
+                                <label htmlFor="isShowSkewbRenderer">
+                                    Show Skewb Visualizer
+                                </label>
+                            </div>
+                            <div
+                                className={`w-100 ${isShowSkewbRenderer ? "" : "blur-2xl"}`}
+                            >
                                 {skewbState && (
                                     <SkewbRenderer
                                         state={skewbState.toSkewbRendererState()}
