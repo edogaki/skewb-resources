@@ -1,0 +1,37 @@
+import { useState } from "react";
+import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
+
+export default function CopyLayerSolutionsToClipboard({
+    layerCasesToShow,
+}: {
+    layerCasesToShow: LayerCase[];
+}) {
+    const [isFinishedCopying, setIsFinishedCopying] = useState(false);
+    return (
+        <div className="flex gap-2 items-center">
+            <button
+                type="button"
+                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
+                onClick={() => {
+                    setIsFinishedCopying(false);
+                    setTimeout(() => {
+                        const solutionAlgs = layerCasesToShow
+                            .map(
+                                (lc) =>
+                                    Object.values(
+                                        layerSolutionsComplete[lc],
+                                    )[0][0],
+                            )
+                            .join("\n");
+                        navigator.clipboard.writeText(`${solutionAlgs}\n`);
+                        setIsFinishedCopying(true);
+                    }, 50);
+                }}
+            >
+                Copy Layer Solutions to Clipboard
+            </button>
+            <div>{isFinishedCopying && "Copied!"}</div>
+        </div>
+    );
+}

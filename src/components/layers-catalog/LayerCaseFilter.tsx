@@ -40,7 +40,6 @@ export default function LayerCaseFilter({
 }) {
     const [filterFuncs, setFilterFuncs] = useState<FilterFunc[]>([]);
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
-    const [isFinishedCopying, setIsFinishedCopying] = useState(false);
 
     const setFilterFuncByIndex = useMemo(
         () =>
@@ -86,38 +85,13 @@ export default function LayerCaseFilter({
                     ),
                 )}
             </div>
-            <div className="flex gap-2 items-center">
-                <button
-                    type="submit"
-                    className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
-                    disabled={isSubmitDisabled}
-                >
-                    Apply Filters
-                </button>
-                <button
-                    type="button"
-                    className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
-                    disabled={isSubmitDisabled}
-                    onClick={() => {
-                        setIsFinishedCopying(false);
-                        setTimeout(() => {
-                            const solutionAlgs = layerCasesToShow
-                                .map(
-                                    (lc) =>
-                                        Object.values(
-                                            layerSolutionsComplete[lc],
-                                        )[0][0],
-                                )
-                                .join("\n");
-                            navigator.clipboard.writeText(`${solutionAlgs}\n`);
-                            setIsFinishedCopying(true);
-                        }, 20);
-                    }}
-                >
-                    Copy Layer Solutions to Clipboard
-                </button>
-                <div>{isFinishedCopying && "Copied!"}</div>
-            </div>
+            <button
+                type="submit"
+                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
+                disabled={isSubmitDisabled}
+            >
+                Apply Filters
+            </button>
         </form>
     );
 }
