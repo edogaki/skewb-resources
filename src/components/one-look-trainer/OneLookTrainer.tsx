@@ -36,7 +36,7 @@ export default function OneLookTrainer({
 
     return (
         <>
-            <div className="flex gap-10">
+            <div className="flex flex-wrap gap-10">
                 <div className="flex flex-col gap-2 w-100">
                     <div className="space-y-2">
                         <p>Input layer solutions in rubikskewb notation.</p>
@@ -53,9 +53,9 @@ export default function OneLookTrainer({
                             <Link to="/layers-catalog" className="underline">
                                 Layers Catalog
                             </Link>
-                            , which lists all the layer cases (will take a few
-                            seconds to load). Use the filter functionality to
-                            filter by the preferred layer case types (e.g.
+                            , which lists all the layer cases (may take more
+                            than a second to load). Use the filter functionality
+                            to filter by the preferred layer case types (e.g.
                             2-movers, adjacent cases) then click on "Copy Layer
                             Solutions to Clipboard" button and paste the layer
                             solutions here.
@@ -107,9 +107,9 @@ export default function OneLookTrainer({
                     </div>
                 </div>
                 <div className="flex flex-col gap-2 w-100">
-                    <div className="w-100">
+                    <h3 className="mb-3 text-xl font-semibold text-(--sea-ink)">
                         Scramble: {scrambleAlg?.toString()}
-                    </div>
+                    </h3>
                     <div>
                         <input
                             type="checkbox"
@@ -126,9 +126,7 @@ export default function OneLookTrainer({
                             Show Skewb Visualizer
                         </label>
                     </div>
-                    <div
-                        className={`w-100 ${isShowSkewbRenderer ? "" : "blur-2xl"}`}
-                    >
+                    <div className={`${isShowSkewbRenderer ? "" : "blur-2xl"}`}>
                         {skewbState && (
                             <SkewbRenderer
                                 state={skewbState.toSkewbRendererState()}
