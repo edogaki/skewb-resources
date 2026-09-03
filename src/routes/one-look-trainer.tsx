@@ -1,12 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import OneLookTrainerOptionsView from "#/components/one-look-trainer/OneLookTrainerOptionsView";
 import SkewbRenderer from "#/components/SkewbRenderer";
+import TopMessage from "#/components/TopMessage";
+import {
+    defaultOneLookTrainerOptions,
+    type OneLookTrainerOptions,
+} from "#/utils/one-look-trainer";
 import {
     generateRandomNSCase,
     generateRandomOneLookCase,
 } from "#/utils/one-look-trainer/generator";
 import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
+import {
+    getShortSolutionStates,
+    isShortSolutionStatesPreloaded,
+} from "#/utils/skewb-matrix/solver";
 import { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
+import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 
 export const Route = createFileRoute("/one-look-trainer")({
     component: RouteComponent,
@@ -37,12 +48,18 @@ function createAlgsFromText(text: string): RubikskewbAlg[] {
 }
 
 function RouteComponent() {
+    getShortSolutionStates();
     const [skewbState, setSkewbState] = useState<SkewbMatrixState>(
         new SkewbMatrixState(),
     );
     const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>();
     const [errorMessage, setErrorMessage] = useState("");
-    const [layerSolutionAlgsText, setLayerSolutionAlgsText] = useState("");
+    const [options, setOptions] = useLocalStorage<OneLookTrainerOptions>(
+        "oneLookTrainerOptions",
+        defaultOneLookTrainerOptions,
+        true,
+    );
+
     const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
     return (
         <main className="page-wrap px-4 py-12">
@@ -68,9 +85,13 @@ function RouteComponent() {
                                 </p>
                                 <textarea
                                     className="border border-(--line) w-full h-50"
-                                    value={layerSolutionAlgsText}
+                                    value={options?.layerSolutionAlgsText}
                                     onChange={(e) =>
-                                        setLayerSolutionAlgsText(e.target.value)
+                                        setOptions((o) => ({
+                                            ...o,
+                                            layerSolutionAlgsText:
+                                                e.target.value,
+                                        }))
                                     }
                                     placeholder={
                                         "Layer solution algs, e.g.:\nR\nR'\nR r' R'\nr' R r"
@@ -87,10 +108,14 @@ function RouteComponent() {
                                             const { state, scrambleAlg } =
                                                 await generateRandomOneLookCase(
                                                     createAlgsFromText(
-                                                        layerSolutionAlgsText,
+                                                        options?.layerSolutionAlgsText ||
+                                                            "",
                                                     ),
                                                 );
-                                            setIsShowSkewbRenderer(false);
+                                            setIsShowSkewbRenderer(
+                                                options?.showSkewbVisualizerByDefault ||
+                                                    false,
+                                            );
                                             setSkewbState(state);
                                             setScrambleAlg(scrambleAlg);
                                             setErrorMessage("");
@@ -140,6 +165,12 @@ function RouteComponent() {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className="island-shell rounded-2xl p-6 sm:p-8">
+                <OneLookTrainerOptionsView
+                    options={options ?? defaultOneLookTrainerOptions}
+                    setOptions={setOptions}
+                />
             </section>
         </main>
     );

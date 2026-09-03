@@ -118,8 +118,6 @@ export async function getShortSolutionStates(): Promise<Map<string, string>> {
     return _shortSolutionStates;
 }
 
-getShortSolutionStates();
-
 export async function solveSkewb(state: SkewbMatrixState) {
     const taskQueue: TaskQueue = new Queue<SearchNode>();
     const shortSolutionStates = await getShortSolutionStates();
