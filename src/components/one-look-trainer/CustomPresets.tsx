@@ -61,9 +61,9 @@ export default function CustomPresets({
                                     </button>
                                 </div>
                             </div>
-                            <div className="p-3 h-full">
+                            <div className="h-full">
                                 <textarea
-                                    className="h-full w-full resize-none"
+                                    className="h-full w-full resize-none p-3 rounded-2xl"
                                     value={preset.text}
                                     onChange={(e) =>
                                         setCustomPresets((cps) =>
