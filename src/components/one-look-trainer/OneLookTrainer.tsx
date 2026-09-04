@@ -6,6 +6,7 @@ import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
 import { RubikskewbAlg, type WCAAlg } from "#/utils/solver/alg";
 import SkewbRenderer from "../SkewbRenderer";
 import OneLookTrainerOptionsView from "./OneLookTrainerOptionsView";
+import Presets from "./Presets";
 
 function createAlgsFromText(text: string): RubikskewbAlg[] {
     const algs = text.split("\n").map((algText) => {
@@ -54,16 +55,8 @@ export default function OneLookTrainer({
                             of the alg will be disregarded.
                         </p>
                         <p>
-                            Try using the{" "}
-                            <Link to="/layers-catalog" className="underline">
-                                Layers Catalog
-                            </Link>
-                            , which lists all the layer cases (may take more
-                            than a second to load). Use the filter functionality
-                            to filter by the preferred layer case types (e.g.
-                            2-movers, adjacent cases) then click on "Copy Layer
-                            Solutions to Clipboard" button and paste the layer
-                            solutions here.
+                            {/** biome-ignore lint/suspicious/noCommentText: this is meant to be text not a comment */}
+                            Lines starting with "#" or "//" are also ignored.
                         </p>
                         <textarea
                             className="border border-(--line) w-full h-50"
@@ -141,12 +134,18 @@ export default function OneLookTrainer({
                     </div>
                 </div>
             </div>
-            <div>
-                <OneLookTrainerOptionsView
-                    options={options}
-                    setOptions={setOptions}
-                />
-            </div>
+            <OneLookTrainerOptionsView
+                options={options}
+                setOptions={setOptions}
+            />
+            <Presets
+                setLayerSolutionsAlgText={(text) => {
+                    setOptions((o) => ({
+                        ...o,
+                        layerSolutionAlgsText: text,
+                    }));
+                }}
+            ></Presets>
         </>
     );
 }
