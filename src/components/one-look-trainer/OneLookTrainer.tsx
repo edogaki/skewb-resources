@@ -11,6 +11,11 @@ function createAlgsFromText(text: string): RubikskewbAlg[] {
     const algs = text.split("\n").map((algText) => {
         const algTextSanitized = algText.trim();
         if (algTextSanitized.length === 0) return null;
+        if (
+            algTextSanitized.startsWith("#") ||
+            algTextSanitized.startsWith("//")
+        )
+            return null;
         try {
             return new RubikskewbAlg(algTextSanitized);
         } catch {
