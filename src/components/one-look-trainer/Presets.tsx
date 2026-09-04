@@ -1,12 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import type { Dispatch } from "react";
 import { presets } from "#/utils/one-look-trainer/presets";
+import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 
 export default function Presets({
     setLayerSolutionsAlgText,
 }: {
     setLayerSolutionsAlgText: Dispatch<string>;
 }) {
+    const [customPresets, setCustomPresets] = useLocalStorage(
+        "oneLookTrainerCustomPresets",
+        [],
+        true,
+    );
     return (
         <div>
             <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">

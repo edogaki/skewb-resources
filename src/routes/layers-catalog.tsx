@@ -5,6 +5,7 @@ import CopyLayerSolutionsToClipboard from "#/components/layers-catalog/CopyLayer
 import LayerCaseFilter from "#/components/layers-catalog/LayerCaseFilter";
 import LayerCasesStats from "#/components/layers-catalog/LayerCasesStats";
 import LayerCaseView from "#/components/layers-catalog/LayerCaseView";
+import SaveAsPresetInOneLookTrainer from "#/components/layers-catalog/SaveAsPresetInOneLookTrainer";
 import { layerCases } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 
@@ -50,6 +51,9 @@ function RouteComponent() {
                     <CopyLayerSolutionsToClipboard
                         layerCasesToShow={layerCasesToShow}
                     />
+                    <SaveAsPresetInOneLookTrainer
+                        layerCasesToShow={layerCasesToShow}
+                    ></SaveAsPresetInOneLookTrainer>
                     <div className="flex flex-wrap gap-x-10 gap-y-4">
                         {layerCasesToShow.map((lc, i) => (
                             <LayerCaseView
