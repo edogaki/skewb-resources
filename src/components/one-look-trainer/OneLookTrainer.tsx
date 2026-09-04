@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import type { OneLookTrainerOptions } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
@@ -6,6 +5,7 @@ import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
 import { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 import Skewb3D from "../Skewb3D";
 import SkewbRenderer from "../SkewbRenderer";
+import CustomPresets from "./CustomPresets";
 import OneLookTrainerOptionsView from "./OneLookTrainerOptionsView";
 import Presets from "./Presets";
 
@@ -155,6 +155,27 @@ export default function OneLookTrainer({
                     }));
                 }}
             ></Presets>
+            <CustomPresets
+                setLayerSolutionsAlgText={(text) => {
+                    setOptions((o) => ({
+                        ...o,
+                        layerSolutionAlgsText:
+                            typeof text === "function"
+                                ? text(o.layerSolutionAlgsText)
+                                : text,
+                    }));
+                }}
+                customPresets={options.customPresets}
+                setCustomPresets={(customPresets) => {
+                    setOptions((o) => ({
+                        ...o,
+                        customPresets:
+                            typeof customPresets === "function"
+                                ? customPresets(o.customPresets)
+                                : customPresets,
+                    }));
+                }}
+            />
         </>
     );
 }
