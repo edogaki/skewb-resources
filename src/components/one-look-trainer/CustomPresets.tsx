@@ -67,6 +67,7 @@ export default function CustomPresets({
                                     ref={(el) => {
                                         if (focusPreset === preset.key) {
                                             el?.focus();
+                                            setFocusPreset(undefined);
                                         }
                                     }}
                                     className="h-full w-full resize-none p-3 rounded-2xl"
