@@ -46,7 +46,7 @@ export default function Presets({
                     ))}
                 </div>
                 <p>
-                    Create your own presets in{" "}
+                    Create your own presets here or in{" "}
                     <Link to="/layers-catalog" className="underline">
                         Layers Catalog
                     </Link>
