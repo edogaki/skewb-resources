@@ -30,6 +30,22 @@ export default function OneLookTrainerOptionsView({
                     Show Skewb Visualizer by default
                 </label>
             </div>
+            <select
+                className="mr-1 border border-(--line) px-3 py-2 rounded-lg"
+                id="skewbVisualizerType"
+                value={options.skewbVisualizerType}
+                onChange={(e) =>
+                    setOptions((o) => ({
+                        ...o,
+                        skewbVisualizerType: e.target
+                            .value as OneLookTrainerOptions["skewbVisualizerType"],
+                    }))
+                }
+            >
+                <option value="2d">2D</option>
+                <option value="3d">3D</option>
+            </select>
+            <label htmlFor="skewbVisualizerType">Skewb Visualizer</label>
         </div>
     );
 }

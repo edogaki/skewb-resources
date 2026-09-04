@@ -3,7 +3,8 @@ import { type Dispatch, type SetStateAction, useState } from "react";
 import type { OneLookTrainerOptions } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
 import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
-import { RubikskewbAlg, type WCAAlg } from "#/utils/solver/alg";
+import { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
+import Skewb3D from "../Skewb3D";
 import SkewbRenderer from "../SkewbRenderer";
 import OneLookTrainerOptionsView from "./OneLookTrainerOptionsView";
 import Presets from "./Presets";
@@ -36,7 +37,7 @@ export default function OneLookTrainer({
     const [skewbState, setSkewbState] = useState<SkewbMatrixState>(
         new SkewbMatrixState(),
     );
-    const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>();
+    const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>(new WCAAlg(""));
     const [errorMessage, setErrorMessage] = useState("");
     const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
 
@@ -47,7 +48,7 @@ export default function OneLookTrainer({
                     onSubmit={async (e) => {
                         e.preventDefault();
                         try {
-                            const { state, scrambleAlg } =
+                            const { state, scrambleAlg: scr } =
                                 await generateRandomOneLookCase(
                                     createAlgsFromText(
                                         options.layerSolutionAlgsText,
@@ -57,7 +58,7 @@ export default function OneLookTrainer({
                                 options.showSkewbVisualizerByDefault,
                             );
                             setSkewbState(state);
-                            setScrambleAlg(scrambleAlg);
+                            setScrambleAlg(scr);
                             setErrorMessage("");
                         } catch (error) {
                             if (error instanceof Error) {
@@ -111,7 +112,7 @@ export default function OneLookTrainer({
                 </form>
                 <div className="flex flex-col gap-2 w-100">
                     <h3 className="mb-3 text-xl font-semibold text-(--sea-ink)">
-                        Scramble: {scrambleAlg?.toString()}
+                        Scramble: {scrambleAlg.toString()}
                     </h3>
                     <div>
                         <input
@@ -130,12 +131,15 @@ export default function OneLookTrainer({
                         </label>
                     </div>
                     <div className={`${isShowSkewbRenderer ? "" : "blur-2xl"}`}>
-                        {skewbState && (
-                            <SkewbRenderer
-                                state={skewbState.toSkewbRendererState()}
-                                options={null}
-                            />
-                        )}
+                        {skewbState &&
+                            (options.skewbVisualizerType === "3d" ? (
+                                <Skewb3D setupAlg={scrambleAlg} />
+                            ) : (
+                                <SkewbRenderer
+                                    state={skewbState.toSkewbRendererState()}
+                                    options={null}
+                                />
+                            ))}
                     </div>
                 </div>
             </div>
