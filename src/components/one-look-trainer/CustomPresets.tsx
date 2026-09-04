@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { type Dispatch, type SetStateAction, useState } from "react";
 import type { CustomPreset } from "#/utils/one-look-trainer";
 
 export default function CustomPresets({
@@ -10,6 +10,7 @@ export default function CustomPresets({
     customPresets: CustomPreset[];
     setCustomPresets: Dispatch<SetStateAction<CustomPreset[]>>;
 }) {
+    const [focusPreset, setFocusPreset] = useState<string>();
     return (
         <div>
             <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">
@@ -63,6 +64,11 @@ export default function CustomPresets({
                             </div>
                             <div className="h-full">
                                 <textarea
+                                    ref={(el) => {
+                                        if (focusPreset === preset.key) {
+                                            el?.focus();
+                                        }
+                                    }}
                                     className="h-full w-full resize-none p-3 rounded-2xl"
                                     value={preset.text}
                                     onChange={(e) =>
@@ -83,14 +89,14 @@ export default function CustomPresets({
                     ))}
                     <button
                         type="button"
-                        className="border border-(--line) hover:border-(--line-heavy) hover:-translate-y-0.5 rounded-2xl shadow-xl "
-                        onClick={() =>
+                        className="border border-(--line) hover:border-(--line-heavy) rounded-2xl shadow-xl "
+                        onClick={() => {
+                            const uuid = crypto.randomUUID();
                             setCustomPresets((cp) =>
-                                cp.concat([
-                                    { key: crypto.randomUUID(), text: "" },
-                                ]),
-                            )
-                        }
+                                cp.concat([{ key: uuid, text: "" }]),
+                            );
+                            setFocusPreset(uuid);
+                        }}
                     >
                         <div className="relative w-60 h-40 ">
                             <div className="p-3 h-full">
