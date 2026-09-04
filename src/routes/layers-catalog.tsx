@@ -3,11 +3,13 @@ import { useState } from "react";
 import Accordion from "#/components/Accordion";
 import CopyLayerSolutionsToClipboard from "#/components/layers-catalog/CopyLayerSolutionsToClipboard";
 import LayerCaseFilter from "#/components/layers-catalog/LayerCaseFilter";
+import LayerCaseSort from "#/components/layers-catalog/LayerCaseSort";
 import LayerCasesStats from "#/components/layers-catalog/LayerCasesStats";
 import LayerCaseView from "#/components/layers-catalog/LayerCaseView";
 import SaveAsPresetInOneLookTrainer from "#/components/layers-catalog/SaveAsPresetInOneLookTrainer";
 import { layerCases } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
+import type { SortBy } from "#/utils/layers-catalog/sortMethods";
 
 export const Route = createFileRoute("/layers-catalog")({
     component: RouteComponent,
@@ -34,6 +36,13 @@ function RouteComponent() {
         layerCases.slice(),
     );
 
+    const [sortBy, setSortBy] = useState<SortBy>({
+        category: "Case ID",
+        order: "asc",
+    });
+
+    console.log({ sortBy });
+
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
@@ -45,9 +54,17 @@ function RouteComponent() {
                         <LayerCaseFilter
                             layerCasesToShow={layerCasesToShow}
                             setLayerCasesToShow={setLayerCasesToShow}
+                            sortBy={sortBy}
                         ></LayerCaseFilter>
                     </Accordion>
-                    <LayerCasesStats layerCasesToShow={layerCasesToShow} />
+                    <div className="flex justify-between">
+                        <LayerCasesStats layerCasesToShow={layerCasesToShow} />
+                        <LayerCaseSort
+                            setLayerCasesToShow={setLayerCasesToShow}
+                            sortBy={sortBy}
+                            setSortBy={setSortBy}
+                        />
+                    </div>
                     <CopyLayerSolutionsToClipboard
                         layerCasesToShow={layerCasesToShow}
                     />

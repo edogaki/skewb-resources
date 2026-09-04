@@ -11,6 +11,10 @@ import {
 } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import type { FilterFunc } from "#/utils/layers-catalog/layersCatalogMethods";
+import {
+    type SortBy,
+    sortLayerCases,
+} from "#/utils/layers-catalog/sortMethods";
 import LayerCaseFilterByCorners from "./LayerCaseFilterByCorners";
 import LayerCaseFilterByTags from "./LayerCaseFilterByTags";
 
@@ -34,9 +38,11 @@ const filterOptions: {
 export default function LayerCaseFilter({
     layerCasesToShow,
     setLayerCasesToShow,
+    sortBy,
 }: {
     layerCasesToShow: LayerCase[];
     setLayerCasesToShow: Dispatch<SetStateAction<LayerCase[]>>;
+    sortBy: SortBy;
 }) {
     const [filterFuncs, setFilterFuncs] = useState<FilterFunc[]>([]);
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
@@ -65,7 +71,7 @@ export default function LayerCaseFilter({
                         for (const filterFunc of filterFuncs) {
                             newLayerCases = filterFunc(newLayerCases);
                         }
-                        return newLayerCases;
+                        return sortLayerCases(newLayerCases, sortBy);
                     });
                     setIsSubmitDisabled(false);
                 }, 0);
