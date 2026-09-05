@@ -111,7 +111,7 @@ export default function OneLookTrainer({
                         </div>
                     </div>
                 </form>
-                <div className="flex flex-col gap-2 w-100">
+                <div className="flex flex-col gap-2 w-100 max-w-full">
                     <h3 className="mb-3 text-xl font-semibold text-(--sea-ink)">
                         Scramble: {scrambleAlg.toString()}
                     </h3>
