@@ -1,5 +1,5 @@
+import type { CaseTag } from "#/utils/layers-catalog/baseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
-import type { CaseTag } from "#/utils/layers-catalog/layerCaseTags.gen";
 import {
     filterRedundantHasTags,
     layerCaseHasTagsShortest,

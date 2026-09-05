@@ -1,7 +1,7 @@
+import type { CaseTag, SolutionTag } from "./baseMethods";
 import { type LayerCase, layerCases } from "./layerCases.gen";
-import type { CaseTag } from "./layerCaseTags.gen";
 import { layerSolutionsComplete } from "./layerSolutionsComplete.gen";
-import { layerSolutionTags, type SolutionTag } from "./layerSolutionTags.gen";
+import { layerSolutionTags } from "./layerSolutionTags.gen";
 
 export type Tag = CaseTag | SolutionTag;
 export type HasTag = [SolutionTag, string[]];

@@ -1,4 +1,5 @@
 import { writeFileSync } from "node:fs";
+import type { CaseTag, SolutionTag } from "#/utils/layers-catalog/baseMethods";
 import {
     layerCaseToSkewbState,
     skewbStateWhiteToLayerCase,
@@ -11,54 +12,9 @@ import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsCom
 import { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
 import type { Piece } from "#/utils/solver/skewbState";
 
-const caseTags = [
-    "0-mover",
-    "1-mover",
-    "2-mover",
-    "3-mover",
-    "4-mover",
-    "5-mover",
-    "6-mover",
-    "7-mover",
-    "Basic layer",
-    "Adjacent layer",
-    "Opposite layer",
-    "Diagadj layer",
-    "One-bar layer",
-    "No-bar layer",
-] as const;
-
-type CaseTag = (typeof caseTags)[number];
-
 const layerCaseTags = Object.fromEntries(
     layerCases.map((lc) => [lc, new Set<CaseTag>()]),
 ) as Record<LayerCase, Set<CaseTag>>;
-
-const solutionTags = [
-    "1 to adjacent layer",
-    "1 to opposite layer",
-    "1 to diagadj layer",
-    "2 to adjacent layer",
-    "2 to opposite layer",
-    "2 to diagadj layer",
-    "Preserves 2 corners",
-    "Preserves centers",
-    "Pres. 2 corners + Pres. centers",
-] as const;
-
-type SolutionTag = (typeof solutionTags)[number];
-
-const solutionTagAbbrev: Record<SolutionTag, string> = {
-    "1 to adjacent layer": "1a",
-    "1 to opposite layer": "1o",
-    "1 to diagadj layer": "1d",
-    "2 to adjacent layer": "2a",
-    "2 to opposite layer": "2o",
-    "2 to diagadj layer": "2d",
-    "Preserves 2 corners": "pco",
-    "Preserves centers": "pce",
-    "Pres. 2 corners + Pres. centers": "pcoce",
-} as const;
 
 const layerSolutionTags = {} as Record<string, Set<SolutionTag>>;
 
@@ -240,13 +196,9 @@ for (const algStr of Object.keys(layerSolutionTags)) {
     layerSolutionTagArrays[algStr] = Array.from(layerSolutionTags[algStr]);
 }
 
-const caseTagsCode = `import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+const caseTagsCode = `import type { LayerCaseTags } from "#/utils/layers-catalog/baseMethods";
 
-export const caseTags = ${JSON.stringify(caseTags, null, 2)} as const;
-
-export type CaseTag = (typeof caseTags)[number];
-
-export const layerCaseTags = ${JSON.stringify(layerCaseTagArrays, null, 2)} as Record<LayerCase, CaseTag[]>;
+export const layerCaseTags: LayerCaseTags = ${JSON.stringify(layerCaseTagArrays, null, 2)};
 `;
 
 writeFileSync(
@@ -255,14 +207,9 @@ writeFileSync(
     "utf8",
 );
 
-const solutionTagsCode = `
-export const solutionTags = ${JSON.stringify(solutionTags, null, 2)} as const;
+const solutionTagsCode = `import type { LayerSolutionTags } from "#/utils/layers-catalog/baseMethods";
 
-export type SolutionTag = (typeof solutionTags)[number];
-
-export const solutionTagAbbrev: Record<SolutionTag, string> = ${JSON.stringify(solutionTagAbbrev, null, 2)} as const;
-
-export const layerSolutionTags = ${JSON.stringify(layerSolutionTagArrays, null, 2)} as Record<string, SolutionTag[]>;
+export const layerSolutionTags: LayerSolutionTags = ${JSON.stringify(layerSolutionTagArrays, null, 2)};
 `;
 
 writeFileSync(

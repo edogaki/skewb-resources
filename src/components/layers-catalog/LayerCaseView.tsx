@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import type { LayerSolutionsComplete } from "#/utils/layers-catalog/baseMethods";
 import { layerCaseToSkewbState } from "#/utils/layers-catalog/layerCaseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
@@ -15,7 +16,7 @@ export default function LayerCaseView({
 }: {
     layerCase: LayerCase;
     index: number;
-    layerSolutionsComplete: Record<LayerCase, Record<number, string[]>> | null;
+    layerSolutionsComplete: LayerSolutionsComplete | null;
 }) {
     const lc = layerCase;
 

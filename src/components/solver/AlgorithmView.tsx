@@ -1,7 +1,5 @@
-import {
-    layerSolutionTags,
-    solutionTagAbbrev,
-} from "#/utils/layers-catalog/layerSolutionTags.gen";
+import { solutionTagAbbrev } from "#/utils/layers-catalog/baseMethods";
+import { layerSolutionTags } from "#/utils/layers-catalog/layerSolutionTags.gen";
 import { filterRedundantSolutionTags } from "#/utils/layers-catalog/tagsMethods";
 import type { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 import Tooltip from "../Tooltip";

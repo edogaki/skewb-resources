@@ -1,25 +1,6 @@
-import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+import type { LayerCaseTags } from "#/utils/layers-catalog/baseMethods";
 
-export const caseTags = [
-  "0-mover",
-  "1-mover",
-  "2-mover",
-  "3-mover",
-  "4-mover",
-  "5-mover",
-  "6-mover",
-  "7-mover",
-  "Basic layer",
-  "Adjacent layer",
-  "Opposite layer",
-  "Diagadj layer",
-  "One-bar layer",
-  "No-bar layer"
-] as const;
-
-export type CaseTag = (typeof caseTags)[number];
-
-export const layerCaseTags = {
+export const layerCaseTags: LayerCaseTags = {
   "abcd": [
     "0-mover",
     "Basic layer"
@@ -5948,4 +5929,4 @@ export const layerCaseTags = {
     "5-mover",
     "No-bar layer"
   ]
-} as Record<LayerCase, CaseTag[]>;
+};

@@ -40,9 +40,9 @@ async function solveAllLayers() {
 
 await solveAllLayers();
 
-const code = `import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+const code = `import type { LayerSolutionsComplete } from "#/utils/layers-catalog/baseMethods";
 
-export const layerSolutionsComplete: Record<LayerCase, Record<number, string[]>> = ${JSON.stringify(layerSolutionsComplete, null, 2)};
+export const layerSolutionsComplete: LayerSolutionsComplete = ${JSON.stringify(layerSolutionsComplete, null, 2)};
 `;
 
 writeFileSync(

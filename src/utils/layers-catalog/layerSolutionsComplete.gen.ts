@@ -1,6 +1,6 @@
-import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+import type { LayerSolutionsComplete } from "#/utils/layers-catalog/baseMethods";
 
-export const layerSolutionsComplete: Record<LayerCase, Record<number, string[]>> = {
+export const layerSolutionsComplete: LayerSolutionsComplete = {
   "abcd": {
     "0": [
       "x"

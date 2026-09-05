@@ -1,20 +1,11 @@
-import {
-    type Dispatch,
-    Fragment,
-    type SetStateAction,
-    useEffect,
-    useState,
-} from "react";
-import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+import { type Dispatch, useEffect, useState } from "react";
 import {
     type CaseTag,
-    caseTags,
-    layerCaseTags,
-} from "#/utils/layers-catalog/layerCaseTags.gen";
-import {
     type SolutionTag,
     solutionTags,
-} from "#/utils/layers-catalog/layerSolutionTags.gen";
+} from "#/utils/layers-catalog/baseMethods";
+import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
 import type { FilterFunc } from "#/utils/layers-catalog/layersCatalogMethods";
 import {
     caseTagCategories,

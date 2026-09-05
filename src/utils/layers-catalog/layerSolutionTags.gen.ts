@@ -1,31 +1,6 @@
+import type { LayerSolutionTags } from "#/utils/layers-catalog/baseMethods";
 
-export const solutionTags = [
-  "1 to adjacent layer",
-  "1 to opposite layer",
-  "1 to diagadj layer",
-  "2 to adjacent layer",
-  "2 to opposite layer",
-  "2 to diagadj layer",
-  "Preserves 2 corners",
-  "Preserves centers",
-  "Pres. 2 corners + Pres. centers"
-] as const;
-
-export type SolutionTag = (typeof solutionTags)[number];
-
-export const solutionTagAbbrev: Record<SolutionTag, string> = {
-  "1 to adjacent layer": "1a",
-  "1 to opposite layer": "1o",
-  "1 to diagadj layer": "1d",
-  "2 to adjacent layer": "2a",
-  "2 to opposite layer": "2o",
-  "2 to diagadj layer": "2d",
-  "Preserves 2 corners": "pco",
-  "Preserves centers": "pce",
-  "Pres. 2 corners + Pres. centers": "pcoce"
-} as const;
-
-export const layerSolutionTags = {
+export const layerSolutionTags: LayerSolutionTags = {
   "x": [
     "Preserves 2 corners",
     "Preserves centers",
@@ -50107,4 +50082,4 @@ export const layerSolutionTags = {
   "x B' r' R' B b r": [],
   "x b' R b B r' b'": [],
   "x b' R' B' b r R": []
-} as Record<string, SolutionTag[]>;
+};
