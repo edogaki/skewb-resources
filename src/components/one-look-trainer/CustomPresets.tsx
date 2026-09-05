@@ -90,7 +90,7 @@ export default function CustomPresets({
                     ))}
                     <button
                         type="button"
-                        className="border border-(--line) hover:border-(--line-heavy) rounded-2xl shadow-xl "
+                        className="relative w-60 h-40 border border-(--line) hover:border-(--line-heavy) rounded-2xl shadow-xl "
                         onClick={() => {
                             const uuid = crypto.randomUUID();
                             setCustomPresets((cp) =>
@@ -99,12 +99,10 @@ export default function CustomPresets({
                             setFocusPreset(uuid);
                         }}
                     >
-                        <div className="relative w-60 h-40 ">
-                            <div className="p-3 h-full">
-                                <div className="h-full border-(--line) border-dashed border-5 rounded-2xl text-(--line) flex flex-col items-center justify-center">
-                                    <div className="text-5xl">+</div>
-                                    <div className="text-xl">Add</div>
-                                </div>
+                        <div className="p-3 h-full">
+                            <div className="h-full border-(--line) border-dashed border-5 rounded-2xl text-(--line) flex flex-col items-center justify-center">
+                                <div className="text-5xl">+</div>
+                                <div className="text-xl">Add</div>
                             </div>
                         </div>
                     </button>

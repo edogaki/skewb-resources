@@ -45,6 +45,7 @@ export default function OneLookTrainer({
         <>
             <div className="flex flex-wrap gap-10">
                 <form
+                    className="max-w-full"
                     onSubmit={async (e) => {
                         e.preventDefault();
                         try {
@@ -69,7 +70,7 @@ export default function OneLookTrainer({
                         }
                     }}
                 >
-                    <div className="flex flex-col gap-2 w-100">
+                    <div className="flex flex-col gap-2 w-100 max-w-full">
                         <div className="space-y-2">
                             <p>Input layer solutions in rubikskewb notation.</p>
                             <p>

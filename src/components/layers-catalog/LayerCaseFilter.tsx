@@ -90,7 +90,7 @@ export default function LayerCaseFilter({
             </div>
             <button
                 type="submit"
-                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
+                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--sea-ink) px-5 py-2.5 text-sm font-semibold text-(--foam) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
                 disabled={isSubmitDisabled}
             >
                 Apply Filters

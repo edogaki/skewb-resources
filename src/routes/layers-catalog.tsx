@@ -79,7 +79,7 @@ function RouteComponent() {
                             sortBy={sortBy}
                         ></LayerCaseFilter>
                     </Accordion>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between flex-wrap">
                         <LayerCasesStats layerCasesToShow={layerCasesToShow} />
                         <LayerCaseSort
                             setLayerCasesToShow={setLayerCasesToShow}

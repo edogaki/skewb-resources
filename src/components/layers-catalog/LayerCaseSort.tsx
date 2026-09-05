@@ -18,10 +18,10 @@ export default function LayerCaseSort({
         setLayerCasesToShow((lcs) => sortLayerCases(lcs, sortBy));
     }, [sortBy, setLayerCasesToShow]);
     return (
-        <div className="flex gap-1 items-center">
+        <div className="flex gap-1 items-center flex-wrap">
             Sort by
             <select
-                className="mr-1 border border-(--line) px-3 py-2 rounded-lg"
+                className="border border-(--line) px-3 py-2 rounded-lg"
                 id="layerCaseSortByCategory"
                 value={sortBy.category}
                 onChange={(e) =>
@@ -35,7 +35,7 @@ export default function LayerCaseSort({
                 <option value="Number of moves">Number of moves</option>
             </select>
             <select
-                className="mr-1 border border-(--line) px-3 py-2 rounded-lg"
+                className="border border-(--line) px-3 py-2 rounded-lg"
                 id="layerCaseSortByOrder"
                 value={sortBy.order}
                 onChange={(e) =>
