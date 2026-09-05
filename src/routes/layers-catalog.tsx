@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useOnInView } from "react-intersection-observer";
 import Accordion from "#/components/Accordion";
 import CopyLayerSolutionsToClipboard from "#/components/layers-catalog/CopyLayerSolutionsToClipboard";
 import LayerCaseFilter from "#/components/layers-catalog/LayerCaseFilter";
@@ -31,6 +32,8 @@ export const Route = createFileRoute("/layers-catalog")({
     }),
 });
 
+const limitPerScroll = 60;
+
 function RouteComponent() {
     const [layerCasesToShow, setLayerCasesToShow] = useState(
         layerCases.slice(),
@@ -41,7 +44,29 @@ function RouteComponent() {
         order: "asc",
     });
 
-    console.log({ sortBy });
+    const [layerCasesToShowLimit, setLayerCasesToShowLimit] =
+        useState(limitPerScroll);
+
+    useEffect(() => {
+        if (layerCasesToShow.length > limitPerScroll)
+            setLayerCasesToShowLimit(limitPerScroll);
+    }, [layerCasesToShow]);
+
+    const inViewRef = useOnInView(
+        (inView, entry) => {
+            if (inView) {
+                // Do something with the element that came into view
+                console.log("Element is in view", entry.target);
+                setLayerCasesToShowLimit((l) => l + limitPerScroll);
+            } else {
+                console.log("Element left view", entry.target);
+            }
+        },
+        {
+            threshold: 0,
+            triggerOnce: false,
+        },
+    );
 
     return (
         <main className="page-wrap px-4 py-12">
@@ -72,14 +97,24 @@ function RouteComponent() {
                         layerCasesToShow={layerCasesToShow}
                     ></SaveAsPresetInOneLookTrainer>
                     <div className="flex flex-wrap gap-x-10 gap-y-4">
-                        {layerCasesToShow.map((lc, i) => (
-                            <LayerCaseView
-                                key={lc}
-                                layerCase={lc}
-                                index={i + 1}
-                                layerSolutionsComplete={layerSolutionsComplete}
-                            />
-                        ))}
+                        {layerCasesToShow
+                            .slice(0, layerCasesToShowLimit)
+                            .map((lc, i) => (
+                                <LayerCaseView
+                                    key={lc}
+                                    layerCase={lc}
+                                    index={i + 1}
+                                    layerSolutionsComplete={
+                                        layerSolutionsComplete
+                                    }
+                                />
+                            ))}
+                        {layerCasesToShowLimit < layerCasesToShow.length && (
+                            <div
+                                className="w-full text-3xl text-center text-(--line)"
+                                ref={inViewRef}
+                            ></div>
+                        )}
                     </div>
                 </div>
             </section>
