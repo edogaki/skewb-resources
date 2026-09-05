@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import type { Dispatch } from "react";
 import { presets } from "#/utils/one-look-trainer/presets";
-import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 
 export default function Presets({
     setLayerSolutionsAlgText,

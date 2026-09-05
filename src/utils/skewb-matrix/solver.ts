@@ -41,14 +41,14 @@ export async function getShortSolutionStates(): Promise<Map<string, string>> {
     });
 
     let maxDepthSoFar = 0;
-    let layerNodesNum = 0;
-    let totalCacheHits = 0;
+    // let layerNodesNum = 0;
+    // let totalCacheHits = 0;
 
     while (!taskQueue.isEmpty()) {
         const searchNode = taskQueue.dequeue();
         if (!searchNode) continue;
         if (shortSolutionStates.has(searchNode.hash)) {
-            totalCacheHits++;
+            // totalCacheHits++;
             continue;
         }
 
@@ -69,10 +69,10 @@ export async function getShortSolutionStates(): Promise<Map<string, string>> {
             );
             */
             maxDepthSoFar = searchNode.depth;
-            layerNodesNum = 0;
-            totalCacheHits = 0;
+            // layerNodesNum = 0;
+            // totalCacheHits = 0;
         }
-        layerNodesNum++;
+        // layerNodesNum++;
 
         if (searchNode.depth >= preloadMaxDepth) {
             continue;

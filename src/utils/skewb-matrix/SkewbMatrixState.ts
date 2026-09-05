@@ -1,9 +1,13 @@
 /** biome-ignore-all lint/complexity/useSimpleNumberKeys: binary representation for keys is simpler */
-import { SQRT1_2 } from "mathjs";
 import { mod } from "../math";
 import { Color } from "../renderer/color";
 import type { SkewbRendererState } from "../renderer/skewbRenderer";
-import { RubikskewbAlg, RubikskewbTurn, WCAAlg, WCATurn } from "../solver/alg";
+import type {
+    RubikskewbAlg,
+    RubikskewbTurn,
+    WCAAlg,
+    WCATurn,
+} from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import {
     type Axis,
@@ -15,14 +19,11 @@ import {
     mask2,
     mask3,
     mask11,
-    mask12,
     mask21,
     mask22,
     mask31,
     mask112131,
-    multiplyRotationByAxis,
     multiplyRotations,
-    prettyPrint,
     rotateAroundAxis,
     rotateAroundDiagonalAxis,
     rotateAroundDiagonalAxisLookup,
@@ -76,11 +77,6 @@ export const defaultCornerPieces: Tuple<CubeRotation, 8> = [
         rotateAroundAxis(0b000100, 0),
         rotateAroundAxis(0b010000, 2),
     ),
-];
-
-const cornerPieceDiagonalAxis: DiagonalAxis[] = [
-    0b010101, 0b110101, 0b110111, 0b010111, 0b011101, 0b111101, 0b111111,
-    0b011111,
 ];
 
 const centerPieceAxis: Axis[] = [

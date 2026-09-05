@@ -1,14 +1,7 @@
-import {
-    type Dispatch,
-    Fragment,
-    type SetStateAction,
-    useEffect,
-    useState,
-} from "react";
+import { type Dispatch, useEffect, useState } from "react";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import {
     type CaseTag,
-    caseTags,
     layerCaseTags,
 } from "#/utils/layers-catalog/layerCaseTags.gen";
 import {

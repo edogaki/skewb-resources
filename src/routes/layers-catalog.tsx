@@ -53,13 +53,11 @@ function RouteComponent() {
     }, [layerCasesToShow]);
 
     const inViewRef = useOnInView(
-        (inView, entry) => {
+        (inView, _entry) => {
             if (inView) {
                 // Do something with the element that came into view
-                console.log("Element is in view", entry.target);
                 setLayerCasesToShowLimit((l) => l + limitPerScroll);
             } else {
-                console.log("Element left view", entry.target);
             }
         },
         {
@@ -77,7 +75,6 @@ function RouteComponent() {
                     </h1>
                     <Accordion title="Show/Hide Filters" defaultIsOpen={false}>
                         <LayerCaseFilter
-                            layerCasesToShow={layerCasesToShow}
                             setLayerCasesToShow={setLayerCasesToShow}
                             sortBy={sortBy}
                         ></LayerCaseFilter>

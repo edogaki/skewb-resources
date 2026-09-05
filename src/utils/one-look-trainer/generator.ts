@@ -1,10 +1,10 @@
 import {
-    CenterPiece,
+    type CenterPiece,
     rubikskewbTurnToStateRotation,
     SkewbMatrixState,
 } from "../skewb-matrix/SkewbMatrixState";
 import { solveSkewb } from "../skewb-matrix/solver";
-import { RubikskewbAlg, WCAAlg } from "../solver/alg";
+import { RubikskewbAlg, type WCAAlg } from "../solver/alg";
 import type { IntFrom0To } from "../solver/helperTypes";
 
 export function generateRandomNSCase() {

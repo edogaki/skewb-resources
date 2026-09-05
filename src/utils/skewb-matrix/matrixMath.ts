@@ -1,41 +1,4 @@
-import { multiply, rotate } from "mathjs";
 import type { Tuple } from "../solver/helperTypes";
-
-/**
- * Computes sin(90 degrees * n) avoiding weirdness of floats.
- * @param n integer or float. If n is float, defaults to Math.sin
- */
-const sin90 = (n: number) => {
-    switch (mod(n, 4)) {
-        case 0:
-        case 2:
-            return 0;
-        case 1:
-            return 1;
-        case 3:
-            return -1;
-        default:
-            return Math.sin((n * Math.PI) / 2);
-    }
-};
-
-/**
- * Computes cos(90 degrees * n) avoiding weirdness of floats.
- * @param n integer or float. If n is float, defaults to Math.cos
- */
-const cos90 = (n: number) => {
-    switch (mod(n, 4)) {
-        case 0:
-            return 1;
-        case 1:
-        case 3:
-            return 0;
-        case 2:
-            return -1;
-        default:
-            return Math.cos((n * Math.PI) / 2);
-    }
-};
 
 const mod = (a: number, b: number) => ((a % b) + b) % b;
 
