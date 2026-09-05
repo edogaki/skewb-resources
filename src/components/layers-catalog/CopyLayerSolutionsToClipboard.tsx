@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
-import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 
 export default function CopyLayerSolutionsToClipboard({
     layerCasesToShow,
 }: {
     layerCasesToShow: LayerCase[];
 }) {
+    const layerSolutionsComplete = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerSolutionsComplete.gen",
+        async () =>
+            (await import("#/utils/layers-catalog/layerSolutionsComplete.gen"))
+                .layerSolutionsComplete,
+    );
+
     const [isFinishedCopying, setIsFinishedCopying] = useState(false);
     useEffect(() => {
         if (isFinishedCopying) {
@@ -20,6 +27,7 @@ export default function CopyLayerSolutionsToClipboard({
                 type="button"
                 className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
                 onClick={() => {
+                    if (!layerSolutionsComplete) return;
                     setIsFinishedCopying(false);
                     setTimeout(() => {
                         const solutionAlgs = layerCasesToShow
@@ -34,6 +42,7 @@ export default function CopyLayerSolutionsToClipboard({
                         setIsFinishedCopying(true);
                     }, 50);
                 }}
+                disabled={layerSolutionsComplete === undefined}
             >
                 Copy Layer Solutions to Clipboard
             </button>

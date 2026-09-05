@@ -1,21 +1,43 @@
-import type { CaseTag } from "#/utils/layers-catalog/baseMethods";
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
-import {
-    filterRedundantHasTags,
-    layerCaseHasTagsShortest,
-    layerCaseHasTagsSuboptimal,
-} from "#/utils/layers-catalog/tagsMethods";
+import { filterRedundantHasTags } from "#/utils/layers-catalog/tagsMethods";
 import Tooltip from "../Tooltip";
 
 export default function TagsViewForCase({
     layerCase,
-    caseTags,
 }: {
     layerCase: LayerCase;
-    caseTags: CaseTag[];
 }) {
-    const hasTagsShortest = layerCaseHasTagsShortest[layerCase];
-    const hasTagsSuboptimal = layerCaseHasTagsSuboptimal[layerCase];
+    const layerCaseTags = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseTags.gen",
+        async () =>
+            (await import("#/utils/layers-catalog/layerCaseTags.gen"))
+                .layerCaseTags,
+    );
+
+    const layerCaseHasTagsShortest = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseHasTagsShortest.gen",
+        async () =>
+            (
+                await import(
+                    "#/utils/layers-catalog/layerCaseHasTagsShortest.gen"
+                )
+            ).layerCaseHasTagsShortest,
+    );
+
+    const layerCaseHasTagsSuboptimal = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseHasTagsSuboptimal.gen",
+        async () =>
+            (
+                await import(
+                    "#/utils/layers-catalog/layerCaseHasTagsSuboptimal.gen"
+                )
+            ).layerCaseHasTagsSuboptimal,
+    );
+
+    const caseTags = layerCaseTags?.[layerCase] || [];
+    const hasTagsShortest = layerCaseHasTagsShortest?.[layerCase] || [];
+    const hasTagsSuboptimal = layerCaseHasTagsSuboptimal?.[layerCase] || [];
     return (
         <div>
             {caseTags.map((caseTag) => (

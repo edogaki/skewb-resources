@@ -1,18 +1,27 @@
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
-import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
 
 export default function LayerCasesStats({
     layerCasesToShow,
 }: {
     layerCasesToShow: LayerCase[];
 }) {
-    const moves = layerCasesToShow.map((lc) =>
-        Number(
-            layerCaseTags[lc]
-                .find((t) => t.endsWith("-mover"))
-                ?.replace("-mover", ""),
-        ),
+    const layerCaseTags = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseTags.gen",
+        async () =>
+            (await import("#/utils/layers-catalog/layerCaseTags.gen"))
+                .layerCaseTags,
     );
+
+    const moves = layerCaseTags
+        ? layerCasesToShow.map((lc) =>
+              Number(
+                  layerCaseTags[lc]
+                      .find((t) => t.endsWith("-mover"))
+                      ?.replace("-mover", ""),
+              ),
+          )
+        : [];
     return (
         <div>
             <div>Results: {layerCasesToShow.length}</div>

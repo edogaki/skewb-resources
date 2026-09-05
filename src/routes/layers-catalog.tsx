@@ -7,8 +7,8 @@ import LayerCaseSort from "#/components/layers-catalog/LayerCaseSort";
 import LayerCasesStats from "#/components/layers-catalog/LayerCasesStats";
 import LayerCaseView from "#/components/layers-catalog/LayerCaseView";
 import SaveAsPresetInOneLookTrainer from "#/components/layers-catalog/SaveAsPresetInOneLookTrainer";
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import { layerCases } from "#/utils/layers-catalog/layerCases.gen";
-import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import type { SortBy } from "#/utils/layers-catalog/sortMethods";
 
 export const Route = createFileRoute("/layers-catalog")({
@@ -52,7 +52,6 @@ function RouteComponent() {
                     </h1>
                     <Accordion title="Show/Hide Filters" defaultIsOpen={false}>
                         <LayerCaseFilter
-                            layerCasesToShow={layerCasesToShow}
                             setLayerCasesToShow={setLayerCasesToShow}
                             sortBy={sortBy}
                         ></LayerCaseFilter>
@@ -77,7 +76,6 @@ function RouteComponent() {
                                 key={lc}
                                 layerCase={lc}
                                 index={i + 1}
-                                layerSolutionsComplete={layerSolutionsComplete}
                             />
                         ))}
                     </div>

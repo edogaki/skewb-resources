@@ -1,5 +1,10 @@
 import { writeFileSync } from "node:fs";
-import type { CaseTag, SolutionTag } from "#/utils/layers-catalog/baseMethods";
+import type {
+    CaseTag,
+    HasTag,
+    LayerCaseHasTags,
+    SolutionTag,
+} from "#/utils/layers-catalog/baseMethods";
 import {
     layerCaseToSkewbState,
     skewbStateWhiteToLayerCase,
@@ -11,6 +16,8 @@ import {
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
 import type { Piece } from "#/utils/solver/skewbState";
+
+console.log("Started generating tags");
 
 const layerCaseTags = Object.fromEntries(
     layerCases.map((lc) => [lc, new Set<CaseTag>()]),
@@ -186,6 +193,50 @@ for (const lc of layerCases) {
     }
 }
 
+console.log("Finished generating case tags & solution tags");
+
+function computeHasTagsShortest(lc: LayerCase): HasTag[] {
+    const hasTags = {} as Record<SolutionTag, string[]>;
+    const shortestMover = Number(Object.keys(layerSolutionsComplete[lc])[0]);
+    for (const algStr of layerSolutionsComplete[lc][shortestMover]) {
+        const solutionTagsCopy = layerSolutionTags[algStr];
+        for (const solutionTag of solutionTagsCopy) {
+            hasTags[solutionTag] = hasTags[solutionTag] || [];
+            hasTags[solutionTag].push(algStr);
+        }
+    }
+    return Object.entries(hasTags) as [SolutionTag, string[]][];
+}
+
+const layerCaseHasTagsShortest = Object.fromEntries(
+    layerCases.map((lc) => [lc, computeHasTagsShortest(lc)]),
+) as LayerCaseHasTags;
+
+console.log("Finished generating has tags shortest");
+
+function computeHasTagsSuboptimal(lc: LayerCase): HasTag[] {
+    const hasTags = {} as Record<SolutionTag, string[]>;
+    for (const n of Object.keys(layerSolutionsComplete[lc])
+        .slice(1)
+        .map(Number)) {
+        for (const algStr of layerSolutionsComplete[lc][n]) {
+            const solutionTagsCopy = layerSolutionTags[algStr];
+            for (const solutionTag of solutionTagsCopy) {
+                hasTags[solutionTag] = hasTags[solutionTag] || [];
+                hasTags[solutionTag].push(algStr);
+            }
+        }
+    }
+    return Object.entries(hasTags) as [SolutionTag, string[]][];
+}
+
+const layerCaseHasTagsSuboptimal = Object.fromEntries(
+    layerCases.map((lc) => [lc, computeHasTagsSuboptimal(lc)]),
+) as LayerCaseHasTags;
+
+console.log("Finished generating has tags suboptimal");
+
+// convert maps to objects in preparation for writing to file
 const layerCaseTagArrays = {} as Record<LayerCase, CaseTag[]>;
 for (const lc of layerCases) {
     layerCaseTagArrays[lc] = Array.from(layerCaseTags[lc]);
@@ -217,3 +268,27 @@ writeFileSync(
     solutionTagsCode,
     "utf8",
 );
+
+const hasTagsShortestCode = `import type { LayerCaseHasTags } from "#/utils/layers-catalog/baseMethods";
+
+export const layerCaseHasTagsShortest: LayerCaseHasTags = ${JSON.stringify(layerCaseHasTagsShortest, null, 2)};
+`;
+
+writeFileSync(
+    "./src/utils/layers-catalog/layerCaseHasTagsShortest.gen.ts",
+    hasTagsShortestCode,
+    "utf8",
+);
+
+const hasTagsSuboptimalCode = `import type { LayerCaseHasTags } from "#/utils/layers-catalog/baseMethods";
+
+export const layerCaseHasTagsSuboptimal: LayerCaseHasTags = ${JSON.stringify(layerCaseHasTagsSuboptimal, null, 2)};
+`;
+
+writeFileSync(
+    "./src/utils/layers-catalog/layerCaseHasTagsSuboptimal.gen.ts",
+    hasTagsSuboptimalCode,
+    "utf8",
+);
+
+console.log("Finished writing to file");

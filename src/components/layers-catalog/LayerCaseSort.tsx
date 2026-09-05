@@ -1,4 +1,4 @@
-import { type Dispatch, type SetStateAction, useEffect, useState } from "react";
+import { type Dispatch, type SetStateAction, useEffect } from "react";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import {
     type SortBy,

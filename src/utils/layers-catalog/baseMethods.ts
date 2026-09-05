@@ -101,3 +101,8 @@ export const solutionTagAbbrev: Record<SolutionTag, string> = {
 } as const;
 
 export type LayerSolutionTags = Record<string, SolutionTag[]>;
+
+export type Tag = CaseTag | SolutionTag;
+export type HasTag = [SolutionTag, string[]];
+
+export type LayerCaseHasTags = Record<LayerCase, HasTag[]>;

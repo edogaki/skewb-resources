@@ -1,8 +1,7 @@
 import { Fragment, useState } from "react";
-import type { LayerSolutionsComplete } from "#/utils/layers-catalog/baseMethods";
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import { layerCaseToSkewbState } from "#/utils/layers-catalog/layerCaseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
-import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
 import { pluralize } from "#/utils/methods";
 import { RubikskewbAlg } from "#/utils/solver/alg";
 import SkewbRenderer from "../SkewbRenderer";
@@ -12,12 +11,17 @@ import TagsViewForCase from "./TagsViewForCase";
 export default function LayerCaseView({
     layerCase,
     index,
-    layerSolutionsComplete,
 }: {
     layerCase: LayerCase;
     index: number;
-    layerSolutionsComplete: LayerSolutionsComplete | null;
 }) {
+    const layerSolutionsComplete = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerSolutionsComplete.gen",
+        async () =>
+            (await import("#/utils/layers-catalog/layerSolutionsComplete.gen"))
+                .layerSolutionsComplete,
+    );
+
     const lc = layerCase;
 
     const optsCopy = {
@@ -50,7 +54,7 @@ export default function LayerCaseView({
     return (
         <div className="w-60" key={lc}>
             #{index}: {lc}
-            <TagsViewForCase layerCase={lc} caseTags={layerCaseTags[lc]} />
+            <TagsViewForCase layerCase={lc} />
             {setupAlg && setupAlg.length > 3 && <div>Setup: {setupAlg}</div>}
             <SkewbRenderer
                 state={layerCaseToSkewbState(lc).toSkewbRendererState()}

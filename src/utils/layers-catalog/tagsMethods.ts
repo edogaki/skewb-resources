@@ -1,10 +1,4 @@
-import type { CaseTag, SolutionTag } from "./baseMethods";
-import { type LayerCase, layerCases } from "./layerCases.gen";
-import { layerSolutionsComplete } from "./layerSolutionsComplete.gen";
-import { layerSolutionTags } from "./layerSolutionTags.gen";
-
-export type Tag = CaseTag | SolutionTag;
-export type HasTag = [SolutionTag, string[]];
+import type { CaseTag, HasTag, SolutionTag } from "./baseMethods";
 
 export const caseTagCategories: [string, CaseTag[]][] = [
     [
@@ -32,43 +26,6 @@ export const caseTagCategories: [string, CaseTag[]][] = [
         ],
     ],
 ];
-
-function computeHasTagsShortest(lc: LayerCase): HasTag[] {
-    const hasTags = {} as Record<SolutionTag, string[]>;
-    const shortestMover = Number(Object.keys(layerSolutionsComplete[lc])[0]);
-    for (const algStr of layerSolutionsComplete[lc][shortestMover]) {
-        const solutionTagsCopy = layerSolutionTags[algStr];
-        for (const solutionTag of solutionTagsCopy) {
-            hasTags[solutionTag] = hasTags[solutionTag] || [];
-            hasTags[solutionTag].push(algStr);
-        }
-    }
-    return Object.entries(hasTags) as [SolutionTag, string[]][];
-}
-
-export const layerCaseHasTagsShortest = Object.fromEntries(
-    layerCases.map((lc) => [lc, computeHasTagsShortest(lc)]),
-) as Record<LayerCase, HasTag[]>;
-
-function computeHasTagsSuboptimal(lc: LayerCase): HasTag[] {
-    const hasTags = {} as Record<SolutionTag, string[]>;
-    for (const n of Object.keys(layerSolutionsComplete[lc])
-        .slice(1)
-        .map(Number)) {
-        for (const algStr of layerSolutionsComplete[lc][n]) {
-            const solutionTagsCopy = layerSolutionTags[algStr];
-            for (const solutionTag of solutionTagsCopy) {
-                hasTags[solutionTag] = hasTags[solutionTag] || [];
-                hasTags[solutionTag].push(algStr);
-            }
-        }
-    }
-    return Object.entries(hasTags) as [SolutionTag, string[]][];
-}
-
-export const layerCaseHasTagsSuboptimal = Object.fromEntries(
-    layerCases.map((lc) => [lc, computeHasTagsSuboptimal(lc)]),
-) as Record<LayerCase, HasTag[]>;
 
 export function filterRedundantSolutionTags(
     solnTags: SolutionTag[],

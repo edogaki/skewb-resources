@@ -1,5 +1,5 @@
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import { solutionTagAbbrev } from "#/utils/layers-catalog/baseMethods";
-import { layerSolutionTags } from "#/utils/layers-catalog/layerSolutionTags.gen";
 import { filterRedundantSolutionTags } from "#/utils/layers-catalog/tagsMethods";
 import type { RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 import Tooltip from "../Tooltip";
@@ -15,6 +15,13 @@ export default function AlgorithmView({
     isHidden?: boolean;
     includeTags?: boolean;
 }) {
+    const layerSolutionTags = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseTags.gen",
+        async () =>
+            (await import("#/utils/layers-catalog/layerSolutionTags.gen"))
+                .layerSolutionTags,
+    );
+
     const algString = alg.toString();
     return (
         <span
@@ -22,15 +29,15 @@ export default function AlgorithmView({
         >
             {algString.length === 0 ? "(solved)" : algString}
             {includeTags &&
-                filterRedundantSolutionTags(layerSolutionTags[algString]).map(
-                    (tag) => (
-                        <Tooltip key={tag} content={tag}>
-                            <span className="text-xs align-sub">
-                                {solutionTagAbbrev[tag]}
-                            </span>
-                        </Tooltip>
-                    ),
-                )}
+                filterRedundantSolutionTags(
+                    layerSolutionTags?.[algString] || [],
+                ).map((tag) => (
+                    <Tooltip key={tag} content={tag}>
+                        <span className="text-xs align-sub">
+                            {solutionTagAbbrev[tag]}
+                        </span>
+                    </Tooltip>
+                ))}
         </span>
     );
 }

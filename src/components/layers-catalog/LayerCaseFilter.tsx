@@ -9,7 +9,6 @@ import {
     type LayerCase,
     layerCases,
 } from "#/utils/layers-catalog/layerCases.gen";
-import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import type { FilterFunc } from "#/utils/layers-catalog/layersCatalogMethods";
 import {
     type SortBy,
@@ -36,11 +35,9 @@ const filterOptions: {
 ];
 
 export default function LayerCaseFilter({
-    layerCasesToShow,
     setLayerCasesToShow,
     sortBy,
 }: {
-    layerCasesToShow: LayerCase[];
     setLayerCasesToShow: Dispatch<SetStateAction<LayerCase[]>>;
     sortBy: SortBy;
 }) {

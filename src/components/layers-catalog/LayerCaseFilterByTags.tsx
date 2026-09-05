@@ -1,17 +1,13 @@
 import { type Dispatch, useEffect, useState } from "react";
+import { useHeavyObjectsLoader } from "#/utils/heavyObjectsLoader";
 import {
     type CaseTag,
     type SolutionTag,
     solutionTags,
 } from "#/utils/layers-catalog/baseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
-import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
 import type { FilterFunc } from "#/utils/layers-catalog/layersCatalogMethods";
-import {
-    caseTagCategories,
-    layerCaseHasTagsShortest,
-    layerCaseHasTagsSuboptimal,
-} from "#/utils/layers-catalog/tagsMethods";
+import { caseTagCategories } from "#/utils/layers-catalog/tagsMethods";
 import { intersection, xor } from "#/utils/math";
 
 type HasDoesNotHave = "Has" | "Does not have";
@@ -21,6 +17,33 @@ export default function LayerCaseFilterByTags({
 }: {
     setFilterFunc: Dispatch<FilterFunc>;
 }) {
+    const layerCaseTags = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseTags.gen",
+        async () =>
+            (await import("#/utils/layers-catalog/layerCaseTags.gen"))
+                .layerCaseTags,
+    );
+
+    const layerCaseHasTagsShortest = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseHasTagsShortest.gen",
+        async () =>
+            (
+                await import(
+                    "#/utils/layers-catalog/layerCaseHasTagsShortest.gen"
+                )
+            ).layerCaseHasTagsShortest,
+    );
+
+    const layerCaseHasTagsSuboptimal = useHeavyObjectsLoader(
+        "#/utils/layers-catalog/layerCaseHasTagsSuboptimal.gen",
+        async () =>
+            (
+                await import(
+                    "#/utils/layers-catalog/layerCaseHasTagsSuboptimal.gen"
+                )
+            ).layerCaseHasTagsSuboptimal,
+    );
+
     const hasTagsShortest = solutionTags;
     const hasTagsSuboptimal = solutionTags;
 
@@ -37,6 +60,13 @@ export default function LayerCaseFilterByTags({
     const [hasASuboptimal, setHasASuboptimal] = useState<HasDoesNotHave>("Has");
 
     useEffect(() => {
+        if (
+            !layerCaseTags ||
+            !layerCaseHasTagsShortest ||
+            !layerCaseHasTagsSuboptimal
+        ) {
+            return;
+        }
         const caseTagsSelectedByCategory = caseTagCategories.map(
             ([catName, catTags]) =>
                 [
@@ -83,6 +113,9 @@ export default function LayerCaseFilterByTags({
             }),
         );
     }, [
+        layerCaseTags,
+        layerCaseHasTagsShortest,
+        layerCaseHasTagsSuboptimal,
         setFilterFunc,
         caseTagsSelected,
         hasTagsShortestSelected,
