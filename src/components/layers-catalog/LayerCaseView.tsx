@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { type Dispatch, Fragment, type SetStateAction, useState } from "react";
 import { layerCaseToSkewbState } from "#/utils/layers-catalog/layerCaseMethods";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
@@ -12,10 +12,16 @@ export default function LayerCaseView({
     layerCase,
     index,
     layerSolutionsComplete,
+    isSelectionEnabled,
+    isChecked,
+    setIsChecked,
 }: {
     layerCase: LayerCase;
     index: number;
     layerSolutionsComplete: Record<LayerCase, Record<number, string[]>> | null;
+    isSelectionEnabled: boolean;
+    isChecked?: boolean;
+    setIsChecked?: Dispatch<SetStateAction<boolean>>;
 }) {
     const lc = layerCase;
 
@@ -48,7 +54,20 @@ export default function LayerCaseView({
 
     return (
         <div className="w-60" key={lc}>
-            #{index}: {lc}
+            <label htmlFor={`isChecked-${lc}`}>
+                {isSelectionEnabled && setIsChecked && (
+                    <input
+                        type="checkbox"
+                        checked={isChecked}
+                        name={`isChecked-${lc}`}
+                        id={`isChecked-${lc}`}
+                        className="mr-1"
+                        onChange={(e) => setIsChecked(e.target.checked)}
+                        autoComplete="off"
+                    />
+                )}
+                #{index}: {lc}
+            </label>
             <TagsViewForCase layerCase={lc} caseTags={layerCaseTags[lc]} />
             {setupAlg && setupAlg.length > 3 && <div>Setup: {setupAlg}</div>}
             <SkewbRenderer

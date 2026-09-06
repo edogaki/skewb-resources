@@ -2,13 +2,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useOnInView } from "react-intersection-observer";
 import Accordion from "#/components/Accordion";
-import CopyLayerSolutionsToClipboard from "#/components/layers-catalog/CopyLayerSolutionsToClipboard";
+import ExportAllToOneLookTrainer from "#/components/layers-catalog/ExportAllToOneLookTrainer";
+import ExportSelectedToOneLookTrainer from "#/components/layers-catalog/ExportSelectedToOneLookTrainer";
 import LayerCaseFilter from "#/components/layers-catalog/LayerCaseFilter";
 import LayerCaseSort from "#/components/layers-catalog/LayerCaseSort";
 import LayerCasesStats from "#/components/layers-catalog/LayerCasesStats";
 import LayerCaseView from "#/components/layers-catalog/LayerCaseView";
-import SaveAsPresetInOneLookTrainer from "#/components/layers-catalog/SaveAsPresetInOneLookTrainer";
-import { layerCases } from "#/utils/layers-catalog/layerCases.gen";
+import SelectAllOrNone from "#/components/layers-catalog/SelectAllOrNone";
+import {
+    type LayerCase,
+    layerCases,
+} from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import type { SortBy } from "#/utils/layers-catalog/sortMethods";
 
@@ -46,6 +50,10 @@ function RouteComponent() {
 
     const [layerCasesToShowLimit, setLayerCasesToShowLimit] =
         useState(limitPerScroll);
+
+    const [selectedLayerCases, setSelectedLayerCases] = useState<
+        Partial<Record<LayerCase, boolean>>
+    >({});
 
     useEffect(() => {
         if (layerCasesToShow.length > limitPerScroll)
@@ -87,12 +95,23 @@ function RouteComponent() {
                             setSortBy={setSortBy}
                         />
                     </div>
+                    {/*
                     <CopyLayerSolutionsToClipboard
                         layerCasesToShow={layerCasesToShow}
                     />
-                    <SaveAsPresetInOneLookTrainer
+                    */}
+                    <ExportAllToOneLookTrainer
                         layerCasesToShow={layerCasesToShow}
-                    ></SaveAsPresetInOneLookTrainer>
+                    ></ExportAllToOneLookTrainer>
+                    <ExportSelectedToOneLookTrainer
+                        layerCasesToShow={layerCasesToShow}
+                        selectedLayerCases={selectedLayerCases}
+                    ></ExportSelectedToOneLookTrainer>
+                    <SelectAllOrNone
+                        layerCasesToShow={layerCasesToShow}
+                        selectedLayerCases={selectedLayerCases}
+                        setSelectedLayerCases={setSelectedLayerCases}
+                    />
                     <div className="flex flex-wrap gap-x-10 gap-y-4">
                         {layerCasesToShow
                             .slice(0, layerCasesToShowLimit)
@@ -103,6 +122,17 @@ function RouteComponent() {
                                     index={i + 1}
                                     layerSolutionsComplete={
                                         layerSolutionsComplete
+                                    }
+                                    isSelectionEnabled={true}
+                                    isChecked={!!selectedLayerCases[lc]}
+                                    setIsChecked={(ic) =>
+                                        setSelectedLayerCases((slc) => ({
+                                            ...slc,
+                                            [lc]:
+                                                typeof ic === "function"
+                                                    ? ic(slc[lc] ?? false)
+                                                    : ic,
+                                        }))
                                     }
                                 />
                             ))}
