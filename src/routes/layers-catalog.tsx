@@ -58,6 +58,7 @@ function RouteComponent() {
     useEffect(() => {
         if (layerCasesToShow.length > limitPerScroll)
             setLayerCasesToShowLimit(limitPerScroll);
+        setSelectedLayerCases({});
     }, [layerCasesToShow]);
 
     const inViewRef = useOnInView(

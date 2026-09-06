@@ -57,7 +57,8 @@ export default function ExportAllToOneLookTrainer({
                     }, 0);
                 }}
             >
-                Export All Layers To One Look Trainer
+                Export All Layers ({layerCasesToShow.length}) To One Look
+                Trainer
             </button>
             <div>{message}</div>
         </div>

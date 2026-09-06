@@ -20,6 +20,10 @@ export default function ExportSelectedToOneLookTrainer({
         true,
     );
 
+    const numSelected = layerCasesToShow.filter(
+        (lc) => selectedLayerCases[lc],
+    ).length;
+
     const [message, setMessage] = useState("");
     useEffect(() => {
         if (message.length > 0) {
@@ -68,7 +72,7 @@ export default function ExportSelectedToOneLookTrainer({
                     }, 0);
                 }}
             >
-                Export Selected To One Look Trainer
+                Export Selected ({numSelected}) To One Look Trainer
             </button>
             <div>{message}</div>
         </div>
