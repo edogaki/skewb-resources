@@ -23,7 +23,7 @@ export default function CustomPresets({
                             key={preset.key}
                             className="relative w-60 h-40 border border-(--line) rounded-2xl shadow-xl "
                         >
-                            <div className="absolute right-2 top-3 flex flex-col gap-1 items-end">
+                            <div className="absolute right-2 bottom-3 flex flex-col gap-1 items-end">
                                 <div>
                                     <button
                                         type="button"
@@ -50,12 +50,24 @@ export default function CustomPresets({
                                         type="button"
                                         className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-4 py-2 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50 shadow-md"
                                         onClick={() => {
-                                            setCustomPresets((cps) =>
-                                                cps.filter(
-                                                    (cp) =>
-                                                        cp.key !== preset.key,
-                                                ),
-                                            );
+                                            const preview = preset.text
+                                                .slice(0, 50)
+                                                .split("\n")
+                                                .slice(0, 3)
+                                                .join("\n");
+                                            if (
+                                                confirm(
+                                                    `Delete this custom preset?${preview ? `\n\n${preview}` : ""}${preview !== preset.text ? " ..." : ""}`,
+                                                ) === true
+                                            ) {
+                                                setCustomPresets((cps) =>
+                                                    cps.filter(
+                                                        (cp) =>
+                                                            cp.key !==
+                                                            preset.key,
+                                                    ),
+                                                );
+                                            }
                                         }}
                                     >
                                         Delete

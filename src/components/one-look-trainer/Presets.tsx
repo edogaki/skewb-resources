@@ -19,7 +19,7 @@ export default function Presets({
                             key={preset}
                             className="relative w-60 h-40 border border-(--line) rounded-2xl shadow-xl "
                         >
-                            <div className="absolute right-2 top-3">
+                            <div className="absolute right-2 bottom-3">
                                 <button
                                     type="button"
                                     className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-4 py-2 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50 shadow-md"
