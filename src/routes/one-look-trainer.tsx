@@ -48,7 +48,7 @@ function RouteComponent() {
                             setOptions={setOptions}
                         />
                     ) : (
-                        "Loading..."
+                        <div className="h-300">Loading...</div>
                     )}
                 </div>
             </section>
