@@ -1,75 +1,33 @@
-import { TwistyPlayer } from "cubing/twisty";
 import { useEffect, useMemo, useRef } from "react";
+import { skewbStateRenderer } from "#/utils/skewb-matrix/three";
 import type { WCAAlg } from "#/utils/solver/alg";
 
 export default function Skewb3D({ setupAlg }: { setupAlg: WCAAlg }) {
-    const player = useMemo(() => {
-        const player = new TwistyPlayer({
-            puzzle: "skewb",
-            background: "none",
-            controlPanel: "none",
-        });
-        player.className = "w-60 h-60";
-        return player;
-    }, []);
-    const divRef = useRef<HTMLDivElement>(null);
+    const skewbStateRendererRef = useRef<HTMLDivElement>(null);
+
     useEffect(() => {
-        if (!divRef.current) return;
-        divRef.current.innerHTML = "";
-        divRef.current.appendChild(player);
+        if (!skewbStateRendererRef.current) return;
+        skewbStateRendererRef.current.innerHTML = "";
+        skewbStateRendererRef.current.appendChild(
+            skewbStateRenderer.renderer.domElement,
+        );
         return () => {
-            if (!divRef.current) return;
-            divRef.current.removeChild(player);
-            divRef.current.innerHTML = "";
+            if (!skewbStateRendererRef.current) return;
+            skewbStateRendererRef.current.removeChild(
+                skewbStateRenderer.renderer.domElement,
+            );
+            skewbStateRendererRef.current.innerHTML = "";
         };
-    }, [player]);
+    }, []);
+
     useEffect(() => {
-        if (!divRef.current) return;
-        player.experimentalSetupAlg = setupAlg.toString();
-    }, [setupAlg, player]);
+        skewbStateRenderer.setFromWCAAlg(setupAlg);
+        skewbStateRenderer.resetGroupRotation();
+    }, [setupAlg]);
+
     return (
-        <div className="relative w-full">
-            <button
-                type="button"
-                className="absolute left-0 top-1/2 hover:font-bold text-9xl -translate-y-1/2 z-100"
-                onClick={async () => {
-                    const orbitCoordinates =
-                        await player.experimentalModel.twistySceneModel.orbitCoordinates.get();
-                    const longitude = orbitCoordinates.longitude;
-                    if (-45 < longitude && longitude <= 45) {
-                        player.experimentalAddMove("z'");
-                    } else if (45 < longitude && longitude <= 135) {
-                        player.experimentalAddMove("x'");
-                    } else if (135 < longitude || longitude <= -135) {
-                        player.experimentalAddMove("z");
-                    } else if (-135 < longitude || longitude <= -45) {
-                        player.experimentalAddMove("x");
-                    }
-                }}
-            >
-                ⤹
-            </button>
-            <div ref={divRef} className="w-full flex justify-center"></div>
-            <button
-                type="button"
-                className="absolute right-0 top-1/2 hover:font-bold text-9xl -translate-y-1/2 z-100"
-                onClick={async () => {
-                    const orbitCoordinates =
-                        await player.experimentalModel.twistySceneModel.orbitCoordinates.get();
-                    const longitude = orbitCoordinates.longitude;
-                    if (-45 < longitude && longitude <= 45) {
-                        player.experimentalAddMove("z");
-                    } else if (45 < longitude && longitude <= 135) {
-                        player.experimentalAddMove("x");
-                    } else if (135 < longitude || longitude <= -135) {
-                        player.experimentalAddMove("z'");
-                    } else if (-135 < longitude || longitude <= -45) {
-                        player.experimentalAddMove("x'");
-                    }
-                }}
-            >
-                ⤸
-            </button>
+        <div>
+            <div ref={skewbStateRendererRef} />
         </div>
     );
 }

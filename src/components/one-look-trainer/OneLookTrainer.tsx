@@ -1,3 +1,4 @@
+import { ClientOnly } from "@tanstack/react-router";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import type { OneLookTrainerOptions } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
@@ -134,7 +135,9 @@ export default function OneLookTrainer({
                     <div className={`${isShowSkewbRenderer ? "" : "blur-2xl"}`}>
                         {skewbState &&
                             (options.skewbVisualizerType === "3d" ? (
-                                <Skewb3D setupAlg={scrambleAlg} />
+                                <ClientOnly>
+                                    <Skewb3D setupAlg={scrambleAlg} />
+                                </ClientOnly>
                             ) : (
                                 <SkewbRenderer
                                     state={skewbState.toSkewbRendererState()}

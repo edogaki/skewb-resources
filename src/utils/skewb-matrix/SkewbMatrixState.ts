@@ -446,4 +446,25 @@ export class SkewbMatrixState {
     generateHash() {
         return `${this.centerPieces.map((r) => standardizedCenterRotation[r])} ${this.cornerPieces}`;
     }
+
+    resetRotations() {
+        this.cornerPieces = defaultCornerPieces.slice() as Tuple<
+            CubeRotation,
+            8
+        >;
+        this.centerPieces = defaultCenterPieces.slice() as Tuple<
+            CubeRotation,
+            6
+        >;
+    }
+
+    setFromWCAAlg(alg: WCAAlg) {
+        this.resetRotations();
+        this.applyWCAAlg(alg);
+    }
+
+    setFromRubikskewbAlg(alg: RubikskewbAlg) {
+        this.resetRotations();
+        this.applyRubikskewbAlg(alg);
+    }
 }

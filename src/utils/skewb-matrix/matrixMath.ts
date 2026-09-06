@@ -237,3 +237,7 @@ export function rotationToAxis(r: CubeRotation) {
         ((r & mask21) >> 8) |
         ((r & mask31) >> 4)) as Axis;
 }
+
+export function bitsToNumber(bits: number) {
+    return bits === 3 ? -1 : bits;
+}
