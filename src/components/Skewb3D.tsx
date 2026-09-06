@@ -3,15 +3,15 @@ import { useEffect, useMemo, useRef } from "react";
 import type { WCAAlg } from "#/utils/solver/alg";
 
 export default function Skewb3D({ setupAlg }: { setupAlg: WCAAlg }) {
-    const player = useMemo(
-        () =>
-            new TwistyPlayer({
-                puzzle: "skewb",
-                background: "none",
-                controlPanel: "none",
-            }),
-        [],
-    );
+    const player = useMemo(() => {
+        const player = new TwistyPlayer({
+            puzzle: "skewb",
+            background: "none",
+            controlPanel: "none",
+        });
+        player.className = "w-60 h-60";
+        return player;
+    }, []);
     const divRef = useRef<HTMLDivElement>(null);
     useEffect(() => {
         if (!divRef.current) return;
