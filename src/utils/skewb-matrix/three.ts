@@ -30,12 +30,10 @@ import {
 } from "./matrixMath";
 import { CenterPiece, CornerPiece, SkewbMatrixState } from "./SkewbMatrixState";
 
-const width = 320;
-const height = 320;
 const hintDistance = 2.4;
 const hintSizeScale = 1;
 const hintSpacing = 0.2;
-const cameraSpeed = 0.03;
+const cameraSpeed = 8;
 
 function cubeRotationToThreeMatrix(r: CubeRotation) {
     return new THREE.Matrix4(
@@ -342,7 +340,18 @@ class SkewbStateRenderer {
 
     animationId: number | null;
 
+    parentDiv: HTMLDivElement | null;
+
+    maxWidth: number;
+    aspectRatio: number;
+    currentWidth: number;
+
+    resizeObserver: ResizeObserver;
+
     constructor(state?: SkewbMatrixState) {
+        this.maxWidth = 320;
+        this.aspectRatio = 1;
+        this.currentWidth = this.maxWidth;
         // inner hints have the world direction perpendicular to their faces
         // so we can track when face is being shown to camera
         // outer hints have the world direction to z axis (default)
@@ -402,6 +411,9 @@ class SkewbStateRenderer {
         }
         this.scene.add(this.skewbGroup);
 
+        this.skewbGroup.setRotationFromEuler(
+            new THREE.Euler(Math.PI / 4, -Math.PI / 4, 0),
+        );
         this.skewbGroupDefaultRotation = new THREE.Quaternion();
         this.skewbGroup.getWorldQuaternion(this.skewbGroupDefaultRotation);
 
@@ -410,13 +422,13 @@ class SkewbStateRenderer {
 
         this.camera = new THREE.PerspectiveCamera(
             55,
-            width / height,
+            this.aspectRatio,
             0.1,
             2000,
         );
-        this.camera.position.x = 4;
-        this.camera.position.y = 4;
-        this.camera.position.z = 4;
+        this.camera.position.x = 0;
+        this.camera.position.y = 0;
+        this.camera.position.z = 7;
 
         this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 
@@ -435,7 +447,7 @@ class SkewbStateRenderer {
             antialias: true,
             alpha: true,
         });
-        this.renderer.setSize(width, height);
+        this.renderer.setSize(this.maxWidth, this.maxWidth / this.aspectRatio);
         this.renderer.setPixelRatio(window.devicePixelRatio);
 
         this.isDraggingScreen = false;
@@ -454,17 +466,28 @@ class SkewbStateRenderer {
             this.pointerMoveEventListener,
         );
 
-        this.renderer.domElement.style = "touch-action: none;";
+        this.renderer.domElement.style =
+            "position:absolute; touch-action: none;";
 
         this.animationId = null;
         this.animate();
+
+        this.parentDiv = null;
+        this.resizeObserver = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                if (!entry.contentBoxSize?.[0]) continue;
+                const [{ blockSize, inlineSize }] = entry.contentBoxSize;
+                console.log({ blockSize, inlineSize });
+                this.setWidth(inlineSize);
+            }
+        });
     }
 
-    pointerDownEventListener = (event: PointerEvent) => {
+    pointerDownEventListener = (_event: PointerEvent) => {
         this.isDraggingScreen = true;
     };
 
-    pointerUpEventListener = (event: PointerEvent) => {
+    pointerUpEventListener = (_event: PointerEvent) => {
         this.isDraggingScreen = false;
     };
 
@@ -475,11 +498,12 @@ class SkewbStateRenderer {
         if (this.isDraggingScreen) {
             this.skewbGroup.rotateOnWorldAxis(
                 new THREE.Vector3(0, 1, 0),
-                event.movementX * cameraSpeed,
+                (event.movementX * cameraSpeed) / this.currentWidth,
             );
             this.skewbGroup.rotateOnWorldAxis(
                 new THREE.Vector3(1, 0, 0),
-                event.movementY * cameraSpeed,
+                (event.movementY * cameraSpeed) /
+                    (this.currentWidth / this.aspectRatio),
             );
             hideOutOfViewHints(this.camera, this.innerHintGroups);
         }
@@ -526,6 +550,27 @@ class SkewbStateRenderer {
             this.skewbGroupDefaultRotation,
         );
         hideOutOfViewHints(this.camera, this.innerHintGroups);
+    }
+
+    mount(parentDiv: HTMLDivElement) {
+        this.parentDiv = parentDiv;
+        this.parentDiv.appendChild(this.renderer.domElement);
+        this.resizeObserver.observe(this.parentDiv);
+    }
+
+    unmount() {
+        if (!this.parentDiv) return;
+        this.parentDiv.removeChild(this.renderer.domElement);
+        this.resizeObserver.unobserve(this.parentDiv);
+        this.parentDiv = null;
+    }
+
+    setWidth(newWidth: number) {
+        this.currentWidth = Math.min(this.maxWidth, newWidth);
+        this.renderer.setSize(
+            this.currentWidth,
+            this.currentWidth / this.aspectRatio,
+        );
     }
 
     // Not sure how to implement yet, will do in the future

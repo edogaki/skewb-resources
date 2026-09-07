@@ -3,20 +3,13 @@ import { skewbStateRenderer } from "#/utils/skewb-matrix/three";
 import type { WCAAlg } from "#/utils/solver/alg";
 
 export default function Skewb3D({ setupAlg }: { setupAlg: WCAAlg }) {
-    const skewbStateRendererRef = useRef<HTMLDivElement>(null);
+    const skewbStateRendererContainerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!skewbStateRendererRef.current) return;
-        skewbStateRendererRef.current.innerHTML = "";
-        skewbStateRendererRef.current.appendChild(
-            skewbStateRenderer.renderer.domElement,
-        );
+        if (!skewbStateRendererContainerRef.current) return;
+        skewbStateRenderer.mount(skewbStateRendererContainerRef.current);
         return () => {
-            if (!skewbStateRendererRef.current) return;
-            skewbStateRendererRef.current.removeChild(
-                skewbStateRenderer.renderer.domElement,
-            );
-            skewbStateRendererRef.current.innerHTML = "";
+            skewbStateRenderer.unmount();
         };
     }, []);
 
@@ -26,8 +19,9 @@ export default function Skewb3D({ setupAlg }: { setupAlg: WCAAlg }) {
     }, [setupAlg]);
 
     return (
-        <div>
-            <div ref={skewbStateRendererRef} />
-        </div>
+        <div
+            className="relative w-full h-auto aspect-square max-w-80"
+            ref={skewbStateRendererContainerRef}
+        ></div>
     );
 }
