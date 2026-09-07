@@ -471,6 +471,13 @@ class SkewbStateRenderer {
             this.pointerMoveEventListener,
         );
 
+        this.renderer.domElement.addEventListener(
+            "contextmenu",
+            (event: Event) => {
+                event.preventDefault();
+            },
+        );
+
         this.renderer.domElement.style =
             "position:absolute; touch-action: none;";
 
@@ -488,12 +495,15 @@ class SkewbStateRenderer {
         });
     }
 
-    pointerDownEventListener = (_event: PointerEvent) => {
+    pointerDownEventListener = (event: PointerEvent) => {
         this.isDraggingScreen = true;
+        this.renderer.domElement.setPointerCapture(event.pointerId);
+        document.body.style.cursor = "grabbing";
     };
 
     pointerUpEventListener = (_event: PointerEvent) => {
         this.isDraggingScreen = false;
+        document.body.style.cursor = "auto";
     };
 
     pointerMoveEventListener = (event: PointerEvent) => {
