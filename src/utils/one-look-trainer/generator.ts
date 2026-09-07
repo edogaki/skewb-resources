@@ -29,35 +29,43 @@ export function generateRandomNSCase(
         Math.floor(Math.random() * 4) as IntFrom0To<4>,
     ];
 
+    const randomLayerCenter = randomVars[0];
+    const randomCornerOrie1 = randomVars[1];
+    const randomCornerOrie2 = randomVars[2];
+    const randomCenterPerm = [randomVars[3], randomVars[4], randomVars[5]];
+    const randomZRotation = randomVars[6];
+
     const state = new SkewbMatrixState();
-    const chosenCenter =
+    const chosenLayerCenter =
         layerColor === "random"
-            ? randomVars[0]
+            ? randomLayerCenter
             : CenterPiece.find(
                   (cp) => state.centerPieceColors[cp] === layerColor,
               );
-    if (chosenCenter === undefined) {
+
+    if (chosenLayerCenter === undefined) {
         throw new Error(
             `color ${layerColor} not found in state centerPieceColors ${Object.entries(state.centerPieceColors)}!`,
         );
     }
-    const { cornerPieceLocations, centerPieceLocations } =
-        state.getL2LPieceLocations(chosenCenter);
 
-    state.turnCornerPiece(cornerPieceLocations[0], randomVars[1]);
-    state.turnCornerPiece(cornerPieceLocations[1], randomVars[2]);
-    state.turnCornerPiece(cornerPieceLocations[2], 3 - randomVars[1]);
-    state.turnCornerPiece(cornerPieceLocations[3], 3 - randomVars[2]);
+    const { cornerPieceLocations, centerPieceLocations } =
+        state.getL2LPieceLocations(chosenLayerCenter);
+
+    state.turnCornerPiece(cornerPieceLocations[0], randomCornerOrie1);
+    state.turnCornerPiece(cornerPieceLocations[1], randomCornerOrie2);
+    state.turnCornerPiece(cornerPieceLocations[2], 3 - randomCornerOrie1);
+    state.turnCornerPiece(cornerPieceLocations[3], 3 - randomCornerOrie2);
 
     const origCenterPieces = state.centerPieces.slice();
     const origCenters = centerPieceLocations.slice();
 
     const shuffledCenters: CenterPiece[] = [];
     let parity = 0;
-    for (let i = 3; i < 6; i++) {
-        parity += randomVars[i];
-        shuffledCenters.push(centerPieceLocations[randomVars[i]]);
-        centerPieceLocations.splice(randomVars[i], 1);
+    for (let i = 0; i < 3; i++) {
+        parity += randomCenterPerm[i];
+        shuffledCenters.push(centerPieceLocations[randomCenterPerm[i]]);
+        centerPieceLocations.splice(randomCenterPerm[i], 1);
     }
     shuffledCenters.push(centerPieceLocations[parity % 2]);
     shuffledCenters.push(centerPieceLocations[(parity + 1) % 2]);
@@ -67,7 +75,7 @@ export function generateRandomNSCase(
             origCenterPieces[origCenters[i]];
     }
 
-    state.rotateCenterToAxis(randomVars[0], 0b000001);
+    state.rotateCenterToAxis(chosenLayerCenter, 0b000001);
 
     state.applyRubikskewbAlg(
         [
@@ -75,7 +83,7 @@ export function generateRandomNSCase(
             new RubikskewbAlg("z"),
             new RubikskewbAlg("z2"),
             new RubikskewbAlg("z'"),
-        ][randomVars[6]],
+        ][randomZRotation],
     );
 
     return state;
