@@ -55,6 +55,7 @@ export default function OneLookTrainer({
                                     createAlgsFromText(
                                         options.layerSolutionAlgsText,
                                     ),
+                                    options.layerColor,
                                 );
                             setIsShowSkewbRenderer(
                                 options.showSkewbVisualizerByDefault,

@@ -1,13 +1,16 @@
 import {
-    type CenterPiece,
+    CenterPiece,
     rubikskewbTurnToStateRotation,
     SkewbMatrixState,
 } from "../skewb-matrix/SkewbMatrixState";
 import { solveSkewb } from "../skewb-matrix/solver";
 import { RubikskewbAlg, type WCAAlg } from "../solver/alg";
 import type { IntFrom0To } from "../solver/helperTypes";
+import type { OneLookTrainerOptions } from ".";
 
-export function generateRandomNSCase() {
+export function generateRandomNSCase(
+    layerColor: OneLookTrainerOptions["layerColor"],
+) {
     const randomVars: [
         IntFrom0To<6>,
         IntFrom0To<3>,
@@ -27,8 +30,19 @@ export function generateRandomNSCase() {
     ];
 
     const state = new SkewbMatrixState();
+    const chosenCenter =
+        layerColor === "random"
+            ? randomVars[0]
+            : CenterPiece.find(
+                  (cp) => state.centerPieceColors[cp] === layerColor,
+              );
+    if (chosenCenter === undefined) {
+        throw new Error(
+            `color ${layerColor} not found in state centerPieceColors ${Object.entries(state.centerPieceColors)}!`,
+        );
+    }
     const { cornerPieceLocations, centerPieceLocations } =
-        state.getL2LPieceLocations(randomVars[0]);
+        state.getL2LPieceLocations(chosenCenter);
 
     state.turnCornerPiece(cornerPieceLocations[0], randomVars[1]);
     state.turnCornerPiece(cornerPieceLocations[1], randomVars[2]);
@@ -67,11 +81,14 @@ export function generateRandomNSCase() {
     return state;
 }
 
-export async function generateRandomOneLookCase(layerAlgs: RubikskewbAlg[]) {
+export async function generateRandomOneLookCase(
+    layerAlgs: RubikskewbAlg[],
+    layerColor: OneLookTrainerOptions["layerColor"],
+) {
     let state: SkewbMatrixState;
     let scrambleAlg: WCAAlg;
     do {
-        state = generateRandomNSCase();
+        state = generateRandomNSCase(layerColor);
         const randomLayerAlg =
             layerAlgs.length === 0
                 ? new RubikskewbAlg("")

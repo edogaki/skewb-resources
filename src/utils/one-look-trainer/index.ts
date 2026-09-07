@@ -1,3 +1,5 @@
+import type { Color } from "../renderer/color";
+
 export type CustomPreset = {
     key: string;
     text: string;
@@ -8,6 +10,7 @@ export type OneLookTrainerOptions = {
     showSkewbVisualizerByDefault: boolean;
     skewbVisualizerType: "2d" | "3d";
     customPresets: CustomPreset[];
+    layerColor: "random" | Color;
 };
 
 export const defaultOneLookTrainerOptions: OneLookTrainerOptions = {
@@ -15,4 +18,5 @@ export const defaultOneLookTrainerOptions: OneLookTrainerOptions = {
     showSkewbVisualizerByDefault: false,
     skewbVisualizerType: "2d",
     customPresets: [],
+    layerColor: "random",
 };
