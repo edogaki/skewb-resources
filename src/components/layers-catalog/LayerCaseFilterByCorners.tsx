@@ -6,8 +6,10 @@ import LayerCaseFilterByCornersGuide from "./LayerCaseFilterByCornersGuide";
 
 export default function LayerCaseFilterByCorners({
     setFilterFunc,
+    setFilterNameString,
 }: {
     setFilterFunc: Dispatch<FilterFunc>;
+    setFilterNameString: Dispatch<string>;
 }) {
     const [regex, setRegex] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
@@ -15,15 +17,18 @@ export default function LayerCaseFilterByCorners({
     useEffect(() => {
         try {
             const regexObj = new RegExp(regex, "i");
-            setFilterFunc((layerCasesToShow: LayerCase[]) =>
-                layerCasesToShow.filter((lc) =>
+            setFilterFunc((layerCasesToShow: LayerCase[]) => {
+                setFilterNameString(
+                    regex.length === 0 ? "" : `Case ID filter is "${regex}"`,
+                );
+                return layerCasesToShow.filter((lc) =>
                     includeRotations
                         ? allLayerCaseRotations[lc].some(
                               (id) => !!regexObj.exec(id),
                           )
                         : !!regexObj.exec(lc),
-                ),
-            );
+                );
+            });
             setErrorMessage("");
         } catch (e) {
             if (e instanceof Error) {
@@ -34,7 +39,7 @@ export default function LayerCaseFilterByCorners({
                 );
             }
         }
-    }, [setFilterFunc, regex, includeRotations]);
+    }, [setFilterFunc, setFilterNameString, regex, includeRotations]);
     return (
         <div className="flex gap-10 flex-wrap">
             <div className="flex flex-col gap-2 w-100">

@@ -20,8 +20,10 @@ type HasDoesNotHave = "Has" | "Does not have";
 
 export default function LayerCaseFilterByTags({
     setFilterFunc,
+    setFilterNameString,
 }: {
     setFilterFunc: Dispatch<FilterFunc>;
+    setFilterNameString: Dispatch<string>;
 }) {
     const hasTagsShortest = solutionTags;
     const hasTagsSuboptimal = solutionTags;
@@ -48,8 +50,31 @@ export default function LayerCaseFilterByTags({
                     ),
                 ] as const,
         );
-        setFilterFunc((layerCasesToShow: LayerCase[]) =>
-            layerCasesToShow.filter((lc) => {
+        setFilterFunc((layerCasesToShow: LayerCase[]) => {
+            let caseTagsFilterNameString = `(${caseTagsSelectedByCategory
+                .filter(([_name, cts]) => cts.length > 0)
+                .map(([_name, cts]) => cts.join(" or "))
+                .join(") and (")})`;
+            if (caseTagsFilterNameString === "()")
+                caseTagsFilterNameString = "";
+            const hasTagsShortestFilterNameString =
+                hasTagsShortestSelected.length === 0
+                    ? ""
+                    : `(${hasAnOptimal} optimal alg that's ${hasTagsShortestSelected.join(" or ")})`;
+            const hasTagsSuboptimalFilterNameString =
+                hasTagsSuboptimalSelected.length === 0
+                    ? ""
+                    : `(${hasASuboptimal} suboptimal alg that's ${hasTagsShortestSelected.join(" or ")})`;
+
+            const filterNameStrings = [
+                caseTagsFilterNameString,
+                hasTagsShortestFilterNameString,
+                hasTagsSuboptimalFilterNameString,
+            ].filter((s) => s.length > 0);
+
+            setFilterNameString(filterNameStrings.join(" and "));
+
+            return layerCasesToShow.filter((lc) => {
                 return (
                     (intersection<string>(
                         caseTagsSelectedByCategory[0][1],
@@ -82,10 +107,11 @@ export default function LayerCaseFilterByTags({
                     ) ||
                         hasTagsSuboptimalSelected.length === 0)
                 );
-            }),
-        );
+            });
+        });
     }, [
         setFilterFunc,
+        setFilterNameString,
         caseTagsSelected,
         hasTagsShortestSelected,
         hasTagsSuboptimalSelected,

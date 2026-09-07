@@ -19,7 +19,10 @@ import LayerCaseFilterByTags from "./LayerCaseFilterByTags";
 
 const filterOptions: {
     optionName: string;
-    Component: FC<{ setFilterFunc: Dispatch<FilterFunc> }>;
+    Component: FC<{
+        setFilterFunc: Dispatch<FilterFunc>;
+        setFilterNameString: Dispatch<string>;
+    }>;
     width: string;
 }[] = [
     {
@@ -37,11 +40,14 @@ const filterOptions: {
 export default function LayerCaseFilter({
     setLayerCasesToShow,
     sortBy,
+    setFilterNameString,
 }: {
     setLayerCasesToShow: Dispatch<SetStateAction<LayerCase[]>>;
     sortBy: SortBy;
+    setFilterNameString: Dispatch<SetStateAction<string>>;
 }) {
     const [filterFuncs, setFilterFuncs] = useState<FilterFunc[]>([]);
+    const [_filterNameStrings, setFilterNameStrings] = useState<string[]>([]);
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 
     const setFilterFuncByIndex = useMemo(
@@ -55,6 +61,27 @@ export default function LayerCaseFilter({
                     }),
             ),
         [],
+    );
+
+    const setFilterNameStringByIndex = useMemo(
+        () =>
+            filterOptions.map(
+                (_, index) => (filterNameString: string) =>
+                    setFilterNameStrings((fns) => {
+                        const newFns = fns.slice();
+                        newFns[index] = filterNameString;
+                        const newFnsNonEmpty = newFns.filter(
+                            (s) => s && s.length > 0,
+                        );
+                        const joinedFilterNameString =
+                            newFnsNonEmpty.length === 0
+                                ? "All cases"
+                                : newFnsNonEmpty.join(" and ");
+                        setFilterNameString(joinedFilterNameString);
+                        return newFns;
+                    }),
+            ),
+        [setFilterNameString],
     );
     return (
         <form
@@ -83,6 +110,9 @@ export default function LayerCaseFilter({
                             </h3>
                             <Component
                                 setFilterFunc={setFilterFuncByIndex[index]}
+                                setFilterNameString={
+                                    setFilterNameStringByIndex[index]
+                                }
                             ></Component>
                         </div>
                     ),

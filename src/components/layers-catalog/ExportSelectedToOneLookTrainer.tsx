@@ -10,9 +10,11 @@ import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 export default function ExportSelectedToOneLookTrainer({
     layerCasesToShow,
     selectedLayerCases,
+    filterNameString,
 }: {
     layerCasesToShow: LayerCase[];
     selectedLayerCases: Partial<Record<LayerCase, boolean>>;
+    filterNameString: string;
 }) {
     const [_options, setOptions] = useLocalStorage<OneLookTrainerOptions>(
         "oneLookTrainerOptions",
@@ -47,7 +49,9 @@ export default function ExportSelectedToOneLookTrainer({
                     }
                     setMessage("");
                     setTimeout(() => {
-                        const solutionAlgs = ["# From Layers Catalog"]
+                        const solutionAlgs = [
+                            `# Selected from ${filterNameString}`,
+                        ]
                             .concat(
                                 layerCasesToShow
                                     .filter((lc) => selectedLayerCases[lc])

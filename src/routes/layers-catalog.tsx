@@ -55,6 +55,8 @@ function RouteComponent() {
         Partial<Record<LayerCase, boolean>>
     >({});
 
+    const [filterNameString, setFilterNameString] = useState("(All cases)");
+
     useEffect(() => {
         if (layerCasesToShow.length > limitPerScroll)
             setLayerCasesToShowLimit(limitPerScroll);
@@ -86,6 +88,7 @@ function RouteComponent() {
                         <LayerCaseFilter
                             setLayerCasesToShow={setLayerCasesToShow}
                             sortBy={sortBy}
+                            setFilterNameString={setFilterNameString}
                         ></LayerCaseFilter>
                     </Accordion>
                     <div className="flex justify-between flex-wrap">
@@ -103,10 +106,12 @@ function RouteComponent() {
                     */}
                     <ExportAllToOneLookTrainer
                         layerCasesToShow={layerCasesToShow}
+                        filterNameString={filterNameString}
                     ></ExportAllToOneLookTrainer>
                     <ExportSelectedToOneLookTrainer
                         layerCasesToShow={layerCasesToShow}
                         selectedLayerCases={selectedLayerCases}
+                        filterNameString={filterNameString}
                     ></ExportSelectedToOneLookTrainer>
                     <SelectAllOrNone
                         layerCasesToShow={layerCasesToShow}
