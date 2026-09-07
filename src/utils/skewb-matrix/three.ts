@@ -411,8 +411,13 @@ class SkewbStateRenderer {
         }
         this.scene.add(this.skewbGroup);
 
-        this.skewbGroup.setRotationFromEuler(
-            new THREE.Euler(Math.PI / 4, -Math.PI / 4, 0),
+        this.skewbGroup.rotateOnWorldAxis(
+            new THREE.Vector3(0, 1, 0),
+            -Math.PI / 4,
+        );
+        this.skewbGroup.rotateOnWorldAxis(
+            new THREE.Vector3(1, 0, 0),
+            Math.atan(1 / Math.sqrt(2)),
         );
         this.skewbGroupDefaultRotation = new THREE.Quaternion();
         this.skewbGroup.getWorldQuaternion(this.skewbGroupDefaultRotation);
