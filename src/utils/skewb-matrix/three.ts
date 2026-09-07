@@ -30,11 +30,12 @@ import {
 } from "./matrixMath";
 import { CenterPiece, CornerPiece, SkewbMatrixState } from "./SkewbMatrixState";
 
-const width = 300;
-const height = 300;
+const width = 320;
+const height = 320;
 const hintDistance = 2.4;
 const hintSizeScale = 1;
 const hintSpacing = 0.2;
+const cameraSpeed = 0.03;
 
 function cubeRotationToThreeMatrix(r: CubeRotation) {
     return new THREE.Matrix4(
@@ -453,15 +454,17 @@ class SkewbStateRenderer {
             this.pointerMoveEventListener,
         );
 
+        this.renderer.domElement.style = "touch-action: none;";
+
         this.animationId = null;
         this.animate();
     }
 
-    pointerDownEventListener = (_event: PointerEvent) => {
+    pointerDownEventListener = (event: PointerEvent) => {
         this.isDraggingScreen = true;
     };
 
-    pointerUpEventListener = (_event: PointerEvent) => {
+    pointerUpEventListener = (event: PointerEvent) => {
         this.isDraggingScreen = false;
     };
 
@@ -472,11 +475,11 @@ class SkewbStateRenderer {
         if (this.isDraggingScreen) {
             this.skewbGroup.rotateOnWorldAxis(
                 new THREE.Vector3(0, 1, 0),
-                event.movementX * 0.02,
+                event.movementX * cameraSpeed,
             );
             this.skewbGroup.rotateOnWorldAxis(
                 new THREE.Vector3(1, 0, 0),
-                event.movementY * 0.02,
+                event.movementY * cameraSpeed,
             );
             hideOutOfViewHints(this.camera, this.innerHintGroups);
         }

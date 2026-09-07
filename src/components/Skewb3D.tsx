@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { skewbStateRenderer } from "#/utils/skewb-matrix/three";
 import type { WCAAlg } from "#/utils/solver/alg";
 
