@@ -488,8 +488,7 @@ class SkewbStateRenderer {
         this.resizeObserver = new ResizeObserver((entries) => {
             for (const entry of entries) {
                 if (!entry.contentBoxSize?.[0]) continue;
-                const [{ blockSize, inlineSize }] = entry.contentBoxSize;
-                console.log({ blockSize, inlineSize });
+                const [{ inlineSize }] = entry.contentBoxSize;
                 this.setWidth(inlineSize);
             }
         });

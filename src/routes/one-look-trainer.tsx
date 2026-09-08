@@ -4,7 +4,6 @@ import {
     defaultOneLookTrainerOptions,
     type OneLookTrainerOptions,
 } from "#/utils/one-look-trainer";
-import { getShortSolutionStates } from "#/utils/skewb-matrix/solver";
 import { useLocalStorage } from "#/utils/trainer/useLocalStorage";
 
 export const Route = createFileRoute("/one-look-trainer")({
@@ -28,7 +27,6 @@ export const Route = createFileRoute("/one-look-trainer")({
 });
 
 function RouteComponent() {
-    getShortSolutionStates();
     const [options, setOptions] = useLocalStorage<OneLookTrainerOptions>(
         "oneLookTrainerOptions",
         defaultOneLookTrainerOptions,

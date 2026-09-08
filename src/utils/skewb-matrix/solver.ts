@@ -1,4 +1,5 @@
 import { Queue } from "@datastructures-js/queue";
+import { cacheFunc } from "../indexeddb/stringCache";
 import { shuffleArray } from "../math";
 import { WCAAlg, WCATurn } from "../solver/alg";
 import { SkewbMatrixState } from "./SkewbMatrixState";
@@ -25,12 +26,8 @@ const searchTurns = [
     WCATurn.Bprime,
 ];
 
-let _shortSolutionStates: Map<string, string> | null = null;
-
-export async function getShortSolutionStates(): Promise<Map<string, string>> {
-    if (_shortSolutionStates) return _shortSolutionStates;
-
-    const shortSolutionStates = new Map<string, string>();
+async function computeShortSolutionStates(): Promise<Record<string, string>> {
+    const shortSolutionStates: Record<string, string> = {};
     const timeStarted = Date.now();
     const taskQueue: TaskQueue = new Queue<SearchNode>();
     taskQueue.enqueue({
@@ -47,15 +44,15 @@ export async function getShortSolutionStates(): Promise<Map<string, string>> {
     while (!taskQueue.isEmpty()) {
         const searchNode = taskQueue.dequeue();
         if (!searchNode) continue;
-        if (shortSolutionStates.has(searchNode.hash)) {
+        if (shortSolutionStates[searchNode.hash]) {
             // totalCacheHits++;
             continue;
         }
 
-        shortSolutionStates.set(
-            searchNode.hash,
-            searchNode.alg.clone().invert().toString(),
-        );
+        shortSolutionStates[searchNode.hash] = searchNode.alg
+            .clone()
+            .invert()
+            .toString();
 
         if (maxDepthSoFar < searchNode.depth) {
             /*
@@ -114,13 +111,25 @@ export async function getShortSolutionStates(): Promise<Map<string, string>> {
         (Date.now() - timeStarted) / 1000,
         "seconds",
     );
-    _shortSolutionStates = shortSolutionStates;
-    return _shortSolutionStates;
+    return shortSolutionStates;
 }
+
+async function getShortSolutionStates(): Promise<Record<string, string>> {
+    const cachedString = await cacheFunc(
+        "shortSolutionStatesMatrix",
+        async () => {
+            const computed = await computeShortSolutionStates();
+            return JSON.stringify(computed);
+        },
+    );
+    return JSON.parse(cachedString);
+}
+
+export const shortSolutionStatesPromise = getShortSolutionStates();
 
 export async function solveSkewb(state: SkewbMatrixState) {
     const taskQueue: TaskQueue = new Queue<SearchNode>();
-    const shortSolutionStates = await getShortSolutionStates();
+    const shortSolutionStates = await shortSolutionStatesPromise;
 
     taskQueue.enqueue({
         alg: new WCAAlg(""),
@@ -131,7 +140,7 @@ export async function solveSkewb(state: SkewbMatrixState) {
     while (!taskQueue.isEmpty()) {
         const searchNode = taskQueue.dequeue();
         if (!searchNode) continue;
-        const possibleShortSolution = shortSolutionStates.get(searchNode.hash);
+        const possibleShortSolution = shortSolutionStates[searchNode.hash];
         if (possibleShortSolution) {
             return searchNode.alg.concat(new WCAAlg(possibleShortSolution));
         }
