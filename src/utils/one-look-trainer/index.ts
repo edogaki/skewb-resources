@@ -1,4 +1,5 @@
 import type { Color } from "../renderer/color";
+import { presets } from "./presets";
 
 export type CustomPreset = {
     key: string;
@@ -14,7 +15,7 @@ export type OneLookTrainerOptions = {
 };
 
 export const defaultOneLookTrainerOptions: OneLookTrainerOptions = {
-    layerSolutionAlgsText: "",
+    layerSolutionAlgsText: presets[0],
     showSkewbVisualizerByDefault: false,
     skewbVisualizerType: "2d",
     customPresets: [],

@@ -1,5 +1,5 @@
 import { Queue } from "@datastructures-js/queue";
-import { cacheFunc } from "../indexeddb/stringCache";
+import { cacheSerializableReturnValFunc } from "../indexeddb/stringCache";
 import { shuffleArray } from "../math";
 import { WCAAlg, WCATurn } from "../solver/alg";
 import { SkewbMatrixState } from "./SkewbMatrixState";
@@ -114,18 +114,10 @@ async function computeShortSolutionStates(): Promise<Record<string, string>> {
     return shortSolutionStates;
 }
 
-async function getShortSolutionStates(): Promise<Record<string, string>> {
-    const cachedString = await cacheFunc(
-        "shortSolutionStatesMatrix",
-        async () => {
-            const computed = await computeShortSolutionStates();
-            return JSON.stringify(computed);
-        },
-    );
-    return JSON.parse(cachedString);
-}
-
-export const shortSolutionStatesPromise = getShortSolutionStates();
+export const shortSolutionStatesPromise = cacheSerializableReturnValFunc(
+    "shortSolutionStatesMatrix",
+    computeShortSolutionStates,
+);
 
 export async function solveSkewb(state: SkewbMatrixState) {
     const taskQueue: TaskQueue = new Queue<SearchNode>();

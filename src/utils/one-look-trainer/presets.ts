@@ -1623,4 +1623,4 @@ x r B R' B R
 x B r'
 x r' R r' R' B'
 `,
-];
+] as const;

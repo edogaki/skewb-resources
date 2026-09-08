@@ -47,3 +47,20 @@ export async function cacheFunc(name: string, func: () => Promise<string>) {
     }
     return newValue;
 }
+
+/**
+ * Caches return value of func to indexeddb
+ * Assumes func returns a serializable value (i.e. a value where v is the same as JSON.parse(JSON.stringify(v))))
+ * @param name
+ * @param func
+ */
+export async function cacheSerializableReturnValFunc<T>(
+    name: string,
+    func: () => Promise<T>,
+) {
+    const cachedString = await cacheFunc(name, async () => {
+        const computed = await func();
+        return JSON.stringify(computed);
+    });
+    return JSON.parse(cachedString) as T;
+}
