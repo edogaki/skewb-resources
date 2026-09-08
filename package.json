@@ -28,7 +28,7 @@
     "@datastructures-js/queue": "^4.3.0",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
-    "@tanstack/react-router": "latest",
+    "@tanstack/react-router": "^1.170.33",
     "@tanstack/react-router-devtools": "latest",
     "@tanstack/react-router-ssr-query": "latest",
     "@tanstack/react-start": "latest",
