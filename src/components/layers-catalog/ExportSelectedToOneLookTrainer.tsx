@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
+import { pluralize } from "#/utils/methods";
 import {
     defaultOneLookTrainerOptions,
     type OneLookTrainerOptions,
@@ -34,33 +35,32 @@ export default function ExportSelectedToOneLookTrainer({
         }
     }, [message]);
 
+    const selectedLayerCasesArray = layerCasesToShow.filter(
+        (lc) => selectedLayerCases[lc],
+    );
+
     return (
         <div className="flex gap-2 items-center">
             <button
                 type="button"
                 className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
                 onClick={() => {
-                    if (
-                        Object.values(selectedLayerCases).filter((b) => b)
-                            .length === 0
-                    ) {
+                    if (selectedLayerCasesArray.length === 0) {
                         setMessage("Export fail: No layers selected");
                         return;
                     }
                     setMessage("");
                     setTimeout(() => {
                         const solutionAlgs = [
-                            `# Selected from ${filterNameString}`,
+                            `# Selected from ${filterNameString} - ${selectedLayerCasesArray.length} ${pluralize("case", selectedLayerCasesArray.length)}`,
                         ]
                             .concat(
-                                layerCasesToShow
-                                    .filter((lc) => selectedLayerCases[lc])
-                                    .map(
-                                        (lc) =>
-                                            Object.values(
-                                                layerSolutionsComplete[lc],
-                                            )[0][0],
-                                    ),
+                                selectedLayerCasesArray.map(
+                                    (lc) =>
+                                        Object.values(
+                                            layerSolutionsComplete[lc],
+                                        )[0][0],
+                                ),
                             )
                             .join("\n");
                         setOptions((o) => ({

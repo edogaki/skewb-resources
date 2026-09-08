@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
+import { pluralize } from "#/utils/methods";
 import {
     defaultOneLookTrainerOptions,
     type OneLookTrainerOptions,
@@ -34,16 +35,15 @@ export default function ExportAllToOneLookTrainer({
                 type="button"
                 className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-5 py-2.5 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
                 onClick={() => {
-                    if (
-                        Object.values(layerCasesToShow).filter((b) => b)
-                            .length === 0
-                    ) {
+                    if (layerCasesToShow.length === 0) {
                         setMessage("Export fail: No layers to export");
                         return;
                     }
                     setMessage("");
                     setTimeout(() => {
-                        const solutionAlgs = [`# ${filterNameString}`]
+                        const solutionAlgs = [
+                            `# ${filterNameString} - ${layerCasesToShow.length} ${pluralize("case", layerCasesToShow.length)}`,
+                        ]
                             .concat(
                                 layerCasesToShow.map(
                                     (lc) =>
