@@ -199,6 +199,13 @@ export abstract class Alg<T extends WCATurn | RubikskewbTurn> {
     concat(alg2: Alg<T>) {
         return this.empty().setTurns([...this.turns, ...alg2.turns]);
     }
+
+    isEquals(alg2: Alg<T>) {
+        if (this.turns.length !== alg2.turns.length) {
+            return false;
+        }
+        return this.turns.every((t, i) => alg2.turns[i] === t);
+    }
 }
 
 export class WCAAlg extends Alg<WCATurn> {

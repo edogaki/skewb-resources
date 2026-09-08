@@ -93,30 +93,17 @@ export async function generateRandomOneLookCase(
     layerAlgs: RubikskewbAlg[],
     layerColor: OneLookTrainerOptions["layerColor"],
 ) {
+    const randomLayerAlg =
+        layerAlgs.length === 0
+            ? new RubikskewbAlg("")
+            : layerAlgs[Math.floor(Math.random() * layerAlgs.length)].clone();
+
     let state: SkewbMatrixState;
     let scrambleAlg: WCAAlg;
     do {
         state = generateRandomNSCase(layerColor);
-        const randomLayerAlg =
-            layerAlgs.length === 0
-                ? new RubikskewbAlg("")
-                : layerAlgs[
-                      Math.floor(Math.random() * layerAlgs.length)
-                  ].clone();
 
-        // remove all rotations at the start & end
-        while (rubikskewbTurnToStateRotation[randomLayerAlg.turns[0]]) {
-            randomLayerAlg.turns.splice(0, 1);
-        }
-        while (
-            rubikskewbTurnToStateRotation[
-                randomLayerAlg.turns[randomLayerAlg.turns.length]
-            ]
-        ) {
-            randomLayerAlg.turns.pop();
-        }
-
-        state.applyRubikskewbAlg(randomLayerAlg.invert());
+        state.applyRubikskewbAlg(randomLayerAlg.clone().invert());
 
         state.standardizeForWCA();
         scrambleAlg = (await solveSkewb(state)).invert();
@@ -125,5 +112,6 @@ export async function generateRandomOneLookCase(
     return {
         state,
         scrambleAlg,
+        layerAlg: randomLayerAlg,
     };
 }
