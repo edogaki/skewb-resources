@@ -27,7 +27,7 @@ export default function CommentOutThisLayer({
             textareaElement.focus();
             textareaElement.setSelectionRange(
                 startIndex,
-                startIndex + lineToSelect.length,
+                startIndex + lineToSelect.length + 1,
             );
         } else if (options.layerSolutionAlgsText.endsWith(lineToSelect)) {
             textareaElement.focus();
