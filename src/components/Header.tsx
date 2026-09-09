@@ -35,7 +35,7 @@ export default function Header() {
                         className="nav-link"
                         activeProps={{ className: "nav-link is-active" }}
                     >
-                        Trainer
+                        NS Center Trainer
                     </Link>
                     <Link
                         to="/layer-solver"

@@ -77,11 +77,6 @@ export default function CustomPresets({
                                                             key={i}
                                                             type="button"
                                                             className={`block w-full border border-transparent ${i === presetOrder && "bg-(--foam)"} hover:bg-(--sand) p-2`}
-                                                            // biome-ignore lint/a11y/noAutofocus: autoFocus not a problem for dropdown attribution
-                                                            autoFocus={
-                                                                i ===
-                                                                presetOrder
-                                                            }
                                                             onClick={() => {
                                                                 setCustomPresets(
                                                                     (cps) => {
