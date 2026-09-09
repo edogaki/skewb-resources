@@ -167,6 +167,7 @@ export default function CustomPresets({
                                             ),
                                         )
                                     }
+                                    spellCheck={false}
                                 ></textarea>
                             </div>
                         </div>
