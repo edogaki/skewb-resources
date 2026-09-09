@@ -107,6 +107,7 @@ for (const lc of layerCases) {
         layerCaseTags[lc].has("0-mover") ||
         layerCaseTags[lc].has("1-mover") ||
         layerCaseTags[lc].has("2-mover") ||
+        layerCaseTags[lc].has("Basic layer") ||
         layerCaseTags[lc].has("Adjacent layer") ||
         layerCaseTags[lc].has("Opposite layer")
     ) {
@@ -144,6 +145,7 @@ for (const lc of layerCases) {
         layerCaseTags[lc].has("1-mover") ||
         layerCaseTags[lc].has("2-mover") ||
         layerCaseTags[lc].has("3-mover") ||
+        layerCaseTags[lc].has("Basic layer") ||
         layerCaseTags[lc].has("Adjacent layer") ||
         layerCaseTags[lc].has("Opposite layer")
     ) {

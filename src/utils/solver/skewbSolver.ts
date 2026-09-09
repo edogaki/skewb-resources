@@ -91,8 +91,9 @@ export const searchTurns = [
     RubikskewbTurn.bprime,
 ] as const;
 
-const maxDepth = 8;
-const extraSearchDepth = 1;
+const maxDepth = 7;
+const maxExtraSearchDepth = 2;
+const minNumLayersFound = 10;
 export function solveLayers(
     skewbState: SkewbState,
     addSolutionFunc: (
@@ -108,6 +109,12 @@ export function solveLayers(
     const centersToSearch = skewbState.uniqueColorCenters();
     const shortestLayerFound = Object.fromEntries(
         centersToSearch.map((c) => [c, Infinity]),
+    ) as Record<CenterPiece, number>;
+    const numLayersFound = Object.fromEntries(
+        centersToSearch.map((c) => [c, 0]),
+    ) as Record<CenterPiece, number>;
+    const extraSearchDepth = Object.fromEntries(
+        centersToSearch.map((c) => [c, 0]),
     ) as Record<CenterPiece, number>;
 
     const queueRegistry = new Map<number, boolean>();
@@ -126,6 +133,22 @@ export function solveLayers(
                 const { isLayerSolved, solvedCorners } = stateData(
                     searchNode.skewbState,
                 );
+                if (
+                    searchNode.depth >
+                    shortestLayerFound[searchNode.centerPiece] +
+                        extraSearchDepth[searchNode.centerPiece]
+                ) {
+                    if (
+                        numLayersFound[searchNode.centerPiece] <
+                            minNumLayersFound &&
+                        extraSearchDepth[searchNode.centerPiece] <
+                            maxExtraSearchDepth
+                    ) {
+                        extraSearchDepth[searchNode.centerPiece]++;
+                    } else {
+                        return;
+                    }
+                }
                 if (isLayerSolved) {
                     if (
                         shortestLayerFound[searchNode.centerPiece] === Infinity
@@ -133,6 +156,7 @@ export function solveLayers(
                         shortestLayerFound[searchNode.centerPiece] =
                             searchNode.depth;
                     }
+                    numLayersFound[searchNode.centerPiece]++;
                     addSolutionFunc(searchNode.centerPiece, searchNode.alg);
                     return;
                 }
@@ -140,17 +164,10 @@ export function solveLayers(
                     return;
                 }
                 if (
-                    searchNode.depth >=
-                    shortestLayerFound[searchNode.centerPiece] +
-                        extraSearchDepth
-                ) {
-                    return;
-                }
-                if (
                     Math.min(
                         maxDepth,
                         shortestLayerFound[searchNode.centerPiece] +
-                            extraSearchDepth,
+                            maxExtraSearchDepth,
                     ) -
                         searchNode.depth <
                     4 - solvedCorners

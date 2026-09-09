@@ -7,6 +7,8 @@ import {
 import type { RubikskewbAlg, RubikskewbTurn } from "#/utils/solver/alg";
 import { searchTurns, solveLayers } from "#/utils/solver/skewbSolver";
 
+const timeStarted = Date.now();
+
 const layerSolutionsComplete = Object.fromEntries(
     layerCases.map((lc) => [lc, {}]),
 ) as Record<LayerCase, Record<number, string[]>>;
@@ -50,3 +52,5 @@ writeFileSync(
     code,
     "utf8",
 );
+
+console.log("Time elapsed:", (Date.now() - timeStarted) / 1000, "seconds");
