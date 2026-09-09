@@ -154,14 +154,6 @@ export default function OneLookTrainer({
                 options={options}
                 setOptions={setOptions}
             />
-            <Presets
-                setLayerSolutionsAlgText={(text) => {
-                    setOptions((o) => ({
-                        ...o,
-                        layerSolutionAlgsText: text,
-                    }));
-                }}
-            ></Presets>
             <CustomPresets
                 setLayerSolutionsAlgText={(text) => {
                     setOptions((o) => ({
@@ -183,6 +175,14 @@ export default function OneLookTrainer({
                     }));
                 }}
             />
+            <Presets
+                setLayerSolutionsAlgText={(text) => {
+                    setOptions((o) => ({
+                        ...o,
+                        layerSolutionAlgsText: text,
+                    }));
+                }}
+            ></Presets>
         </>
     );
 }

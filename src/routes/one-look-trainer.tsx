@@ -36,7 +36,7 @@ function RouteComponent() {
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8 mb-8">
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                     <h1 className="display-title mb-3 text-4xl font-bold text-(--sea-ink) sm:text-5xl">
                         Skewb One Look Trainer
                     </h1>

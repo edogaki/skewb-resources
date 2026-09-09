@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import type { Dispatch } from "react";
 import { presets } from "#/utils/one-look-trainer/presets";
 
@@ -10,7 +9,7 @@ export default function Presets({
     return (
         <div>
             <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">
-                Presets
+                Pre-made Lists
             </h2>
             <div className="flex flex-col gap-10">
                 <div className="flex flex-wrap gap-10">
@@ -44,12 +43,6 @@ export default function Presets({
                         </div>
                     ))}
                 </div>
-                <p>
-                    Create your own presets here or in{" "}
-                    <Link to="/layers-catalog" className="underline">
-                        Layers Catalog
-                    </Link>
-                </p>
             </div>
         </div>
     );

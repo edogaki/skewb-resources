@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { type Dispatch, type SetStateAction, useState } from "react";
 import type { CustomPreset } from "#/utils/one-look-trainer";
 
@@ -12,11 +13,18 @@ export default function CustomPresets({
 }) {
     const [focusPreset, setFocusPreset] = useState<string>();
     return (
-        <div>
-            <h2 className="mb-3 text-2xl font-semibold text-(--sea-ink)">
-                Custom Presets
+        <div className="flex flex-col gap-2">
+            <h2 className="mb-1 text-2xl font-semibold text-(--sea-ink)">
+                My Lists
             </h2>
-            <div className="flex flex-col gap-10">
+            <div>
+                Create your own lists here or in{" "}
+                <Link to="/layers-catalog" className="underline">
+                    Layers Catalog
+                </Link>
+                .
+            </div>
+            <div className="flex flex-col gap-10 mb-3">
                 <div className="flex flex-wrap gap-10">
                     {customPresets?.map((preset) => (
                         <div
