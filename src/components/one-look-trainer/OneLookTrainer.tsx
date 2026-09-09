@@ -9,6 +9,7 @@ import {
 } from "react";
 import {
     createSanitizedAlgsFromText,
+    getSelectionRangeOfNthLine,
     type OneLookTrainerOptions,
 } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
@@ -16,7 +17,6 @@ import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
 import { type RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
 import Skewb3D from "../Skewb3D";
 import SkewbRenderer from "../SkewbRenderer";
-import CommentOutThisLayer from "./CommentOutThisLayer";
 import CustomPresets from "./CustomPresets";
 import OneLookTrainerOptionsView from "./OneLookTrainerOptionsView";
 import Presets from "./Presets";
@@ -28,9 +28,23 @@ export default function OneLookTrainer({
     options: OneLookTrainerOptions;
     setOptions: Dispatch<SetStateAction<OneLookTrainerOptions>>;
 }) {
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const sanitizedAlgsWithLineNumber = useMemo(() => {
+        try {
+            setErrorMessage("");
+            return createSanitizedAlgsFromText(options.layerSolutionAlgsText);
+        } catch (err) {
+            if (err instanceof Error) {
+                setErrorMessage(err.message);
+            }
+            return [];
+        }
+    }, [options.layerSolutionAlgsText]);
+
     const sanitizedAlgs = useMemo(
-        () => createSanitizedAlgsFromText(options.layerSolutionAlgsText),
-        [options.layerSolutionAlgsText],
+        () => sanitizedAlgsWithLineNumber.map((o) => o.alg),
+        [sanitizedAlgsWithLineNumber],
     );
 
     const numAlgs = sanitizedAlgs.length;
@@ -43,7 +57,6 @@ export default function OneLookTrainer({
     );
     const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>(new WCAAlg(""));
     const [layerAlg, setLayerAlg] = useState<RubikskewbAlg>();
-    const [errorMessage, setErrorMessage] = useState("");
     const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -64,33 +77,48 @@ export default function OneLookTrainer({
                     className="max-w-full"
                     onSubmit={async (e) => {
                         e.preventDefault();
-                        try {
-                            const {
-                                state,
-                                scrambleAlg: scr,
-                                layerAlg,
-                            } = await generateRandomOneLookCase(
-                                sanitizedAlgs,
-                                options.layerColor,
-                                nextLayerAlgIndex,
-                            );
-                            setIsShowSkewbRenderer(
-                                options.showSkewbVisualizerByDefault,
-                            );
-                            setSkewbState(state);
-                            setScrambleAlg(scr);
-                            setLayerAlg(layerAlg);
-                            setErrorMessage("");
-                            setNextLayerAlgIndex((n) =>
-                                n === null ? null : (n + 1) % numAlgs,
-                            );
-                        } catch (error) {
-                            if (error instanceof Error) {
-                                setErrorMessage(error.message);
-                            } else {
-                                throw error;
+                        if (errorMessage !== "") return;
+                        const {
+                            state,
+                            scrambleAlg: scr,
+                            layerAlg,
+                        } = await generateRandomOneLookCase(
+                            sanitizedAlgs,
+                            options.layerColor,
+                            nextLayerAlgIndex,
+                        );
+                        setIsShowSkewbRenderer(
+                            options.showSkewbVisualizerByDefault,
+                        );
+                        setSkewbState(state);
+                        setScrambleAlg(scr);
+                        setLayerAlg(layerAlg);
+                        setErrorMessage("");
+                        if (
+                            textareaRef.current &&
+                            nextLayerAlgIndex !== null &&
+                            sanitizedAlgsWithLineNumber.length > 0
+                        ) {
+                            const { lineNum } =
+                                sanitizedAlgsWithLineNumber[nextLayerAlgIndex];
+                            const { startIndex, endIndex } =
+                                getSelectionRangeOfNthLine(
+                                    options.layerSolutionAlgsText,
+                                    lineNum,
+                                );
+                            if (startIndex !== null && endIndex !== null) {
+                                textareaRef.current.focus({
+                                    preventScroll: true,
+                                });
+                                textareaRef.current.setSelectionRange(
+                                    startIndex,
+                                    endIndex,
+                                );
                             }
                         }
+                        setNextLayerAlgIndex((n) =>
+                            n === null ? null : (n + 1) % numAlgs,
+                        );
                     }}
                 >
                     <div className="flex flex-col gap-2 w-100 max-w-full">
@@ -117,7 +145,7 @@ export default function OneLookTrainer({
                             )}
                             <textarea
                                 ref={textareaRef}
-                                className="border border-(--line) w-full h-50"
+                                className="border border-(--line) w-full h-50 outline-none"
                                 value={options?.layerSolutionAlgsText}
                                 onChange={(e) =>
                                     setOptions((o) => ({
@@ -128,6 +156,7 @@ export default function OneLookTrainer({
                                 placeholder={
                                     "Layer solution algs, e.g.:\nR\nR'\nR r' R'\nr' R r"
                                 }
+                                spellCheck="false"
                             ></textarea>
                             <p className="text-red-400">{errorMessage}</p>
                         </div>
@@ -174,16 +203,6 @@ export default function OneLookTrainer({
                                 />
                             ))}
                     </div>
-                    {textareaRef.current &&
-                        layerAlg &&
-                        layerAlg.turns.length > 0 && (
-                            <CommentOutThisLayer
-                                layerAlg={layerAlg}
-                                options={options}
-                                setOptions={setOptions}
-                                textareaElement={textareaRef.current}
-                            />
-                        )}
                 </div>
             </div>
             <OneLookTrainerOptionsView

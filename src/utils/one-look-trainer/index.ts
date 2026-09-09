@@ -26,8 +26,10 @@ export const defaultOneLookTrainerOptions: OneLookTrainerOptions = {
     doLayersInOrder: false,
 };
 
-export function createSanitizedAlgsFromText(text: string): RubikskewbAlg[] {
-    const algs = text.split("\n").map((algText) => {
+export function createSanitizedAlgsFromText(
+    text: string,
+): { lineNum: number; alg: RubikskewbAlg }[] {
+    const algs = text.split("\n").map((algText, lineNum) => {
         const algTextSanitized = algText.trim();
         if (algTextSanitized.length === 0) return null;
         if (
@@ -45,10 +47,21 @@ export function createSanitizedAlgsFromText(text: string): RubikskewbAlg[] {
             while (rubikskewbTurnToStateRotation[alg.turns[alg.turns.length]]) {
                 alg.turns.pop();
             }
-            return alg;
+            return { lineNum, alg };
         } catch {
             throw new Error(`Invalid alg: ${algText}`);
         }
     });
     return algs.filter((a) => a !== null);
+}
+
+export function getSelectionRangeOfNthLine(text: string, lineNum: number) {
+    let startIndex = 0;
+    for (let i = 0; i < lineNum; i++) {
+        startIndex = text.indexOf("\n", startIndex) + 1;
+        if (startIndex === 0) return { startIndex: null, endIndex: null };
+    }
+    let endIndex = text.indexOf("\n", startIndex) + 1;
+    if (endIndex === 0) endIndex = text.length;
+    return { startIndex, endIndex };
 }
