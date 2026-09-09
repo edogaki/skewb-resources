@@ -92,11 +92,14 @@ export function generateRandomNSCase(
 export async function generateRandomOneLookCase(
     layerAlgs: RubikskewbAlg[],
     layerColor: OneLookTrainerOptions["layerColor"],
+    layerAlgIndex: number | null,
 ) {
+    const chosenIndex =
+        layerAlgIndex ?? Math.floor(Math.random() * layerAlgs.length);
     const randomLayerAlg =
         layerAlgs.length === 0
             ? new RubikskewbAlg("")
-            : layerAlgs[Math.floor(Math.random() * layerAlgs.length)].clone();
+            : layerAlgs[chosenIndex].clone();
 
     let state: SkewbMatrixState;
     let scrambleAlg: WCAAlg;

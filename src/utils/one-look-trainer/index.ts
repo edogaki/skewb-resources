@@ -14,6 +14,7 @@ export type OneLookTrainerOptions = {
     skewbVisualizerType: "2d" | "3d";
     customPresets: CustomPreset[];
     layerColor: "random" | Color;
+    doLayersInOrder: boolean;
 };
 
 export const defaultOneLookTrainerOptions: OneLookTrainerOptions = {
@@ -22,6 +23,7 @@ export const defaultOneLookTrainerOptions: OneLookTrainerOptions = {
     skewbVisualizerType: "2d",
     customPresets: [],
     layerColor: "random",
+    doLayersInOrder: false,
 };
 
 export function createSanitizedAlgsFromText(text: string): RubikskewbAlg[] {

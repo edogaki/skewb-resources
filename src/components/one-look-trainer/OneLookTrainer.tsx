@@ -1,5 +1,12 @@
 import { ClientOnly } from "@tanstack/react-router";
-import { type Dispatch, type SetStateAction, useRef, useState } from "react";
+import {
+    type Dispatch,
+    type SetStateAction,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from "react";
 import {
     createSanitizedAlgsFromText,
     type OneLookTrainerOptions,
@@ -21,6 +28,16 @@ export default function OneLookTrainer({
     options: OneLookTrainerOptions;
     setOptions: Dispatch<SetStateAction<OneLookTrainerOptions>>;
 }) {
+    const sanitizedAlgs = useMemo(
+        () => createSanitizedAlgsFromText(options.layerSolutionAlgsText),
+        [options.layerSolutionAlgsText],
+    );
+
+    const numAlgs = sanitizedAlgs.length;
+    const [nextLayerAlgIndex, setNextLayerAlgIndex] = useState<number | null>(
+        null,
+    );
+
     const [skewbState, setSkewbState] = useState<SkewbMatrixState>(
         new SkewbMatrixState(),
     );
@@ -29,6 +46,17 @@ export default function OneLookTrainer({
     const [errorMessage, setErrorMessage] = useState("");
     const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+    // biome-ignore lint/correctness/useExhaustiveDependencies: need to reset next layer index when textbox is edited
+    useEffect(() => {
+        if (options.doLayersInOrder) {
+            setNextLayerAlgIndex(0);
+        } else {
+            setNextLayerAlgIndex(null);
+        }
+    }, [options.doLayersInOrder, sanitizedAlgs]);
+
+    console.log({ alg: layerAlg?.toString() });
     return (
         <>
             <div className="flex flex-wrap gap-10">
@@ -42,10 +70,9 @@ export default function OneLookTrainer({
                                 scrambleAlg: scr,
                                 layerAlg,
                             } = await generateRandomOneLookCase(
-                                createSanitizedAlgsFromText(
-                                    options.layerSolutionAlgsText,
-                                ),
+                                sanitizedAlgs,
                                 options.layerColor,
+                                nextLayerAlgIndex,
                             );
                             setIsShowSkewbRenderer(
                                 options.showSkewbVisualizerByDefault,
@@ -54,6 +81,9 @@ export default function OneLookTrainer({
                             setScrambleAlg(scr);
                             setLayerAlg(layerAlg);
                             setErrorMessage("");
+                            setNextLayerAlgIndex((n) =>
+                                n === null ? null : (n + 1) % numAlgs,
+                            );
                         } catch (error) {
                             if (error instanceof Error) {
                                 setErrorMessage(error.message);
@@ -79,6 +109,12 @@ export default function OneLookTrainer({
                                 Lines starting with "#" or "//" are also
                                 ignored.
                             </p>
+                            {nextLayerAlgIndex !== null && numAlgs > 0 && (
+                                <p className="text-sm text-(--sea-ink-softer)">
+                                    Next generated scramble will be from layer
+                                    case {nextLayerAlgIndex + 1}/{numAlgs}.
+                                </p>
+                            )}
                             <textarea
                                 ref={textareaRef}
                                 className="border border-(--line) w-full h-50"
