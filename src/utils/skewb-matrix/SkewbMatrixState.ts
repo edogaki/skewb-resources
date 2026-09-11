@@ -31,10 +31,10 @@ import {
     rotationToDiagAxis,
 } from "./matrixMath";
 
-export const CornerPiece = [0, 1, 2, 3, 4, 5, 6, 7] as const;
-export type CornerPiece = (typeof CornerPiece)[number];
-export const CenterPiece = [0, 1, 2, 3, 4, 5] as const;
-export type CenterPiece = (typeof CenterPiece)[number];
+export const CornerIndex = [0, 1, 2, 3, 4, 5, 6, 7] as const;
+export type CornerIndex = (typeof CornerIndex)[number];
+export const CenterIndex = [0, 1, 2, 3, 4, 5] as const;
+export type CenterIndex = (typeof CenterIndex)[number];
 
 const baseCornerPieceColors = {
     0: [Color.White, Color.Red, Color.Green],
@@ -45,7 +45,7 @@ const baseCornerPieceColors = {
     5: [Color.Yellow, Color.Orange, Color.Green],
     6: [Color.Yellow, Color.Blue, Color.Orange],
     7: [Color.Yellow, Color.Red, Color.Blue],
-} as const as Record<CornerPiece, Tuple<Color, 3>>;
+} as const as Record<CornerIndex, Tuple<Color, 3>>;
 
 const baseCenterPieceColors = {
     0: Color.White,
@@ -54,7 +54,7 @@ const baseCenterPieceColors = {
     3: Color.Orange,
     4: Color.Blue,
     5: Color.Yellow,
-} as const as Record<CenterPiece, Color>;
+} as const as Record<CenterIndex, Color>;
 
 export const defaultCornerPieces: Tuple<CubeRotation, 8> = [
     rotateAroundAxis(0b000100, 0),
@@ -191,14 +191,14 @@ const standardizedCenterRotation: Record<CubeRotation, CubeRotation> =
 export class SkewbMatrixState {
     cornerPieces: Tuple<CubeRotation, 8>;
     centerPieces: Tuple<CubeRotation, 6>;
-    cornerPieceColors: Record<CornerPiece, Tuple<Color, 3>>;
-    centerPieceColors: Record<CenterPiece, Color>;
+    cornerPieceColors: Record<CornerIndex, Tuple<Color, 3>>;
+    centerPieceColors: Record<CenterIndex, Color>;
 
     constructor(
         cornerPieces?: Tuple<CubeRotation, 8>,
         centerPieces?: Tuple<CubeRotation, 6>,
-        cornerPieceColors?: Record<CornerPiece, Tuple<Color, 3>>,
-        centerPieceColors?: Record<CenterPiece, Color>,
+        cornerPieceColors?: Record<CornerIndex, Tuple<Color, 3>>,
+        centerPieceColors?: Record<CenterIndex, Color>,
     ) {
         this.cornerPieces =
             (cornerPieces?.slice() as Tuple<CubeRotation, 8>) ??
@@ -296,13 +296,13 @@ export class SkewbMatrixState {
                 const cornerIndex =
                     rendererStateCornerIndices[cornerDiagAxis][j];
                 skewbRendererState[cornerIndex] =
-                    this.cornerPieceColors[i as CornerPiece][mod(j + orie, 3)];
+                    this.cornerPieceColors[i as CornerIndex][mod(j + orie, 3)];
             }
         }
         for (let i = 0; i < this.centerPieces.length; i++) {
             const centerAxis = rotationToAxis(this.centerPieces[i]);
             skewbRendererState[rendererStateCenterIndices[centerAxis]] =
-                this.centerPieceColors[i as CenterPiece];
+                this.centerPieceColors[i as CenterIndex];
         }
         if (skewbRendererState.some((c) => c === null)) {
             throw new Error(
@@ -353,69 +353,69 @@ export class SkewbMatrixState {
         );
     }
 
-    turnCornerPiece(cp: CornerPiece, th: number) {
-        const cornerDiagAxis = rotationToDiagAxis(this.cornerPieces[cp]);
-        this.cornerPieces[cp] = multiplyRotations(
+    turnCornerPiece(corner: CornerIndex, th: number) {
+        const cornerDiagAxis = rotationToDiagAxis(this.cornerPieces[corner]);
+        this.cornerPieces[corner] = multiplyRotations(
             rotateAroundDiagonalAxisLookup[cornerDiagAxis][mod(th, 3)],
-            this.cornerPieces[cp],
+            this.cornerPieces[corner],
         );
         return this;
     }
 
-    getLayerPieceLocations(center: CenterPiece) {
+    getLayerPieceLocations(center: CenterIndex) {
         const color = this.centerPieceColors[center];
         return {
-            cornerPieceLocations: CornerPiece.filter((cp) =>
-                this.cornerPieceColors[cp].includes(color),
+            cornerPieceLocations: CornerIndex.filter((corner) =>
+                this.cornerPieceColors[corner].includes(color),
             ),
             centerPieceLocations: [center],
         };
     }
 
-    getL2LPieceLocations(center: CenterPiece) {
+    getL2LPieceLocations(center: CenterIndex) {
         const color = this.centerPieceColors[center];
         const oppositeColor =
             this.centerPieceColors[
                 centerPieceAxis.indexOf(
                     invertAxis(centerPieceAxis[center]),
-                ) as CenterPiece
+                ) as CenterIndex
             ];
         const cornerPieceLocations = [
-            CornerPiece.find(
-                (cp) => !this.cornerPieceColors[cp].includes(color),
+            CornerIndex.find(
+                (corner) => !this.cornerPieceColors[corner].includes(color),
             ),
         ];
         for (let i = 1; i < 4; i++) {
-            const prevCorner = cornerPieceLocations[i - 1] as CornerPiece;
+            const prevCorner = cornerPieceLocations[i - 1] as CornerIndex;
             const prevCornerColors = this.cornerPieceColors[prevCorner];
             const prevCornerCenterOppColorIndex =
                 prevCornerColors.indexOf(oppositeColor);
             const commonColor =
                 prevCornerColors[mod(prevCornerCenterOppColorIndex + 1, 3)];
             cornerPieceLocations.push(
-                CornerPiece.find(
-                    (cp) =>
-                        cp !== prevCorner &&
-                        !this.cornerPieceColors[cp].includes(color) &&
-                        this.cornerPieceColors[cp].includes(commonColor),
+                CornerIndex.find(
+                    (corner) =>
+                        corner !== prevCorner &&
+                        !this.cornerPieceColors[corner].includes(color) &&
+                        this.cornerPieceColors[corner].includes(commonColor),
                 ),
             );
         }
-        if (cornerPieceLocations.some((cp) => cp === undefined)) {
+        if (cornerPieceLocations.some((corner) => corner === undefined)) {
             throw new Error(
                 `ran getL2LPieceLocations on a bad color scheme ${Object.values(this.cornerPieceColors)} ${Object.values(this.centerPieceColors)})}`,
             );
         }
         return {
             // cornerPieceLocations is sorted ccw
-            cornerPieceLocations: cornerPieceLocations as CornerPiece[],
-            centerPieceLocations: CenterPiece.filter(
-                (cp) => this.centerPieceColors[cp] !== color,
+            cornerPieceLocations: cornerPieceLocations as CornerIndex[],
+            centerPieceLocations: CenterIndex.filter(
+                (center) => this.centerPieceColors[center] !== color,
             ),
         };
     }
 
-    rotateCenterToAxis(center: CenterPiece, axis: Axis) {
+    rotateCenterToAxis(center: CenterIndex, axis: Axis) {
         const centerCurrRotation = this.centerPieces[center];
         const rotationToExecute = CubeRotation.find(
             (r) =>
@@ -431,14 +431,14 @@ export class SkewbMatrixState {
     }
 
     standardizeForWCA() {
-        const wrgIndex: CornerPiece = Object.values(
+        const wrgIndex: CornerIndex = Object.values(
             this.cornerPieceColors,
         ).findIndex(
             (cArr) =>
                 cArr.includes(Color.White) &&
                 cArr.includes(Color.Red) &&
                 cArr.includes(Color.Green),
-        ) as CornerPiece;
+        ) as CornerIndex;
         if (wrgIndex === undefined) return;
         this.applyRotation(invertRotation(this.cornerPieces[wrgIndex]));
     }

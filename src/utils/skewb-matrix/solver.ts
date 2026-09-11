@@ -2,7 +2,7 @@ import { Queue } from "@datastructures-js/queue";
 import { cacheSerializableReturnValFunc } from "../indexeddb/stringCache";
 import { shuffleArray } from "../math";
 import { WCAAlg, WCATurn } from "../solver/alg";
-import { SkewbMatrixState } from "./SkewbMatrixState";
+import { SkewbMatrixState } from "./skewbMatrixState";
 
 export interface SearchNode {
     alg: WCAAlg;

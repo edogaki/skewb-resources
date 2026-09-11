@@ -13,8 +13,8 @@ import {
     type OneLookTrainerOptions,
 } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
-import { SkewbMatrixState } from "#/utils/skewb-matrix/SkewbMatrixState";
-import { type RubikskewbAlg, WCAAlg } from "#/utils/solver/alg";
+import { SkewbMatrixState } from "#/utils/skewb-matrix/skewbMatrixState";
+import { WCAAlg } from "#/utils/solver/alg";
 import Skewb3D from "../Skewb3D";
 import SkewbRenderer from "../SkewbRenderer";
 import CustomPresets from "./CustomPresets";
@@ -56,7 +56,6 @@ export default function OneLookTrainer({
         new SkewbMatrixState(),
     );
     const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>(new WCAAlg(""));
-    const [layerAlg, setLayerAlg] = useState<RubikskewbAlg>();
     const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -68,8 +67,6 @@ export default function OneLookTrainer({
             setNextLayerAlgIndex(null);
         }
     }, [options.doLayersInOrder, sanitizedAlgs]);
-
-    console.log({ alg: layerAlg?.toString() });
     return (
         <>
             <div className="flex flex-wrap gap-10">
@@ -78,21 +75,17 @@ export default function OneLookTrainer({
                     onSubmit={async (e) => {
                         e.preventDefault();
                         if (errorMessage !== "") return;
-                        const {
-                            state,
-                            scrambleAlg: scr,
-                            layerAlg,
-                        } = await generateRandomOneLookCase(
-                            sanitizedAlgs,
-                            options.layerColor,
-                            nextLayerAlgIndex,
-                        );
+                        const { state, scrambleAlg: scr } =
+                            await generateRandomOneLookCase(
+                                sanitizedAlgs,
+                                options.layerColor,
+                                nextLayerAlgIndex,
+                            );
                         setIsShowSkewbRenderer(
                             options.showSkewbVisualizerByDefault,
                         );
                         setSkewbState(state);
                         setScrambleAlg(scr);
-                        setLayerAlg(layerAlg);
                         setErrorMessage("");
                         if (
                             textareaRef.current &&

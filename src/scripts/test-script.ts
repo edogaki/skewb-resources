@@ -14,7 +14,7 @@ import {
 import {
     defaultCenterPieces,
     defaultCornerPieces,
-} from "#/utils/skewb-matrix/SkewbMatrixState";
+} from "#/utils/skewb-matrix/skewbMatrixState";
 import { fileLog } from "./utils/log";
 
 console.log(

@@ -28,7 +28,7 @@ import {
     shift32,
     shift33,
 } from "./matrixMath";
-import { CenterPiece, CornerPiece, SkewbMatrixState } from "./SkewbMatrixState";
+import { CenterIndex, CornerIndex, SkewbMatrixState } from "./skewbMatrixState";
 
 const hintDistance = 2.4;
 const hintSizeScale = 1;
@@ -359,7 +359,7 @@ class SkewbStateRenderer {
         this.skewbCornerInnerHints = [];
         this.skewbCornerOuterHints = [];
         this.state = state ?? new SkewbMatrixState();
-        for (const cp of CornerPiece) {
+        for (const cp of CornerIndex) {
             const [skewbCorner, skewbCornerInnerHintArr, skewbCornerOuterHint] =
                 skewbCornerObjects(this.state.cornerPieceColors[cp]);
             const matrix = cubeRotationToThreeMatrix(
@@ -376,12 +376,12 @@ class SkewbStateRenderer {
         this.skewbCenters = [];
         this.skewbCenterInnerHints = [];
         this.skewbCenterOuterHints = [];
-        for (const cp of CenterPiece) {
+        for (const center of CenterIndex) {
             const [skewbCenter, skewbCenterInnerHint, skewbCenterOuterHint] =
-                skewbCenterObjects(this.state.centerPieceColors[cp]);
+                skewbCenterObjects(this.state.centerPieceColors[center]);
 
             const matrix = cubeRotationToThreeMatrix(
-                this.state.centerPieces[cp],
+                this.state.centerPieces[center],
             );
             skewbCenter.setRotationFromMatrix(matrix);
             skewbCenterOuterHint.setRotationFromMatrix(matrix);
@@ -541,20 +541,20 @@ class SkewbStateRenderer {
     }
 
     setFromStateRotations() {
-        for (const cp of CornerPiece) {
+        for (const corner of CornerIndex) {
             const matrix = cubeRotationToThreeMatrix(
-                this.state.cornerPieces[cp],
+                this.state.cornerPieces[corner],
             );
-            this.skewbCorners[cp].setRotationFromMatrix(matrix);
-            this.skewbCornerOuterHints[cp].setRotationFromMatrix(matrix);
+            this.skewbCorners[corner].setRotationFromMatrix(matrix);
+            this.skewbCornerOuterHints[corner].setRotationFromMatrix(matrix);
         }
 
-        for (const cp of CenterPiece) {
+        for (const center of CenterIndex) {
             const matrix = cubeRotationToThreeMatrix(
-                this.state.centerPieces[cp],
+                this.state.centerPieces[center],
             );
-            this.skewbCenters[cp].setRotationFromMatrix(matrix);
-            this.skewbCenterOuterHints[cp].setRotationFromMatrix(matrix);
+            this.skewbCenters[center].setRotationFromMatrix(matrix);
+            this.skewbCenterOuterHints[center].setRotationFromMatrix(matrix);
         }
         hideOutOfViewHints(this.camera, this.innerHintGroups);
     }
