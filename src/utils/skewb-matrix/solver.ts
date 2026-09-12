@@ -115,7 +115,7 @@ async function computeShortSolutionStates(): Promise<Record<string, string>> {
 }
 
 export const shortSolutionStatesPromise = cacheSerializableReturnValFunc(
-    "shortSolutionStatesMatrix",
+    "shortSolutionStatesMatrixV2",
     computeShortSolutionStates,
 );
 

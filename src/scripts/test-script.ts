@@ -189,15 +189,12 @@ fileLog(
 fileLog(
     "all skewb center states",
     JSON.stringify(
-        defaultCenterPieces.map((r) =>
+        defaultCenterPieces.map((a) =>
             [0, 1, 2, 3].map((i) =>
                 prettyPrint(
-                    multiplyRotations(
-                        rotateAroundAxis(
-                            multiplyRotationByAxis<Axis>(r, 0b010000),
-                            i as 0 | 1 | 2 | 3,
-                        ),
-                        r,
+                    multiplyRotationByAxis(
+                        rotateAroundAxis(a, i as 0 | 1 | 2 | 3),
+                        a,
                     ),
                 ),
             ),
