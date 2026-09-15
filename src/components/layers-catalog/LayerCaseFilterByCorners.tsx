@@ -18,9 +18,6 @@ export default function LayerCaseFilterByCorners({
         try {
             const regexObj = new RegExp(regex, "i");
             setFilterFunc((layerCasesToShow: LayerCase[]) => {
-                setFilterNameString(
-                    regex.length === 0 ? "" : `Case ID filter is "${regex}"`,
-                );
                 return layerCasesToShow.filter((lc) =>
                     includeRotations
                         ? allLayerCaseRotations[lc].some(
@@ -29,6 +26,9 @@ export default function LayerCaseFilterByCorners({
                         : !!regexObj.exec(lc),
                 );
             });
+            setFilterNameString(
+                regex.length === 0 ? "" : `Case ID filter is "${regex}"`,
+            );
             setErrorMessage("");
         } catch (e) {
             if (e instanceof Error) {

@@ -2,6 +2,7 @@ import {
     type Dispatch,
     type FC,
     type SetStateAction,
+    useEffect,
     useMemo,
     useState,
 } from "react";
@@ -47,7 +48,7 @@ export default function LayerCaseFilter({
     setFilterNameString: Dispatch<SetStateAction<string>>;
 }) {
     const [filterFuncs, setFilterFuncs] = useState<FilterFunc[]>([]);
-    const [_filterNameStrings, setFilterNameStrings] = useState<string[]>([]);
+    const [filterNameStrings, setFilterNameStrings] = useState<string[]>([]);
     const [isSubmitDisabled, setIsSubmitDisabled] = useState(false);
 
     const setFilterFuncByIndex = useMemo(
@@ -70,19 +71,19 @@ export default function LayerCaseFilter({
                     setFilterNameStrings((fns) => {
                         const newFns = fns.slice();
                         newFns[index] = filterNameString;
-                        const newFnsNonEmpty = newFns.filter(
-                            (s) => s && s.length > 0,
-                        );
-                        const joinedFilterNameString =
-                            newFnsNonEmpty.length === 0
-                                ? "All cases"
-                                : newFnsNonEmpty.join(" and ");
-                        setFilterNameString(joinedFilterNameString);
                         return newFns;
                     }),
             ),
-        [setFilterNameString],
+        [],
     );
+
+    useEffect(() => {
+        const fnsNonEmpty = filterNameStrings.filter((s) => s && s.length > 0);
+        const joinedFilterNameString =
+            fnsNonEmpty.length === 0 ? "All cases" : fnsNonEmpty.join(" and ");
+        setFilterNameString(joinedFilterNameString);
+    }, [filterNameStrings, setFilterNameString]);
+
     return (
         <form
             className="mb-3"
