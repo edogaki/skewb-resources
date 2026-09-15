@@ -108,7 +108,6 @@ export async function generateRandomOneLookCase(
 
         state.applyRubikskewbAlg(randomLayerAlg.clone().invert());
 
-        state.standardizeForWCA();
         scrambleAlg = (await solveSkewb(state)).invert();
     } while (scrambleAlg.turns.length < 7);
 

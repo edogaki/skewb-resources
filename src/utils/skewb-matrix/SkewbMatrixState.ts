@@ -12,7 +12,7 @@ import type { Tuple } from "../solver/helperTypes";
 import {
     type Axis,
     CubeRotation,
-    type DiagonalAxis,
+    DiagonalAxis,
     invertAxis,
     invertRotation,
     mask1,
@@ -24,6 +24,7 @@ import {
     mask31,
     mask112131,
     multiplyRotations,
+    prettyPrint,
     rotateAroundAxis,
     rotateAroundDiagonalAxis,
     rotateAroundDiagonalAxisLookup,
@@ -77,11 +78,16 @@ export const defaultCornerPieces: Tuple<CubeRotation, 8> = [
         rotateAroundAxis(0b000100, 0),
         rotateAroundAxis(0b010000, 2),
     ),
-];
+] as const;
+
+export const cornerPieceAxis: DiagonalAxis[] = [
+    0b010101, 0b110101, 0b110111, 0b010111, 0b011101, 0b111101, 0b111111,
+    0b011111,
+] as const;
 
 const centerPieceAxis: Axis[] = [
     0b000100, 0b010000, 0b000001, 0b110000, 0b000011, 0b001100,
-];
+] as const;
 
 export const defaultCenterPieces: Tuple<CubeRotation, 6> = [
     rotateAroundAxis(0b000001, 1),
@@ -467,4 +473,48 @@ export class SkewbMatrixState {
         this.resetRotations();
         this.applyRubikskewbAlg(alg);
     }
+}
+
+export function isValidState(state: SkewbMatrixState) {
+    const cornerAxes = new Map<DiagonalAxis, number>();
+    for (let i = 0; i < 8; i++) {
+        if (!CubeRotation.includes(state.cornerPieces[i])) {
+            console.error("Corner piece", i, "is not valid rotation!");
+            console.error(state.generateHash());
+            return false;
+        }
+        const axis = rotationToDiagAxis(state.cornerPieces[i]);
+        const j = cornerAxes.get(axis);
+        if (j !== undefined) {
+            console.error(
+                "Corner pieces",
+                i,
+                "and",
+                j,
+                "are in the same axis: ",
+                prettyPrint(axis),
+            );
+        }
+    }
+    const centerAxes = new Map<Axis, number>();
+    for (let i = 0; i < 6; i++) {
+        if (!CubeRotation.includes(state.centerPieces[i])) {
+            console.error("Center piece", i, "is not valid rotation!");
+            console.error(state.generateHash());
+            return false;
+        }
+        const axis = rotationToAxis(state.centerPieces[i]);
+        const j = centerAxes.get(axis);
+        if (j !== undefined) {
+            console.error(
+                "Center pieces",
+                i,
+                "and",
+                j,
+                "are in the same axis: ",
+                prettyPrint(axis),
+            );
+        }
+    }
+    return true;
 }

@@ -119,21 +119,30 @@ export const shortSolutionStatesPromise = cacheSerializableReturnValFunc(
     computeShortSolutionStates,
 );
 
+/*
+fileLog(
+    JSON.stringify(Object.entries(await shortSolutionStatesPromise), null, 2),
+);
+*/
+
 export async function solveSkewb(state: SkewbMatrixState) {
     const taskQueue: TaskQueue = new Queue<SearchNode>();
     const shortSolutionStates = await shortSolutionStatesPromise;
 
+    const standardState = state.clone();
+    standardState.standardizeForWCA();
+
     taskQueue.enqueue({
         alg: new WCAAlg(""),
-        state,
-        hash: state.generateHash(),
+        state: standardState,
+        hash: standardState.generateHash(),
         depth: 0,
     });
     while (!taskQueue.isEmpty()) {
         const searchNode = taskQueue.dequeue();
         if (!searchNode) continue;
         const possibleShortSolution = shortSolutionStates[searchNode.hash];
-        if (possibleShortSolution) {
+        if (possibleShortSolution !== undefined) {
             return searchNode.alg.concat(new WCAAlg(possibleShortSolution));
         }
 
