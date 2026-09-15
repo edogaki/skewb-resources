@@ -6,8 +6,12 @@ import * as BufferGeometryUtils from "three/examples/jsm/utils/BufferGeometryUti
 import type { Color } from "../renderer/color";
 import type { WCAAlg } from "../solver/alg";
 import {
+    type Axis,
     bitsToNumber,
     type CubeRotation,
+    mask1,
+    mask2,
+    mask3,
     mask11,
     mask12,
     mask13,
@@ -18,6 +22,9 @@ import {
     mask32,
     mask33,
     rotateAroundAxis,
+    shift1,
+    shift2,
+    shift3,
     shift11,
     shift12,
     shift13,
@@ -28,7 +35,7 @@ import {
     shift32,
     shift33,
 } from "./matrixMath";
-import { CenterPiece, CornerPiece, SkewbMatrixState } from "./SkewbMatrixState";
+import { CenterIndex, CornerIndex, SkewbMatrixState } from "./skewbMatrixState";
 
 const hintDistance = 2.4;
 const hintSizeScale = 1;
@@ -48,6 +55,30 @@ function cubeRotationToThreeMatrix(r: CubeRotation) {
         bitsToNumber((r & mask31) >> shift31),
         bitsToNumber((r & mask32) >> shift32),
         bitsToNumber((r & mask33) >> shift33),
+        0,
+        0,
+        0,
+        0,
+        1,
+    );
+}
+
+function axisToThreeMatrix(a: Axis) {
+    const a1 = bitsToNumber((a & mask1) >> shift1);
+    const a2 = bitsToNumber((a & mask2) >> shift2);
+    const a3 = bitsToNumber((a & mask3) >> shift3);
+    return new THREE.Matrix4(
+        a1,
+        a3,
+        Math.abs(a2),
+        0,
+        a2,
+        a1,
+        Math.abs(a3),
+        0,
+        a3,
+        a2,
+        Math.abs(a1),
         0,
         0,
         0,
@@ -359,7 +390,7 @@ class SkewbStateRenderer {
         this.skewbCornerInnerHints = [];
         this.skewbCornerOuterHints = [];
         this.state = state ?? new SkewbMatrixState();
-        for (const cp of CornerPiece) {
+        for (const cp of CornerIndex) {
             const [skewbCorner, skewbCornerInnerHintArr, skewbCornerOuterHint] =
                 skewbCornerObjects(this.state.cornerPieceColors[cp]);
             const matrix = cubeRotationToThreeMatrix(
@@ -376,13 +407,11 @@ class SkewbStateRenderer {
         this.skewbCenters = [];
         this.skewbCenterInnerHints = [];
         this.skewbCenterOuterHints = [];
-        for (const cp of CenterPiece) {
+        for (const center of CenterIndex) {
             const [skewbCenter, skewbCenterInnerHint, skewbCenterOuterHint] =
-                skewbCenterObjects(this.state.centerPieceColors[cp]);
+                skewbCenterObjects(this.state.centerPieceColors[center]);
 
-            const matrix = cubeRotationToThreeMatrix(
-                this.state.centerPieces[cp],
-            );
+            const matrix = axisToThreeMatrix(this.state.centerPieces[center]);
             skewbCenter.setRotationFromMatrix(matrix);
             skewbCenterOuterHint.setRotationFromMatrix(matrix);
 
@@ -541,20 +570,18 @@ class SkewbStateRenderer {
     }
 
     setFromStateRotations() {
-        for (const cp of CornerPiece) {
+        for (const corner of CornerIndex) {
             const matrix = cubeRotationToThreeMatrix(
-                this.state.cornerPieces[cp],
+                this.state.cornerPieces[corner],
             );
-            this.skewbCorners[cp].setRotationFromMatrix(matrix);
-            this.skewbCornerOuterHints[cp].setRotationFromMatrix(matrix);
+            this.skewbCorners[corner].setRotationFromMatrix(matrix);
+            this.skewbCornerOuterHints[corner].setRotationFromMatrix(matrix);
         }
 
-        for (const cp of CenterPiece) {
-            const matrix = cubeRotationToThreeMatrix(
-                this.state.centerPieces[cp],
-            );
-            this.skewbCenters[cp].setRotationFromMatrix(matrix);
-            this.skewbCenterOuterHints[cp].setRotationFromMatrix(matrix);
+        for (const center of CenterIndex) {
+            const matrix = axisToThreeMatrix(this.state.centerPieces[center]);
+            this.skewbCenters[center].setRotationFromMatrix(matrix);
+            this.skewbCenterOuterHints[center].setRotationFromMatrix(matrix);
         }
         hideOutOfViewHints(this.camera, this.innerHintGroups);
     }
