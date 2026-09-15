@@ -1,6 +1,8 @@
+import { appendFileSync, writeFileSync } from "node:fs";
 import { Color } from "#/utils/renderer/color";
 import {
-    CubeRotation,
+    type Axis,
+    type CubeRotation,
     multiplyRotations,
     prettyPrint,
     rotateAroundDiagonalAxis,
@@ -11,10 +13,12 @@ import {
     defaultCornerPieces,
     isValidState,
     SkewbMatrixState,
-} from "#/utils/skewb-matrix/SkewbMatrixState";
+} from "#/utils/skewb-matrix/skewbMatrixState";
 import { solveSkewb } from "#/utils/skewb-matrix/solver";
 import type { IntFrom0To, Tuple } from "#/utils/solver/helperTypes";
 import { fileLog } from "./utils/log";
+
+const tsFileName = "./src/utils/allSkewbStateScrambles.gen.ts";
 
 function generateSkewbPiecesFromRandomParameters(
     params: [
@@ -33,7 +37,7 @@ function generateSkewbPiecesFromRandomParameters(
     ],
 ) {
     const cornerPieces = defaultCornerPieces.slice() as Tuple<CubeRotation, 8>;
-    const centerPieces = defaultCenterPieces.slice() as Tuple<CubeRotation, 6>;
+    const centerPieces = defaultCenterPieces.slice() as Tuple<Axis, 6>;
     cornerPieces[0] = multiplyRotations(
         rotateAroundDiagonalAxis(cornerPieceAxis[0], params[0]),
         cornerPieces[0],
@@ -166,13 +170,16 @@ const colorReverseMap = Object.fromEntries(
     Object.entries(Color).map(([a, b]) => [b, a]),
 );
 
+writeFileSync(tsFileName, "const skewbStateScrambles = [\n", "utf8");
+
 let i = 0;
 let hits = 0;
 const hashMap = new Map<string, number>();
+
 for (const state of allStatesGenerator) {
     const hash = JSON.stringify(state.slice(0, 2));
     if (hashMap.has(hash)) {
-        // console.log("hit", { i, j: hashMap.get(hash), hash });
+        console.log("hit", { i, j: hashMap.get(hash), hash });
         hits++;
     }
     hashMap.set(hash, i);
@@ -182,7 +189,8 @@ for (const state of allStatesGenerator) {
         break;
     }
     const solution = await solveSkewb(matrixState);
-    fileLog(solution.toString());
+    const setupString = solution.invert().toString();
+    appendFileSync(tsFileName, `"${setupString}",\n`, "utf8");
     if (i % 1000 === 0) {
         console.log("processed", i, "th state");
         console.log(
@@ -197,3 +205,5 @@ for (const state of allStatesGenerator) {
 console.log("finished in", (Date.now() - startTime) / 1000, "seconds");
 console.log("number of states:", i);
 console.log("number of duplicate states (if > 1, generator is bugged):", hits);
+
+appendFileSync(tsFileName, "];", "utf8");

@@ -1,8 +1,5 @@
 import { type Dispatch, type SetStateAction, useEffect, useRef } from "react";
-import {
-    type LayerCase,
-    layerCases,
-} from "#/utils/layers-catalog/layerCases.gen";
+import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
 
 function getSelectedStatus(
     selectedLayerCases: Partial<Record<LayerCase, boolean>>,

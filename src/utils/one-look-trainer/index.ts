@@ -1,5 +1,5 @@
 import type { Color } from "../renderer/color";
-import { rubikskewbTurnToStateRotation } from "../skewb-matrix/SkewbMatrixState";
+import { rubikskewbTurnToStateRotation } from "../skewb-matrix/skewbMatrixState";
 import { RubikskewbAlg } from "../solver/alg";
 import { presets } from "./presets";
 

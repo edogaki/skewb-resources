@@ -1,8 +1,7 @@
 import {
-    CenterPiece,
-    rubikskewbTurnToStateRotation,
+    CenterIndex,
     SkewbMatrixState,
-} from "../skewb-matrix/SkewbMatrixState";
+} from "../skewb-matrix/skewbMatrixState";
 import { solveSkewb } from "../skewb-matrix/solver";
 import { RubikskewbAlg, type WCAAlg } from "../solver/alg";
 import type { IntFrom0To } from "../solver/helperTypes";
@@ -39,8 +38,8 @@ export function generateRandomNSCase(
     const chosenLayerCenter =
         layerColor === "random"
             ? randomLayerCenter
-            : CenterPiece.find(
-                  (cp) => state.centerPieceColors[cp] === layerColor,
+            : CenterIndex.find(
+                  (center) => state.centerPieceColors[center] === layerColor,
               );
 
     if (chosenLayerCenter === undefined) {
@@ -60,7 +59,7 @@ export function generateRandomNSCase(
     const origCenterPieces = state.centerPieces.slice();
     const origCenters = centerPieceLocations.slice();
 
-    const shuffledCenters: CenterPiece[] = [];
+    const shuffledCenters: CenterIndex[] = [];
     let parity = 0;
     for (let i = 0; i < 3; i++) {
         parity += randomCenterPerm[i];
