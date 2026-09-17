@@ -170,7 +170,7 @@ const colorReverseMap = Object.fromEntries(
     Object.entries(Color).map(([a, b]) => [b, a]),
 );
 
-writeFileSync(tsFileName, "const skewbStateScrambles = [\n", "utf8");
+writeFileSync(tsFileName, "export const skewbStateScrambles = [\n", "utf8");
 
 let i = 0;
 let hits = 0;

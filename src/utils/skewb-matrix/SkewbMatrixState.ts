@@ -344,10 +344,31 @@ export class SkewbMatrixState {
 
     getLayerPieceLocations(center: CenterIndex) {
         const color = this.centerPieceColors[center];
+        const cornerPieceLocations = CornerIndex.filter((corner) =>
+            this.cornerPieceColors[corner].includes(color),
+        );
+        for (let i = 0; i < 2; i++) {
+            const corner = cornerPieceLocations[i];
+            const commonColor =
+                this.cornerPieceColors[corner][
+                    mod(this.cornerPieceColors[corner].indexOf(color) - 1, 3)
+                ];
+            const nextCornerIndex = cornerPieceLocations.findIndex(
+                (corner, idx) =>
+                    idx > i &&
+                    this.cornerPieceColors[corner].includes(commonColor),
+            );
+            [
+                cornerPieceLocations[i + 1],
+                cornerPieceLocations[nextCornerIndex],
+            ] = [
+                cornerPieceLocations[nextCornerIndex],
+                cornerPieceLocations[i + 1],
+            ];
+        }
+        // return cornerPieceLocations in cw order
         return {
-            cornerPieceLocations: CornerIndex.filter((corner) =>
-                this.cornerPieceColors[corner].includes(color),
-            ),
+            cornerPieceLocations,
             centerPieceLocations: [center],
         };
     }
@@ -404,6 +425,27 @@ export class SkewbMatrixState {
             throw new Error(
                 "impossible error! check if matrix operations are closed",
             );
+        }
+        this.applyRotation(rotationToExecute);
+    }
+
+    rotateCenterToAxisAndCornerToDiagAxis(
+        center: CenterIndex,
+        axis: Axis,
+        corner: CornerIndex,
+        diagAxis: DiagonalAxis,
+    ) {
+        const centerCurrAxis = this.centerPieces[center];
+        const cornerCurrDiagAxis = rotationToDiagAxis(
+            this.cornerPieces[corner],
+        );
+        const rotationToExecute = CubeRotation.find(
+            (r) =>
+                multiplyRotationByAxis(r, centerCurrAxis) === axis &&
+                multiplyRotationByAxis(r, cornerCurrDiagAxis) === diagAxis,
+        );
+        if (rotationToExecute === undefined) {
+            throw new Error("impossible rotation");
         }
         this.applyRotation(rotationToExecute);
     }

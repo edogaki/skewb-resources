@@ -127,6 +127,10 @@ function xor(a: unknown, b: unknown) {
     return !a === !b;
 }
 
+function sum(arr: number[]): number {
+    return arr.reduce((a, b) => a + b, 0);
+}
+
 export {
     mod,
     rotationMatrix,
@@ -135,4 +139,5 @@ export {
     weightedRandom,
     intersection,
     xor,
+    sum,
 };
