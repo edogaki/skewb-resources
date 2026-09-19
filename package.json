@@ -22,7 +22,8 @@
     "generate-all-layer-solutions-complete": "npx tsx ./src/scripts/generateAllLayerSolutionsComplete.ts",
     "generate-all-tags": "npx tsx ./src/scripts/generateAllTags.ts",
     "generate-all-skewb-states": "npx tsx ./src/scripts/generateAllSkewbStates.ts",
-    "generate-all-skewb-states-stats": "npx tsx ./src/scripts/generateAllSkewbStatesStats.ts",
+    "generate-all-skewb-states-stats-and-nobars": "npx tsx ./src/scripts/generateAllSkewbStatesStatsAndNobars.ts",
+    "generate-all-skewb-nobar-stats": "npx tsx ./src/scripts/generateAllSkewbNobarStats.ts",
     "test-script": "npx tsx ./src/scripts/test-script.ts",
     "check-typescript": "tsc --noEmit"
   },

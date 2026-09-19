@@ -1,27 +1,23 @@
-import { skewbStateScrambles } from "#/utils/allSkewbStateScrambles.gen";
-
-import { computeHash, toRight } from "#/utils/layers-catalog/baseMethods";
-import { sum } from "#/utils/math";
-import { applyFuncNTimes } from "#/utils/methods";
-import { Color } from "#/utils/renderer/color";
+import { computeHash, toRight } from "../layers-catalog/baseMethods";
+import type { LayerCase } from "../layers-catalog/layerCases.gen";
+import { applyFuncNTimes } from "../methods";
+import { Color } from "../renderer/color";
 import {
     CubeRotation,
     identity,
     invertRotation,
     multiplyRotationByAxis,
     multiplyRotations,
-    prettyPrint,
     rotateAroundAxis,
     rotateAroundDiagonalAxis,
-} from "#/utils/skewb-matrix/matrixMath";
+} from "./matrixMath";
 import {
     CenterIndex,
     cornerPieceAxis,
     defaultCenterPieces,
     defaultCornerPieces,
-    SkewbMatrixState,
-} from "#/utils/skewb-matrix/skewbMatrixState";
-import { WCAAlg } from "#/utils/solver/alg";
+    type SkewbMatrixState,
+} from "./skewbMatrixState";
 
 const colorReverseMap = Object.fromEntries(
     Object.entries(Color).map(([a, b]) => [b, a]),
@@ -129,60 +125,9 @@ if (Object.keys(cornerRotationToLetterMap).length !== 24) {
     throw new Error("invalid cornerRotationToLetterMap");
 }
 
-function classifyLayerCase(lc: string) {
-    if (lc.startsWith("abc")) {
-        return "Basic layer";
-    } else if (lc.startsWith("ab")) {
-        return "Adjacent layer";
-    } else if (lc.startsWith("a") && lc.includes("c")) {
-        return "Opposite layer";
-    } else if (lc.startsWith("ad")) {
-        return "Diagadj layer";
-    } else if (lc.startsWith("a")) {
-        return "One-bar layer";
-    } else {
-        return "No-bar layer";
-    }
-}
-
-const layerCasePriority = {
-    "Basic layer": 6,
-    "Adjacent layer": 5,
-    "Opposite layer": 4,
-    "Diagadj layer": 3,
-    "One-bar layer": 2,
-    "No-bar layer": 1,
-} as const;
-
-const easiestLayerCount: Record<keyof typeof layerCasePriority, number> = {
-    "Basic layer": 0,
-    "Adjacent layer": 0,
-    "Opposite layer": 0,
-    "Diagadj layer": 0,
-    "One-bar layer": 0,
-    "No-bar layer": 0,
-};
-
-const easiestLayerCountWCALegalOnly: Record<
-    keyof typeof layerCasePriority,
-    number
-> = {
-    "Basic layer": 0,
-    "Adjacent layer": 0,
-    "Opposite layer": 0,
-    "Diagadj layer": 0,
-    "One-bar layer": 0,
-    "No-bar layer": 0,
-};
-
-function isWCALegal(setupStr: string) {
-    return setupStr.split(" ").length >= 7;
-}
-
-let ct = 0;
-for (const setupStr of skewbStateScrambles) {
-    const state = new SkewbMatrixState().applyWCAAlg(new WCAAlg(setupStr));
-    let easiestLayerType: keyof typeof layerCasePriority = "No-bar layer";
+export function identifyLayerCases(skewbState: SkewbMatrixState) {
+    const state = skewbState.clone();
+    const layerCases = {} as Record<CenterIndex, LayerCase>;
     for (const center of CenterIndex) {
         state.rotateCenterToAxis(center, defaultCenterPieces[center]);
         const { cornerPieceLocations } = state.getLayerPieceLocations(center);
@@ -237,61 +182,11 @@ for (const setupStr of skewbStateScrambles) {
                 cornerRotationRelativeToDefault,
                 cornerPieceLocations,
                 center,
-                setupStr,
             });
             throw new Error("invalid letters");
         }
-
-        const hash = computeHash(letters);
-
-        const lcType = classifyLayerCase(hash);
-        if (layerCasePriority[lcType] > layerCasePriority[easiestLayerType]) {
-            easiestLayerType = lcType;
-        }
+        const hash = computeHash(letters) as LayerCase;
+        layerCases[center] = hash;
     }
-    easiestLayerCount[easiestLayerType]++;
-    if (isWCALegal(setupStr)) {
-        easiestLayerCountWCALegalOnly[easiestLayerType]++;
-    }
-    ct++;
-    if (ct % 100000 === 0) {
-        console.log("Processed", ct, "states:", easiestLayerCount);
-    }
+    return layerCases;
 }
-
-function aggregateRecordOfNumbers<T extends string, U>(
-    record: Record<T, number>,
-    func: (arg0: number) => U,
-): Record<T, U> {
-    return Object.fromEntries(
-        Object.entries(record).map(([k, v]) => [k as T, func(v as number)]),
-    ) as Record<T, U>;
-}
-
-console.log(
-    ct,
-    "total processed states. Scrambles with at least one:",
-    easiestLayerCount,
-);
-
-const easiestLayerCountPercents = aggregateRecordOfNumbers(
-    easiestLayerCount,
-    (n) => `${((n * 100) / sum(Object.values(easiestLayerCount))).toFixed(2)}%`,
-);
-
-console.log("Percentages:", easiestLayerCountPercents);
-
-const wcaLegalCt = sum(Object.values(easiestLayerCountWCALegalOnly));
-
-console.log(
-    wcaLegalCt,
-    "WCA legal states. Scrambles with at least one:",
-    easiestLayerCountWCALegalOnly,
-);
-
-const easiestLayerCountWCALegalOnlyPercents = aggregateRecordOfNumbers(
-    easiestLayerCountWCALegalOnly,
-    (n) => `${((n * 100) / wcaLegalCt).toFixed(2)}%`,
-);
-
-console.log("Percentages:", easiestLayerCountWCALegalOnlyPercents);
