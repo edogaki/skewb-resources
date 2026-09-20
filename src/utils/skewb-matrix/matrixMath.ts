@@ -85,6 +85,8 @@ export const CubeRotation = [
 ] as const;
 export type CubeRotation = (typeof CubeRotation)[number];
 
+export const identity = 0b010000000100000001;
+
 export function multiplyRotations(
     r1: CubeRotation,
     r2: CubeRotation,
