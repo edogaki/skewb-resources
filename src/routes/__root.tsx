@@ -55,6 +55,13 @@ export const Route = createRootRoute({
         ],
     }),
     shellComponent: RootDocument,
+    notFoundComponent: () => (
+        <main className="page-wrap px-4 py-12">
+            <section className="island-shell rounded-2xl p-6 sm:p-8">
+                404 Not Found
+            </section>
+        </main>
+    ),
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
