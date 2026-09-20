@@ -10,9 +10,9 @@ import type {
 } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import {
-    type Axis,
+    Axis,
     CubeRotation,
-    type DiagonalAxis,
+    DiagonalAxis,
     invertAxis,
     invertRotation,
     mask1,
@@ -25,6 +25,7 @@ import {
     mask112131,
     multiplyRotationByAxis,
     multiplyRotations,
+    prettyPrint,
     rotateAroundAxis,
     rotateAroundDiagonalAxis,
     rotateAroundDiagonalAxisLookup,
@@ -77,7 +78,12 @@ export const defaultCornerPieces: Tuple<CubeRotation, 8> = [
         rotateAroundAxis(0b000100, 0),
         rotateAroundAxis(0b010000, 2),
     ),
-];
+] as const;
+
+export const cornerPieceAxis: DiagonalAxis[] = [
+    0b010101, 0b110101, 0b110111, 0b010111, 0b011101, 0b111101, 0b111111,
+    0b011111,
+] as const;
 
 export const defaultCenterPieces: Tuple<Axis, 6> = [
     0b000100, 0b010000, 0b000001, 0b110000, 0b000011, 0b001100,
@@ -338,10 +344,31 @@ export class SkewbMatrixState {
 
     getLayerPieceLocations(center: CenterIndex) {
         const color = this.centerPieceColors[center];
+        const cornerPieceLocations = CornerIndex.filter((corner) =>
+            this.cornerPieceColors[corner].includes(color),
+        );
+        for (let i = 0; i < 2; i++) {
+            const corner = cornerPieceLocations[i];
+            const commonColor =
+                this.cornerPieceColors[corner][
+                    mod(this.cornerPieceColors[corner].indexOf(color) - 1, 3)
+                ];
+            const nextCornerIndex = cornerPieceLocations.findIndex(
+                (corner, idx) =>
+                    idx > i &&
+                    this.cornerPieceColors[corner].includes(commonColor),
+            );
+            [
+                cornerPieceLocations[i + 1],
+                cornerPieceLocations[nextCornerIndex],
+            ] = [
+                cornerPieceLocations[nextCornerIndex],
+                cornerPieceLocations[i + 1],
+            ];
+        }
+        // return cornerPieceLocations in cw order
         return {
-            cornerPieceLocations: CornerIndex.filter((corner) =>
-                this.cornerPieceColors[corner].includes(color),
-            ),
+            cornerPieceLocations,
             centerPieceLocations: [center],
         };
     }
@@ -402,6 +429,27 @@ export class SkewbMatrixState {
         this.applyRotation(rotationToExecute);
     }
 
+    rotateCenterToAxisAndCornerToDiagAxis(
+        center: CenterIndex,
+        axis: Axis,
+        corner: CornerIndex,
+        diagAxis: DiagonalAxis,
+    ) {
+        const centerCurrAxis = this.centerPieces[center];
+        const cornerCurrDiagAxis = rotationToDiagAxis(
+            this.cornerPieces[corner],
+        );
+        const rotationToExecute = CubeRotation.find(
+            (r) =>
+                multiplyRotationByAxis(r, centerCurrAxis) === axis &&
+                multiplyRotationByAxis(r, cornerCurrDiagAxis) === diagAxis,
+        );
+        if (rotationToExecute === undefined) {
+            throw new Error("impossible rotation");
+        }
+        this.applyRotation(rotationToExecute);
+    }
+
     standardizeForWCA() {
         const wrgIndex: CornerIndex = Object.values(
             this.cornerPieceColors,
@@ -436,4 +484,49 @@ export class SkewbMatrixState {
         this.resetRotations();
         this.applyRubikskewbAlg(alg);
     }
+}
+
+export function isValidState(state: SkewbMatrixState) {
+    const cornerAxes = new Map<DiagonalAxis, number>();
+    for (let i = 0; i < 8; i++) {
+        if (!CubeRotation.includes(state.cornerPieces[i])) {
+            console.error("Corner piece", i, "is not valid rotation!");
+            console.error(state.generateHash());
+            return false;
+        }
+        const axis = rotationToDiagAxis(state.cornerPieces[i]);
+        const j = cornerAxes.get(axis);
+        if (j !== undefined) {
+            console.error(
+                "Corner pieces",
+                i,
+                "and",
+                j,
+                "are in the same axis: ",
+                prettyPrint(axis),
+            );
+        }
+        cornerAxes.set(axis, i);
+    }
+    const centerAxes = new Map<Axis, number>();
+    for (let i = 0; i < 6; i++) {
+        if (!Axis.includes(state.centerPieces[i])) {
+            console.error("Center piece", i, "is not valid axis!");
+            console.error(state.generateHash());
+            return false;
+        }
+        const j = centerAxes.get(state.centerPieces[i]);
+        if (j !== undefined) {
+            console.error(
+                "Center pieces",
+                i,
+                "and",
+                j,
+                "are in the same axis: ",
+                prettyPrint(state.centerPieces[i]),
+            );
+        }
+        centerAxes.set(state.centerPieces[i], i);
+    }
+    return true;
 }
