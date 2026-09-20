@@ -6,12 +6,11 @@ import {
 import { layerCaseTags } from "#/utils/layers-catalog/layerCaseTags.gen";
 import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import { identifyLayerCases } from "#/utils/skewb-matrix/layerCasesIdentifier";
-import {
-    CenterIndex,
-    SkewbMatrixState,
-} from "#/utils/skewb-matrix/skewbMatrixState";
+import { SkewbMatrixState } from "#/utils/skewb-matrix/skewbMatrixState";
 import { WCAAlg } from "#/utils/solver/alg";
 import { fileLog } from "./utils/log";
+
+const isCountOptimalOnly = false;
 
 const nobarAlgs = readFileSync(
     "./src/utils/allSkewbNobarScrambles.gen.csv",
@@ -32,25 +31,24 @@ for (const setupAlg of nobarAlgs.split("\n")) {
     const state = new SkewbMatrixState().applyWCAAlg(algObj);
 
     const stateLayerCases = identifyLayerCases(state);
-    const stateLayerCasesVals = Object.values(stateLayerCases);
+    let stateLayerCasesVals = Object.values(stateLayerCases);
     const minMover = Math.min(
         ...stateLayerCasesVals.map((lc) =>
             Number(Object.keys(layerSolutionsComplete[lc])[0]),
         ),
     );
-    const stateLayerCasesValsSet = new Set(
-        stateLayerCasesVals.filter(
+
+    if (isCountOptimalOnly) {
+        stateLayerCasesVals = stateLayerCasesVals.filter(
             (lc) =>
                 Number(Object.keys(layerSolutionsComplete[lc])[0]) === minMover,
-        ),
-    );
+        );
+    }
 
-    for (const lc of stateLayerCasesValsSet) {
+    for (const lc of stateLayerCasesVals) {
         layerCasesTotalCount[lc]++;
     }
-    stateLayerCasesArr.push(Array.from(stateLayerCasesValsSet));
-    // fileLog(setupAlg);
-    // fileLog(JSON.stringify(stateLayerCases));
+    stateLayerCasesArr.push(stateLayerCasesVals);
 }
 
 console.log(layerCasesTotalCount);
@@ -59,12 +57,20 @@ const sortedTotal = (
 ).filter(([lc, _n]) => !lc.startsWith("a"));
 sortedTotal.sort(([_lc1, n1], [_lc2, n2]) => n2 - n1);
 
-sortedTotal.map((arr) => fileLog(JSON.stringify(arr)));
+for (const arr of sortedTotal) {
+    fileLog(
+        `Layer case ${arr[0]} (${layerCaseTags[arr[0]].find((t) =>
+            t.endsWith("-mover"),
+        )}): ${arr[1]} nobar scrambles with it as ${isCountOptimalOnly ? "optimal " : ""}layer case`,
+    );
+}
 
 // greedy find minimum number of layer cases to know to be able to solve all no bar scrambles
 
 let currStateLayerCasesArr = stateLayerCasesArr.slice();
 const minLayerCases: LayerCase[] = [];
+fileLog(`Initial number of no bar scrambles: ${currStateLayerCasesArr.length}`);
+let i = 0;
 while (currStateLayerCasesArr.length > 0) {
     const numUniquePerLayer = new Map<LayerCase, number>();
     // count total
@@ -96,65 +102,18 @@ while (currStateLayerCasesArr.length > 0) {
         (lcArr) => !lcArr.includes(mostCommonLc[0]),
     );
     console.log(mostCommonLc, currStateLayerCasesArr.length);
+    i++;
     fileLog(
-        JSON.stringify(mostCommonLc),
-        currStateLayerCasesArr.length.toString(),
+        `Crossing out ${mostCommonLc[1]} no bar scrambles with ${isCountOptimalOnly ? "optimal " : ""}layer case ${mostCommonLc[0]}. ${i} layer cases covers ${((1 - currStateLayerCasesArr.length / stateLayerCasesArr.length) * 100).toFixed(2)}% of no bar scrambles`,
     );
 }
 
 console.log(minLayerCases);
 fileLog(
-    "layer solns of 200 no-bars that will cover the highest number of no-bar scrams",
+    "solns of no bar layers that will cover all no bar scrambles, in order of most common to least",
 );
 fileLog(
     minLayerCases
-        .slice(0, 200)
         .map((lc) => Object.values(layerSolutionsComplete[lc])[0][0])
         .join("\n"),
 );
-
-// bruteforce search power set of nobarLayerCases
-
-const nobarLayerCasesSorted = sortedTotal
-    .filter(([_lc, n]) => n > 0)
-    .map(([lc, _n]) => lc);
-
-let minRunsCt = 0;
-
-let minHit = Infinity;
-
-function min(
-    arr: LayerCase[],
-    filteredStates: LayerCase[][],
-    idx: number,
-): LayerCase[] {
-    minRunsCt++;
-    if (minRunsCt % 1000000 === 0) {
-        console.log(minRunsCt, "min function calls");
-    }
-    if (idx >= nobarLayerCasesSorted.length) {
-        return nobarLayerCasesSorted;
-    }
-    if (arr.length >= minHit) {
-        return nobarLayerCasesSorted;
-    }
-    const newArr = [...arr, nobarLayerCasesSorted[idx]];
-    const newFilteredStates = filteredStates.filter(
-        (lcs) => !lcs.includes(nobarLayerCasesSorted[idx]),
-    );
-    if (newFilteredStates.length === 0) {
-        if (newArr.length < minHit) {
-            minHit = newArr.length;
-            console.log("new minHit:", minHit, newArr);
-        }
-        return newArr;
-    }
-    const withMin = min(newArr, newFilteredStates, idx + 1);
-    const withoutMin = min(arr, filteredStates, idx + 1);
-    if (withMin.length > withoutMin.length) {
-        return withoutMin;
-    } else {
-        return withMin;
-    }
-}
-console.log(min([], stateLayerCasesArr, 0));
