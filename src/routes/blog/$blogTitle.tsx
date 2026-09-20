@@ -1,23 +1,21 @@
-import {
-    createFileRoute,
-    Link,
-    notFound,
-    useLoaderData,
-    useParams,
-} from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import Markdown from "react-markdown";
+import { getBlogInfoFromLink } from "#/utils/blog";
 
-const mdFiles = import.meta.glob("#/content/*.md", {
+const mdFiles = import.meta.glob("#/content/blog/*.md", {
     query: "?raw",
     import: "default",
 });
 
-export const Route = createFileRoute("/$contentTitle")({
+export const Route = createFileRoute("/blog/$blogTitle")({
     loader: async ({ params }) => {
         try {
             const mdString =
-                await mdFiles[`/src/content/${params.contentTitle}.md`]();
-            return mdString;
+                await mdFiles[`/src/content/blog/${params.blogTitle}.md`]();
+            return {
+                mdString,
+                ...getBlogInfoFromLink(params.blogTitle),
+            };
         } catch {
             throw notFound();
         }
@@ -27,10 +25,15 @@ export const Route = createFileRoute("/$contentTitle")({
 
 function RouteComponent() {
     // const { contentTitle } = Route.useParams();
-    const mdString = Route.useLoaderData();
+    const { mdString, date, title } = Route.useLoaderData();
     return (
         <main className="page-wrap px-4 py-12">
             <section className="island-shell rounded-2xl p-6 sm:p-8">
+                <h6 className="island-kicker mb-2">Edogaki's Skewb Blog</h6>
+                <h1 className="display-title mb-2 text-4xl font-bold text-(--sea-ink) sm:text-5xl capitalize">
+                    {title}
+                </h1>
+                <div className="italic text-sm mb-5">Published {date}</div>
                 <Markdown
                     components={{
                         h1: ({ node, ...rest }) => (
@@ -60,26 +63,13 @@ function RouteComponent() {
                                 {...rest}
                             />
                         ),
-                        a: ({ href, node, ...rest }) =>
-                            href?.startsWith("/") ? (
-                                <Link
-                                    to={href}
-                                    className="underline"
-                                    {...rest}
-                                />
-                            ) : (
-                                <a
-                                    target="_blank"
-                                    href={href}
-                                    rel="noopener"
-                                    className="underline"
-                                    {...rest}
-                                />
-                            ),
                     }}
                 >
                     {mdString}
                 </Markdown>
+                <Link to="/blog" className="underline">
+                    Back
+                </Link>
             </section>
         </main>
     );

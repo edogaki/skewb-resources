@@ -38,8 +38,8 @@ function App() {
             <section className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {[
                     [
-                        "Skewb Trainer",
-                        "Includes NS Center trainer.",
+                        "Skewb NS Center Trainer",
+                        "Drill NS 3 sided recognition with this NS center trainer.",
                         "/trainer",
                     ],
                     [
@@ -48,9 +48,19 @@ function App() {
                         "/layer-solver",
                     ],
                     [
+                        "Skewb One Look Trainer",
+                        "Input layer solutions and generate random scrambles containing those layers.",
+                        "/one-look-trainer",
+                    ],
+                    [
                         "Skewb Layers Catalog",
                         "A list of all layer cases, with solutions & other info. Includes sort and filter functions.",
-                        "/layer-solver",
+                        "/layers-catalog",
+                    ],
+                    [
+                        "Other Resources",
+                        "Useful resources from the skewb community.",
+                        "/other-resources",
                     ],
                 ].map(([title, desc, href], index) => (
                     <Link to={href} key={title}>

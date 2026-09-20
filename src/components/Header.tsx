@@ -1,7 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useMatchRoute } from "@tanstack/react-router";
+import DropdownButton from "./DropdownButton";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
+    const matchRoute = useMatchRoute();
+
     return (
         <header className="lg:sticky top-0 z-50 border-b border-(--line) bg-(--header-bg) px-4 backdrop-blur-lg">
             <nav className="page-wrap flex flex-wrap items-center gap-x-3 gap-y-2 py-3 sm:py-4">
@@ -15,7 +18,7 @@ export default function Header() {
                     </Link>
                 </h2>
 
-                <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 pb-1 text-sm font-semibold sm:order-0 sm:w-auto sm:flex-nowrap sm:pb-0">
+                <div className="order-3 flex w-full flex-wrap items-center gap-x-4 gap-y-1 pb-1 text-sm font-semibold sm:order-0 sm:w-auto md:flex-nowrap sm:pb-0">
                     <Link
                         to="/"
                         className="nav-link"
@@ -24,7 +27,8 @@ export default function Header() {
                         Home
                     </Link>
                     <Link
-                        to="/about"
+                        to="/$contentTitle"
+                        params={{ contentTitle: "about" }}
                         className="nav-link"
                         activeProps={{ className: "nav-link is-active" }}
                     >
@@ -58,6 +62,38 @@ export default function Header() {
                     >
                         Layers Catalog
                     </Link>
+                    <DropdownButton
+                        className={`cursor-pointer nav-link ${matchRoute({ to: "/blog" }) || matchRoute({ to: "/$contentTitle", params: { contentTitle: "other-resources" } }) ? "is-active" : ""}`}
+                        buttonContent="Misc"
+                        dropdownClassName="top-[150%]"
+                        closeOnChangeURL={true}
+                    >
+                        <div className="p-2 flex flex-col gap-4 items-end">
+                            <div>
+                                <Link
+                                    to="/blog"
+                                    className="nav-link"
+                                    activeProps={{
+                                        className: "nav-link is-active",
+                                    }}
+                                >
+                                    Blog
+                                </Link>
+                            </div>
+                            <div>
+                                <Link
+                                    to="/$contentTitle"
+                                    params={{ contentTitle: "other-resources" }}
+                                    className="nav-link"
+                                    activeProps={{
+                                        className: "nav-link is-active",
+                                    }}
+                                >
+                                    Other Resources
+                                </Link>
+                            </div>
+                        </div>
+                    </DropdownButton>
                 </div>
 
                 <div className="ml-auto flex items-center gap-1.5 sm:gap-2">

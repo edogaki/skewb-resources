@@ -1,16 +1,26 @@
+import { useLocation } from "@tanstack/react-router";
 import { type ReactNode, useEffect, useRef, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 export default function DropdownButton({
     className,
+    dropdownClassName,
     buttonContent,
     children,
+    closeOnChangeURL,
 }: {
     className: string;
+    dropdownClassName?: string;
     buttonContent: ReactNode;
     children: ReactNode;
+    closeOnChangeURL?: boolean;
 }) {
     const [isOpen, setIsOpen] = useState(false);
     const divRef = useRef<HTMLDivElement>(null);
+
+    const location = useLocation({
+        select: (location) => location.pathname,
+    });
 
     useEffect(() => {
         const onClickOutside = (e: PointerEvent) => {
@@ -26,6 +36,13 @@ export default function DropdownButton({
         };
     }, []);
 
+    // biome-ignore lint/correctness/useExhaustiveDependencies: expected behavior
+    useEffect(() => {
+        if (closeOnChangeURL) {
+            setIsOpen(false);
+        }
+    }, [location, closeOnChangeURL]);
+
     return (
         <div className="relative inline-block" ref={divRef}>
             <button
@@ -36,7 +53,12 @@ export default function DropdownButton({
                 {buttonContent}
             </button>
             {isOpen && (
-                <div className="absolute z-100 top-full right-0 w-max bg-(--surface-strong) p-2 shadow-md rounded-xl">
+                <div
+                    className={twMerge(
+                        "absolute z-100 top-full right-0 w-max bg-(--surface-strong) p-2 shadow-md rounded-xl",
+                        dropdownClassName,
+                    )}
+                >
                     {children}
                 </div>
             )}

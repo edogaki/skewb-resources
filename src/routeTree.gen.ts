@@ -15,6 +15,8 @@ import { Route as LayerSolverRouteImport } from './routes/layer-solver'
 import { Route as LayersCatalogRouteImport } from './routes/layers-catalog'
 import { Route as OneLookTrainerRouteImport } from './routes/one-look-trainer'
 import { Route as TrainerRouteImport } from './routes/trainer'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogBlogTitleRouteImport } from './routes/blog/$blogTitle'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +48,16 @@ const TrainerRoute = TrainerRouteImport.update({
   path: '/trainer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogBlogTitleRoute = BlogBlogTitleRouteImport.update({
+  id: '/blog/$blogTitle',
+  path: '/blog/$blogTitle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +66,8 @@ export interface FileRoutesByFullPath {
   '/layers-catalog': typeof LayersCatalogRoute
   '/one-look-trainer': typeof OneLookTrainerRoute
   '/trainer': typeof TrainerRoute
+  '/blog/$blogTitle': typeof BlogBlogTitleRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +76,8 @@ export interface FileRoutesByTo {
   '/layers-catalog': typeof LayersCatalogRoute
   '/one-look-trainer': typeof OneLookTrainerRoute
   '/trainer': typeof TrainerRoute
+  '/blog/$blogTitle': typeof BlogBlogTitleRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +87,8 @@ export interface FileRoutesById {
   '/layers-catalog': typeof LayersCatalogRoute
   '/one-look-trainer': typeof OneLookTrainerRoute
   '/trainer': typeof TrainerRoute
+  '/blog/$blogTitle': typeof BlogBlogTitleRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +99,8 @@ export interface FileRouteTypes {
     | '/layers-catalog'
     | '/one-look-trainer'
     | '/trainer'
+    | '/blog/$blogTitle'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +109,8 @@ export interface FileRouteTypes {
     | '/layers-catalog'
     | '/one-look-trainer'
     | '/trainer'
+    | '/blog/$blogTitle'
+    | '/blog'
   id:
     | '__root__'
     | '/'
@@ -97,6 +119,8 @@ export interface FileRouteTypes {
     | '/layers-catalog'
     | '/one-look-trainer'
     | '/trainer'
+    | '/blog/$blogTitle'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +130,8 @@ export interface RootRouteChildren {
   LayersCatalogRoute: typeof LayersCatalogRoute
   OneLookTrainerRoute: typeof OneLookTrainerRoute
   TrainerRoute: typeof TrainerRoute
+  BlogBlogTitleRoute: typeof BlogBlogTitleRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +178,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrainerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$blogTitle': {
+      id: '/blog/$blogTitle'
+      path: '/blog/$blogTitle'
+      fullPath: '/blog/$blogTitle'
+      preLoaderRoute: typeof BlogBlogTitleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +202,8 @@ const rootRouteChildren: RootRouteChildren = {
   LayersCatalogRoute: LayersCatalogRoute,
   OneLookTrainerRoute: OneLookTrainerRoute,
   TrainerRoute: TrainerRoute,
+  BlogBlogTitleRoute: BlogBlogTitleRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
