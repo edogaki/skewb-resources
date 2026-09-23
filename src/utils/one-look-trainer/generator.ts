@@ -110,6 +110,8 @@ export async function generateRandomOneLookCase(
         scrambleAlg = (await solveSkewb(state)).invert();
     } while (scrambleAlg.turns.length < 7);
 
+    state.standardizeForWCA();
+
     return {
         state,
         scrambleAlg,
