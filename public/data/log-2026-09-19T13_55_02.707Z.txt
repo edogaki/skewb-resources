@@ -1,0 +1,1112 @@
+Layer case elwm (6-mover): 1488 nobar scrambles with it as layer case
+Layer case eswh (6-mover): 1080 nobar scrambles with it as layer case
+Layer case eoxu (6-mover): 960 nobar scrambles with it as layer case
+Layer case furo (6-mover): 960 nobar scrambles with it as layer case
+Layer case mxur (6-mover): 960 nobar scrambles with it as layer case
+Layer case nxur (6-mover): 960 nobar scrambles with it as layer case
+Layer case ehqm (6-mover): 864 nobar scrambles with it as layer case
+Layer case egjl (6-mover): 816 nobar scrambles with it as layer case
+Layer case egwm (6-mover): 816 nobar scrambles with it as layer case
+Layer case fhqs (6-mover): 816 nobar scrambles with it as layer case
+Layer case mxtr (6-mover): 816 nobar scrambles with it as layer case
+Layer case mxuq (4-mover): 816 nobar scrambles with it as layer case
+Layer case ekwm (5-mover): 792 nobar scrambles with it as layer case
+Layer case eswm (5-mover): 792 nobar scrambles with it as layer case
+Layer case flwm (5-mover): 792 nobar scrambles with it as layer case
+Layer case fnpt (5-mover): 792 nobar scrambles with it as layer case
+Layer case ekpm (6-mover): 768 nobar scrambles with it as layer case
+Layer case flwt (6-mover): 768 nobar scrambles with it as layer case
+Layer case euwm (4-mover): 720 nobar scrambles with it as layer case
+Layer case fnpu (4-mover): 720 nobar scrambles with it as layer case
+Layer case mvur (5-mover): 720 nobar scrambles with it as layer case
+Layer case nwur (5-mover): 720 nobar scrambles with it as layer case
+Layer case egvn (6-mover): 696 nobar scrambles with it as layer case
+Layer case egwn (6-mover): 696 nobar scrambles with it as layer case
+Layer case ekwo (6-mover): 696 nobar scrambles with it as layer case
+Layer case elim (6-mover): 696 nobar scrambles with it as layer case
+Layer case elwh (6-mover): 696 nobar scrambles with it as layer case
+Layer case elwo (5-mover): 696 nobar scrambles with it as layer case
+Layer case elxm (5-mover): 696 nobar scrambles with it as layer case
+Layer case emqh (6-mover): 696 nobar scrambles with it as layer case
+Layer case envh (5-mover): 696 nobar scrambles with it as layer case
+Layer case eorh (6-mover): 696 nobar scrambles with it as layer case
+Layer case eoxt (4-mover): 696 nobar scrambles with it as layer case
+Layer case esxh (5-mover): 696 nobar scrambles with it as layer case
+Layer case etph (5-mover): 696 nobar scrambles with it as layer case
+Layer case euqm (5-mover): 696 nobar scrambles with it as layer case
+Layer case euwh (5-mover): 696 nobar scrambles with it as layer case
+Layer case fhps (6-mover): 696 nobar scrambles with it as layer case
+Layer case fhpt (6-mover): 696 nobar scrambles with it as layer case
+Layer case flxm (6-mover): 696 nobar scrambles with it as layer case
+Layer case fnvu (5-mover): 696 nobar scrambles with it as layer case
+Layer case fsro (4-mover): 696 nobar scrambles with it as layer case
+Layer case egim (5-mover): 672 nobar scrambles with it as layer case
+Layer case etvn (5-mover): 672 nobar scrambles with it as layer case
+Layer case fhjt (5-mover): 672 nobar scrambles with it as layer case
+Layer case fmqs (5-mover): 672 nobar scrambles with it as layer case
+Layer case egvm (4-mover): 648 nobar scrambles with it as layer case
+Layer case egxm (4-mover): 648 nobar scrambles with it as layer case
+Layer case elru (6-mover): 648 nobar scrambles with it as layer case
+Layer case elvm (5-mover): 648 nobar scrambles with it as layer case
+Layer case elwn (5-mover): 648 nobar scrambles with it as layer case
+Layer case enpl (5-mover): 648 nobar scrambles with it as layer case
+Layer case eovu (5-mover): 648 nobar scrambles with it as layer case
+Layer case etvl (5-mover): 648 nobar scrambles with it as layer case
+Layer case fhqt (4-mover): 648 nobar scrambles with it as layer case
+Layer case fhqu (4-mover): 648 nobar scrambles with it as layer case
+Layer case fuqo (5-mover): 648 nobar scrambles with it as layer case
+Layer case mvtq (5-mover): 648 nobar scrambles with it as layer case
+Layer case egqm (5-mover): 624 nobar scrambles with it as layer case
+Layer case ekqm (6-mover): 624 nobar scrambles with it as layer case
+Layer case elio (6-mover): 624 nobar scrambles with it as layer case
+Layer case elxh (6-mover): 624 nobar scrambles with it as layer case
+Layer case enxu (5-mover): 624 nobar scrambles with it as layer case
+Layer case eojt (6-mover): 624 nobar scrambles with it as layer case
+Layer case esvh (6-mover): 624 nobar scrambles with it as layer case
+Layer case etvh (5-mover): 624 nobar scrambles with it as layer case
+Layer case etvm (4-mover): 624 nobar scrambles with it as layer case
+Layer case etwh (6-mover): 624 nobar scrambles with it as layer case
+Layer case eujm (6-mover): 624 nobar scrambles with it as layer case
+Layer case fhqm (5-mover): 624 nobar scrambles with it as layer case
+Layer case flws (6-mover): 624 nobar scrambles with it as layer case
+Layer case fnqs (4-mover): 624 nobar scrambles with it as layer case
+Layer case furm (5-mover): 624 nobar scrambles with it as layer case
+Layer case mvuq (5-mover): 624 nobar scrambles with it as layer case
+Layer case mxtq (5-mover): 624 nobar scrambles with it as layer case
+Layer case egws (6-mover): 600 nobar scrambles with it as layer case
+Layer case ekwh (6-mover): 600 nobar scrambles with it as layer case
+Layer case emjt (6-mover): 600 nobar scrambles with it as layer case
+Layer case enpt (5-mover): 600 nobar scrambles with it as layer case
+Layer case enrh (5-mover): 600 nobar scrambles with it as layer case
+Layer case eoph (5-mover): 600 nobar scrambles with it as layer case
+Layer case esjh (6-mover): 600 nobar scrambles with it as layer case
+Layer case etjm (6-mover): 600 nobar scrambles with it as layer case
+Layer case etqm (5-mover): 600 nobar scrambles with it as layer case
+Layer case euxm (5-mover): 600 nobar scrambles with it as layer case
+Layer case fhws (6-mover): 600 nobar scrambles with it as layer case
+Layer case fnru (5-mover): 600 nobar scrambles with it as layer case
+Layer case fnvs (5-mover): 600 nobar scrambles with it as layer case
+Layer case fswm (5-mover): 600 nobar scrambles with it as layer case
+Layer case egin (5-mover): 576 nobar scrambles with it as layer case
+Layer case egjt (5-mover): 576 nobar scrambles with it as layer case
+Layer case ehjm (5-mover): 576 nobar scrambles with it as layer case
+Layer case ekrt (6-mover): 576 nobar scrambles with it as layer case
+Layer case elit (6-mover): 576 nobar scrambles with it as layer case
+Layer case elph (6-mover): 576 nobar scrambles with it as layer case
+Layer case envu (6-mover): 576 nobar scrambles with it as layer case
+Layer case enxh (6-mover): 576 nobar scrambles with it as layer case
+Layer case euph (6-mover): 576 nobar scrambles with it as layer case
+Layer case eurl (6-mover): 576 nobar scrambles with it as layer case
+Layer case fhjs (5-mover): 576 nobar scrambles with it as layer case
+Layer case flpu (6-mover): 576 nobar scrambles with it as layer case
+Layer case fuqm (6-mover): 576 nobar scrambles with it as layer case
+Layer case mqsx (4-mover): 576 nobar scrambles with it as layer case
+Layer case mquw (4-mover): 576 nobar scrambles with it as layer case
+Layer case mqux (6-mover): 576 nobar scrambles with it as layer case
+Layer case mwsr (5-mover): 576 nobar scrambles with it as layer case
+Layer case mwuq (5-mover): 576 nobar scrambles with it as layer case
+Layer case egwt (5-mover): 552 nobar scrambles with it as layer case
+Layer case egxo (6-mover): 552 nobar scrambles with it as layer case
+Layer case ehin (6-mover): 552 nobar scrambles with it as layer case
+Layer case ehpl (6-mover): 552 nobar scrambles with it as layer case
+Layer case ehqs (5-mover): 552 nobar scrambles with it as layer case
+Layer case ehwm (5-mover): 552 nobar scrambles with it as layer case
+Layer case ekih (7-mover): 552 nobar scrambles with it as layer case
+Layer case ekjt (6-mover): 552 nobar scrambles with it as layer case
+Layer case ekpt (6-mover): 552 nobar scrambles with it as layer case
+Layer case ekrh (6-mover): 552 nobar scrambles with it as layer case
+Layer case ekvh (6-mover): 552 nobar scrambles with it as layer case
+Layer case elin (6-mover): 552 nobar scrambles with it as layer case
+Layer case elis (6-mover): 552 nobar scrambles with it as layer case
+Layer case eljh (7-mover): 552 nobar scrambles with it as layer case
+Layer case eljm (6-mover): 552 nobar scrambles with it as layer case
+Layer case elpm (5-mover): 552 nobar scrambles with it as layer case
+Layer case elqh (6-mover): 552 nobar scrambles with it as layer case
+Layer case elvh (6-mover): 552 nobar scrambles with it as layer case
+Layer case elvo (6-mover): 552 nobar scrambles with it as layer case
+Layer case elwt (5-mover): 552 nobar scrambles with it as layer case
+Layer case elxn (6-mover): 552 nobar scrambles with it as layer case
+Layer case emph (6-mover): 552 nobar scrambles with it as layer case
+Layer case emqs (5-mover): 552 nobar scrambles with it as layer case
+Layer case emxu (5-mover): 552 nobar scrambles with it as layer case
+Layer case enjs (5-mover): 552 nobar scrambles with it as layer case
+Layer case enqh (6-mover): 552 nobar scrambles with it as layer case
+Layer case envs (4-mover): 552 nobar scrambles with it as layer case
+Layer case eojh (6-mover): 552 nobar scrambles with it as layer case
+Layer case esjn (5-mover): 552 nobar scrambles with it as layer case
+Layer case etjh (6-mover): 552 nobar scrambles with it as layer case
+Layer case fhru (6-mover): 552 nobar scrambles with it as layer case
+Layer case fhvs (5-mover): 552 nobar scrambles with it as layer case
+Layer case flpt (6-mover): 552 nobar scrambles with it as layer case
+Layer case ftqm (4-mover): 552 nobar scrambles with it as layer case
+Layer case ftvn (5-mover): 552 nobar scrambles with it as layer case
+Layer case furn (5-mover): 552 nobar scrambles with it as layer case
+Layer case egvo (4-mover): 528 nobar scrambles with it as layer case
+Layer case egxu (5-mover): 528 nobar scrambles with it as layer case
+Layer case ehws (6-mover): 528 nobar scrambles with it as layer case
+Layer case ekim (6-mover): 528 nobar scrambles with it as layer case
+Layer case ekin (6-mover): 528 nobar scrambles with it as layer case
+Layer case ekqh (6-mover): 528 nobar scrambles with it as layer case
+Layer case ekqt (6-mover): 528 nobar scrambles with it as layer case
+Layer case ekvn (6-mover): 528 nobar scrambles with it as layer case
+Layer case ekxm (5-mover): 528 nobar scrambles with it as layer case
+Layer case emiu (5-mover): 528 nobar scrambles with it as layer case
+Layer case emjh (6-mover): 528 nobar scrambles with it as layer case
+Layer case emwl (6-mover): 528 nobar scrambles with it as layer case
+Layer case enru (5-mover): 528 nobar scrambles with it as layer case
+Layer case eoju (5-mover): 528 nobar scrambles with it as layer case
+Layer case eopt (5-mover): 528 nobar scrambles with it as layer case
+Layer case eopu (5-mover): 528 nobar scrambles with it as layer case
+Layer case eowh (6-mover): 528 nobar scrambles with it as layer case
+Layer case eowu (5-mover): 528 nobar scrambles with it as layer case
+Layer case esrh (6-mover): 528 nobar scrambles with it as layer case
+Layer case eujo (5-mover): 528 nobar scrambles with it as layer case
+Layer case euvm (6-mover): 528 nobar scrambles with it as layer case
+Layer case euwn (5-mover): 528 nobar scrambles with it as layer case
+Layer case fhrt (4-mover): 528 nobar scrambles with it as layer case
+Layer case fhxu (5-mover): 528 nobar scrambles with it as layer case
+Layer case fljs (6-mover): 528 nobar scrambles with it as layer case
+Layer case fljt (6-mover): 528 nobar scrambles with it as layer case
+Layer case flps (6-mover): 528 nobar scrambles with it as layer case
+Layer case flvn (6-mover): 528 nobar scrambles with it as layer case
+Layer case flwo (5-mover): 528 nobar scrambles with it as layer case
+Layer case fmpu (5-mover): 528 nobar scrambles with it as layer case
+Layer case fnqu (6-mover): 528 nobar scrambles with it as layer case
+Layer case fswo (5-mover): 528 nobar scrambles with it as layer case
+Layer case ftjo (5-mover): 528 nobar scrambles with it as layer case
+Layer case fupo (5-mover): 528 nobar scrambles with it as layer case
+Layer case fuwo (5-mover): 528 nobar scrambles with it as layer case
+Layer case fuxm (5-mover): 528 nobar scrambles with it as layer case
+Layer case mvtr (5-mover): 528 nobar scrambles with it as layer case
+Layer case mwtr (5-mover): 528 nobar scrambles with it as layer case
+Layer case mwur (4-mover): 528 nobar scrambles with it as layer case
+Layer case egio (5-mover): 504 nobar scrambles with it as layer case
+Layer case egrn (5-mover): 504 nobar scrambles with it as layer case
+Layer case egvu (5-mover): 504 nobar scrambles with it as layer case
+Layer case ehim (5-mover): 504 nobar scrambles with it as layer case
+Layer case ehql (5-mover): 504 nobar scrambles with it as layer case
+Layer case ekis (6-mover): 504 nobar scrambles with it as layer case
+Layer case ekph (6-mover): 504 nobar scrambles with it as layer case
+Layer case ekpo (6-mover): 504 nobar scrambles with it as layer case
+Layer case ekxh (6-mover): 504 nobar scrambles with it as layer case
+Layer case emqu (6-mover): 504 nobar scrambles with it as layer case
+Layer case emws (5-mover): 504 nobar scrambles with it as layer case
+Layer case eniu (5-mover): 504 nobar scrambles with it as layer case
+Layer case enjh (6-mover): 504 nobar scrambles with it as layer case
+Layer case enjt (5-mover): 504 nobar scrambles with it as layer case
+Layer case enph (6-mover): 504 nobar scrambles with it as layer case
+Layer case eoxh (5-mover): 504 nobar scrambles with it as layer case
+Layer case esjm (5-mover): 504 nobar scrambles with it as layer case
+Layer case esxm (5-mover): 504 nobar scrambles with it as layer case
+Layer case eujh (6-mover): 504 nobar scrambles with it as layer case
+Layer case eurh (5-mover): 504 nobar scrambles with it as layer case
+Layer case euro (5-mover): 504 nobar scrambles with it as layer case
+Layer case euxh (6-mover): 504 nobar scrambles with it as layer case
+Layer case fhju (5-mover): 504 nobar scrambles with it as layer case
+Layer case fhpo (5-mover): 504 nobar scrambles with it as layer case
+Layer case fhxt (5-mover): 504 nobar scrambles with it as layer case
+Layer case fljn (6-mover): 504 nobar scrambles with it as layer case
+Layer case flxt (6-mover): 504 nobar scrambles with it as layer case
+Layer case fnrt (5-mover): 504 nobar scrambles with it as layer case
+Layer case foxu (5-mover): 504 nobar scrambles with it as layer case
+Layer case fsjo (5-mover): 504 nobar scrambles with it as layer case
+Layer case ftpn (5-mover): 504 nobar scrambles with it as layer case
+Layer case fuvn (6-mover): 504 nobar scrambles with it as layer case
+Layer case egpn (6-mover): 480 nobar scrambles with it as layer case
+Layer case egpt (6-mover): 480 nobar scrambles with it as layer case
+Layer case ehpu (5-mover): 480 nobar scrambles with it as layer case
+Layer case ehxn (5-mover): 480 nobar scrambles with it as layer case
+Layer case ekit (6-mover): 480 nobar scrambles with it as layer case
+Layer case ekjs (6-mover): 480 nobar scrambles with it as layer case
+Layer case ekrm (6-mover): 480 nobar scrambles with it as layer case
+Layer case eliu (6-mover): 480 nobar scrambles with it as layer case
+Layer case eljn (6-mover): 480 nobar scrambles with it as layer case
+Layer case elqm (5-mover): 480 nobar scrambles with it as layer case
+Layer case elrh (6-mover): 480 nobar scrambles with it as layer case
+Layer case elws (5-mover): 480 nobar scrambles with it as layer case
+Layer case enpu (5-mover): 480 nobar scrambles with it as layer case
+Layer case enqs (5-mover): 480 nobar scrambles with it as layer case
+Layer case eojs (5-mover): 480 nobar scrambles with it as layer case
+Layer case eovs (5-mover): 480 nobar scrambles with it as layer case
+Layer case eoxs (5-mover): 480 nobar scrambles with it as layer case
+Layer case esin (5-mover): 480 nobar scrambles with it as layer case
+Layer case esio (5-mover): 480 nobar scrambles with it as layer case
+Layer case esqm (5-mover): 480 nobar scrambles with it as layer case
+Layer case eswn (6-mover): 480 nobar scrambles with it as layer case
+Layer case eswo (6-mover): 480 nobar scrambles with it as layer case
+Layer case etpm (5-mover): 480 nobar scrambles with it as layer case
+Layer case eujn (5-mover): 480 nobar scrambles with it as layer case
+Layer case fhpn (6-mover): 480 nobar scrambles with it as layer case
+Layer case fhvn (6-mover): 480 nobar scrambles with it as layer case
+Layer case fljm (6-mover): 480 nobar scrambles with it as layer case
+Layer case flwu (6-mover): 480 nobar scrambles with it as layer case
+Layer case fmjt (5-mover): 480 nobar scrambles with it as layer case
+Layer case fmpt (6-mover): 480 nobar scrambles with it as layer case
+Layer case fnju (5-mover): 480 nobar scrambles with it as layer case
+Layer case fnvt (5-mover): 480 nobar scrambles with it as layer case
+Layer case fnws (5-mover): 480 nobar scrambles with it as layer case
+Layer case fopt (6-mover): 480 nobar scrambles with it as layer case
+Layer case ftqo (5-mover): 480 nobar scrambles with it as layer case
+Layer case ftro (5-mover): 480 nobar scrambles with it as layer case
+Layer case ftvm (5-mover): 480 nobar scrambles with it as layer case
+Layer case fuwm (5-mover): 480 nobar scrambles with it as layer case
+Layer case egjn (6-mover): 456 nobar scrambles with it as layer case
+Layer case egjo (5-mover): 456 nobar scrambles with it as layer case
+Layer case egql (6-mover): 456 nobar scrambles with it as layer case
+Layer case egqs (5-mover): 456 nobar scrambles with it as layer case
+Layer case egrs (6-mover): 456 nobar scrambles with it as layer case
+Layer case egwo (6-mover): 456 nobar scrambles with it as layer case
+Layer case egxl (5-mover): 456 nobar scrambles with it as layer case
+Layer case egxn (5-mover): 456 nobar scrambles with it as layer case
+Layer case ehjs (6-mover): 456 nobar scrambles with it as layer case
+Layer case ehju (5-mover): 456 nobar scrambles with it as layer case
+Layer case ehpn (6-mover): 456 nobar scrambles with it as layer case
+Layer case ehps (5-mover): 456 nobar scrambles with it as layer case
+Layer case ehqu (6-mover): 456 nobar scrambles with it as layer case
+Layer case ehwn (5-mover): 456 nobar scrambles with it as layer case
+Layer case ehxm (6-mover): 456 nobar scrambles with it as layer case
+Layer case ekjh (7-mover): 456 nobar scrambles with it as layer case
+Layer case ekjm (6-mover): 456 nobar scrambles with it as layer case
+Layer case ekrs (5-mover): 456 nobar scrambles with it as layer case
+Layer case ekvm (5-mover): 456 nobar scrambles with it as layer case
+Layer case ekws (5-mover): 456 nobar scrambles with it as layer case
+Layer case eljt (6-mover): 456 nobar scrambles with it as layer case
+Layer case elro (6-mover): 456 nobar scrambles with it as layer case
+Layer case elvn (5-mover): 456 nobar scrambles with it as layer case
+Layer case elxu (6-mover): 456 nobar scrambles with it as layer case
+Layer case emju (6-mover): 456 nobar scrambles with it as layer case
+Layer case envt (4-mover): 456 nobar scrambles with it as layer case
+Layer case enwh (5-mover): 456 nobar scrambles with it as layer case
+Layer case eojl (5-mover): 456 nobar scrambles with it as layer case
+Layer case esjl (6-mover): 456 nobar scrambles with it as layer case
+Layer case esph (5-mover): 456 nobar scrambles with it as layer case
+Layer case esrl (5-mover): 456 nobar scrambles with it as layer case
+Layer case etjo (6-mover): 456 nobar scrambles with it as layer case
+Layer case etvo (4-mover): 456 nobar scrambles with it as layer case
+Layer case eupo (5-mover): 456 nobar scrambles with it as layer case
+Layer case euql (5-mover): 456 nobar scrambles with it as layer case
+Layer case eurn (6-mover): 456 nobar scrambles with it as layer case
+Layer case fhpu (5-mover): 456 nobar scrambles with it as layer case
+Layer case fhrs (6-mover): 456 nobar scrambles with it as layer case
+Layer case fhwm (5-mover): 456 nobar scrambles with it as layer case
+Layer case fhwo (6-mover): 456 nobar scrambles with it as layer case
+Layer case flqm (5-mover): 456 nobar scrambles with it as layer case
+Layer case flqu (5-mover): 456 nobar scrambles with it as layer case
+Layer case flwn (5-mover): 456 nobar scrambles with it as layer case
+Layer case fmxu (6-mover): 456 nobar scrambles with it as layer case
+Layer case foqs (4-mover): 456 nobar scrambles with it as layer case
+Layer case fowu (5-mover): 456 nobar scrambles with it as layer case
+Layer case fsqm (4-mover): 456 nobar scrambles with it as layer case
+Layer case mruw (6-mover): 456 nobar scrambles with it as layer case
+Layer case oxur (5-mover): 444 nobar scrambles with it as layer case
+Layer case egil (6-mover): 432 nobar scrambles with it as layer case
+Layer case egwu (5-mover): 432 nobar scrambles with it as layer case
+Layer case ehjl (6-mover): 432 nobar scrambles with it as layer case
+Layer case ekiu (6-mover): 432 nobar scrambles with it as layer case
+Layer case ekru (6-mover): 432 nobar scrambles with it as layer case
+Layer case ekwn (6-mover): 432 nobar scrambles with it as layer case
+Layer case ekxt (5-mover): 432 nobar scrambles with it as layer case
+Layer case emit (5-mover): 432 nobar scrambles with it as layer case
+Layer case empl (5-mover): 432 nobar scrambles with it as layer case
+Layer case emps (5-mover): 432 nobar scrambles with it as layer case
+Layer case empu (5-mover): 432 nobar scrambles with it as layer case
+Layer case emql (5-mover): 432 nobar scrambles with it as layer case
+Layer case emrh (5-mover): 432 nobar scrambles with it as layer case
+Layer case emwh (6-mover): 432 nobar scrambles with it as layer case
+Layer case enqu (5-mover): 432 nobar scrambles with it as layer case
+Layer case enxs (6-mover): 432 nobar scrambles with it as layer case
+Layer case eoqh (5-mover): 432 nobar scrambles with it as layer case
+Layer case eors (5-mover): 432 nobar scrambles with it as layer case
+Layer case eovh (6-mover): 432 nobar scrambles with it as layer case
+Layer case eows (5-mover): 432 nobar scrambles with it as layer case
+Layer case eowt (5-mover): 432 nobar scrambles with it as layer case
+Layer case espl (5-mover): 432 nobar scrambles with it as layer case
+Layer case esqh (6-mover): 432 nobar scrambles with it as layer case
+Layer case esvn (5-mover): 432 nobar scrambles with it as layer case
+Layer case eswl (5-mover): 432 nobar scrambles with it as layer case
+Layer case etql (5-mover): 432 nobar scrambles with it as layer case
+Layer case etrh (6-mover): 432 nobar scrambles with it as layer case
+Layer case etwl (5-mover): 432 nobar scrambles with it as layer case
+Layer case etwm (5-mover): 432 nobar scrambles with it as layer case
+Layer case etxh (6-mover): 432 nobar scrambles with it as layer case
+Layer case eurm (5-mover): 432 nobar scrambles with it as layer case
+Layer case euvh (6-mover): 432 nobar scrambles with it as layer case
+Layer case euvn (4-mover): 432 nobar scrambles with it as layer case
+Layer case euwo (5-mover): 432 nobar scrambles with it as layer case
+Layer case fhxs (5-mover): 432 nobar scrambles with it as layer case
+Layer case fljo (6-mover): 432 nobar scrambles with it as layer case
+Layer case flpo (5-mover): 432 nobar scrambles with it as layer case
+Layer case flru (6-mover): 432 nobar scrambles with it as layer case
+Layer case flvm (6-mover): 432 nobar scrambles with it as layer case
+Layer case fmqt (5-mover): 432 nobar scrambles with it as layer case
+Layer case fmqu (4-mover): 432 nobar scrambles with it as layer case
+Layer case fnps (5-mover): 432 nobar scrambles with it as layer case
+Layer case fnxu (5-mover): 432 nobar scrambles with it as layer case
+Layer case fopu (5-mover): 432 nobar scrambles with it as layer case
+Layer case fsjn (5-mover): 432 nobar scrambles with it as layer case
+Layer case fspo (5-mover): 432 nobar scrambles with it as layer case
+Layer case ftpo (5-mover): 432 nobar scrambles with it as layer case
+Layer case ftrm (6-mover): 432 nobar scrambles with it as layer case
+Layer case ftwn (5-mover): 432 nobar scrambles with it as layer case
+Layer case ftxo (5-mover): 432 nobar scrambles with it as layer case
+Layer case fuvm (5-mover): 432 nobar scrambles with it as layer case
+Layer case fuwn (5-mover): 432 nobar scrambles with it as layer case
+Layer case mvsq (4-mover): 432 nobar scrambles with it as layer case
+Layer case mwtq (4-mover): 432 nobar scrambles with it as layer case
+Layer case egit (5-mover): 408 nobar scrambles with it as layer case
+Layer case egpl (7-mover): 408 nobar scrambles with it as layer case
+Layer case egqo (5-mover): 408 nobar scrambles with it as layer case
+Layer case egru (6-mover): 408 nobar scrambles with it as layer case
+Layer case egvl (6-mover): 408 nobar scrambles with it as layer case
+Layer case egwl (6-mover): 408 nobar scrambles with it as layer case
+Layer case ehpm (6-mover): 408 nobar scrambles with it as layer case
+Layer case ehqn (6-mover): 408 nobar scrambles with it as layer case
+Layer case ekpn (6-mover): 408 nobar scrambles with it as layer case
+Layer case ekqs (5-mover): 408 nobar scrambles with it as layer case
+Layer case emjl (6-mover): 408 nobar scrambles with it as layer case
+Layer case empt (5-mover): 408 nobar scrambles with it as layer case
+Layer case emvh (6-mover): 408 nobar scrambles with it as layer case
+Layer case emwu (6-mover): 408 nobar scrambles with it as layer case
+Layer case enjl (6-mover): 408 nobar scrambles with it as layer case
+Layer case eoqs (5-mover): 408 nobar scrambles with it as layer case
+Layer case eorl (6-mover): 408 nobar scrambles with it as layer case
+Layer case eovt (4-mover): 408 nobar scrambles with it as layer case
+Layer case espm (4-mover): 408 nobar scrambles with it as layer case
+Layer case esvm (4-mover): 408 nobar scrambles with it as layer case
+Layer case etio (6-mover): 408 nobar scrambles with it as layer case
+Layer case etjl (7-mover): 408 nobar scrambles with it as layer case
+Layer case etqh (6-mover): 408 nobar scrambles with it as layer case
+Layer case etrl (6-mover): 408 nobar scrambles with it as layer case
+Layer case etxm (5-mover): 408 nobar scrambles with it as layer case
+Layer case eupl (6-mover): 408 nobar scrambles with it as layer case
+Layer case eupm (6-mover): 408 nobar scrambles with it as layer case
+Layer case euqo (6-mover): 408 nobar scrambles with it as layer case
+Layer case euxl (6-mover): 408 nobar scrambles with it as layer case
+Layer case euxn (6-mover): 408 nobar scrambles with it as layer case
+Layer case fhjm (5-mover): 408 nobar scrambles with it as layer case
+Layer case fhrm (5-mover): 408 nobar scrambles with it as layer case
+Layer case fhxo (6-mover): 408 nobar scrambles with it as layer case
+Layer case flqs (5-mover): 408 nobar scrambles with it as layer case
+Layer case flvt (6-mover): 408 nobar scrambles with it as layer case
+Layer case fmju (6-mover): 408 nobar scrambles with it as layer case
+Layer case fmru (6-mover): 408 nobar scrambles with it as layer case
+Layer case fnqt (4-mover): 408 nobar scrambles with it as layer case
+Layer case fnrs (5-mover): 408 nobar scrambles with it as layer case
+Layer case fnwt (4-mover): 408 nobar scrambles with it as layer case
+Layer case fnwu (6-mover): 408 nobar scrambles with it as layer case
+Layer case fovu (6-mover): 408 nobar scrambles with it as layer case
+Layer case fsqo (4-mover): 408 nobar scrambles with it as layer case
+Layer case fswn (5-mover): 408 nobar scrambles with it as layer case
+Layer case ftvo (5-mover): 408 nobar scrambles with it as layer case
+Layer case fupn (6-mover): 408 nobar scrambles with it as layer case
+Layer case mptw (4-mover): 408 nobar scrambles with it as layer case
+Layer case mpux (4-mover): 408 nobar scrambles with it as layer case
+Layer case nqux (4-mover): 408 nobar scrambles with it as layer case
+Layer case egro (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehis (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehpt (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehqo (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehrm (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehvn (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehwl (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehwu (5-mover): 384 nobar scrambles with it as layer case
+Layer case ehxs (5-mover): 384 nobar scrambles with it as layer case
+Layer case ekio (6-mover): 384 nobar scrambles with it as layer case
+Layer case ekvs (5-mover): 384 nobar scrambles with it as layer case
+Layer case ekvu (6-mover): 384 nobar scrambles with it as layer case
+Layer case ekwt (5-mover): 384 nobar scrambles with it as layer case
+Layer case ekxo (5-mover): 384 nobar scrambles with it as layer case
+Layer case elpn (6-mover): 384 nobar scrambles with it as layer case
+Layer case elpo (6-mover): 384 nobar scrambles with it as layer case
+Layer case elqs (6-mover): 384 nobar scrambles with it as layer case
+Layer case elvt (6-mover): 384 nobar scrambles with it as layer case
+Layer case elxt (6-mover): 384 nobar scrambles with it as layer case
+Layer case emjs (6-mover): 384 nobar scrambles with it as layer case
+Layer case emxh (5-mover): 384 nobar scrambles with it as layer case
+Layer case enju (6-mover): 384 nobar scrambles with it as layer case
+Layer case enps (5-mover): 384 nobar scrambles with it as layer case
+Layer case enrl (5-mover): 384 nobar scrambles with it as layer case
+Layer case envl (6-mover): 384 nobar scrambles with it as layer case
+Layer case enxl (5-mover): 384 nobar scrambles with it as layer case
+Layer case eopl (6-mover): 384 nobar scrambles with it as layer case
+Layer case eovl (5-mover): 384 nobar scrambles with it as layer case
+Layer case esjo (6-mover): 384 nobar scrambles with it as layer case
+Layer case esrm (5-mover): 384 nobar scrambles with it as layer case
+Layer case esvo (5-mover): 384 nobar scrambles with it as layer case
+Layer case etjn (6-mover): 384 nobar scrambles with it as layer case
+Layer case etxl (6-mover): 384 nobar scrambles with it as layer case
+Layer case euqh (5-mover): 384 nobar scrambles with it as layer case
+Layer case euvl (5-mover): 384 nobar scrambles with it as layer case
+Layer case fhro (5-mover): 384 nobar scrambles with it as layer case
+Layer case flju (6-mover): 384 nobar scrambles with it as layer case
+Layer case flpm (5-mover): 384 nobar scrambles with it as layer case
+Layer case flqn (5-mover): 384 nobar scrambles with it as layer case
+Layer case flrn (6-mover): 384 nobar scrambles with it as layer case
+Layer case flxo (5-mover): 384 nobar scrambles with it as layer case
+Layer case fnxt (5-mover): 384 nobar scrambles with it as layer case
+Layer case foqt (5-mover): 384 nobar scrambles with it as layer case
+Layer case ftwm (5-mover): 384 nobar scrambles with it as layer case
+Layer case mpsw (5-mover): 384 nobar scrambles with it as layer case
+Layer case mqtw (5-mover): 384 nobar scrambles with it as layer case
+Layer case mqsw (6-mover): 372 nobar scrambles with it as layer case
+Layer case egis (6-mover): 360 nobar scrambles with it as layer case
+Layer case egiu (5-mover): 360 nobar scrambles with it as layer case
+Layer case egjm (5-mover): 360 nobar scrambles with it as layer case
+Layer case egps (6-mover): 360 nobar scrambles with it as layer case
+Layer case egqn (5-mover): 360 nobar scrambles with it as layer case
+Layer case egrm (5-mover): 360 nobar scrambles with it as layer case
+Layer case ehjt (5-mover): 360 nobar scrambles with it as layer case
+Layer case ehqt (4-mover): 360 nobar scrambles with it as layer case
+Layer case ehrs (6-mover): 360 nobar scrambles with it as layer case
+Layer case ehvm (4-mover): 360 nobar scrambles with it as layer case
+Layer case ehwo (6-mover): 360 nobar scrambles with it as layer case
+Layer case ekjn (6-mover): 360 nobar scrambles with it as layer case
+Layer case ekpu (5-mover): 360 nobar scrambles with it as layer case
+Layer case ekvt (5-mover): 360 nobar scrambles with it as layer case
+Layer case ekxn (6-mover): 360 nobar scrambles with it as layer case
+Layer case ekxs (5-mover): 360 nobar scrambles with it as layer case
+Layer case ekxu (5-mover): 360 nobar scrambles with it as layer case
+Layer case eljs (6-mover): 360 nobar scrambles with it as layer case
+Layer case elpu (5-mover): 360 nobar scrambles with it as layer case
+Layer case elqu (5-mover): 360 nobar scrambles with it as layer case
+Layer case elrn (5-mover): 360 nobar scrambles with it as layer case
+Layer case elrs (5-mover): 360 nobar scrambles with it as layer case
+Layer case elrt (5-mover): 360 nobar scrambles with it as layer case
+Layer case elvu (5-mover): 360 nobar scrambles with it as layer case
+Layer case emvu (4-mover): 360 nobar scrambles with it as layer case
+Layer case emxt (5-mover): 360 nobar scrambles with it as layer case
+Layer case enrs (6-mover): 360 nobar scrambles with it as layer case
+Layer case enxt (6-mover): 360 nobar scrambles with it as layer case
+Layer case eoru (5-mover): 360 nobar scrambles with it as layer case
+Layer case eoxl (5-mover): 360 nobar scrambles with it as layer case
+Layer case esql (6-mover): 360 nobar scrambles with it as layer case
+Layer case esrn (5-mover): 360 nobar scrambles with it as layer case
+Layer case esro (5-mover): 360 nobar scrambles with it as layer case
+Layer case etpn (5-mover): 360 nobar scrambles with it as layer case
+Layer case etpo (6-mover): 360 nobar scrambles with it as layer case
+Layer case etqo (5-mover): 360 nobar scrambles with it as layer case
+Layer case etrn (6-mover): 360 nobar scrambles with it as layer case
+Layer case etro (5-mover): 360 nobar scrambles with it as layer case
+Layer case etwn (6-mover): 360 nobar scrambles with it as layer case
+Layer case fhjn (6-mover): 360 nobar scrambles with it as layer case
+Layer case fhjo (5-mover): 360 nobar scrambles with it as layer case
+Layer case fhpm (5-mover): 360 nobar scrambles with it as layer case
+Layer case fhqo (5-mover): 360 nobar scrambles with it as layer case
+Layer case fhwn (6-mover): 360 nobar scrambles with it as layer case
+Layer case flpn (5-mover): 360 nobar scrambles with it as layer case
+Layer case flqo (5-mover): 360 nobar scrambles with it as layer case
+Layer case flro (5-mover): 360 nobar scrambles with it as layer case
+Layer case flrt (5-mover): 360 nobar scrambles with it as layer case
+Layer case flvo (6-mover): 360 nobar scrambles with it as layer case
+Layer case fmps (6-mover): 360 nobar scrambles with it as layer case
+Layer case fmws (5-mover): 360 nobar scrambles with it as layer case
+Layer case fmxs (6-mover): 360 nobar scrambles with it as layer case
+Layer case fmxt (5-mover): 360 nobar scrambles with it as layer case
+Layer case fovs (5-mover): 360 nobar scrambles with it as layer case
+Layer case fows (6-mover): 360 nobar scrambles with it as layer case
+Layer case foxs (5-mover): 360 nobar scrambles with it as layer case
+Layer case foxt (5-mover): 360 nobar scrambles with it as layer case
+Layer case fsrm (6-mover): 360 nobar scrambles with it as layer case
+Layer case fsrn (5-mover): 360 nobar scrambles with it as layer case
+Layer case ftxm (6-mover): 360 nobar scrambles with it as layer case
+Layer case fuqn (4-mover): 360 nobar scrambles with it as layer case
+Layer case fuxo (5-mover): 360 nobar scrambles with it as layer case
+Layer case mrux (4-mover): 360 nobar scrambles with it as layer case
+Layer case nrux (4-mover): 360 nobar scrambles with it as layer case
+Layer case egjs (6-mover): 336 nobar scrambles with it as layer case
+Layer case egpm (5-mover): 336 nobar scrambles with it as layer case
+Layer case egpo (6-mover): 336 nobar scrambles with it as layer case
+Layer case egqu (5-mover): 336 nobar scrambles with it as layer case
+Layer case egrl (5-mover): 336 nobar scrambles with it as layer case
+Layer case ehjn (6-mover): 336 nobar scrambles with it as layer case
+Layer case ehru (6-mover): 336 nobar scrambles with it as layer case
+Layer case ehvs (4-mover): 336 nobar scrambles with it as layer case
+Layer case ehvt (6-mover): 336 nobar scrambles with it as layer case
+Layer case ehwt (4-mover): 336 nobar scrambles with it as layer case
+Layer case ehxo (6-mover): 336 nobar scrambles with it as layer case
+Layer case ekju (6-mover): 336 nobar scrambles with it as layer case
+Layer case ekro (6-mover): 336 nobar scrambles with it as layer case
+Layer case eljo (6-mover): 336 nobar scrambles with it as layer case
+Layer case elrm (5-mover): 336 nobar scrambles with it as layer case
+Layer case elwu (5-mover): 336 nobar scrambles with it as layer case
+Layer case elxo (5-mover): 336 nobar scrambles with it as layer case
+Layer case emqt (5-mover): 336 nobar scrambles with it as layer case
+Layer case emvt (4-mover): 336 nobar scrambles with it as layer case
+Layer case emxs (5-mover): 336 nobar scrambles with it as layer case
+Layer case enql (5-mover): 336 nobar scrambles with it as layer case
+Layer case enqt (5-mover): 336 nobar scrambles with it as layer case
+Layer case eoqt (5-mover): 336 nobar scrambles with it as layer case
+Layer case eoqu (4-mover): 336 nobar scrambles with it as layer case
+Layer case esvl (5-mover): 336 nobar scrambles with it as layer case
+Layer case etrm (5-mover): 336 nobar scrambles with it as layer case
+Layer case etxo (6-mover): 336 nobar scrambles with it as layer case
+Layer case eujl (5-mover): 336 nobar scrambles with it as layer case
+Layer case euqn (4-mover): 336 nobar scrambles with it as layer case
+Layer case euvo (5-mover): 336 nobar scrambles with it as layer case
+Layer case fhqn (5-mover): 336 nobar scrambles with it as layer case
+Layer case fhrn (6-mover): 336 nobar scrambles with it as layer case
+Layer case fhxm (5-mover): 336 nobar scrambles with it as layer case
+Layer case flxu (6-mover): 336 nobar scrambles with it as layer case
+Layer case fmvu (4-mover): 336 nobar scrambles with it as layer case
+Layer case fnxs (5-mover): 336 nobar scrambles with it as layer case
+Layer case foqu (5-mover): 336 nobar scrambles with it as layer case
+Layer case fors (6-mover): 336 nobar scrambles with it as layer case
+Layer case fsqn (4-mover): 336 nobar scrambles with it as layer case
+Layer case fsvm (5-mover): 336 nobar scrambles with it as layer case
+Layer case fsvn (5-mover): 336 nobar scrambles with it as layer case
+Layer case fsvo (5-mover): 336 nobar scrambles with it as layer case
+Layer case ftrn (5-mover): 336 nobar scrambles with it as layer case
+Layer case fuvo (4-mover): 336 nobar scrambles with it as layer case
+Layer case egvs (5-mover): 312 nobar scrambles with it as layer case
+Layer case egvt (5-mover): 312 nobar scrambles with it as layer case
+Layer case ehio (6-mover): 312 nobar scrambles with it as layer case
+Layer case ehit (5-mover): 312 nobar scrambles with it as layer case
+Layer case ehpo (6-mover): 312 nobar scrambles with it as layer case
+Layer case ehrl (6-mover): 312 nobar scrambles with it as layer case
+Layer case ehrn (6-mover): 312 nobar scrambles with it as layer case
+Layer case ehro (6-mover): 312 nobar scrambles with it as layer case
+Layer case ehvl (5-mover): 312 nobar scrambles with it as layer case
+Layer case ehxu (6-mover): 312 nobar scrambles with it as layer case
+Layer case ekps (5-mover): 312 nobar scrambles with it as layer case
+Layer case ekvo (5-mover): 312 nobar scrambles with it as layer case
+Layer case elih (7-mover): 312 nobar scrambles with it as layer case
+Layer case elqn (5-mover): 312 nobar scrambles with it as layer case
+Layer case elvs (5-mover): 312 nobar scrambles with it as layer case
+Layer case emwt (5-mover): 312 nobar scrambles with it as layer case
+Layer case enwu (4-mover): 312 nobar scrambles with it as layer case
+Layer case eops (5-mover): 312 nobar scrambles with it as layer case
+Layer case eoql (4-mover): 312 nobar scrambles with it as layer case
+Layer case espn (5-mover): 312 nobar scrambles with it as layer case
+Layer case espo (5-mover): 312 nobar scrambles with it as layer case
+Layer case esxl (4-mover): 312 nobar scrambles with it as layer case
+Layer case esxn (4-mover): 312 nobar scrambles with it as layer case
+Layer case esxo (4-mover): 312 nobar scrambles with it as layer case
+Layer case etpl (6-mover): 312 nobar scrambles with it as layer case
+Layer case etwo (5-mover): 312 nobar scrambles with it as layer case
+Layer case eupn (5-mover): 312 nobar scrambles with it as layer case
+Layer case euxo (5-mover): 312 nobar scrambles with it as layer case
+Layer case fhvt (5-mover): 312 nobar scrambles with it as layer case
+Layer case fhwt (5-mover): 312 nobar scrambles with it as layer case
+Layer case flqt (5-mover): 312 nobar scrambles with it as layer case
+Layer case flxn (5-mover): 312 nobar scrambles with it as layer case
+Layer case fmrt (4-mover): 312 nobar scrambles with it as layer case
+Layer case fmwt (5-mover): 312 nobar scrambles with it as layer case
+Layer case fmwu (5-mover): 312 nobar scrambles with it as layer case
+Layer case fops (5-mover): 312 nobar scrambles with it as layer case
+Layer case fort (4-mover): 312 nobar scrambles with it as layer case
+Layer case foru (5-mover): 312 nobar scrambles with it as layer case
+Layer case fowt (5-mover): 312 nobar scrambles with it as layer case
+Layer case fspn (5-mover): 312 nobar scrambles with it as layer case
+Layer case ftwo (5-mover): 312 nobar scrambles with it as layer case
+Layer case fupm (4-mover): 312 nobar scrambles with it as layer case
+Layer case mvsr (4-mover): 312 nobar scrambles with it as layer case
+Layer case nwtr (4-mover): 312 nobar scrambles with it as layer case
+Layer case egju (6-mover): 288 nobar scrambles with it as layer case
+Layer case egxs (5-mover): 288 nobar scrambles with it as layer case
+Layer case ehjo (6-mover): 288 nobar scrambles with it as layer case
+Layer case ekqu (5-mover): 288 nobar scrambles with it as layer case
+Layer case ekrn (6-mover): 288 nobar scrambles with it as layer case
+Layer case ekwu (6-mover): 288 nobar scrambles with it as layer case
+Layer case elpt (6-mover): 288 nobar scrambles with it as layer case
+Layer case emvs (6-mover): 288 nobar scrambles with it as layer case
+Layer case emxl (6-mover): 288 nobar scrambles with it as layer case
+Layer case eowl (6-mover): 288 nobar scrambles with it as layer case
+Layer case esim (5-mover): 288 nobar scrambles with it as layer case
+Layer case esqn (5-mover): 288 nobar scrambles with it as layer case
+Layer case etqn (5-mover): 288 nobar scrambles with it as layer case
+Layer case fhwu (5-mover): 288 nobar scrambles with it as layer case
+Layer case flrm (6-mover): 288 nobar scrambles with it as layer case
+Layer case flrs (5-mover): 288 nobar scrambles with it as layer case
+Layer case flvu (6-mover): 288 nobar scrambles with it as layer case
+Layer case fmvs (5-mover): 288 nobar scrambles with it as layer case
+Layer case fmvt (5-mover): 288 nobar scrambles with it as layer case
+Layer case fnjt (5-mover): 288 nobar scrambles with it as layer case
+Layer case ftqn (6-mover): 288 nobar scrambles with it as layer case
+Layer case mptx (5-mover): 288 nobar scrambles with it as layer case
+Layer case mqtx (5-mover): 288 nobar scrambles with it as layer case
+Layer case mrtx (5-mover): 288 nobar scrambles with it as layer case
+Layer case mxsr (6-mover): 276 nobar scrambles with it as layer case
+Layer case nxtr (6-mover): 276 nobar scrambles with it as layer case
+Layer case egxt (5-mover): 264 nobar scrambles with it as layer case
+Layer case ehil (6-mover): 264 nobar scrambles with it as layer case
+Layer case ehiu (5-mover): 264 nobar scrambles with it as layer case
+Layer case ehvu (5-mover): 264 nobar scrambles with it as layer case
+Layer case ehxl (5-mover): 264 nobar scrambles with it as layer case
+Layer case ehxt (5-mover): 264 nobar scrambles with it as layer case
+Layer case ekjo (6-mover): 264 nobar scrambles with it as layer case
+Layer case ekqn (6-mover): 264 nobar scrambles with it as layer case
+Layer case ekqo (6-mover): 264 nobar scrambles with it as layer case
+Layer case elju (6-mover): 264 nobar scrambles with it as layer case
+Layer case emrl (5-mover): 264 nobar scrambles with it as layer case
+Layer case emrt (5-mover): 264 nobar scrambles with it as layer case
+Layer case emru (5-mover): 264 nobar scrambles with it as layer case
+Layer case emvl (4-mover): 264 nobar scrambles with it as layer case
+Layer case enwl (4-mover): 264 nobar scrambles with it as layer case
+Layer case esqo (5-mover): 264 nobar scrambles with it as layer case
+Layer case etxn (5-mover): 264 nobar scrambles with it as layer case
+Layer case euwl (5-mover): 264 nobar scrambles with it as layer case
+Layer case fhvu (5-mover): 264 nobar scrambles with it as layer case
+Layer case flvs (6-mover): 264 nobar scrambles with it as layer case
+Layer case flxs (6-mover): 264 nobar scrambles with it as layer case
+Layer case fmrs (5-mover): 264 nobar scrambles with it as layer case
+Layer case fovt (5-mover): 264 nobar scrambles with it as layer case
+Layer case fsxn (5-mover): 264 nobar scrambles with it as layer case
+Layer case fuxn (5-mover): 264 nobar scrambles with it as layer case
+Layer case egqt (6-mover): 240 nobar scrambles with it as layer case
+Layer case elps (5-mover): 240 nobar scrambles with it as layer case
+Layer case elqt (5-mover): 240 nobar scrambles with it as layer case
+Layer case enwt (4-mover): 240 nobar scrambles with it as layer case
+Layer case eoiu (6-mover): 240 nobar scrambles with it as layer case
+Layer case eort (5-mover): 240 nobar scrambles with it as layer case
+Layer case fhvm (6-mover): 240 nobar scrambles with it as layer case
+Layer case fspm (4-mover): 240 nobar scrambles with it as layer case
+Layer case fsxo (5-mover): 240 nobar scrambles with it as layer case
+Layer case fujo (6-mover): 240 nobar scrambles with it as layer case
+Layer case mpsx (5-mover): 240 nobar scrambles with it as layer case
+Layer case mwsq (5-mover): 240 nobar scrambles with it as layer case
+Layer case nqtx (5-mover): 240 nobar scrambles with it as layer case
+Layer case egpu (6-mover): 216 nobar scrambles with it as layer case
+Layer case ehrt (5-mover): 216 nobar scrambles with it as layer case
+Layer case ehvo (5-mover): 216 nobar scrambles with it as layer case
+Layer case elqo (6-mover): 216 nobar scrambles with it as layer case
+Layer case elxs (6-mover): 216 nobar scrambles with it as layer case
+Layer case emrs (5-mover): 216 nobar scrambles with it as layer case
+Layer case etin (5-mover): 216 nobar scrambles with it as layer case
+Layer case fhxn (6-mover): 216 nobar scrambles with it as layer case
+Layer case fmjs (5-mover): 216 nobar scrambles with it as layer case
+Layer case ftxn (5-mover): 216 nobar scrambles with it as layer case
+Layer case mpuw (4-mover): 216 nobar scrambles with it as layer case
+Layer case mrtw (4-mover): 216 nobar scrambles with it as layer case
+Layer case egrt (4-mover): 192 nobar scrambles with it as layer case
+Layer case emis (5-mover): 192 nobar scrambles with it as layer case
+Layer case enrt (5-mover): 192 nobar scrambles with it as layer case
+Layer case enws (5-mover): 192 nobar scrambles with it as layer case
+Layer case euio (6-mover): 192 nobar scrambles with it as layer case
+Layer case fhvo (4-mover): 192 nobar scrambles with it as layer case
+Layer case foju (6-mover): 192 nobar scrambles with it as layer case
+Layer case fsxm (5-mover): 192 nobar scrambles with it as layer case
+Layer case ftjn (5-mover): 192 nobar scrambles with it as layer case
+Layer case ftpm (5-mover): 192 nobar scrambles with it as layer case
+Layer case mrsx (4-mover): 180 nobar scrambles with it as layer case
+Layer case nrtx (4-mover): 180 nobar scrambles with it as layer case
+Layer case enit (5-mover): 168 nobar scrambles with it as layer case
+Layer case fsjm (5-mover): 168 nobar scrambles with it as layer case
+Layer case ekig (7-mover): 132 nobar scrambles with it as layer case
+Layer case fljh (7-mover): 132 nobar scrambles with it as layer case
+Layer case orux (7-mover): 132 nobar scrambles with it as layer case
+Layer case egik (6-mover): 108 nobar scrambles with it as layer case
+Layer case fhjl (6-mover): 108 nobar scrambles with it as layer case
+Layer case mpsv (6-mover): 36 nobar scrambles with it as layer case
+Layer case nqtw (6-mover): 36 nobar scrambles with it as layer case
+Layer case mvsp (5-mover): 18 nobar scrambles with it as layer case
+Layer case nwtq (5-mover): 18 nobar scrambles with it as layer case
+Initial number of no bar scrambles: 50980
+Crossing out 994 no bar scrambles with layer case elwm. 1 layer cases covers 1.95% of no bar scrambles
+Crossing out 846 no bar scrambles with layer case eswh. 2 layer cases covers 3.61% of no bar scrambles
+Crossing out 840 no bar scrambles with layer case ehqm. 3 layer cases covers 5.26% of no bar scrambles
+Crossing out 828 no bar scrambles with layer case eoxu. 4 layer cases covers 6.88% of no bar scrambles
+Crossing out 828 no bar scrambles with layer case furo. 5 layer cases covers 8.51% of no bar scrambles
+Crossing out 720 no bar scrambles with layer case eswm. 6 layer cases covers 9.92% of no bar scrambles
+Crossing out 720 no bar scrambles with layer case fnpt. 7 layer cases covers 11.33% of no bar scrambles
+Crossing out 660 no bar scrambles with layer case etph. 8 layer cases covers 12.62% of no bar scrambles
+Crossing out 660 no bar scrambles with layer case envh. 9 layer cases covers 13.92% of no bar scrambles
+Crossing out 624 no bar scrambles with layer case fnvu. 10 layer cases covers 15.14% of no bar scrambles
+Crossing out 624 no bar scrambles with layer case fhqm. 11 layer cases covers 16.37% of no bar scrambles
+Crossing out 624 no bar scrambles with layer case fmqs. 12 layer cases covers 17.59% of no bar scrambles
+Crossing out 600 no bar scrambles with layer case egim. 13 layer cases covers 18.77% of no bar scrambles
+Crossing out 588 no bar scrambles with layer case fhpt. 14 layer cases covers 19.92% of no bar scrambles
+Crossing out 588 no bar scrambles with layer case egvn. 15 layer cases covers 21.07% of no bar scrambles
+Crossing out 588 no bar scrambles with layer case mxtq. 16 layer cases covers 22.23% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case euph. 17 layer cases covers 23.36% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case euqm. 18 layer cases covers 24.49% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case enxh. 19 layer cases covers 25.62% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case mquw. 20 layer cases covers 26.75% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case fhqs. 21 layer cases covers 27.88% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case egwm. 22 layer cases covers 29.01% of no bar scrambles
+Crossing out 576 no bar scrambles with layer case mxuq. 23 layer cases covers 30.14% of no bar scrambles
+Crossing out 564 no bar scrambles with layer case esxh. 24 layer cases covers 31.24% of no bar scrambles
+Crossing out 552 no bar scrambles with layer case fhjt. 25 layer cases covers 32.33% of no bar scrambles
+Crossing out 552 no bar scrambles with layer case ekih. 26 layer cases covers 33.41% of no bar scrambles
+Crossing out 540 no bar scrambles with layer case mvuq. 27 layer cases covers 34.47% of no bar scrambles
+Crossing out 528 no bar scrambles with layer case ekwh. 28 layer cases covers 35.50% of no bar scrambles
+Crossing out 512 no bar scrambles with layer case elwh. 29 layer cases covers 36.51% of no bar scrambles
+Crossing out 504 no bar scrambles with layer case esjh. 30 layer cases covers 37.50% of no bar scrambles
+Crossing out 504 no bar scrambles with layer case fsjo. 31 layer cases covers 38.49% of no bar scrambles
+Crossing out 504 no bar scrambles with layer case fnvs. 32 layer cases covers 39.47% of no bar scrambles
+Crossing out 488 no bar scrambles with layer case elim. 33 layer cases covers 40.43% of no bar scrambles
+Crossing out 488 no bar scrambles with layer case ekin. 34 layer cases covers 41.39% of no bar scrambles
+Crossing out 480 no bar scrambles with layer case egws. 35 layer cases covers 42.33% of no bar scrambles
+Crossing out 480 no bar scrambles with layer case fhvs. 36 layer cases covers 43.27% of no bar scrambles
+Crossing out 464 no bar scrambles with layer case fljs. 37 layer cases covers 44.18% of no bar scrambles
+Crossing out 456 no bar scrambles with layer case eoph. 38 layer cases covers 45.08% of no bar scrambles
+Crossing out 432 no bar scrambles with layer case fhju. 39 layer cases covers 45.92% of no bar scrambles
+Crossing out 432 no bar scrambles with layer case ekqm. 40 layer cases covers 46.77% of no bar scrambles
+Crossing out 432 no bar scrambles with layer case flws. 41 layer cases covers 47.62% of no bar scrambles
+Crossing out 432 no bar scrambles with layer case flqu. 42 layer cases covers 48.47% of no bar scrambles
+Crossing out 432 no bar scrambles with layer case envu. 43 layer cases covers 49.31% of no bar scrambles
+Crossing out 432 no bar scrambles with layer case fuqm. 44 layer cases covers 50.16% of no bar scrambles
+Crossing out 408 no bar scrambles with layer case ehin. 45 layer cases covers 50.96% of no bar scrambles
+Crossing out 408 no bar scrambles with layer case egio. 46 layer cases covers 51.76% of no bar scrambles
+Crossing out 408 no bar scrambles with layer case enrh. 47 layer cases covers 52.56% of no bar scrambles
+Crossing out 396 no bar scrambles with layer case ekrh. 48 layer cases covers 53.34% of no bar scrambles
+Crossing out 396 no bar scrambles with layer case eojh. 49 layer cases covers 54.12% of no bar scrambles
+Crossing out 396 no bar scrambles with layer case enpt. 50 layer cases covers 54.89% of no bar scrambles
+Crossing out 384 no bar scrambles with layer case ehpl. 51 layer cases covers 55.65% of no bar scrambles
+Crossing out 384 no bar scrambles with layer case ehpm. 52 layer cases covers 56.40% of no bar scrambles
+Crossing out 384 no bar scrambles with layer case ehrm. 53 layer cases covers 57.15% of no bar scrambles
+Crossing out 384 no bar scrambles with layer case mqtw. 54 layer cases covers 57.91% of no bar scrambles
+Crossing out 384 no bar scrambles with layer case etvn. 55 layer cases covers 58.66% of no bar scrambles
+Crossing out 384 no bar scrambles with layer case egwt. 56 layer cases covers 59.41% of no bar scrambles
+Crossing out 372 no bar scrambles with layer case fswm. 57 layer cases covers 60.14% of no bar scrambles
+Crossing out 360 no bar scrambles with layer case elph. 58 layer cases covers 60.85% of no bar scrambles
+Crossing out 360 no bar scrambles with layer case esjo. 59 layer cases covers 61.55% of no bar scrambles
+Crossing out 348 no bar scrambles with layer case eoxt. 60 layer cases covers 62.24% of no bar scrambles
+Crossing out 348 no bar scrambles with layer case flpu. 61 layer cases covers 62.92% of no bar scrambles
+Crossing out 336 no bar scrambles with layer case furm. 62 layer cases covers 63.58% of no bar scrambles
+Crossing out 336 no bar scrambles with layer case elvn. 63 layer cases covers 64.24% of no bar scrambles
+Crossing out 336 no bar scrambles with layer case etqm. 64 layer cases covers 64.90% of no bar scrambles
+Crossing out 324 no bar scrambles with layer case elxh. 65 layer cases covers 65.53% of no bar scrambles
+Crossing out 312 no bar scrambles with layer case elit. 66 layer cases covers 66.14% of no bar scrambles
+Crossing out 312 no bar scrambles with layer case envs. 67 layer cases covers 66.76% of no bar scrambles
+Crossing out 312 no bar scrambles with layer case ftjo. 68 layer cases covers 67.37% of no bar scrambles
+Crossing out 312 no bar scrambles with layer case fuqo. 69 layer cases covers 67.98% of no bar scrambles
+Crossing out 308 no bar scrambles with layer case elwo. 70 layer cases covers 68.58% of no bar scrambles
+Crossing out 300 no bar scrambles with layer case elvh. 71 layer cases covers 69.17% of no bar scrambles
+Crossing out 300 no bar scrambles with layer case elio. 72 layer cases covers 69.76% of no bar scrambles
+Crossing out 300 no bar scrambles with layer case flwt. 73 layer cases covers 70.35% of no bar scrambles
+Crossing out 300 no bar scrambles with layer case eoxs. 74 layer cases covers 70.94% of no bar scrambles
+Crossing out 288 no bar scrambles with layer case eujm. 75 layer cases covers 71.50% of no bar scrambles
+Crossing out 288 no bar scrambles with layer case mqux. 76 layer cases covers 72.07% of no bar scrambles
+Crossing out 288 no bar scrambles with layer case esvn. 77 layer cases covers 72.63% of no bar scrambles
+Crossing out 276 no bar scrambles with layer case egjl. 78 layer cases covers 73.17% of no bar scrambles
+Crossing out 264 no bar scrambles with layer case fhwo. 79 layer cases covers 73.69% of no bar scrambles
+Crossing out 264 no bar scrambles with layer case eowt. 80 layer cases covers 74.21% of no bar scrambles
+Crossing out 252 no bar scrambles with layer case elin. 81 layer cases covers 74.70% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case egxu. 82 layer cases covers 75.17% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case mptw. 83 layer cases covers 75.65% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case fspo. 84 layer cases covers 76.12% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case fmqt. 85 layer cases covers 76.59% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case ehqu. 86 layer cases covers 77.06% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case enqh. 87 layer cases covers 77.53% of no bar scrambles
+Crossing out 240 no bar scrambles with layer case ehpu. 88 layer cases covers 78.00% of no bar scrambles
+Crossing out 228 no bar scrambles with layer case egjt. 89 layer cases covers 78.45% of no bar scrambles
+Crossing out 228 no bar scrambles with layer case ehjm. 90 layer cases covers 78.89% of no bar scrambles
+Crossing out 228 no bar scrambles with layer case mxtr. 91 layer cases covers 79.34% of no bar scrambles
+Crossing out 216 no bar scrambles with layer case eujo. 92 layer cases covers 79.76% of no bar scrambles
+Crossing out 216 no bar scrambles with layer case ehpo. 93 layer cases covers 80.19% of no bar scrambles
+Crossing out 216 no bar scrambles with layer case flxt. 94 layer cases covers 80.61% of no bar scrambles
+Crossing out 216 no bar scrambles with layer case ehxn. 95 layer cases covers 81.04% of no bar scrambles
+Crossing out 216 no bar scrambles with layer case fovu. 96 layer cases covers 81.46% of no bar scrambles
+Crossing out 216 no bar scrambles with layer case fmqu. 97 layer cases covers 81.88% of no bar scrambles
+Crossing out 204 no bar scrambles with layer case fhqu. 98 layer cases covers 82.28% of no bar scrambles
+Crossing out 204 no bar scrambles with layer case ftro. 99 layer cases covers 82.68% of no bar scrambles
+Crossing out 192 no bar scrambles with layer case ekjh. 100 layer cases covers 83.06% of no bar scrambles
+Crossing out 192 no bar scrambles with layer case envl. 101 layer cases covers 83.44% of no bar scrambles
+Crossing out 192 no bar scrambles with layer case fhps. 102 layer cases covers 83.81% of no bar scrambles
+Crossing out 180 no bar scrambles with layer case egin. 103 layer cases covers 84.17% of no bar scrambles
+Crossing out 180 no bar scrambles with layer case egxl. 104 layer cases covers 84.52% of no bar scrambles
+Crossing out 180 no bar scrambles with layer case egvm. 105 layer cases covers 84.87% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case fhrm. 106 layer cases covers 85.20% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case fujo. 107 layer cases covers 85.53% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case euqn. 108 layer cases covers 85.86% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case enjh. 109 layer cases covers 86.19% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case egil. 110 layer cases covers 86.52% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case ehwt. 111 layer cases covers 86.85% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case foxt. 112 layer cases covers 87.18% of no bar scrambles
+Crossing out 168 no bar scrambles with layer case eurn. 113 layer cases covers 87.51% of no bar scrambles
+Crossing out 156 no bar scrambles with layer case egxt. 114 layer cases covers 87.81% of no bar scrambles
+Crossing out 156 no bar scrambles with layer case eopu. 115 layer cases covers 88.12% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case emjh. 116 layer cases covers 88.40% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case ehrn. 117 layer cases covers 88.69% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case emvh. 118 layer cases covers 88.97% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case ehpn. 119 layer cases covers 89.25% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case eowh. 120 layer cases covers 89.53% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case etql. 121 layer cases covers 89.82% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case fswo. 122 layer cases covers 90.10% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case etqh. 123 layer cases covers 90.38% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case eopt. 124 layer cases covers 90.66% of no bar scrambles
+Crossing out 144 no bar scrambles with layer case ehxm. 125 layer cases covers 90.95% of no bar scrambles
+Crossing out 140 no bar scrambles with layer case elwn. 126 layer cases covers 91.22% of no bar scrambles
+Crossing out 132 no bar scrambles with layer case ekig. 127 layer cases covers 91.48% of no bar scrambles
+Crossing out 132 no bar scrambles with layer case elpu. 128 layer cases covers 91.74% of no bar scrambles
+Crossing out 132 no bar scrambles with layer case enwh. 129 layer cases covers 92.00% of no bar scrambles
+Crossing out 132 no bar scrambles with layer case fuwm. 130 layer cases covers 92.26% of no bar scrambles
+Crossing out 132 no bar scrambles with layer case ftrm. 131 layer cases covers 92.51% of no bar scrambles
+Crossing out 120 no bar scrambles with layer case ekqh. 132 layer cases covers 92.75% of no bar scrambles
+Crossing out 120 no bar scrambles with layer case ekxh. 133 layer cases covers 92.99% of no bar scrambles
+Crossing out 120 no bar scrambles with layer case enph. 134 layer cases covers 93.22% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case eojl. 135 layer cases covers 93.43% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case ehvm. 136 layer cases covers 93.64% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case ekpm. 137 layer cases covers 93.86% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case enxs. 138 layer cases covers 94.07% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case fuwo. 139 layer cases covers 94.28% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case egrs. 140 layer cases covers 94.49% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case enpu. 141 layer cases covers 94.70% of no bar scrambles
+Crossing out 108 no bar scrambles with layer case egqu. 142 layer cases covers 94.92% of no bar scrambles
+Crossing out 104 no bar scrambles with layer case ekpn. 143 layer cases covers 95.12% of no bar scrambles
+Crossing out 96 no bar scrambles with layer case elqh. 144 layer cases covers 95.31% of no bar scrambles
+Crossing out 96 no bar scrambles with layer case eoiu. 145 layer cases covers 95.50% of no bar scrambles
+Crossing out 96 no bar scrambles with layer case emqt. 146 layer cases covers 95.68% of no bar scrambles
+Crossing out 96 no bar scrambles with layer case euvn. 147 layer cases covers 95.87% of no bar scrambles
+Crossing out 96 no bar scrambles with layer case nwur. 148 layer cases covers 96.06% of no bar scrambles
+Crossing out 84 no bar scrambles with layer case ekps. 149 layer cases covers 96.23% of no bar scrambles
+Crossing out 84 no bar scrambles with layer case ehvn. 150 layer cases covers 96.39% of no bar scrambles
+Crossing out 72 no bar scrambles with layer case egxm. 151 layer cases covers 96.53% of no bar scrambles
+Crossing out 72 no bar scrambles with layer case esph. 152 layer cases covers 96.67% of no bar scrambles
+Crossing out 72 no bar scrambles with layer case eops. 153 layer cases covers 96.81% of no bar scrambles
+Crossing out 72 no bar scrambles with layer case mxur. 154 layer cases covers 96.96% of no bar scrambles
+Crossing out 72 no bar scrambles with layer case fuvn. 155 layer cases covers 97.10% of no bar scrambles
+Crossing out 64 no bar scrambles with layer case ekjn. 156 layer cases covers 97.22% of no bar scrambles
+Crossing out 60 no bar scrambles with layer case elih. 157 layer cases covers 97.34% of no bar scrambles
+Crossing out 60 no bar scrambles with layer case ehql. 158 layer cases covers 97.46% of no bar scrambles
+Crossing out 60 no bar scrambles with layer case egjo. 159 layer cases covers 97.58% of no bar scrambles
+Crossing out 60 no bar scrambles with layer case ehim. 160 layer cases covers 97.69% of no bar scrambles
+Crossing out 60 no bar scrambles with layer case mvtq. 161 layer cases covers 97.81% of no bar scrambles
+Crossing out 60 no bar scrambles with layer case flqt. 162 layer cases covers 97.93% of no bar scrambles
+Crossing out 56 no bar scrambles with layer case flvt. 163 layer cases covers 98.04% of no bar scrambles
+Crossing out 48 no bar scrambles with layer case ehiu. 164 layer cases covers 98.13% of no bar scrambles
+Crossing out 48 no bar scrambles with layer case euvh. 165 layer cases covers 98.23% of no bar scrambles
+Crossing out 48 no bar scrambles with layer case egit. 166 layer cases covers 98.32% of no bar scrambles
+Crossing out 48 no bar scrambles with layer case egxs. 167 layer cases covers 98.42% of no bar scrambles
+Crossing out 48 no bar scrambles with layer case eovu. 168 layer cases covers 98.51% of no bar scrambles
+Crossing out 48 no bar scrambles with layer case ekwm. 169 layer cases covers 98.60% of no bar scrambles
+Crossing out 40 no bar scrambles with layer case eljs. 170 layer cases covers 98.68% of no bar scrambles
+Crossing out 36 no bar scrambles with layer case egru. 171 layer cases covers 98.75% of no bar scrambles
+Crossing out 36 no bar scrambles with layer case fowt. 172 layer cases covers 98.82% of no bar scrambles
+Crossing out 36 no bar scrambles with layer case eort. 173 layer cases covers 98.89% of no bar scrambles
+Crossing out 36 no bar scrambles with layer case egpt. 174 layer cases covers 98.96% of no bar scrambles
+Crossing out 36 no bar scrambles with layer case egju. 175 layer cases covers 99.03% of no bar scrambles
+Crossing out 36 no bar scrambles with layer case ehjo. 176 layer cases covers 99.11% of no bar scrambles
+Crossing out 32 no bar scrambles with layer case flvm. 177 layer cases covers 99.17% of no bar scrambles
+Crossing out 30 no bar scrambles with layer case eorh. 178 layer cases covers 99.23% of no bar scrambles
+Crossing out 24 no bar scrambles with layer case mptx. 179 layer cases covers 99.27% of no bar scrambles
+Crossing out 24 no bar scrambles with layer case ehjn. 180 layer cases covers 99.32% of no bar scrambles
+Crossing out 24 no bar scrambles with layer case fsrm. 181 layer cases covers 99.37% of no bar scrambles
+Crossing out 24 no bar scrambles with layer case etpo. 182 layer cases covers 99.42% of no bar scrambles
+Crossing out 24 no bar scrambles with layer case fsvo. 183 layer cases covers 99.46% of no bar scrambles
+Crossing out 24 no bar scrambles with layer case fhqn. 184 layer cases covers 99.51% of no bar scrambles
+Crossing out 16 no bar scrambles with layer case elwt. 185 layer cases covers 99.54% of no bar scrambles
+Crossing out 16 no bar scrambles with layer case elpm. 186 layer cases covers 99.57% of no bar scrambles
+Crossing out 16 no bar scrambles with layer case flvo. 187 layer cases covers 99.60% of no bar scrambles
+Crossing out 16 no bar scrambles with layer case ekqn. 188 layer cases covers 99.64% of no bar scrambles
+Crossing out 16 no bar scrambles with layer case flvs. 189 layer cases covers 99.67% of no bar scrambles
+Crossing out 16 no bar scrambles with layer case ekxn. 190 layer cases covers 99.70% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case nqtw. 191 layer cases covers 99.72% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case egrn. 192 layer cases covers 99.74% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case espm. 193 layer cases covers 99.77% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case fuvo. 194 layer cases covers 99.79% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case ftxm. 195 layer cases covers 99.82% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case eljt. 196 layer cases covers 99.84% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case ekwo. 197 layer cases covers 99.86% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case fhvo. 198 layer cases covers 99.89% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case fhxm. 199 layer cases covers 99.91% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case fhxo. 200 layer cases covers 99.93% of no bar scrambles
+Crossing out 12 no bar scrambles with layer case ehxl. 201 layer cases covers 99.96% of no bar scrambles
+Crossing out 8 no bar scrambles with layer case ekvn. 202 layer cases covers 99.97% of no bar scrambles
+Crossing out 8 no bar scrambles with layer case elxm. 203 layer cases covers 99.99% of no bar scrambles
+Crossing out 6 no bar scrambles with layer case elru. 204 layer cases covers 100.00% of no bar scrambles
+solns of no bar layers that will cover all no bar scrambles, in order of most common to least
+x R r' b' B' r b
+x R b' B' b B' r
+x r b r R B r
+x R' b r B R B
+x R b' R r' R B
+x R b' r B' b
+x r b' B' R' b
+x b' B r R b'
+x B b' R' r' B
+x r B' R' b R
+x r' b R B r
+x B' b' R b' r
+x R' B' b' r' R'
+x r b' B' R' r' b
+x R b' R' b' B' r'
+x B' b' r b' R'
+x R' B' b' B' r b
+x b R' r' B R'
+x r b B b R' B'
+x B' r b' R
+x R b R B r b'
+x R b B r' B b'
+x b R' r' B
+x b R' b B r
+x B R r b R
+x R r b' R B r b'
+x b B R' B r
+x r' B' b R' r' b
+x R b r B r b'
+x R b B' r R B'
+x r' B R b R
+x r R' b R B'
+x R b' R r B b'
+x r R b' B R b'
+x R b' B' r b B'
+x R' B r b R
+x R r b R r' B
+x b' B' b R' r'
+x R b B R r
+x R r' b' r R' B'
+x R b B' r B b'
+x r b R r' B
+x R r R' b' R' B'
+x r b R B r' B'
+x R' b' R' r' B r
+x R' b' R' B' r'
+x B b B' r R
+x r b' R B r b'
+x R b r B' R B
+x b' R' b r B'
+x R B r B b' R'
+x R B r b' R' B'
+x R B' b' R' r'
+x b B' R' B' r'
+x r b R' b B'
+x r b' R' B' r'
+x b R b' B' r
+x r b' B r R b'
+x r' R b R' B R'
+x B r' b' R'
+x r B b' R b' r'
+x B b B R r
+x r B b R' b
+x r b r R B
+x b r B r b' R
+x R b r' b' B' R'
+x b' R' B r'
+x R r' b B R
+x b R' r' R' B
+x r' B r' b' R'
+x B r B b R' b
+x r' B r' R' b' R'
+x R r b' B r' b
+x r' b B R' b
+x R r b r R B
+x R B R' b R' r'
+x b' r R' r B
+x r B R b r R
+x R B b' r' B b
+x R b' B' b r
+x R r b' B R b'
+x B' r' b' R' B
+x R' B' r b
+x R' b r b' B'
+x b B' R B' r'
+x R B r' b' r' R'
+x r B' R B b' R'
+x R B r b' R'
+x B R b r R
+x B' R' r' b' R'
+x r R B b' r' B'
+x R' r' B b' R'
+x r' B r R b' R'
+x r b R b' r' B
+x r' b' R' B r
+x r' b R b' r' B'
+x b R B r'
+x b R B r
+x B b' r' R b'
+x R r b B' r R B'
+x R r B R' b' R'
+x R b R b' B r
+x b' R' b' B' r'
+x r' b' R' B' r'
+x B' b' r' R'
+x B b B R r'
+x R r b R r B
+x b B' r R
+x B R' r' b' R' B
+x R r B b r R
+x B r b' R'
+x B R' b R r'
+x R r b R' b B'
+x B R' b r R
+x R' b' B' b r
+x R' B' b R' r' b
+x R b' R' r' B r
+x R' B' R' b r' b'
+x R B r B' b' R'
+x R' b' B' b R' r'
+x R r' b' R' B'
+x R b r B' b'
+x R b R' b B r
+x R' b' B' r b
+x R B' R' r' b' R'
+x r b B R' b
+x R r' B' b r' b' R'
+x R' r' b' B' b
+x b B' R' r' b
+x R' B' b R r
+x R r' b R B b'
+x r b B' r R B'
+x r B' r B' b' R'
+x R b B' R' r' b
+x R b r B R
+x B' b' R' r'
+x R r b' R' r' B'
+x R' B b' R' r' b
+x R b r b' B'
+x R r B' r' b' R'
+x R r b' R' B'
+x b r R B' r'
+x r R' B' b' B' b
+x r' b r B' R B
+x R B b r R r
+x b B r R r
+x b' R' r' B
+x r b' B R B
+x b r' B' b' R'
+x b' R' r' B r
+x B' r' b' R'
+x B' b r R B'
+x b r' b' R' B
+x R B' b' R' r R
+x r R' B' b' R b'
+x r R' b R' b B
+x R B b r R r' B'
+x r b B r R
+x b' R' B' r' b'
+x R' B' b' R' r'
+x B r R' b r
+x r' b R r B
+x r B b r' R' b
+x R' b' R' B r
+x r B' b R' r' b
+x B b' R' b' r
+x B' r' B b' R'
+x b r B' R b'
+x r b' R' r' B'
+x R r' b r R B
+x R B b' r' R' r'
+x R r' b' B b
+x B b r R r
+x R' b' B' r b B'
+x r R' B' r' b' R'
+x R r' b B r R
+x r' b R b' B r'
+x B r' b R' B R'
+x R B' R b r
+x R' r' b' R' B r
+x R B' r R' b R
+x R' b r' b' r' B'
+x r' B b R b'
+x B r B' b R
+x R r' b' B' b
+x B' r' b r R
+x R' r' B r' b R
+x r R B b R' b
+x r R' b B' R r
+x r b B' R' b B'
+x R r b B b B
+x B b r R B'
+x B' b r R
+x b' B' r R'
+x R r' R b B R
+x r' R b r B R
+x R B b r' B' b'
+x b' B' R' r'
+x B' R' r' b R
+x R b' B' R' r' b'
+x r B r b' R'
+x r b R B R b
+x b R' b r B
+x r R b' r' R' B
