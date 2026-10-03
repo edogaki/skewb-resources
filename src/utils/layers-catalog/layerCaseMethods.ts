@@ -1,4 +1,5 @@
 import { Color } from "../renderer/color";
+import type { RubikskewbAlg } from "../solver/alg";
 import type { Tuple } from "../solver/helperTypes";
 import {
     basePieceColors,
@@ -148,3 +149,12 @@ export function generateAllLayerCaseRotations(lc: LayerCase) {
 export const allLayerCaseRotations = Object.fromEntries(
     layerCases.map((lc) => [lc, generateAllLayerCaseRotations(lc)]),
 ) as Record<LayerCase, string[]>;
+
+export function layerAlgToLayerCase(layerAlg: RubikskewbAlg) {
+    const state = new SkewbState();
+    state.turnRubikskewb("x'");
+
+    state.applyRubikskewbAlg(layerAlg.clone().invert());
+
+    return skewbStateWhiteToLayerCase(state);
+}

@@ -1,3 +1,5 @@
+import { layerAlgToLayerCase } from "../layers-catalog/layerCaseMethods";
+import { Color } from "../renderer/color";
 import {
     CenterIndex,
     SkewbMatrixState,
@@ -85,7 +87,10 @@ export function generateRandomNSCase(
         ][randomZRotation],
     );
 
-    return state;
+    return {
+        state,
+        chosenLayerCenter,
+    };
 }
 
 export async function generateRandomOneLookCase(
@@ -102,8 +107,9 @@ export async function generateRandomOneLookCase(
 
     let state: SkewbMatrixState;
     let scrambleAlg: WCAAlg;
+    let chosenLayerCenter: CenterIndex;
     do {
-        state = generateRandomNSCase(layerColor);
+        ({ state, chosenLayerCenter } = generateRandomNSCase(layerColor));
 
         state.applyRubikskewbAlg(randomLayerAlg.clone().invert());
 
@@ -116,5 +122,7 @@ export async function generateRandomOneLookCase(
         state,
         scrambleAlg,
         layerAlg: randomLayerAlg,
+        layerCase: layerAlgToLayerCase(randomLayerAlg),
+        layerColor: state.centerPieceColors[chosenLayerCenter],
     };
 }

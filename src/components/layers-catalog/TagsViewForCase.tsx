@@ -10,9 +10,11 @@ import Tooltip from "../Tooltip";
 export default function TagsViewForCase({
     layerCase,
     caseTags,
+    hideHasTags,
 }: {
     layerCase: LayerCase;
     caseTags: CaseTag[];
+    hideHasTags?: boolean;
 }) {
     const hasTagsShortest = layerCaseHasTagsShortest[layerCase];
     const hasTagsSuboptimal = layerCaseHasTagsSuboptimal[layerCase];
@@ -26,32 +28,40 @@ export default function TagsViewForCase({
                     {caseTag}
                 </span>
             ))}
-            {filterRedundantHasTags(hasTagsShortest).map(([tag, algStrs]) => (
-                <span key={tag}>
-                    <Tooltip
-                        content={algStrs.map((algStr) => (
-                            <div key={algStr}>{algStr}</div>
-                        ))}
-                    >
-                        <div className="inline-block p-1 rounded-full border border-(--line) px-2 text-sm">
-                            has:{tag}
-                        </div>
-                    </Tooltip>
-                </span>
-            ))}
-            {filterRedundantHasTags(hasTagsSuboptimal).map(([tag, algStrs]) => (
-                <span key={tag}>
-                    <Tooltip
-                        content={algStrs.map((algStr) => (
-                            <div key={algStr}>{algStr}</div>
-                        ))}
-                    >
-                        <div className="inline-block p-1 rounded-full border border-(--line) px-2 text-sm">
-                            has sub:{tag}
-                        </div>
-                    </Tooltip>
-                </span>
-            ))}
+            {!hideHasTags && (
+                <>
+                    {filterRedundantHasTags(hasTagsShortest).map(
+                        ([tag, algStrs]) => (
+                            <span key={tag}>
+                                <Tooltip
+                                    content={algStrs.map((algStr) => (
+                                        <div key={algStr}>{algStr}</div>
+                                    ))}
+                                >
+                                    <div className="inline-block p-1 rounded-full border border-(--line) px-2 text-sm">
+                                        has:{tag}
+                                    </div>
+                                </Tooltip>
+                            </span>
+                        ),
+                    )}
+                    {filterRedundantHasTags(hasTagsSuboptimal).map(
+                        ([tag, algStrs]) => (
+                            <span key={tag}>
+                                <Tooltip
+                                    content={algStrs.map((algStr) => (
+                                        <div key={algStr}>{algStr}</div>
+                                    ))}
+                                >
+                                    <div className="inline-block p-1 rounded-full border border-(--line) px-2 text-sm">
+                                        has sub:{tag}
+                                    </div>
+                                </Tooltip>
+                            </span>
+                        ),
+                    )}
+                </>
+            )}
         </div>
     );
 }

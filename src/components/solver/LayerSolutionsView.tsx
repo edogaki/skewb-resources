@@ -1,13 +1,10 @@
 import { Fragment, useState } from "react";
 import { pluralize } from "#/utils/methods";
-import { Color, tailwindColors } from "#/utils/renderer/color";
+import type { Color } from "#/utils/renderer/color";
 import type { LayerSolutions, SolverOptions } from "#/utils/solver/skewbSolver";
 import type { CenterPiece, Piece, SkewbState } from "#/utils/solver/skewbState";
+import ColorView from "../ColorView";
 import AlgorithmView from "./AlgorithmView";
-
-const colorsReverseMap = Object.fromEntries(
-    Object.entries(Color).map(([k, v]) => [v, k]),
-);
 
 export default function LayerSolutionsView({
     layerSolutions,
@@ -74,18 +71,9 @@ export default function LayerSolutionsView({
                 ) : null}
                 {centersToShow.map((c) => {
                     const color: Color = pieceColors[c][0];
-                    const colorName = colorsReverseMap[color];
                     return (
                         <div key={c}>
-                            <span
-                                className={`inline-block w-7 border border-(--line) rounded-xl ${tailwindColors[color]}`}
-                            >
-                                &nbsp;
-                            </span>
-                            &nbsp;
-                            <span className="inline-block py-1.5">
-                                {colorName}
-                            </span>
+                            <ColorView color={color} />
                             :&nbsp;
                             {!optsCopy.hideSolutionsInitially ? null : isShowShortestLength[
                                   c

@@ -7,14 +7,20 @@ import {
     useRef,
     useState,
 } from "react";
+import type { LayerCase } from "#/utils/layers-catalog/layerCases.gen";
+import { layerSolutionsComplete } from "#/utils/layers-catalog/layerSolutionsComplete.gen";
 import {
     createSanitizedAlgsFromText,
     getSelectionRangeOfNthLine,
     type OneLookTrainerOptions,
 } from "#/utils/one-look-trainer";
 import { generateRandomOneLookCase } from "#/utils/one-look-trainer/generator";
+import type { Color } from "#/utils/renderer/color";
 import { SkewbMatrixState } from "#/utils/skewb-matrix/skewbMatrixState";
 import { WCAAlg } from "#/utils/solver/alg";
+import ColorView from "../ColorView";
+import DropdownButton from "../DropdownButton";
+import LayerCaseView from "../layers-catalog/LayerCaseView";
 import Skewb3D from "../Skewb3D";
 import SkewbRenderer from "../SkewbRenderer";
 import CustomPresets from "./CustomPresets";
@@ -56,6 +62,9 @@ export default function OneLookTrainer({
         new SkewbMatrixState(),
     );
     const [scrambleAlg, setScrambleAlg] = useState<WCAAlg>(new WCAAlg(""));
+    const [layerColor, setLayerColor] = useState<Color>();
+    const [layerCase, setLayerCase] = useState<LayerCase>();
+
     const [isShowSkewbRenderer, setIsShowSkewbRenderer] = useState(true);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -75,17 +84,23 @@ export default function OneLookTrainer({
                     onSubmit={async (e) => {
                         e.preventDefault();
                         if (errorMessage !== "") return;
-                        const { state, scrambleAlg: scr } =
-                            await generateRandomOneLookCase(
-                                sanitizedAlgs,
-                                options.layerColor,
-                                nextLayerAlgIndex,
-                            );
+                        const {
+                            state,
+                            scrambleAlg: scr,
+                            layerColor,
+                            layerCase,
+                        } = await generateRandomOneLookCase(
+                            sanitizedAlgs,
+                            options.layerColor,
+                            nextLayerAlgIndex,
+                        );
                         setIsShowSkewbRenderer(
                             options.showSkewbVisualizerByDefault,
                         );
                         setSkewbState(state);
                         setScrambleAlg(scr);
+                        setLayerColor(layerColor);
+                        setLayerCase(layerCase);
                         setErrorMessage("");
                         if (
                             textareaRef.current &&
@@ -196,6 +211,26 @@ export default function OneLookTrainer({
                                 />
                             ))}
                     </div>
+                    {layerCase && layerColor && (
+                        <div>
+                            <DropdownButton
+                                className="rounded-full border border-(--line) hover:border-(--line-heavy) bg-(--surface) px-4 py-2 text-sm font-semibold text-(--sea-ink) no-underline transition hover:-translate-y-0.5 disabled:opacity-50"
+                                buttonContent="Show Layer Solution"
+                                dropdownClassName="left-0"
+                            >
+                                Layer color: <ColorView color={layerColor} />
+                                <LayerCaseView
+                                    layerCase={layerCase}
+                                    isSelectionEnabled={false}
+                                    layerSolutionsComplete={
+                                        layerSolutionsComplete
+                                    }
+                                    hideHasTags={true}
+                                    hideSetupAlg={true}
+                                />
+                            </DropdownButton>
+                        </div>
+                    )}
                 </div>
             </div>
             <OneLookTrainerOptionsView

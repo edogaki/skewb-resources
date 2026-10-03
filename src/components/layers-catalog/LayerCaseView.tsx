@@ -15,13 +15,17 @@ export default function LayerCaseView({
     isSelectionEnabled,
     isChecked,
     setIsChecked,
+    hideHasTags,
+    hideSetupAlg,
 }: {
     layerCase: LayerCase;
-    index: number;
+    index?: number;
     layerSolutionsComplete: Record<LayerCase, Record<number, string[]>> | null;
     isSelectionEnabled: boolean;
     isChecked?: boolean;
     setIsChecked?: Dispatch<SetStateAction<boolean>>;
+    hideHasTags?: boolean;
+    hideSetupAlg?: boolean;
 }) {
     const lc = layerCase;
 
@@ -66,10 +70,17 @@ export default function LayerCaseView({
                         autoComplete="off"
                     />
                 )}
-                #{index}: {lc}
+                {index !== undefined ? `#${index}: ` : "Layer case: "}
+                {lc}
             </label>
-            <TagsViewForCase layerCase={lc} caseTags={layerCaseTags[lc]} />
-            {setupAlg && setupAlg.length > 3 && <div>Setup: {setupAlg}</div>}
+            <TagsViewForCase
+                layerCase={lc}
+                caseTags={layerCaseTags[lc]}
+                hideHasTags={hideHasTags}
+            />
+            {setupAlg && !hideSetupAlg && setupAlg.length > 3 && (
+                <div>Setup: {setupAlg}</div>
+            )}
             <SkewbRenderer
                 state={layerCaseToSkewbState(lc).toSkewbRendererState()}
                 options={null}

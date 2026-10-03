@@ -13,6 +13,10 @@ const Color = {
 
 type Color = (typeof Color)[keyof typeof Color];
 
+const colorsReverseMap = Object.fromEntries(
+    Object.entries(Color).map(([k, v]) => [v, k]),
+) as Record<Color, keyof typeof Color>;
+
 const tailwindColors = {
     [Color.Gray]: "bg-[rgb(127,127,127)]",
     [Color.Orange]: "bg-[rgb(255,166,0)]",
@@ -69,6 +73,7 @@ function rotateColor(color: Color, rotation: CubeRotation) {
 
 export {
     Color,
+    colorsReverseMap,
     tailwindColors,
     tailwindHoverColors,
     validColors,
