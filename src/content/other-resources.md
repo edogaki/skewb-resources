@@ -23,4 +23,4 @@ Resources made by other people in the skewb community which I think everyone who
 
 ## Websites
 
-[SkewbSkillsWeb by Annika Stein](https://annikastein.github.io/SkewbPage/SkewbSkills/skskweb.html) Has L2L alg trainer which is useful for drilling Sarah's Advanced/NS algs.
+[Skewb NS2 Trainer by Malte Ihlefeld](https://mihlefeld.github.io/Alg-Trainers/Skewb-NS2-Trainer/) Trains specific NS cases. Choose NS cases to train.
