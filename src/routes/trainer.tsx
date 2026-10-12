@@ -45,6 +45,7 @@ function RouteComponent() {
         {
             trainerType: NSCenterTrainerType.HorizontalU,
             showRightCornerColors: true,
+            showLeftCornerColors: true,
             showRandomUCorners: false,
             renderer: {
                 cubeOrientation: CubeOrientation.UpDown,

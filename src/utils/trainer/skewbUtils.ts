@@ -29,6 +29,7 @@ type NSCenterTrainerState = {
 interface NSCenterTrainerOptions {
     trainerType: NSCenterTrainerType;
     showRightCornerColors: boolean;
+    showLeftCornerColors: boolean;
     showRandomUCorners: boolean;
     renderer: RendererOptions;
     isKeyBindChangerOn: boolean;
@@ -51,64 +52,20 @@ function nsCenterTrainerStateToSkewbRendererState(
     const uCorners = nsCenterTrainerState.uCorners;
 
     return [
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU &&
-            options.showRandomUCorners
-                ? uCorners[3][1]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU &&
-            options.showRandomUCorners
-                ? uCorners[0][2]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU
-                ? Color.Red
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU
-                ? Color.Red
-                : Color.Gray
-        ],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[options.showLeftCornerColors ? Color.Red : Color.Gray],
+        rotatedCenters[Color.Gray],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU
                 ? nsCenterTrainerState.centers[0]
                 : Color.Gray
         ],
 
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-                chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? uCorners[0][1]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-                chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? uCorners[1][2]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-            chosenTrainerType === NSCenterTrainerType.O ||
-            chosenTrainerType === NSCenterTrainerType.VerticalU
-                ? Color.Green
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-            chosenTrainerType === NSCenterTrainerType.O ||
-            chosenTrainerType === NSCenterTrainerType.VerticalU
-                ? Color.Green
-                : Color.Gray
-        ],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Green],
+        rotatedCenters[options.showLeftCornerColors ? Color.Green : Color.Gray],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU ||
             chosenTrainerType === NSCenterTrainerType.O ||
@@ -123,34 +80,10 @@ function nsCenterTrainerStateToSkewbRendererState(
         rotatedCenters[Color.White],
         rotatedCenters[Color.White],
 
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? uCorners[3][0]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? uCorners[2][0]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? uCorners[1][0]
-                : Color.Gray
-        ],
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? uCorners[0][0]
-                : Color.Gray
-        ],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.O ||
             chosenTrainerType === NSCenterTrainerType.VerticalU
@@ -158,44 +91,10 @@ function nsCenterTrainerStateToSkewbRendererState(
                 : Color.Gray
         ],
 
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-                chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? options.showRightCornerColors
-                    ? uCorners[1][1]
-                    : Color.Gray
-                : Color.Gray
-        ],
-        rotatedCenters[
-            (chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-                chosenTrainerType === NSCenterTrainerType.O ||
-                chosenTrainerType === NSCenterTrainerType.VerticalU) &&
-            options.showRandomUCorners
-                ? options.showRightCornerColors
-                    ? uCorners[2][2]
-                    : Color.Gray
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-            chosenTrainerType === NSCenterTrainerType.O ||
-            chosenTrainerType === NSCenterTrainerType.VerticalU
-                ? options.showRightCornerColors
-                    ? Color.Orange
-                    : Color.Gray
-                : Color.Gray
-        ],
-        rotatedCenters[
-            chosenTrainerType === NSCenterTrainerType.HorizontalU ||
-            chosenTrainerType === NSCenterTrainerType.O ||
-            chosenTrainerType === NSCenterTrainerType.VerticalU
-                ? options.showRightCornerColors
-                    ? Color.Orange
-                    : Color.Gray
-                : Color.Gray
-        ],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Gray],
+        rotatedCenters[Color.Orange],
         rotatedCenters[
             chosenTrainerType === NSCenterTrainerType.HorizontalU ||
             chosenTrainerType === NSCenterTrainerType.O

@@ -42,36 +42,19 @@ function NSCenterTrainerOptionsEditor({
             <br />
             <input
                 type="checkbox"
-                checked={options.showRightCornerColors}
-                name="showRightCornerColors"
-                id="nsCenterTrainer-showRightCornerColors"
+                checked={options.showLeftCornerColors}
+                name="showLeftCornerColors"
+                id="nsCenterTrainer-showLeftCornerColors"
                 className="mr-1"
                 onChange={(e) =>
                     setOptions((values) => ({
                         ...values,
-                        showRightCornerColors: e.target.checked,
+                        showLeftCornerColors: e.target.checked,
                     }))
                 }
             />
-            <label htmlFor="nsCenterTrainer-showRightCornerColors">
-                Show Right Corner Colors
-            </label>
-            <br />
-            <input
-                type="checkbox"
-                checked={options.showRandomUCorners}
-                name="showRandomUCorners"
-                id="nsCenterTrainer-showRandomUCorners"
-                className="mr-1"
-                onChange={(e) =>
-                    setOptions((values) => ({
-                        ...values,
-                        showRandomUCorners: e.target.checked,
-                    }))
-                }
-            />
-            <label htmlFor="nsCenterTrainer-showRandomUCorners">
-                Show Random U Corners
+            <label htmlFor="nsCenterTrainer-showLeftCornerColors">
+                Show Left Corner Colors
             </label>
             <br />
             <br />

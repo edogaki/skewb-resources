@@ -10,6 +10,7 @@ import { generateRandomQuestion } from "#/utils/trainer/useQuestionGenerator";
 const options: NSCenterTrainerOptions = {
     trainerType: NSCenterTrainerType.HorizontalU,
     showRightCornerColors: true,
+    showLeftCornerColors: true,
     showRandomUCorners: true,
     renderer: {
         cubeOrientation: CubeOrientation.UpDown,
