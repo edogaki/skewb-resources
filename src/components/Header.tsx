@@ -63,7 +63,7 @@ export default function Header() {
                         Layers Catalog
                     </Link>
                     <DropdownButton
-                        className={`cursor-pointer nav-link ${matchRoute({ to: "/blog" }) || matchRoute({ to: "/$contentTitle", params: { contentTitle: "other-resources" } }) ? "is-active" : ""}`}
+                        className={`cursor-pointer nav-link ${matchRoute({ to: "/blog", fuzzy: true }) || matchRoute({ to: "/$contentTitle", params: { contentTitle: "other-resources" } }) ? "is-active" : ""}`}
                         buttonContent="Misc"
                         dropdownClassName="top-[150%]"
                         closeOnChangeURL={true}
