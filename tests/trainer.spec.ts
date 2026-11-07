@@ -16,7 +16,9 @@ test("all correct answers", async ({ page }) => {
             page.getByText(`${i}/${i} answered correctly`),
         ).toBeVisible();
         const { correctAnswer } = testQuestions[i];
-        await page.getByText(correctAnswer, { exact: true }).click();
+        await page
+            .getByRole("button", { name: correctAnswer, exact: true })
+            .click();
     }
     await expect(page.getByText(`${i}/${i} answered correctly`)).toBeVisible();
 });
@@ -32,7 +34,9 @@ test("some wrong answers", async ({ page }) => {
         ).toBeVisible();
         const { correctAnswer } = testQuestions[i];
         const randomAnswer = getRandomCenterPerm();
-        await page.getByText(randomAnswer, { exact: true }).click();
+        await page
+            .getByRole("button", { name: randomAnswer, exact: true })
+            .click();
         if (randomAnswer === correctAnswer) {
             correctAnswers++;
         } else {
@@ -40,14 +44,18 @@ test("some wrong answers", async ({ page }) => {
                 page.getByText(`${correctAnswers}/${i + 1} answered correctly`),
             ).toBeVisible();
             const randomAnswer2 = getRandomCenterPerm();
-            await page.getByText(randomAnswer2, { exact: true }).click();
+            await page
+                .getByRole("button", { name: randomAnswer2, exact: true })
+                .click();
             if (randomAnswer2 !== correctAnswer) {
                 await expect(
                     page.getByText(
                         `${correctAnswers}/${i + 1} answered correctly`,
                     ),
                 ).toBeVisible();
-                await page.getByText(correctAnswer, { exact: true }).click();
+                await page
+                    .getByRole("button", { name: correctAnswer, exact: true })
+                    .click();
             }
         }
     }
