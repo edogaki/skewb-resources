@@ -9,22 +9,17 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TrainerRouteImport } from './routes/trainer'
-import { Route as LayerSolverRouteImport } from './routes/layer-solver'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as LayerSolverRouteImport } from './routes/layer-solver'
+import { Route as TrainerRouteImport } from './routes/trainer'
 import { Route as TrainersIndexRouteImport } from './routes/trainers/index'
-import { Route as TrainersNsCenterRouteImport } from './routes/trainers/ns-center'
 import { Route as TrainersNsCaseRouteImport } from './routes/trainers/ns-case'
+import { Route as TrainersNsCenterRouteImport } from './routes/trainers/ns-center'
 
-const TrainerRoute = TrainerRouteImport.update({
-  id: '/trainer',
-  path: '/trainer',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LayerSolverRoute = LayerSolverRouteImport.update({
-  id: '/layer-solver',
-  path: '/layer-solver',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -32,9 +27,14 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const LayerSolverRoute = LayerSolverRouteImport.update({
+  id: '/layer-solver',
+  path: '/layer-solver',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrainerRoute = TrainerRouteImport.update({
+  id: '/trainer',
+  path: '/trainer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TrainersIndexRoute = TrainersIndexRouteImport.update({
@@ -42,14 +42,14 @@ const TrainersIndexRoute = TrainersIndexRouteImport.update({
   path: '/trainers/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TrainersNsCenterRoute = TrainersNsCenterRouteImport.update({
-  id: '/trainers/ns-center',
-  path: '/trainers/ns-center',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TrainersNsCaseRoute = TrainersNsCaseRouteImport.update({
   id: '/trainers/ns-case',
   path: '/trainers/ns-case',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrainersNsCenterRoute = TrainersNsCenterRouteImport.update({
+  id: '/trainers/ns-center',
+  path: '/trainers/ns-center',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -123,18 +123,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/trainer': {
-      id: '/trainer'
-      path: '/trainer'
-      fullPath: '/trainer'
-      preLoaderRoute: typeof TrainerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/layer-solver': {
-      id: '/layer-solver'
-      path: '/layer-solver'
-      fullPath: '/layer-solver'
-      preLoaderRoute: typeof LayerSolverRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -144,11 +137,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/layer-solver': {
+      id: '/layer-solver'
+      path: '/layer-solver'
+      fullPath: '/layer-solver'
+      preLoaderRoute: typeof LayerSolverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trainer': {
+      id: '/trainer'
+      path: '/trainer'
+      fullPath: '/trainer'
+      preLoaderRoute: typeof TrainerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/trainers/': {
@@ -158,18 +158,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrainersIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/trainers/ns-center': {
-      id: '/trainers/ns-center'
-      path: '/trainers/ns-center'
-      fullPath: '/trainers/ns-center'
-      preLoaderRoute: typeof TrainersNsCenterRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/trainers/ns-case': {
       id: '/trainers/ns-case'
       path: '/trainers/ns-case'
       fullPath: '/trainers/ns-case'
       preLoaderRoute: typeof TrainersNsCaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trainers/ns-center': {
+      id: '/trainers/ns-center'
+      path: '/trainers/ns-center'
+      fullPath: '/trainers/ns-center'
+      preLoaderRoute: typeof TrainersNsCenterRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
