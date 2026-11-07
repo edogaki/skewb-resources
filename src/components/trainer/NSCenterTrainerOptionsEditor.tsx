@@ -1,6 +1,7 @@
 import type React from "react";
 import { CubeOrientation } from "#/utils/renderer/skewbRenderer";
 import {
+    CenterPerm,
     type NSCenterTrainerOptions,
     NSCenterTrainerType,
 } from "#/utils/trainer/skewbUtils";
@@ -104,6 +105,45 @@ function NSCenterTrainerOptionsEditor({
                 {options.isKeyBindChangerOn ? "Save Changes" : "Show Keybinds"}
             </button>
             <br />
+            <br />
+            <p>Enabled Perms (from next question on)</p>
+            <div className="flex flex-row gap-x-4 flex-wrap">
+                {(
+                    Object.keys(CenterPerm) as Array<keyof typeof CenterPerm>
+                ).map((k) => (
+                    <div key={k}>
+                        <input
+                            type="checkbox"
+                            checked={
+                                !options.centerPermsDisabled.includes(
+                                    CenterPerm[k],
+                                )
+                            }
+                            name={`centerPermsDisabled-${CenterPerm[k]}`}
+                            id={`nsCenterTrainer-centerPermsDisabled-${CenterPerm[k]}`}
+                            className="mr-1"
+                            onChange={(e) =>
+                                setOptions((values) => ({
+                                    ...values,
+                                    centerPermsDisabled: e.target.checked
+                                        ? values.centerPermsDisabled.filter(
+                                              (cp) => cp !== CenterPerm[k],
+                                          )
+                                        : [
+                                              ...values.centerPermsDisabled,
+                                              CenterPerm[k],
+                                          ],
+                                }))
+                            }
+                        />
+                        <label
+                            htmlFor={`nsCenterTrainer-centerPermsDisabled-${CenterPerm[k]}`}
+                        >
+                            {CenterPerm[k]}
+                        </label>
+                    </div>
+                ))}
+            </div>
         </form>
     );
 }

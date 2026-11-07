@@ -6,6 +6,22 @@ import type {
     SkewbRendererState,
 } from "../renderer/skewbRenderer";
 
+const CenterPerm = {
+    Swirl: "Swirl Perm",
+    Wat: "Wat Perm",
+    X: "X Perm",
+    HorizontalU: "Horizontal U Perm",
+    VerticalU: "Vertical U Perm",
+    O: "O Perm",
+    ZConj: "Z Perm Conjugate",
+    TripleSledge: "Triple Sledge",
+    H: "H Perm",
+    Z: "Z Perm",
+    Pure: "Pure/Solved",
+} as const;
+
+type CenterPerm = (typeof CenterPerm)[keyof typeof CenterPerm];
+
 const NSCenterTrainerType = {
     HorizontalU: "Show Horizontal U centers (LFR)",
     O: "Show O centers (FRU)",
@@ -33,6 +49,7 @@ interface NSCenterTrainerOptions {
     showRandomUCorners: boolean;
     renderer: RendererOptions;
     isKeyBindChangerOn: boolean;
+    centerPermsDisabled: CenterPerm[];
 }
 
 function nsCenterTrainerStateToSkewbRendererState(
@@ -114,22 +131,6 @@ function nsCenterTrainerStateToSkewbRendererState(
     ] as readonly Color[] as SkewbRendererState;
 }
 
-const CenterPerm = {
-    Swirl: "Swirl Perm",
-    Wat: "Wat Perm",
-    X: "X Perm",
-    HorizontalU: "Horizontal U Perm",
-    VerticalU: "Vertical U Perm",
-    O: "O Perm",
-    ZConj: "Z Perm Conjugate",
-    TripleSledge: "Triple Sledge",
-    H: "H Perm",
-    Z: "Z Perm",
-    Pure: "Pure/Solved",
-} as const;
-
-type CenterPerm = (typeof CenterPerm)[keyof typeof CenterPerm];
-
 const CenterPermSpecificName = {
     SwirlLeft: "Left",
     SwirlRight: "Right",
@@ -153,188 +154,188 @@ type CenterPermSpecificName =
 
 const nsCenterPerms = {
     [[Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.Pure,
     [[Color.Red, Color.Green, Color.Blue, Color.Yellow, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Red, Color.Green, Color.Yellow, Color.Orange, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Red, Color.Orange, Color.Green, Color.Yellow, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
     [[Color.Red, Color.Orange, Color.Blue, Color.Green, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Red, Color.Orange, Color.Yellow, Color.Blue, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Red, Color.Blue, Color.Orange, Color.Yellow, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.VerticalU,
     [[Color.Red, Color.Blue, Color.Yellow, Color.Green, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.TripleSledge,
     [[Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Red, Color.Yellow, Color.Orange, Color.Green, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.VerticalU,
     [[Color.Red, Color.Yellow, Color.Blue, Color.Orange, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
 
     [[Color.Green, Color.Red, Color.Orange, Color.Yellow, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
     [[Color.Green, Color.Red, Color.Blue, Color.Orange, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.Z,
     [[Color.Green, Color.Red, Color.Yellow, Color.Blue, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
     [[Color.Green, Color.Orange, Color.Red, Color.Blue, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Green, Color.Orange, Color.Blue, Color.Yellow, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Green, Color.Orange, Color.Yellow, Color.Red, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Green, Color.Blue, Color.Red, Color.Yellow, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Green, Color.Blue, Color.Orange, Color.Red, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Green, Color.Blue, Color.Yellow, Color.Orange, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Green, Color.Yellow, Color.Red, Color.Orange, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Green, Color.Yellow, Color.Orange, Color.Blue, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Green, Color.Yellow, Color.Blue, Color.Red, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
 
     [[Color.Orange, Color.Red, Color.Green, Color.Blue, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Orange, Color.Red, Color.Blue, Color.Yellow, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Orange, Color.Red, Color.Yellow, Color.Green, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Orange, Color.Green, Color.Red, Color.Yellow, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.TripleSledge,
     [[Color.Orange, Color.Green, Color.Blue, Color.Red, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Orange, Color.Green, Color.Yellow, Color.Blue, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.VerticalU,
     [[Color.Orange, Color.Blue, Color.Red, Color.Green, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.H,
     [[Color.Orange, Color.Blue, Color.Green, Color.Yellow, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Orange, Color.Blue, Color.Yellow, Color.Red, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Orange, Color.Yellow, Color.Red, Color.Blue, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.TripleSledge,
     [[Color.Orange, Color.Yellow, Color.Green, Color.Red, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Orange, Color.Yellow, Color.Blue, Color.Green, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
 
     [[Color.Blue, Color.Red, Color.Green, Color.Yellow, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Blue, Color.Red, Color.Orange, Color.Green, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Blue, Color.Red, Color.Yellow, Color.Orange, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Blue, Color.Green, Color.Red, Color.Orange, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.HorizontalU,
     [[Color.Blue, Color.Green, Color.Orange, Color.Yellow, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Blue, Color.Green, Color.Yellow, Color.Red, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
     [[Color.Blue, Color.Orange, Color.Red, Color.Yellow, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Blue, Color.Orange, Color.Green, Color.Red, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPerm.Z,
     [[Color.Blue, Color.Orange, Color.Yellow, Color.Green, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Blue, Color.Yellow, Color.Red, Color.Green, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Blue, Color.Yellow, Color.Green, Color.Orange, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Blue, Color.Yellow, Color.Orange, Color.Red, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
 
     [[Color.Yellow, Color.Red, Color.Green, Color.Orange, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Yellow, Color.Red, Color.Orange, Color.Blue, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Yellow, Color.Red, Color.Blue, Color.Green, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Yellow, Color.Green, Color.Red, Color.Blue, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.VerticalU,
     [[Color.Yellow, Color.Green, Color.Orange, Color.Red, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.O,
     [[Color.Yellow, Color.Green, Color.Blue, Color.Orange, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
     [[Color.Yellow, Color.Orange, Color.Red, Color.Green, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Yellow, Color.Orange, Color.Green, Color.Blue, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.ZConj,
     [[Color.Yellow, Color.Orange, Color.Blue, Color.Red, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.Swirl,
     [[Color.Yellow, Color.Blue, Color.Red, Color.Orange, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPerm.X,
     [[Color.Yellow, Color.Blue, Color.Green, Color.Red, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPerm.Wat,
     [[Color.Yellow, Color.Blue, Color.Orange, Color.Green, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPerm.TripleSledge,
 } as {
     [x: string]: CenterPerm;
@@ -342,188 +343,188 @@ const nsCenterPerms = {
 
 const nsCenterPermSpecificNames = {
     [[Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Red, Color.Green, Color.Blue, Color.Yellow, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ORight,
     [[Color.Red, Color.Green, Color.Yellow, Color.Orange, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.OLeft,
     [[Color.Red, Color.Orange, Color.Green, Color.Yellow, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjULeft,
     [[Color.Red, Color.Orange, Color.Blue, Color.Green, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalURight,
     [[Color.Red, Color.Orange, Color.Yellow, Color.Blue, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ORight,
     [[Color.Red, Color.Blue, Color.Green, Color.Orange, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalULeft,
     [[Color.Red, Color.Blue, Color.Orange, Color.Yellow, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Red, Color.Blue, Color.Yellow, Color.Green, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Red, Color.Yellow, Color.Green, Color.Blue, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.OLeft,
     [[Color.Red, Color.Yellow, Color.Orange, Color.Green, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Red, Color.Yellow, Color.Blue, Color.Orange, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjURight,
 
     [[Color.Green, Color.Red, Color.Orange, Color.Yellow, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjURight,
     [[Color.Green, Color.Red, Color.Blue, Color.Orange, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Green, Color.Red, Color.Yellow, Color.Blue, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjULeft,
     [[Color.Green, Color.Orange, Color.Red, Color.Blue, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalURight,
     [[Color.Green, Color.Orange, Color.Blue, Color.Yellow, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlRight,
     [[Color.Green, Color.Orange, Color.Yellow, Color.Red, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlRight,
     [[Color.Green, Color.Blue, Color.Red, Color.Yellow, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjRight,
     [[Color.Green, Color.Blue, Color.Orange, Color.Red, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalURight,
     [[Color.Green, Color.Blue, Color.Yellow, Color.Orange, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppLeft,
     [[Color.Green, Color.Yellow, Color.Red, Color.Orange, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppRight,
     [[Color.Green, Color.Yellow, Color.Orange, Color.Blue, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ORight,
     [[Color.Green, Color.Yellow, Color.Blue, Color.Red, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlRight,
 
     [[Color.Orange, Color.Red, Color.Green, Color.Blue, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalULeft,
     [[Color.Orange, Color.Red, Color.Blue, Color.Yellow, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppRight,
     [[Color.Orange, Color.Red, Color.Yellow, Color.Green, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjLeft,
     [[Color.Orange, Color.Green, Color.Red, Color.Yellow, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Orange, Color.Green, Color.Blue, Color.Red, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalURight,
     [[Color.Orange, Color.Green, Color.Yellow, Color.Blue, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Orange, Color.Blue, Color.Red, Color.Green, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Orange, Color.Blue, Color.Green, Color.Yellow, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjLeft,
     [[Color.Orange, Color.Blue, Color.Yellow, Color.Red, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjRight,
     [[Color.Orange, Color.Yellow, Color.Red, Color.Blue, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Orange, Color.Yellow, Color.Green, Color.Red, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppLeft,
     [[Color.Orange, Color.Yellow, Color.Blue, Color.Green, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjRight,
 
     [[Color.Blue, Color.Red, Color.Green, Color.Yellow, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlLeft,
     [[Color.Blue, Color.Red, Color.Orange, Color.Green, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalULeft,
     [[Color.Blue, Color.Red, Color.Yellow, Color.Orange, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlLeft,
     [[Color.Blue, Color.Green, Color.Red, Color.Orange, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.HorizontalULeft,
     [[Color.Blue, Color.Green, Color.Orange, Color.Yellow, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.OLeft,
     [[Color.Blue, Color.Green, Color.Yellow, Color.Red, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjURight,
     [[Color.Blue, Color.Orange, Color.Red, Color.Yellow, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppLeft,
     [[Color.Blue, Color.Orange, Color.Green, Color.Red, Color.Yellow].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Blue, Color.Orange, Color.Yellow, Color.Green, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppRight,
     [[Color.Blue, Color.Yellow, Color.Red, Color.Green, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjLeft,
     [[Color.Blue, Color.Yellow, Color.Green, Color.Orange, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlLeft,
     [[Color.Blue, Color.Yellow, Color.Orange, Color.Red, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjULeft,
 
     [[Color.Yellow, Color.Red, Color.Green, Color.Orange, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlLeft,
     [[Color.Yellow, Color.Red, Color.Orange, Color.Blue, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.OLeft,
     [[Color.Yellow, Color.Red, Color.Blue, Color.Green, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppLeft,
     [[Color.Yellow, Color.Green, Color.Red, Color.Blue, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
     [[Color.Yellow, Color.Green, Color.Orange, Color.Red, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ORight,
     [[Color.Yellow, Color.Green, Color.Blue, Color.Orange, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjULeft,
     [[Color.Yellow, Color.Orange, Color.Red, Color.Green, Color.Blue].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjRight,
     [[Color.Yellow, Color.Orange, Color.Green, Color.Blue, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.ZConjURight,
     [[Color.Yellow, Color.Orange, Color.Blue, Color.Red, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.SwirlRight,
     [[Color.Yellow, Color.Blue, Color.Red, Color.Orange, Color.Green].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.XAdjLeft,
     [[Color.Yellow, Color.Blue, Color.Green, Color.Red, Color.Orange].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.WatOppRight,
     [[Color.Yellow, Color.Blue, Color.Orange, Color.Green, Color.Red].join(
-        ",",
+        "|",
     )]: CenterPermSpecificName.None,
 } as {
     [x: string]: CenterPermSpecificName;
@@ -532,13 +533,13 @@ const nsCenterPermSpecificNames = {
 function nsCenterTrainerStateToCenterPerm(
     nsCenterTrainerState: NSCenterTrainerState,
 ) {
-    return nsCenterPerms[nsCenterTrainerState.centers.join(",")];
+    return nsCenterPerms[nsCenterTrainerState.centers.join("|")];
 }
 
 function nsCenterTrainerStateToCenterPermSpecificName(
     nsCenterTrainerState: NSCenterTrainerState,
 ) {
-    return nsCenterPermSpecificNames[nsCenterTrainerState.centers.join(",")];
+    return nsCenterPermSpecificNames[nsCenterTrainerState.centers.join("|")];
 }
 
 // const nonWhiteColors: Color[] = [Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow];
@@ -652,6 +653,7 @@ export {
     type NSCenterTrainerOptions,
     nsCenterTrainerStateToSkewbRendererState,
     CenterPerm,
+    nsCenterPerms,
     nsCenterTrainerStateToCenterPerm,
     nsCenterTrainerStateToCenterPermSpecificName,
     type NSCornerTrainerState,

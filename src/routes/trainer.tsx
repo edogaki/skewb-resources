@@ -51,6 +51,7 @@ function RouteComponent() {
                 cubeOrientation: CubeOrientation.UpDown,
             },
             isKeyBindChangerOn: false,
+            centerPermsDisabled: [],
         },
         true,
     );

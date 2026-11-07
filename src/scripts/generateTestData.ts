@@ -16,6 +16,7 @@ const options: NSCenterTrainerOptions = {
         cubeOrientation: CubeOrientation.UpDown,
     },
     isKeyBindChangerOn: false,
+    centerPermsDisabled: [],
 };
 const questions = Array.from({ length: 200 }, () => {
     const question = generateRandomQuestion(options);

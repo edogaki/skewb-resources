@@ -6,11 +6,24 @@ import {
     type NSCenterTrainerOptions,
     type NSCenterTrainerState,
     nonRandomNSCenterTrainerTypes,
+    nsCenterPerms,
 } from "./skewbUtils";
 
-export function generateRandomQuestion(_options: NSCenterTrainerOptions) {
-    const centers = nonWhiteColors.slice();
-    shuffleArray(centers, true);
+export function generateRandomQuestion(options: NSCenterTrainerOptions) {
+    const nsCenterPermsFiltered = Object.keys(nsCenterPerms).filter(
+        (cpArrStr) =>
+            !options.centerPermsDisabled.includes(nsCenterPerms[cpArrStr]),
+    );
+    const centersString =
+        nsCenterPermsFiltered[
+            Math.floor(Math.random() * nsCenterPermsFiltered.length)
+        ] ||
+        [Color.Red, Color.Green, Color.Orange, Color.Blue, Color.Yellow].join(
+            "|",
+        );
+    const centers = centersString.split("|");
+    // const centers = nonWhiteColors.slice();
+    // shuffleArray(centers, true);
     const randomRotation =
         CubeRotation[Math.floor(Math.random() * CubeRotation.length)];
     const randomlyChosenTrainerType =
