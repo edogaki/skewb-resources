@@ -1,0 +1,16 @@
+# Vite and the router use this prefix, while prerendered files are emitted
+# relative to the publish directory. Serve those files under the same prefix.
+[[redirects]]
+  from = "/skewb-resources"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/skewb-resources/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/skewb-resources/*"
+  to = "/:splat"
+  status = 200
