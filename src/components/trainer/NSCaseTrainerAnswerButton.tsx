@@ -77,10 +77,8 @@ function NSCaseTrainerAnswerButton({
                 ref={buttonRef}
             >
                 <div>{name}</div>
-                {useAltName && altNames[name] ? (
+                {useAltName && altNames[name] && (
                     <div>{altNames[name]}</div>
-                ) : (
-                    name
                 )}
                 {showSkewbRenderer && (
                     <div className="w-full flex justify-center-safe">

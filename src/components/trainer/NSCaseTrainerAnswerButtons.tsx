@@ -35,6 +35,7 @@ function NSCaseTrainerAnswerButtons({
                                             }
                                             onClick={() => selectAnswer(c)}
                                             altNames={options.altNames}
+                                            useAltName={true}
                                         />
                                     </div>
                                 ))}
